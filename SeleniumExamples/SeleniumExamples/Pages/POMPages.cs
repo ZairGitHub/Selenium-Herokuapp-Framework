@@ -11,12 +11,15 @@ namespace SeleniumExamples.Pages
             DriverConfig = new DriverConfig(
                 elementWaitTime, pageWaitTime).Driver;
 
+            IndexPage = new IndexPage(new FirefoxDriver());
             AddRemovePage = new AddRemovePage(new FirefoxDriver());
         }
 
         public void Dispose() => DriverConfig.Quit();
         
         public FirefoxDriver DriverConfig { get; private set; }
+
+        public IndexPage IndexPage { get; private set; }
 
         public AddRemovePage AddRemovePage { get; private set; }
     }

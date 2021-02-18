@@ -19,6 +19,8 @@ namespace SeleniumExamples.Pages
         public ReadOnlyCollection<IWebElement> ButtonsDelete() =>
             _driver.FindElements(By.CssSelector(".added-manually"));
         
-        private void NavigateToPage() => _driver.Navigate().GoToUrl(_url);
+        public void NavigateToPage() => _driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/add_remove_elements/");
+
+        public void CloseDriver() => _driver.Quit();
     }
 }

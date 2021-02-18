@@ -1,13 +1,14 @@
 ﻿using System;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
 
 namespace SeleniumExamples.Pages
 {
-    public class POMPages<driver> : IDisposable where driver : IWebDriver, new()
+    public class POMPages
     {
-        public POMPages(int elementWaitTime = 5, int pageWaitTime = 5)
+        public POMPages(int elementWaitTime = 3, int pageWaitTime = 3)
         {
-            DriverConfig = new DriverConfig<driver>(
+            DriverConfig = new DriverConfig(
                 elementWaitTime, pageWaitTime).Driver;
 
             AddRemovePage = new AddRemovePage(DriverConfig);
@@ -15,10 +16,8 @@ namespace SeleniumExamples.Pages
 
         public void Dispose() => DriverConfig.Quit();
         
-        public driver DriverConfig { get; private set; }
+        public FirefoxDriver DriverConfig { get; private set; }
 
         public AddRemovePage AddRemovePage { get; private set; }
-
-     
     }
 }

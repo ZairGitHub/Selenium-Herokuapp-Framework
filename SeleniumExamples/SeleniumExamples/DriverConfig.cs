@@ -1,17 +1,17 @@
 ﻿using System;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
 
 namespace SeleniumExamples
 {
-    public class DriverConfig<T> where T : IWebDriver, new()
+    public class DriverConfig
     {
         public DriverConfig(int elementWaitTime, int pageWaitTime)
         {
-            Driver = new T();
             ConfigureDriverTimeouts(elementWaitTime, pageWaitTime);
         }
 
-        public T Driver { get; private set; }
+        public FirefoxDriver Driver => new FirefoxDriver();
 
         private void ConfigureDriverTimeouts(int elementWaitTime, int pageWaitTime)
         {

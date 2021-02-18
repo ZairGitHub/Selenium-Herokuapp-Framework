@@ -12,10 +12,20 @@ namespace SeleniumExamples.Pages
 
         public IWebElement PageHeader => _driver.FindElement(By.TagName("h3"));
 
+        public IWebElement LinkFooter =>
+            _driver.FindElement(By.LinkText("Elemental Selenium"));
+
+        public IWebElement LinkGitHub =>
+            _driver.FindElement(By.CssSelector("img"));
+
         public IWebElement LinkAddRemove =>
             _driver.FindElement(By.LinkText("Add/Remove Elements"));
 
         public string GetPageHeaderText() => PageHeader.Text;
+
+        public void ClickPageFooterLink() => LinkFooter.Click();
+
+        public void ClickGitHubImage() => LinkGitHub.Click();
 
         public void ClickAddRemoveElementsLink() => LinkAddRemove.Click();
 

@@ -71,12 +71,11 @@ namespace SeleniumExamples
         public void AddButton_ClickedMultipleTimes_CreatesMultipleDeleteButtons()
         {
             _website.NavigateToPage();
-            var addButton = GetAddButton();
-            addButton.Click();
-            addButton.Click();
-            addButton.Click();
+            _website.ClickAddButton();
+            _website.ClickAddButton();
+            _website.ClickAddButton();
 
-            var result = GetDeleteButtons().Count;
+            var result = _website.CountNumberOfDeleteButtons();
 
             Assert.That(result, Is.EqualTo(3));
         }
@@ -85,10 +84,10 @@ namespace SeleniumExamples
         public void DeleteButton_RemovesDeleteButton()
         {
             _website.NavigateToPage();
-            GetAddButton().Click();
-            GetDeleteButton().Click();
+            _website.ClickAddButton();
+            _website.ClickDeleteButton();
 
-            var result = GetDeleteButtons().Count;
+            var result = _website.CountNumberOfDeleteButtons();
 
             Assert.That(result, Is.Zero);
         }

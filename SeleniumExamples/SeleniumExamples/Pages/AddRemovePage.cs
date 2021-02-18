@@ -21,6 +21,8 @@ namespace SeleniumExamples.Pages
 
         public void ClickAddButton() => ButtonAdd.Click();
 
+        public void ClickDeleteButton() => ButtonDelete.Click();
+
         public int CountNumberOfDeleteButtons() => ButtonsDelete.Count;
         
         public void NavigateToPage() => _driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/add_remove_elements/");

@@ -8,12 +8,12 @@ namespace SeleniumExamples
         public DriverConfig(int elementWaitTime, int pageWaitTime)
         {
             Driver = new T();
-            ConfigureDriver(elementWaitTime, pageWaitTime);
+            ConfigureDriverTimeouts(elementWaitTime, pageWaitTime);
         }
 
         public T Driver { get; private set; }
 
-        private void ConfigureDriver(int elementWaitTime, int pageWaitTime)
+        private void ConfigureDriverTimeouts(int elementWaitTime, int pageWaitTime)
         {
             Driver.Manage().Timeouts().ImplicitWait = 
                 TimeSpan.FromSeconds(elementWaitTime);

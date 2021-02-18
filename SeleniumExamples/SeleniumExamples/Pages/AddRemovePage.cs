@@ -5,7 +5,7 @@ namespace SeleniumExamples.Pages
 {
     public class AddRemovePage
     {
-        private readonly string _url = ConfigReader.BaseUrl + ConfigReader.AddRemoveElements;
+        private readonly string _url = ConfigReader.Index + ConfigReader.AddRemoveElements;
         private readonly IWebDriver _driver;
 
         public AddRemovePage(IWebDriver driver) => _driver = driver;

@@ -1,10 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using OpenQA.Selenium;
 
 namespace SeleniumExamples.Pages
 {
-    class POMPages
+    public class POMPages<driver> : IDisposable where driver : IWebDriver, new()
     {
+        public POMPages(int elementWaitTime = 5, int pageWaitTime = 5)
+        {
+            DriverConfig = new DriverConfig<driver>(
+                elementWaitTime, pageWaitTime).Driver;
+
+            AddRemovePage = new AddRemovePage(DriverConfig);
+        }
+
+        public void Dispose() => DriverConfig.Quit();
+        
+        public driver DriverConfig { get; private set; }
+
+        public AddRemovePage AddRemovePage { get; private set; }
+
+     
     }
 }

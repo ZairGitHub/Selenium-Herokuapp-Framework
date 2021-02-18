@@ -10,6 +10,8 @@ namespace SeleniumExamples.Pages
 
         public IndexPage(IWebDriver driver) => _driver = driver;
 
+        public string PageURL => _driver.Url;
+
         public IWebElement PageHeader => _driver.FindElement(By.TagName("h3"));
 
         public IWebElement LinkFooter =>
@@ -25,7 +27,7 @@ namespace SeleniumExamples.Pages
 
         public void ClickPageFooterLink() => LinkFooter.Click();
 
-        public void ClickGitHubImage() => LinkGitHub.Click();
+        public void ClickGitHubImageLink() => LinkGitHub.Click();
 
         public void ClickAddRemoveElementsLink() => LinkAddRemove.Click();
 

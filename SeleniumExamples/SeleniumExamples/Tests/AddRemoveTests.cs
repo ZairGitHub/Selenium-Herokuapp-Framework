@@ -60,11 +60,11 @@ namespace SeleniumExamples
         public void AddButton_CreatesADeleteButton()
         {
             _website.NavigateToPage();
-            GetAddButton().Click();
-            
-            var result = GetDeleteButton().Text;
+            _website.ClickAddButton();
 
-            Assert.That(result, Is.EqualTo("Delete"));
+            var result = _website.CountNumberOfDeleteButtons();
+
+            Assert.That(result, Is.EqualTo(1));
         }
 
         [Test]

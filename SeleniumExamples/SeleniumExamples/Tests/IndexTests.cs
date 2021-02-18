@@ -18,12 +18,12 @@ namespace SeleniumExamples
         [Test]
         public void AddRemoveElementsLink_HomePage_RedirectsToAddRemovePage()
         {
-            //_website.NavigateToPage();
-            //_driver.FindElement(By.LinkText("Add/Remove Elements")).Click();
+            _sut.NavigateToPage();
 
-            //var result = GetAddButton().Text;
-
-            //Assert.That(result, Is.EqualTo("Add Element"));
+            _sut.ClickAddRemoveElementsText();
+            var result = _sut.GetPageHeaderText();
+            
+            Assert.That(result, Is.EqualTo("Add/Remove Elements"));
         }
     }
 }

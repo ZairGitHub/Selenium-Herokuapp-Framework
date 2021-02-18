@@ -10,14 +10,14 @@ namespace SeleniumExamples.Pages
 
         public IndexPage(IWebDriver driver) => _driver = driver;
 
-        public IWebElement HeaderPage => _driver.FindElement(By.TagName("h3"));
+        public IWebElement PageHeader => _driver.FindElement(By.TagName("h3"));
 
-        public IWebElement TextAddRemove =>
+        public IWebElement LinkAddRemove =>
             _driver.FindElement(By.LinkText("Add/Remove Elements"));
 
-        public string GetPageHeaderText() => HeaderPage.Text;
+        public string GetPageHeaderText() => PageHeader.Text;
 
-        public void ClickAddRemoveElementsText() => TextAddRemove.Click();
+        public void ClickAddRemoveElementsLink() => LinkAddRemove.Click();
 
         public void NavigateToPage() => _driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
 

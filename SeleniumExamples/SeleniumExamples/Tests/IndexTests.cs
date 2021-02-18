@@ -16,11 +16,11 @@ namespace SeleniumExamples
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void AddRemoveElementsLink_HomePage_RedirectsToAddRemovePage()
+        public void AddRemoveElementsLink_RedirectsToAddRemovePage()
         {
             _sut.NavigateToPage();
 
-            _sut.ClickAddRemoveElementsText();
+            _sut.ClickAddRemoveElementsLink();
             var result = _sut.GetPageHeaderText();
             
             Assert.That(result, Is.EqualTo("Add/Remove Elements"));

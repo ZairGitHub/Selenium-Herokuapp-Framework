@@ -21,7 +21,7 @@ namespace SeleniumExamples.Pages
 
         public void ClickAddButton() => ButtonAdd.Click();
 
-        public void ClickDeleteButton() => ButtonDelete.Click();
+        public void ClickAnyDeleteButton() => ButtonDelete.Click();
 
         public int CountNumberOfDeleteButtons() => ButtonsDelete.Count;
         

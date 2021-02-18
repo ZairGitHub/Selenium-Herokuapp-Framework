@@ -28,39 +28,31 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void AddButton_CreatesADeleteButton()
+        public void AddButton_CreatesADeleteButtonForEachClick()
         {
             _website.NavigateToPage();
-            _website.ClickAddButton();
 
-            var result = _website.CountNumberOfDeleteButtons();
-
-            Assert.That(result, Is.EqualTo(1));
-        }
-
-        [Test]
-        public void AddButton_ClickedMultipleTimes_CreatesMultipleDeleteButtons()
-        {
-            _website.NavigateToPage();
             _website.ClickAddButton();
             _website.ClickAddButton();
             _website.ClickAddButton();
-
             var result = _website.CountNumberOfDeleteButtons();
 
             Assert.That(result, Is.EqualTo(3));
         }
 
         [Test]
-        public void DeleteButton_RemovesDeleteButton()
+        public void DeleteButton_RemovesADeleteButtonForEachClick()
         {
             _website.NavigateToPage();
-            _website.ClickAddButton();
-            _website.ClickDeleteButton();
 
+            _website.ClickAddButton();
+            _website.ClickAddButton();
+            _website.ClickAddButton();
+            _website.ClickAnyDeleteButton();
+            _website.ClickAnyDeleteButton();
             var result = _website.CountNumberOfDeleteButtons();
 
-            Assert.That(result, Is.Zero);
+            Assert.That(result, Is.EqualTo(1));
         }
     }
 }

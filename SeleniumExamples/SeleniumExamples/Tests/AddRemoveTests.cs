@@ -1,6 +1,4 @@
-using System.Collections.ObjectModel;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using SeleniumExamples.Pages;
 
@@ -11,49 +9,22 @@ namespace SeleniumExamples
     {
         private AddRemovePage _website;
 
-        private IWebDriver _driver;
-        
-        private IWebElement GetAddButton()
-        {
-            return _driver.FindElement(By.CssSelector("button"));
-        }
-
-        private IWebElement GetDeleteButton()
-        {
-            return _driver.FindElement(By.CssSelector(".added-manually"));
-        }
-
-        private ReadOnlyCollection<IWebElement> GetDeleteButtons()
-        {
-            return _driver.FindElements(By.CssSelector(".added-manually"));
-        }
-
-        private void NavigateToPage(string url) => _driver.Navigate().GoToUrl(url);
-
         [OneTimeSetUp]
-        public void OneTimeSetUp()
-        {
-            _driver = new FirefoxDriver();
-            _website = new AddRemovePage(new FirefoxDriver());
-        }
-
+        public void OneTimeSetUp() => _website = new AddRemovePage(new FirefoxDriver());
+        
         [OneTimeTearDown]
-        public void OneTimeTearDown()
-        {
-            _driver.Quit();
-            _website.CloseDriver();
-        }
-
+        public void OneTimeTearDown() => _website.CloseDriver();
+        
         [Ignore("Move to a seperate home page test class")]
         [Test]
         public void AddRemoveElementsLink_HomePage_RedirectsToAddRemovePage()
         {
-            _website.NavigateToPage();
-            _driver.FindElement(By.LinkText("Add/Remove Elements")).Click();
+            //_website.NavigateToPage();
+            //_driver.FindElement(By.LinkText("Add/Remove Elements")).Click();
 
-            var result = GetAddButton().Text;
+            //var result = GetAddButton().Text;
 
-            Assert.That(result, Is.EqualTo("Add Element"));
+            //Assert.That(result, Is.EqualTo("Add Element"));
         }
 
         [Test]

@@ -22,7 +22,7 @@ namespace SeleniumExamples
 
             _sut.ClickPageFooterLink();
             _sut.SwitchToNextTab();
-            var result = _sut.PageURL;
+            var result = _sut.ReadPageURL();
 
             Assert.That(result, Is.EqualTo("http://elementalselenium.com/"));
         }
@@ -33,7 +33,7 @@ namespace SeleniumExamples
             _sut.NavigateToPage();
 
             _sut.ClickGitHubImageLink();
-            var result = _sut.PageURL;
+            var result = _sut.ReadPageURL();
 
             Assert.That(result,
                 Is.EqualTo("https://github.com/saucelabs/the-internet"));

@@ -9,33 +9,33 @@ namespace SeleniumExamples.Pages
 
         public IndexPage(IWebDriver driver) => _driver = driver;
 
-        public string PageURL => _driver.Url;
+        private IWebElement PageHeader2 => _driver.FindElement(By.TagName("h2"));
 
-        public IWebElement PageHeader2 => _driver.FindElement(By.TagName("h2"));
+        private IWebElement PageHeader3 => _driver.FindElement(By.TagName("h3"));
 
-        public IWebElement PageHeader3 => _driver.FindElement(By.TagName("h3"));
-
-        public IWebElement LinkFooter =>
+        private IWebElement LinkFooter =>
             _driver.FindElement(By.LinkText("Elemental Selenium"));
 
-        public IWebElement LinkGitHub =>
+        private IWebElement LinkGitHub =>
             _driver.FindElement(By.CssSelector("img"));
 
-        public IWebElement LinkAddRemove =>
+        private IWebElement LinkAddRemove =>
             _driver.FindElement(By.LinkText("Add/Remove Elements"));
 
-        public IWebElement LinkFormAuthentiication =>
+        private IWebElement LinkFormAuthentiication =>
             _driver.FindElement(By.LinkText("Form Authentication"));
 
         public void NavigateToPage() => _driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
+
+        public void CloseDriver() => _driver.Quit();
+
+        public string ReadPageURL() => _driver.Url;
 
         public void SwitchToNextTab()
         {
             _driver.SwitchTo().Window(
                 _driver.WindowHandles[_driver.WindowHandles.Count - 1]);
         }
-
-        public void CloseDriver() => _driver.Quit();
 
         public string GetPageHeaderText()
         {

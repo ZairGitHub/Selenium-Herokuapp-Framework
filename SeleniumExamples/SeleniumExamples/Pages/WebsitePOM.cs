@@ -1,14 +1,15 @@
-﻿using System;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
+﻿using OpenQA.Selenium.Firefox;
 
 namespace SeleniumExamples.Pages
 {
     public class WebsitePOM
     {
-        public WebsitePOM(bool isHeadless = false, int elementWaitTime = 0, int pageWaitTime = 3)
+        public WebsitePOM(
+            bool isHeadless = false, int elementWaitTime = 0, int pageWaitTime = 0)
         {
-            Driver = new DriverConfig(isHeadless, elementWaitTime, pageWaitTime).Driver;
+            Driver = new DriverConfig(
+                isHeadless, elementWaitTime, pageWaitTime).Driver;
+
             IndexPage = new IndexPage(Driver);
             AddRemovePage = new AddRemovePage(Driver);
             FormAuthenticationPage = new FormAuthenticationPage(Driver);

@@ -1,30 +1,26 @@
 ﻿using System;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 
 namespace SeleniumExamples
 {
     public class DriverConfig
     {
-        private readonly FirefoxOptions _options = new FirefoxOptions();
-
         public DriverConfig(bool isHeadless, int elementWaitTime, int pageWaitTime)
         {
-            if (isHeadless)
+            /*if (isHeadless)
             {
-                _options = new FirefoxOptions();
-                _options.AddArguments("--headless");
-                Driver = new FirefoxDriver(_options);
+                FirefoxOptions options = new FirefoxOptions();
+                options.AddArguments("--headless");
+                Driver = new FirefoxDriver(options);
             }
             else
             {
                 Driver = new FirefoxDriver();
-            }
+            }*/
             ConfigureDriverTimeouts(elementWaitTime, pageWaitTime);
-            
         }
 
-        public FirefoxDriver Driver { get; }
+        public FirefoxDriver Driver => new FirefoxDriver();
 
         private void ConfigureDriverTimeouts(int elementWaitTime, int pageWaitTime)
         {

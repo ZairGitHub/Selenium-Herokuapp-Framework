@@ -7,7 +7,6 @@ namespace SeleniumExamples.Pages
         private const string _validUsername = "tomsmith";
         private const string _validPassword = "SuperSecretPassword!";
 
-        private readonly string _url = ConfigReader.Index + ConfigReader.FormAuthetication;
         private readonly IWebDriver _driver;
 
         public FormAuthenticationPage(IWebDriver driver) => _driver = driver;
@@ -21,10 +20,6 @@ namespace SeleniumExamples.Pages
         private IWebElement FieldPassword => _driver.FindElement(By.Id("password"));
 
         private IWebElement TextUpdate => _driver.FindElement(By.Id("flash"));
-
-        public void NavigateToPage() => _driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/login");
-
-        public void CloseDriver() => _driver.Quit();
 
         public string ReadUpdateText() => TextUpdate.Text;
 

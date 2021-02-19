@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium.Firefox;
 using SeleniumExamples.Pages;
 
 namespace SeleniumExamples
@@ -7,7 +6,7 @@ namespace SeleniumExamples
     [TestFixture]
     public class FormAuthenticationTests
     {
-        private FormAuthenticationPage _sut;
+        private WebsitePOM _sut;
 
         /*private IWebElement GetLogOutButton()
         {
@@ -16,14 +15,14 @@ namespace SeleniumExamples
 
         private void NavigateToSecureArea()
         {
-            _sut.NavigateToPage();
-            _sut.EnterValidUsername();
-            _sut.EnterValidPassword();
-            _sut.ClickLoginButton();
+            _sut.NavigateToFormAuthenticationPage();
+            _sut.FormAuthenticationPage.EnterValidUsername();
+            _sut.FormAuthenticationPage.EnterValidPassword();
+            _sut.FormAuthenticationPage.ClickLoginButton();
         }
 
         [OneTimeSetUp]
-        public void OneTimeSetUp() => _sut = new FormAuthenticationPage(new FirefoxDriver());
+        public void OneTimeSetUp() => _sut = new WebsitePOM();
 
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
@@ -31,10 +30,10 @@ namespace SeleniumExamples
         [Test]
         public void Login_NoDetails_ReturnsInvalidUsernameError()
         {
-            _sut.NavigateToPage();
+            _sut.NavigateToFormAuthenticationPage();
 
-            _sut.ClickLoginButton();
-            var result = _sut.ReadUpdateText();
+            _sut.FormAuthenticationPage.ClickLoginButton();
+            var result = _sut.FormAuthenticationPage.ReadUpdateText();
 
             Assert.That(result, Contains.Substring("Your username is invalid!"));
         }
@@ -42,11 +41,11 @@ namespace SeleniumExamples
         [Test]
         public void Login_ValidUsernameAndNoPassword_ReturnsInvalidPasswordError()
         {
-            _sut.NavigateToPage();
-            _sut.EnterValidUsername();
-            _sut.ClickLoginButton();
+            _sut.NavigateToFormAuthenticationPage();
 
-            var result = _sut.ReadUpdateText();
+            _sut.FormAuthenticationPage.EnterValidUsername();
+            _sut.FormAuthenticationPage.ClickLoginButton();
+            var result = _sut.FormAuthenticationPage.ReadUpdateText();
 
             Assert.That(result, Contains.Substring("Your password is invalid!"));
         }
@@ -54,13 +53,13 @@ namespace SeleniumExamples
         [Test]
         public void Login_ValidUsernameAndPassword_RedirectsToSecureArea()
         {
-            _sut.NavigateToPage();
+            _sut.NavigateToFormAuthenticationPage();
 
-            _sut.EnterValidUsername();
-            _sut.EnterValidPassword();
-            _sut.ClickLoginButton();
+            _sut.FormAuthenticationPage.EnterValidUsername();
+            _sut.FormAuthenticationPage.EnterValidPassword();
+            _sut.FormAuthenticationPage.ClickLoginButton();
 
-            var result = _sut.ReadUpdateText();
+            var result = _sut.FormAuthenticationPage.ReadUpdateText();
 
             Assert.That(result, Contains.Substring("You logged into a secure area!"));
         }

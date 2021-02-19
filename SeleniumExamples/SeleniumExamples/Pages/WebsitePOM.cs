@@ -11,6 +11,7 @@ namespace SeleniumExamples.Pages
             Driver = new DriverConfig(elementWaitTime, pageWaitTime).Driver;
             IndexPage = new IndexPage(Driver);
             AddRemovePage = new AddRemovePage(Driver);
+            FormAuthenticationPage = new FormAuthenticationPage(Driver);
         }
         
         public FirefoxDriver Driver { get; private set; }
@@ -18,6 +19,8 @@ namespace SeleniumExamples.Pages
         public IndexPage IndexPage { get; private set; }
 
         public AddRemovePage AddRemovePage { get; private set; }
+
+        public FormAuthenticationPage FormAuthenticationPage { get; private set; }
 
         public void NavigateToPage(string url) => Driver.Navigate().GoToUrl(url);
 
@@ -31,6 +34,12 @@ namespace SeleniumExamples.Pages
         {
             //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.AddRemoveElements);
             Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/add_remove_elements/");
+        }
+
+        public void NavigateToFormAuthenticationPage()
+        {
+            //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.FormAuthetication);
+            Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/login");
         }
 
         public void CloseDriver() => Driver.Quit();

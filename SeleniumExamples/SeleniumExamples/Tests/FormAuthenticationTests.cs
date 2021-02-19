@@ -1,16 +1,14 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using SeleniumExamples.Pages;
 
 namespace SeleniumExamples
 {
     [TestFixture]
     public class FormAuthenticationTests
     {
-        private const string _urlBase = "http://the-internet.herokuapp.com/";
-        private const string _urlLogin = _urlBase + "login";
-        private const string _validUsername = "tomsmith";
-        private const string _validPassword = "SuperSecretPassword!";
+        private FormAuthenticationPage _sut;
 
         private IWebDriver _driver;
 
@@ -36,26 +34,25 @@ namespace SeleniumExamples
 
         private IWebElement GetUpdate() => _driver.FindElement(By.Id("flash"));
 
-        private void NavigateToPage(string url) => _driver.Navigate().GoToUrl(url);
-
         private void NavigateToSecureArea()
         {
-            NavigateToPage(_urlLogin);
+            /*NavigateToPage(_urlLogin);
             GetUsernameField().SendKeys(_validUsername);
             GetPasswordField().SendKeys(_validPassword);
-            GetLoginButton().Click();
+            GetLoginButton().Click();*/
         }
 
         [OneTimeSetUp]
-        public void OneTimeSetUp() => _driver = new FirefoxDriver();
+        public void OneTimeSetUp() => _sut = new FormAuthenticationPage(new FirefoxDriver());
 
         [OneTimeTearDown]
-        public void OneTimeTearDown() => _driver.Quit();
+        public void OneTimeTearDown() => _sut.CloseDriver();
 
+        [Ignore("Move to index tests")]
         [Test]
         public void FormAuthenticationLink_HomePage_RedirectsToLoginPage()
         {
-            NavigateToPage(_urlBase);
+            //NavigateToPage(_urlBase);
             _driver.FindElement(By.LinkText("Form Authentication")).Click();
             
             var result = _driver.FindElement(By.TagName("h2")).Text;
@@ -66,10 +63,10 @@ namespace SeleniumExamples
         [Test]
         public void Login_NoDetails_ReturnsInvalidUsernameError()
         {
-            NavigateToPage(_urlLogin);
-            GetLoginButton().Click();
+            _sut.NavigateToPage();
 
-            var result = GetUpdate().Text;
+            _sut.ButtonLogin.Click();
+            var result = _sut.UpdateText;
 
             Assert.That(result, Contains.Substring("Your username is invalid!"));
         }
@@ -77,9 +74,9 @@ namespace SeleniumExamples
         [Test]
         public void Login_ValidUsernameAndNoPassword_ReturnsInvalidPasswordError()
         {
-            NavigateToPage(_urlLogin);
+            /*NavigateToPage(_urlLogin);
             GetUsernameField().SendKeys(_validUsername);
-            GetLoginButton().Click();
+            GetLoginButton().Click();*/
 
             var result = GetUpdate().Text;
 
@@ -89,10 +86,10 @@ namespace SeleniumExamples
         [Test]
         public void Login_ValidUsernameAndPassword_RedirectsToSecureArea()
         {
-            NavigateToPage(_urlLogin);
+            /*NavigateToPage(_urlLogin);
             GetUsernameField().SendKeys(_validUsername);
             GetPasswordField().SendKeys(_validPassword);
-            GetLoginButton().Click();
+            GetLoginButton().Click();*/
 
             var result = GetUpdate().Text;
 

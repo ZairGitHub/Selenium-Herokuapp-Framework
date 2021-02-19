@@ -12,13 +12,17 @@ namespace SeleniumExamples.Pages
 
         public FormAuthenticationPage(IWebDriver driver) => _driver = driver;
 
+        public string UpdateText => TextUpdate.Text;
+
+        public IWebElement ButtonLogin => _driver.FindElement(By.CssSelector(".fa"));
+
+        public IWebElement ButtonLogOut => _driver.FindElement(By.CssSelector(".icon-2x"));
+
         public IWebElement FieldUsername => _driver.FindElement(By.Id("username"));
         
         public IWebElement FieldPassword => _driver.FindElement(By.Id("password"));
-        
-        public IWebElement ButtonLogin => _driver.FindElement(By.CssSelector(".fa"));
-        
-        public IWebElement ButtonLogOut => _driver.FindElement(By.CssSelector(".icon-2x"));
+
+        private IWebElement TextUpdate => _driver.FindElement(By.Id("flash"));
 
         public void NavigateToPage() => _driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/login");
 

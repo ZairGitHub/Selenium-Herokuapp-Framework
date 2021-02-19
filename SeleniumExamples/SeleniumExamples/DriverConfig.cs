@@ -7,25 +7,26 @@ namespace SeleniumExamples
     {
         private readonly int _elementWaitTime;
         private readonly int _pageWaitTime;
+        private readonly FirefoxOptions _options;
 
         public DriverConfig(bool isHeadless, int elementWaitTime, int pageWaitTime)
         {
-            /*if (isHeadless)
+            if (isHeadless)
             {
-                FirefoxOptions options = new FirefoxOptions();
-                options.AddArguments("--headless");
-                Driver = new FirefoxDriver(options);
+                _options = new FirefoxOptions();
+                _options.AddArguments("--headless");
+                Driver = new FirefoxDriver(_options);
             }
             else
             {
                 Driver = new FirefoxDriver();
-            }*/
+            }
             _elementWaitTime = elementWaitTime;
             _pageWaitTime = pageWaitTime;
             ConfigureDriverTimeouts();
         }
 
-        public FirefoxDriver Driver => new FirefoxDriver();
+        public FirefoxDriver Driver { get; }
 
         private void ConfigureDriverTimeouts()
         {

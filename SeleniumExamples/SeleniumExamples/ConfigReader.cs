@@ -15,5 +15,8 @@ namespace SeleniumExamples
 
         public static readonly string FormAuthetication =
             ConfigurationManager.AppSettings["form_authentication"];
+
+        public static readonly string SecureArea =
+            ConfigurationManager.AppSettings["secure_area"];
     }
 }

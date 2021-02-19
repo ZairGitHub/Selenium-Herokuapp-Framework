@@ -27,8 +27,15 @@ namespace SeleniumExamples.Pages
 
         public void EnterValidUsername() => FieldUsername.SendKeys(_validUsername);
 
-        public void EnterValidPassword() => FieldPassword.SendKeys(_validPassword);        
+        public void EnterValidPassword() => FieldPassword.SendKeys(_validPassword);
 
         public void ClickLoginButton() => ButtonLogin.Click();
+
+        public void LogInAsAuthenticatedUser()
+        {
+            EnterValidUsername();
+            EnterValidPassword();
+            ClickLoginButton();
+        }
     }
 }

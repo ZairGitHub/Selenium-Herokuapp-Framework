@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace SeleniumExamples.Pages
 {

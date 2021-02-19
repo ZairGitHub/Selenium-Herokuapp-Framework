@@ -5,7 +5,7 @@ namespace SeleniumExamples
     public static class ConfigReader
     {
         public static readonly string Index =
-            ConfigurationManager.AppSettings["base_url"];
+            ConfigurationManager.AppSettings["index"];
 
         public static readonly string AddRemoveElements =
             ConfigurationManager.AppSettings["add_remove_elements"];

@@ -65,6 +65,16 @@ namespace SeleniumExamples
         }
 
         [Test]
+        public void DirectLink_SecureArea_ReadUpdateText()
+        {
+            _sut.NavigateToSecureAreaPage(false);
+
+            var result = _sut.FormAuthenticationPage.ReadUpdateText();
+
+            Assert.That(result, Contains.Substring("You must login to view the secure area!"));
+        }
+
+        [Test]
         public void Logout_RemovesAuthenticationAndRedirectsToFormAuthenticationPage()
         {
             _sut.NavigateToSecureAreaPage(true);

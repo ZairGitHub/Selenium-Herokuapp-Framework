@@ -4,6 +4,9 @@ namespace SeleniumExamples.Pages
 {
     public class FormAuthenticationPage
     {
+        private const string _validUsername = "tomsmith";
+        private const string _validPassword = "SuperSecretPassword!";
+
         private readonly string _url = ConfigReader.Index + ConfigReader.FormAuthetication;
         private readonly IWebDriver _driver;
 

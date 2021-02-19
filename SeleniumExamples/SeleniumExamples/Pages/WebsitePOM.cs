@@ -5,7 +5,7 @@ namespace SeleniumExamples.Pages
     public class WebsitePOM
     {
         public WebsitePOM(
-            bool isHeadless = false, int elementWaitTime = 0, int pageWaitTime = 0)
+            bool isHeadless = false, int elementWaitTime = 0, int pageWaitTime = -1)
         {
             Driver = new DriverConfig(
                 isHeadless, elementWaitTime, pageWaitTime).Driver;
@@ -25,8 +25,6 @@ namespace SeleniumExamples.Pages
         public FormAuthenticationPage FormAuthenticationPage { get; private set; }
 
         public SecureAreaPage SecureAreaPage { get; private set; }
-
-        public void NavigateToPage(string url) => Driver.Navigate().GoToUrl(url);
 
         public void NavigateToIndexPage()
         {

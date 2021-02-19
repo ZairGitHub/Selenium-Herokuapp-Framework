@@ -4,9 +4,9 @@ using OpenQA.Selenium.Firefox;
 
 namespace SeleniumExamples.Pages
 {
-    public class POMPages
+    public class WebsitePOM
     {
-        public POMPages(int elementWaitTime = 3, int pageWaitTime = 3)
+        public WebsitePOM(int elementWaitTime = 3, int pageWaitTime = 3)
         {
             DriverConfig = new DriverConfig(
                 elementWaitTime, pageWaitTime).Driver;

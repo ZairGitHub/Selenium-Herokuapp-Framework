@@ -19,14 +19,14 @@ namespace SeleniumExamples.Pages
         public ReadOnlyCollection<IWebElement> ButtonsDelete =>
             _driver.FindElements(By.CssSelector(".added-manually"));
 
+        public void NavigateToPage() => _driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/add_remove_elements/");
+
+        public void CloseDriver() => _driver.Quit();
+
         public void ClickAddButton() => ButtonAdd.Click();
 
         public void ClickAnyDeleteButton() => ButtonDelete.Click();
 
         public int CountNumberOfDeleteButtons() => ButtonsDelete.Count;
-        
-        public void NavigateToPage() => _driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/add_remove_elements/");
-
-        public void CloseDriver() => _driver.Quit();
     }
 }

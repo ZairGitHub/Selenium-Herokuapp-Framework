@@ -23,6 +23,16 @@ namespace SeleniumExamples.Pages
         public IWebElement LinkAddRemove =>
             _driver.FindElement(By.LinkText("Add/Remove Elements"));
 
+        public void NavigateToPage() => _driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
+
+        public void SwitchToNextTab()
+        {
+            _driver.SwitchTo().Window(
+                _driver.WindowHandles[_driver.WindowHandles.Count - 1]);
+        }
+
+        public void CloseDriver() => _driver.Quit();
+
         public string GetPageHeaderText() => PageHeader.Text;
 
         public void ClickPageFooterLink() => LinkFooter.Click();
@@ -30,9 +40,5 @@ namespace SeleniumExamples.Pages
         public void ClickGitHubImageLink() => LinkGitHub.Click();
 
         public void ClickAddRemoveElementsLink() => LinkAddRemove.Click();
-
-        public void NavigateToPage() => _driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
-
-        public void CloseDriver() => _driver.Quit();
     }
 }

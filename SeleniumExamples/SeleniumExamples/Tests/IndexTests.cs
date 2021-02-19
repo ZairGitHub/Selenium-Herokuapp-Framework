@@ -16,14 +16,15 @@ namespace SeleniumExamples
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void PageFooterLink_RedirectsToElementalSeleniumWebsite()
+        public void PageFooterLink_OpensElementalSeleniumWebsiteInANewTab()
         {
             _sut.NavigateToPage();
 
             _sut.ClickPageFooterLink();
+            _sut.SwitchToNextTab();
             var result = _sut.PageURL;
 
-            Assert.That(result, Is.EqualTo("elementalselenium.com"));
+            Assert.That(result, Is.EqualTo("http://elementalselenium.com/"));
         }
 
         [Test]

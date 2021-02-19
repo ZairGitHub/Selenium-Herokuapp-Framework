@@ -6,7 +6,7 @@ namespace SeleniumExamples.Pages
 {
     public class WebsitePOM
     {
-        public WebsitePOM(int elementWaitTime = 0, int pageWaitTime = 0)
+        public WebsitePOM(bool hasHead = true, int elementWaitTime = 0, int pageWaitTime = 3)
         {
             Driver = new DriverConfig(elementWaitTime, pageWaitTime).Driver;
             IndexPage = new IndexPage(Driver);

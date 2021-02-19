@@ -13,8 +13,6 @@ namespace SeleniumExamples.Pages
 
         private IWebElement ButtonLogin => _driver.FindElement(By.CssSelector(".fa"));
 
-        private IWebElement ButtonLogOut => _driver.FindElement(By.CssSelector(".icon-2x"));
-
         private IWebElement FieldUsername => _driver.FindElement(By.Id("username"));
         
         private IWebElement FieldPassword => _driver.FindElement(By.Id("password"));

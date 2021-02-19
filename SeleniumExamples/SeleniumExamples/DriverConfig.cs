@@ -6,12 +6,19 @@ namespace SeleniumExamples
 {
     public class DriverConfig
     {
+        private readonly FirefoxOptions _options = new FirefoxOptions();
+
         public DriverConfig(int elementWaitTime, int pageWaitTime)
         {
+            _options = new FirefoxOptions();
+            _options.AddArguments("--headless");
+            Driver = new FirefoxDriver(_options);
+
             ConfigureDriverTimeouts(elementWaitTime, pageWaitTime);
+            
         }
 
-        public FirefoxDriver Driver => new FirefoxDriver();
+        public FirefoxDriver Driver { get; }
 
         private void ConfigureDriverTimeouts(int elementWaitTime, int pageWaitTime)
         {

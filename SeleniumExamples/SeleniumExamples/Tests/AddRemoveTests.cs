@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using OpenQA.Selenium.Firefox;
 using SeleniumExamples.Pages;
 
 namespace SeleniumExamples
@@ -7,10 +6,10 @@ namespace SeleniumExamples
     [TestFixture]
     public class AddRemoveTests
     {
-        private AddRemovePage _sut;
+        private WebsitePOM _sut;
 
         [OneTimeSetUp]
-        public void OneTimeSetUp() => _sut = new AddRemovePage(new FirefoxDriver());
+        public void OneTimeSetUp() => _sut = new WebsitePOM();
         
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
@@ -18,12 +17,12 @@ namespace SeleniumExamples
         [Test]
         public void AddButton_CreatesADeleteButtonForEachClick()
         {
-            _sut.NavigateToPage();
+            _sut.NavigateToAddRemovePage();
 
-            _sut.ClickAddButton();
-            _sut.ClickAddButton();
-            _sut.ClickAddButton();
-            var result = _sut.CountNumberOfDeleteButtons();
+            _sut.AddRemovePage.ClickAddButton();
+            _sut.AddRemovePage.ClickAddButton();
+            _sut.AddRemovePage.ClickAddButton();
+            var result = _sut.AddRemovePage.CountNumberOfDeleteButtons();
 
             Assert.That(result, Is.EqualTo(3));
         }
@@ -31,14 +30,14 @@ namespace SeleniumExamples
         [Test]
         public void DeleteButton_RemovesADeleteButtonForEachClick()
         {
-            _sut.NavigateToPage();
+            _sut.NavigateToAddRemovePage();
 
-            _sut.ClickAddButton();
-            _sut.ClickAddButton();
-            _sut.ClickAddButton();
-            _sut.ClickAnyDeleteButton();
-            _sut.ClickAnyDeleteButton();
-            var result = _sut.CountNumberOfDeleteButtons();
+            _sut.AddRemovePage.ClickAddButton();
+            _sut.AddRemovePage.ClickAddButton();
+            _sut.AddRemovePage.ClickAddButton();
+            _sut.AddRemovePage.ClickAnyDeleteButton();
+            _sut.AddRemovePage.ClickAnyDeleteButton();
+            var result = _sut.AddRemovePage.CountNumberOfDeleteButtons();
 
             Assert.That(result, Is.EqualTo(1));
         }

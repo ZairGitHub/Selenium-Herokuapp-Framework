@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium.Firefox;
 using SeleniumExamples.Pages;
 
 namespace SeleniumExamples

@@ -8,9 +8,7 @@ namespace SeleniumExamples.Pages
     {
         public WebsitePOM(int elementWaitTime = 0, int pageWaitTime = 0)
         {
-            Driver = new DriverConfig(
-                elementWaitTime, pageWaitTime).Driver;
-
+            Driver = new DriverConfig(elementWaitTime, pageWaitTime).Driver;
             IndexPage = new IndexPage(Driver);
             AddRemovePage = new AddRemovePage(Driver);
         }
@@ -27,6 +25,12 @@ namespace SeleniumExamples.Pages
         {
             //Driver.Navigate().GoToUrl(ConfigReader.Index);
             Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
+        }
+
+        public void NavigateToAddRemovePage()
+        {
+            //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.AddRemoveElements);
+            Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/add_remove_elements/");
         }
 
         public void CloseDriver() => Driver.Quit();

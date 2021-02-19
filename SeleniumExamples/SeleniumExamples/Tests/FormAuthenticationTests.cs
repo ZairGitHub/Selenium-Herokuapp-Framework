@@ -65,7 +65,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void DirectLink_SecureArea_ReadUpdateText()
+        public void DirectlyNavigateToSecureAreaPage_RedirectsToFormAuthenticationPageWithErrorMessage()
         {
             _sut.NavigateToSecureAreaPage(false);
 

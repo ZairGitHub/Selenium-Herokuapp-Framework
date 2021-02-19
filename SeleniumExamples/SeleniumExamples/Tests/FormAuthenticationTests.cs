@@ -51,7 +51,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void Login_ValidUsernameAndPassword_RedirectsToSecureArea()
+        public void Login_ValidUsernameAndPassword_RedirectsToSecureAreaPage()
         {
             _sut.NavigateToFormAuthenticationPage();
 
@@ -64,16 +64,15 @@ namespace SeleniumExamples
             Assert.That(result, Contains.Substring("You logged into a secure area!"));
         }
 
-        [Ignore("different page")]
         [Test]
-        public void Logout_RemovesAuthenticationAndRedirectsUserAwayFromSecureArea()
+        public void Logout_RemovesAuthenticationAndRedirectsToFormAuthenticationPage()
         {
-            /*NavigateToSecureArea();
-            GetLogOutButton().Click();
+            _sut.NavigateToSecureAreaPage(true);
 
-            var result = GetUpdate().Text;
+            _sut.SecureAreaPage.ClickLogoutButton();
+            var result = _sut.FormAuthenticationPage.ReadUpdateText();
 
-            Assert.That(result, Contains.Substring("You logged out of the secure area!"));*/
+            Assert.That(result, Contains.Substring("You logged out of the secure area!"));
         }
 
         [Ignore("different page")]

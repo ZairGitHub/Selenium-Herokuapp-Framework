@@ -7,22 +7,22 @@ namespace SeleniumExamples
     [TestFixture]
     public class IndexTests
     {
-        private IndexPage _sut;
+        private WebsitePOM _sut;
 
         [OneTimeSetUp]
-        public void OneTimeSetUp() => _sut = new IndexPage(new FirefoxDriver());
+        public void OneTimeSetUp() => _sut = new WebsitePOM();
 
         [OneTimeTearDown]
-        public void OneTimeTearDown() => _sut.CloseDriver();
+        public void OneTimeTearDown() => _sut.IndexPage.CloseDriver();
 
         [Test]
         public void PageFooterLink_OpensElementalSeleniumWebsiteInANewTab()
         {
-            _sut.NavigateToPage();
+            _sut.IndexPage.NavigateToPage();
 
-            _sut.ClickPageFooterLink();
-            _sut.SwitchToNextTab();
-            var result = _sut.ReadPageURL();
+            _sut.IndexPage.ClickPageFooterLink();
+            _sut.IndexPage.SwitchToNextTab();
+            var result = _sut.IndexPage.ReadPageURL();
 
             Assert.That(result, Is.EqualTo("http://elementalselenium.com/"));
         }
@@ -30,10 +30,10 @@ namespace SeleniumExamples
         [Test]
         public void GitHubImageLink_RedirectsToGitHubRepository()
         {
-            _sut.NavigateToPage();
+            _sut.IndexPage.NavigateToPage();
 
-            _sut.ClickGitHubImageLink();
-            var result = _sut.ReadPageURL();
+            _sut.IndexPage.ClickGitHubImageLink();
+            var result = _sut.IndexPage.ReadPageURL();
 
             Assert.That(result,
                 Is.EqualTo("https://github.com/saucelabs/the-internet"));
@@ -42,10 +42,10 @@ namespace SeleniumExamples
         [Test]
         public void AddRemoveElementsLink_RedirectsToAddRemovePage()
         {
-            _sut.NavigateToPage();
+            _sut.IndexPage.NavigateToPage();
 
-            _sut.ClickAddRemoveElementsLink();
-            var result = _sut.GetPageHeaderText();
+            _sut.IndexPage.ClickAddRemoveElementsLink();
+            var result = _sut.IndexPage.GetPageHeaderText();
             
             Assert.That(result, Is.EqualTo("Add/Remove Elements"));
         }
@@ -53,10 +53,10 @@ namespace SeleniumExamples
         [Test]
         public void FormAuthenticationLink_RedirectsToLoginPage()
         {
-            _sut.NavigateToPage();
+            _sut.IndexPage.NavigateToPage();
 
-            _sut.ClickFormAuthenticationLink();
-            var result = _sut.GetPageHeaderText();
+            _sut.IndexPage.ClickFormAuthenticationLink();
+            var result = _sut.IndexPage.GetPageHeaderText();
 
             Assert.That(result, Is.EqualTo("Login Page"));
         }

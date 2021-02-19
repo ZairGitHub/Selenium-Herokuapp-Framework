@@ -13,12 +13,12 @@ namespace SeleniumExamples
         public void OneTimeSetUp() => _sut = new WebsitePOM();
 
         [OneTimeTearDown]
-        public void OneTimeTearDown() => _sut.IndexPage.CloseDriver();
+        public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
         public void PageFooterLink_OpensElementalSeleniumWebsiteInANewTab()
         {
-            _sut.IndexPage.NavigateToPage();
+            _sut.NavigateToIndexPage();
 
             _sut.IndexPage.ClickPageFooterLink();
             _sut.IndexPage.SwitchToNextTab();
@@ -30,7 +30,7 @@ namespace SeleniumExamples
         [Test]
         public void GitHubImageLink_RedirectsToGitHubRepository()
         {
-            _sut.IndexPage.NavigateToPage();
+            _sut.NavigateToIndexPage();
 
             _sut.IndexPage.ClickGitHubImageLink();
             var result = _sut.IndexPage.ReadPageURL();
@@ -42,7 +42,7 @@ namespace SeleniumExamples
         [Test]
         public void AddRemoveElementsLink_RedirectsToAddRemovePage()
         {
-            _sut.IndexPage.NavigateToPage();
+            _sut.NavigateToIndexPage();
 
             _sut.IndexPage.ClickAddRemoveElementsLink();
             var result = _sut.IndexPage.GetPageHeaderText();
@@ -53,7 +53,7 @@ namespace SeleniumExamples
         [Test]
         public void FormAuthenticationLink_RedirectsToLoginPage()
         {
-            _sut.IndexPage.NavigateToPage();
+            _sut.NavigateToIndexPage();
 
             _sut.IndexPage.ClickFormAuthenticationLink();
             var result = _sut.IndexPage.GetPageHeaderText();

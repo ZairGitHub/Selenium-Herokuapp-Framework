@@ -4,7 +4,6 @@ namespace SeleniumExamples.Pages
 {
     public class IndexPage
     {
-        private readonly string _url = ConfigReader.Index;
         private readonly IWebDriver _driver;
 
         public IndexPage(IWebDriver driver) => _driver = driver;
@@ -24,10 +23,6 @@ namespace SeleniumExamples.Pages
 
         private IWebElement LinkFormAuthentiication =>
             _driver.FindElement(By.LinkText("Form Authentication"));
-
-        public void NavigateToPage() => _driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
-
-        public void CloseDriver() => _driver.Quit();
 
         public string ReadPageURL() => _driver.Url;
 

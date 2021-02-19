@@ -6,21 +6,29 @@ namespace SeleniumExamples.Pages
 {
     public class WebsitePOM
     {
-        public WebsitePOM(int elementWaitTime = 3, int pageWaitTime = 3)
+        public WebsitePOM(int elementWaitTime = 0, int pageWaitTime = 0)
         {
-            DriverConfig = new DriverConfig(
+            Driver = new DriverConfig(
                 elementWaitTime, pageWaitTime).Driver;
 
-            IndexPage = new IndexPage(new FirefoxDriver());
-            AddRemovePage = new AddRemovePage(new FirefoxDriver());
+            IndexPage = new IndexPage(Driver);
+            AddRemovePage = new AddRemovePage(Driver);
         }
-
-        public void Dispose() => DriverConfig.Quit();
         
-        public FirefoxDriver DriverConfig { get; private set; }
+        public FirefoxDriver Driver { get; private set; }
 
         public IndexPage IndexPage { get; private set; }
 
         public AddRemovePage AddRemovePage { get; private set; }
+
+        public void NavigateToPage(string url) => Driver.Navigate().GoToUrl(url);
+
+        public void NavigateToIndexPage()
+        {
+            //Driver.Navigate().GoToUrl(ConfigReader.Index);
+            Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
+        }
+
+        public void CloseDriver() => Driver.Quit();
     }
 }

@@ -19,8 +19,6 @@ namespace SeleniumExamples.Pages
 
         private IWebElement TextUpdate => _driver.FindElement(By.Id("flash"));
 
-        public string ReadUpdateText() => TextUpdate.Text;
-
         public void EnterUsername(string input) => FieldUsername.SendKeys(input);
 
         public void EnterPassword(string input) => FieldPassword.SendKeys(input);
@@ -37,5 +35,7 @@ namespace SeleniumExamples.Pages
             EnterValidPassword();
             ClickLoginButton();
         }
+
+        public string ReadUpdateText() => TextUpdate.Text;
     }
 }

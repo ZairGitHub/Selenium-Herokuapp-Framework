@@ -75,17 +75,17 @@ namespace SeleniumExamples
             Assert.That(result, Contains.Substring("You logged out of the secure area!"));
         }
 
-        [Ignore("different page")]
         [Test]
         public void Back_Logout_RestoresAuthenticationAndRedirectsUserToSecureArea()
         {
-            /*NavigateToSecureArea();
-            GetLogOutButton().Click();
-            _driver.Navigate().Back();
+            _sut.NavigateToSecureAreaPage(true);
 
-            var result = GetUpdate().Text;
+            _sut.SecureAreaPage.ClickLogoutButton();
+            _sut.Driver.Navigate().Back();
 
-            Assert.That(result, Contains.Substring("You logged into a secure area!"));*/
+            var result = _sut.SecureAreaPage.ReadUpdateText();
+
+            Assert.That(result, Contains.Substring("You logged into a secure area!"));
         }
     }
 }

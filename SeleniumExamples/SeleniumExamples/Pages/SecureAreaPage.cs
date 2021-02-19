@@ -10,6 +10,10 @@ namespace SeleniumExamples.Pages
 
         private IWebElement ButtonLogOut => _driver.FindElement(By.CssSelector(".icon-2x"));
 
+        private IWebElement TextUpdate => _driver.FindElement(By.Id("flash"));
+
         public void ClickLogoutButton() => ButtonLogOut.Click();
+
+        public string ReadUpdateText() => TextUpdate.Text;
     }
 }

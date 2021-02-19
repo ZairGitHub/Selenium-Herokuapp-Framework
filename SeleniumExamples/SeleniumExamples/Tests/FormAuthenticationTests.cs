@@ -48,18 +48,6 @@ namespace SeleniumExamples
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
 
-        [Ignore("Move to index tests")]
-        [Test]
-        public void FormAuthenticationLink_HomePage_RedirectsToLoginPage()
-        {
-            //NavigateToPage(_urlBase);
-            _driver.FindElement(By.LinkText("Form Authentication")).Click();
-            
-            var result = _driver.FindElement(By.TagName("h2")).Text;
-
-            Assert.That(result, Is.EqualTo("Login Page"));
-        }
-
         [Test]
         public void Login_NoDetails_ReturnsInvalidUsernameError()
         {

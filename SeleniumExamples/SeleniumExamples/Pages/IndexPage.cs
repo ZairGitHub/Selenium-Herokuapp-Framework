@@ -11,7 +11,9 @@ namespace SeleniumExamples.Pages
 
         public string PageURL => _driver.Url;
 
-        public IWebElement PageHeader => _driver.FindElement(By.TagName("h3"));
+        public IWebElement PageHeader2 => _driver.FindElement(By.TagName("h2"));
+
+        public IWebElement PageHeader3 => _driver.FindElement(By.TagName("h3"));
 
         public IWebElement LinkFooter =>
             _driver.FindElement(By.LinkText("Elemental Selenium"));
@@ -21,6 +23,9 @@ namespace SeleniumExamples.Pages
 
         public IWebElement LinkAddRemove =>
             _driver.FindElement(By.LinkText("Add/Remove Elements"));
+
+        public IWebElement LinkFormAuthentiication =>
+            _driver.FindElement(By.LinkText("Form Authentication"));
 
         public void NavigateToPage() => _driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
 
@@ -32,12 +37,33 @@ namespace SeleniumExamples.Pages
 
         public void CloseDriver() => _driver.Quit();
 
-        public string GetPageHeaderText() => PageHeader.Text;
+        public string GetPageHeaderText()
+        {
+            string result;
+            try
+            {
+                result = PageHeader2.Text;
+            }
+            catch (NoSuchElementException)
+            {
+                try
+                {
+                    result = PageHeader3.Text;
+                }
+                catch (NoSuchElementException e)
+                {
+                    result = e.StackTrace;
+                }
+            }
+            return result;
+        }
 
         public void ClickPageFooterLink() => LinkFooter.Click();
 
         public void ClickGitHubImageLink() => LinkGitHub.Click();
 
         public void ClickAddRemoveElementsLink() => LinkAddRemove.Click();
+
+        public void ClickFormAuthenticationLink() => LinkFormAuthentiication.Click();
     }
 }

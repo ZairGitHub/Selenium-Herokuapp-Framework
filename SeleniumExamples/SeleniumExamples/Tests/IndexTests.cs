@@ -49,5 +49,16 @@ namespace SeleniumExamples
             
             Assert.That(result, Is.EqualTo("Add/Remove Elements"));
         }
+
+        [Test]
+        public void FormAuthenticationLink_RedirectsToLoginPage()
+        {
+            _sut.NavigateToPage();
+
+            _sut.ClickFormAuthenticationLink();
+            var result = _sut.GetPageHeaderText();
+
+            Assert.That(result, Is.EqualTo("Login Page"));
+        }
     }
 }

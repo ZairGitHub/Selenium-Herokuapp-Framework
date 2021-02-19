@@ -8,19 +8,6 @@ namespace SeleniumExamples
     {
         private WebsitePOM _sut;
 
-        /*private IWebElement GetLogOutButton()
-        {
-            return _driver.FindElement(By.CssSelector(".icon-2x"));
-        }*/
-
-        private void NavigateToSecureArea()
-        {
-            _sut.NavigateToFormAuthenticationPage();
-            _sut.FormAuthenticationPage.EnterValidUsername();
-            _sut.FormAuthenticationPage.EnterValidPassword();
-            _sut.FormAuthenticationPage.ClickLoginButton();
-        }
-
         [OneTimeSetUp]
         public void OneTimeSetUp() => _sut = new WebsitePOM();
 
@@ -28,7 +15,7 @@ namespace SeleniumExamples
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void Login_NoDetails_ReturnsInvalidUsernameError()
+        public void Login_NoDetails_DisplaysInvalidUsernameError()
         {
             _sut.NavigateToFormAuthenticationPage();
 
@@ -39,7 +26,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void Login_ValidUsernameAndNoPassword_ReturnsInvalidPasswordError()
+        public void Login_ValidUsernameAndNoPassword_DisplaysInvalidPasswordError()
         {
             _sut.NavigateToFormAuthenticationPage();
 

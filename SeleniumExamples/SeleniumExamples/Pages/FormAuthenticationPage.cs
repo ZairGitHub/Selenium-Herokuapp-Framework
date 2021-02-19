@@ -12,15 +12,13 @@ namespace SeleniumExamples.Pages
 
         public FormAuthenticationPage(IWebDriver driver) => _driver = driver;
 
-        public string UpdateText => TextUpdate.Text;
+        private IWebElement ButtonLogin => _driver.FindElement(By.CssSelector(".fa"));
 
-        public IWebElement ButtonLogin => _driver.FindElement(By.CssSelector(".fa"));
+        private IWebElement ButtonLogOut => _driver.FindElement(By.CssSelector(".icon-2x"));
 
-        public IWebElement ButtonLogOut => _driver.FindElement(By.CssSelector(".icon-2x"));
-
-        public IWebElement FieldUsername => _driver.FindElement(By.Id("username"));
+        private IWebElement FieldUsername => _driver.FindElement(By.Id("username"));
         
-        public IWebElement FieldPassword => _driver.FindElement(By.Id("password"));
+        private IWebElement FieldPassword => _driver.FindElement(By.Id("password"));
 
         private IWebElement TextUpdate => _driver.FindElement(By.Id("flash"));
 
@@ -28,9 +26,15 @@ namespace SeleniumExamples.Pages
 
         public void CloseDriver() => _driver.Quit();
 
+        public string ReadUpdateText() => TextUpdate.Text;
+
         public void EnterUsername(string input) => FieldUsername.SendKeys(input);
 
         public void EnterPassword(string input) => FieldPassword.SendKeys(input);
+
+        public void EnterValidUsername() => FieldUsername.SendKeys(_validUsername);
+
+        public void EnterValidPassword() => FieldPassword.SendKeys(_validPassword);        
 
         public void ClickLoginButton() => ButtonLogin.Click();
     }

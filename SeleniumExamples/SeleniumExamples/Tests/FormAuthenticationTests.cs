@@ -53,8 +53,8 @@ namespace SeleniumExamples
         {
             _sut.NavigateToPage();
 
-            _sut.ButtonLogin.Click();
-            var result = _sut.UpdateText;
+            _sut.ClickLoginButton();
+            var result = _sut.ReadUpdateText();
 
             Assert.That(result, Contains.Substring("Your username is invalid!"));
         }
@@ -62,11 +62,11 @@ namespace SeleniumExamples
         [Test]
         public void Login_ValidUsernameAndNoPassword_ReturnsInvalidPasswordError()
         {
-            /*NavigateToPage(_urlLogin);
-            GetUsernameField().SendKeys(_validUsername);
-            GetLoginButton().Click();*/
+            _sut.NavigateToPage();
+            _sut.EnterValidUsername();
+            _sut.ClickLoginButton();
 
-            var result = GetUpdate().Text;
+            var result = _sut.ReadUpdateText();
 
             Assert.That(result, Contains.Substring("Your password is invalid!"));
         }
@@ -74,16 +74,18 @@ namespace SeleniumExamples
         [Test]
         public void Login_ValidUsernameAndPassword_RedirectsToSecureArea()
         {
-            /*NavigateToPage(_urlLogin);
-            GetUsernameField().SendKeys(_validUsername);
-            GetPasswordField().SendKeys(_validPassword);
-            GetLoginButton().Click();*/
+            _sut.NavigateToPage();
 
-            var result = GetUpdate().Text;
+            _sut.EnterValidUsername();
+            _sut.EnterValidPassword();
+            _sut.ClickLoginButton();
+
+            var result = _sut.ReadUpdateText();
 
             Assert.That(result, Contains.Substring("You logged into a secure area!"));
         }
 
+        [Ignore("different page")]
         [Test]
         public void Logout_RemovesAuthenticationAndRedirectsUserAwayFromSecureArea()
         {
@@ -95,6 +97,7 @@ namespace SeleniumExamples
             Assert.That(result, Contains.Substring("You logged out of the secure area!"));
         }
 
+        [Ignore("different page")]
         [Test]
         public void Back_Logout_RestoresAuthenticationAndRedirectsUserToSecureArea()
         {

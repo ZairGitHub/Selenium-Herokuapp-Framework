@@ -6,9 +6,9 @@ namespace SeleniumExamples.Pages
 {
     public class WebsitePOM
     {
-        public WebsitePOM(bool hasHead = true, int elementWaitTime = 0, int pageWaitTime = 3)
+        public WebsitePOM(bool isHeadless = false, int elementWaitTime = 0, int pageWaitTime = 3)
         {
-            Driver = new DriverConfig(elementWaitTime, pageWaitTime).Driver;
+            Driver = new DriverConfig(isHeadless, elementWaitTime, pageWaitTime).Driver;
             IndexPage = new IndexPage(Driver);
             AddRemovePage = new AddRemovePage(Driver);
             FormAuthenticationPage = new FormAuthenticationPage(Driver);

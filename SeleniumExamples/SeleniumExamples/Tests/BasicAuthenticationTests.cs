@@ -97,5 +97,17 @@ namespace SeleniumExamples
 
             Assert.That(result, Is.EqualTo("Not authorized"));
         }
+
+        [Test]
+        public void Authenticate()
+        {
+            _driver.Manage().Cookies.DeleteAllCookies();
+            _driver.Navigate().GoToUrl(
+                "http://admin:admin@the-internet.herokuapp.com/basic_auth");
+
+            var result = _driver.FindElement(By.CssSelector("h3")).Text;
+
+            Assert.That(result, Is.EqualTo("Basic Auth"));
+        }
     }
 }

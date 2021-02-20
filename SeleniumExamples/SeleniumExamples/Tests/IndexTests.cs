@@ -44,9 +44,20 @@ namespace SeleniumExamples
             _sut.NavigateToIndexPage();
 
             _sut.IndexPage.ClickAddRemoveElementsLink();
-            var result = _sut.IndexPage.GetPageHeaderText();
+            var result = _sut.IndexPage.ReadPageHeaderText();
             
             Assert.That(result, Is.EqualTo("Add/Remove Elements"));
+        }
+
+        [Test]
+        public void BasicAuthenticationLink_RedirectsToAuthenticationAlert()
+        {
+            _sut.NavigateToIndexPage();
+
+            _sut.IndexPage.ClickBasicAuthenticationLink();
+            var result = _sut.IndexPage.ReadBasicAuthenticationAlertText();
+
+            Assert.That(result, Contains.Substring("Restricted Area"));
         }
 
         [Test]
@@ -55,7 +66,7 @@ namespace SeleniumExamples
             _sut.NavigateToIndexPage();
 
             _sut.IndexPage.ClickFormAuthenticationLink();
-            var result = _sut.IndexPage.GetPageHeaderText();
+            var result = _sut.IndexPage.ReadPageHeaderText();
 
             Assert.That(result, Is.EqualTo("Login Page"));
         }

@@ -8,6 +8,8 @@ namespace SeleniumExamples.Pages
 
         public IndexPage(IWebDriver driver) => _driver = driver;
 
+        private IAlert AlertBasicAuthentication => _driver.SwitchTo().Alert();
+
         private IWebElement PageHeader2 => _driver.FindElement(By.CssSelector("h2"));
 
         private IWebElement PageHeader3 => _driver.FindElement(By.CssSelector("h3"));
@@ -21,6 +23,9 @@ namespace SeleniumExamples.Pages
         private IWebElement LinkAddRemove =>
             _driver.FindElement(By.LinkText("Add/Remove Elements"));
 
+        private IWebElement LinkBasicAuthentication =>
+            _driver.FindElement(By.LinkText("Basic Auth"));
+
         private IWebElement LinkFormAuthentiication =>
             _driver.FindElement(By.LinkText("Form Authentication"));
 
@@ -32,7 +37,7 @@ namespace SeleniumExamples.Pages
                 _driver.WindowHandles[_driver.WindowHandles.Count - 1]);
         }
 
-        public string GetPageHeaderText()
+        public string ReadPageHeaderText()
         {
             string result;
             try
@@ -58,6 +63,10 @@ namespace SeleniumExamples.Pages
         public void ClickGitHubImageLink() => LinkGitHub.Click();
 
         public void ClickAddRemoveElementsLink() => LinkAddRemove.Click();
+
+        public void ClickBasicAuthenticationLink() => LinkBasicAuthentication.Click();
+
+        public string ReadBasicAuthenticationAlertText() => AlertBasicAuthentication.Text;
 
         public void ClickFormAuthenticationLink() => LinkFormAuthentiication.Click();
     }

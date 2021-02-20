@@ -8,9 +8,9 @@ namespace SeleniumExamples.Pages
 
         public IndexPage(IWebDriver driver) => _driver = driver;
 
-        private IWebElement PageHeader2 => _driver.FindElement(By.TagName("h2"));
+        private IWebElement PageHeader2 => _driver.FindElement(By.CssSelector("h2"));
 
-        private IWebElement PageHeader3 => _driver.FindElement(By.TagName("h3"));
+        private IWebElement PageHeader3 => _driver.FindElement(By.CssSelector("h3"));
 
         private IWebElement LinkFooter =>
             _driver.FindElement(By.LinkText("Elemental Selenium"));

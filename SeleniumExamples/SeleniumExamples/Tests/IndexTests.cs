@@ -57,7 +57,7 @@ namespace SeleniumExamples
             _sut.IndexPage.ClickBasicAuthenticationLink();
             var result = _sut.IndexPage.ReadBasicAuthenticationAlertText();
 
-            Assert.That(result, Contains.Substring("Restricted Area"));
+            Assert.That(result, Contains.Substring("“Restricted Area”"));
         }
 
         [Test]

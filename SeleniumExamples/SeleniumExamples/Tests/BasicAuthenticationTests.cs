@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using SeleniumExamples.Pages;
 
 namespace SeleniumExamples
 {
@@ -14,15 +15,14 @@ namespace SeleniumExamples
 
         private void NavigateToAuthentication()
         {
-            _driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
-            _driver.FindElement(By.LinkText("Basic Auth")).Click();
+            _driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/basic_auth");
         }
 
-        private IAlert GetAlert() => _driver.SwitchTo().Alert();
+        private IAlert AlertBasicAuthentication() => _driver.SwitchTo().Alert();
         
-        private IWebElement GetErrorBody()
+        private IWebElement PageBody()
         {
-            return _driver.FindElement(By.TagName("body"));
+            return _driver.FindElement(By.CssSelector("body"));
         }
 
         [OneTimeSetUp]
@@ -32,24 +32,12 @@ namespace SeleniumExamples
         public void OneTimeTearDown() => _driver.Quit();
 
         [Test]
-        public void Alert_HasCorrectMessage()
-        {
-            NavigateToAuthentication();
-            var result = GetAlert().Text;
-
-            Assert.That(result, Is.EqualTo(
-                "http://the-internet.herokuapp.com " +
-                "is requesting your username and password. " +
-                "The site says: “Restricted Area”"));
-        }
-
-        [Test]
         public void Alert_Dismiss_RedirectsToAuthenticationError()
         {
             NavigateToAuthentication();
-            GetAlert().Dismiss();
+            AlertBasicAuthentication().Dismiss();
 
-            var result = GetErrorBody().Text;
+            var result = PageBody().Text;
 
             Assert.That(result, Is.EqualTo(_errorString));
         }
@@ -58,9 +46,9 @@ namespace SeleniumExamples
         public void Alert_AcceptOnce_CreatesNewAlert()
         {
             NavigateToAuthentication();
-            GetAlert().Accept();
+            AlertBasicAuthentication().Accept();
 
-            var result = GetAlert();
+            var result = AlertBasicAuthentication();
 
             Assert.That(result, Is.InstanceOf<IAlert>());
         }
@@ -69,33 +57,19 @@ namespace SeleniumExamples
         public void Alert_AcceptTwice_RedirectsToAuthenticationError()
         {
             NavigateToAuthentication();
-            GetAlert().Accept();
-            GetAlert().Accept();
+            AlertBasicAuthentication().Accept();
+            AlertBasicAuthentication().Accept();
 
-            var result = GetErrorBody().Text;
+            var result = PageBody().Text;
 
             Assert.That(result, Is.EqualTo(_errorString));
         }
-
+            
+        [Ignore("To be completed")]
         [Test]
-        public void Alert_IncorrectDetails_Error()
+        public void InvalidCredentials()
         {
-            NavigateToAuthentication();
-
-            /*_chromeDriver.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
-            _chromeDriver.FindElement(By.LinkText("Basic Auth")).Click();
-            var alert = _chromeDriver.SwitchTo().Alert();*/
-
-            var alert = GetAlert();
-            alert.SetAuthenticationCredentials(_validAuth, _validAuth);
-            alert.SendKeys(_validAuth + Keys.Tab + _validAuth);
-
-            alert.Accept();
-            alert.Accept();
-
-            var result = _driver.FindElement(By.TagName("body")).Text;
-
-            Assert.That(result, Is.EqualTo("Not authorized"));
+            Assert.Fail();
         }
 
         [Test]

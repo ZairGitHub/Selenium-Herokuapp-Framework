@@ -10,12 +10,6 @@ namespace SeleniumExamples.Pages
 
         private IAlert AlertBasicAuthentication => _driver.SwitchTo().Alert();
 
-        private IWebElement LinkFooter =>
-            _driver.FindElement(By.LinkText("Elemental Selenium"));
-
-        private IWebElement LinkGitHub =>
-            _driver.FindElement(By.CssSelector("img"));
-
         private IWebElement LinkAddRemove =>
             _driver.FindElement(By.LinkText("Add/Remove Elements"));
 
@@ -32,10 +26,6 @@ namespace SeleniumExamples.Pages
             _driver.SwitchTo().Window(
                 _driver.WindowHandles[_driver.WindowHandles.Count - 1]);
         }
-
-        public void ClickPageFooterLink() => LinkFooter.Click();
-
-        public void ClickGitHubImageLink() => LinkGitHub.Click();
 
         public void ClickAddRemoveElementsLink() => LinkAddRemove.Click();
 

@@ -19,7 +19,7 @@ namespace SeleniumExamples
         {
             _sut.NavigateToIndexPage();
 
-            _sut.IndexPage.ClickPageFooterLink();
+            _sut.SharedHTML.ClickPageFooterLink();
             _sut.IndexPage.SwitchToNextTab();
             var result = _sut.IndexPage.ReadPageURL();
 
@@ -31,7 +31,7 @@ namespace SeleniumExamples
         {
             _sut.NavigateToIndexPage();
 
-            _sut.IndexPage.ClickGitHubImageLink();
+            _sut.SharedHTML.ClickGitHubImageLink();
             var result = _sut.IndexPage.ReadPageURL();
 
             Assert.That(result,

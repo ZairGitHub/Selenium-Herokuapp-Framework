@@ -4,15 +4,25 @@ namespace SeleniumExamples.Pages
 {
     public class SharedHTML
     {
-        private IWebDriver _driver;
+        private readonly IWebDriver _driver;
 
         public SharedHTML(IWebDriver driver) => _driver = driver;
-        
+
+        private IWebElement LinkFooter =>
+            _driver.FindElement(By.LinkText("Elemental Selenium"));
+
+        private IWebElement LinkGitHub =>
+            _driver.FindElement(By.CssSelector("img"));
+
+        private IWebElement PageBody => _driver.FindElement(By.CssSelector("body"));
+
         private IWebElement PageHeader2 => _driver.FindElement(By.CssSelector("h2"));
 
         private IWebElement PageHeader3 => _driver.FindElement(By.CssSelector("h3"));
 
-        private IWebElement PageBody => _driver.FindElement(By.CssSelector("body"));
+        public void ClickPageFooterLink() => LinkFooter.Click();
+
+        public void ClickGitHubImageLink() => LinkGitHub.Click();
 
         public string ReadPageHeaderText()
         {

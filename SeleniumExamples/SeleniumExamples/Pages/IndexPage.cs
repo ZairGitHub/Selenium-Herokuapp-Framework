@@ -14,6 +14,9 @@ namespace SeleniumExamples.Pages
         private IWebElement LinkBasicAuthentication =>
             _driver.FindElement(By.LinkText("Basic Auth"));
 
+        private IWebElement LinkCheckboxes =>
+            _driver.FindElement(By.LinkText("Checkboxes"));
+
         private IWebElement LinkDigestAuthentication =>
             _driver.FindElement(By.LinkText("Digest Authentication"));
 
@@ -29,6 +32,8 @@ namespace SeleniumExamples.Pages
         {
             LinkBasicAuthentication.Click();
         }
+
+        public void ClickCheckboxesLink() => LinkCheckboxes.Click();
 
         public void ClickDigestAuthenticationLink()
         {

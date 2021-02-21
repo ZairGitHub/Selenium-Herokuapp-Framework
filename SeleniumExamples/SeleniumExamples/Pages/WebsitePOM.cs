@@ -54,7 +54,8 @@ namespace SeleniumExamples.Pages
         {
             //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.BasicAuthentication);
             Driver.Navigate().GoToUrl(
-                $"http://{username}:{password}@the-internet.herokuapp.com/basic_auth");
+                $"http://{username}:{password}@" +
+                $"the-internet.herokuapp.com/basic_auth");
         }
 
         public void NavigateToDigestAuthenticationPage(
@@ -62,7 +63,8 @@ namespace SeleniumExamples.Pages
         {
             //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.DigestAuthentication);
             Driver.Navigate().GoToUrl(
-                $"http://{username}:{password}@the-internet.herokuapp.com/digest_auth");
+                $"http://{username}:{password}@" +
+                $"the-internet.herokuapp.com/digest_auth");
         }
 
         public void NavigateToFormAuthenticationPage()
@@ -89,7 +91,8 @@ namespace SeleniumExamples.Pages
         public void NavigateToJavaScriptAlertsPage()
         {
             //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.JavaScriptAlerts);
-            Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/javascript_alerts");
+            Driver.Navigate().GoToUrl(
+                "http://the-internet.herokuapp.com/javascript_alerts");
         }
 
         public void CloseDriver() => Driver.Quit();

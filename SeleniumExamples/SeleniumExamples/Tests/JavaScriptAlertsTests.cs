@@ -49,5 +49,29 @@ namespace SeleniumExamples
 
             Assert.That(result, Is.EqualTo("You clicked: Ok"));
         }
+
+        [Test]
+        public void Cancel_PromptButtonTest()
+        {
+            _sut.NavigateToJavaScriptAlertsPage();
+
+            _sut.JavaScriptAlertsPage.ClickJSPromptButton();
+            _sut.SharedIAlert.ClickCancelButton();
+            var result = _sut.JavaScriptAlertsPage.ReadResultText();
+
+            Assert.That(result, Is.EqualTo("You entered: null"));
+        }
+
+        [Test]
+        public void OK_PromptButtonTest()
+        {
+            _sut.NavigateToJavaScriptAlertsPage();
+
+            _sut.JavaScriptAlertsPage.ClickJSPromptButton();
+            _sut.SharedIAlert.ClickOKButton();
+            var result = _sut.JavaScriptAlertsPage.ReadResultText();
+
+            Assert.That(result, Is.EqualTo("You entered:"));
+        }
     }
 }

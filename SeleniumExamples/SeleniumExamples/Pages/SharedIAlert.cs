@@ -10,9 +10,9 @@ namespace SeleniumExamples.Pages
 
         private IAlert Alert => _driver.SwitchTo().Alert();
 
-        public bool AuthenticationWindowExists() => Alert != null;
+        public bool AuthenticationPopupExists() => Alert != null;
 
-        public string ReadAuthenticationWindowText() => Alert.Text;
+        public string ReadAuthenticationPopupText() => Alert.Text;
 
         public void ClickOKButton() => Alert.Accept();
 

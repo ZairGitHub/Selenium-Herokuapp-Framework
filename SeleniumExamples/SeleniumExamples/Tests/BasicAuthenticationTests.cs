@@ -29,12 +29,12 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void OK_CreatesNewAuthenticationWindow()
+        public void OK_CreatesNewAuthenticationPopup()
         {
             CreateWebDriverAndNavigateToBasicAuthenticationPage();
 
             _sut.SharedIAlert.ClickOKButton();
-            var result = _sut.SharedIAlert.AuthenticationWindowExists();
+            var result = _sut.SharedIAlert.AuthenticationPopupExists();
 
             Assert.That(result, Is.True);
 

@@ -13,5 +13,18 @@ namespace SeleniumExamples
 
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
+
+        [Test]
+        public void AlertButtonTest()
+        {
+            _sut.NavigateToJavaScriptAlertsPage();
+
+            _sut.JavaScriptAlertsPage.ClickJSAlertButton();
+            _sut.SharedIAlert.ClickOKButton();
+            var result = _sut.JavaScriptAlertsPage.ReadResultText();
+
+            Assert.That(result, Is.EqualTo("You successfully clicked an alert"));
+            
+        }
     }
 }

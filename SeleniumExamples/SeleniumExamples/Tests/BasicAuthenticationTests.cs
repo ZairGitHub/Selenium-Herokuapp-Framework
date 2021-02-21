@@ -15,9 +15,6 @@ namespace SeleniumExamples
             _sut.NavigateToBasicAuthenticationPage(username, password);
         }
 
-        [TearDown]
-        public void OneTimeTearDown() => _sut.CloseDriver();
-
         [Test]
         public void Cancel_RedirectsToAuthenticationError()
         {

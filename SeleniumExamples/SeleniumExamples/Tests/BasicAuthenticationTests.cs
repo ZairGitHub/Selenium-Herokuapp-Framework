@@ -29,8 +29,9 @@ namespace SeleniumExamples
         private IAlert AlertBasicAuthentication() => _driver.SwitchTo().Alert();
         
         [Test]
-        public void Alert_Dismiss_RedirectsToAuthenticationError()
+        public void Cancel_RedirectsToAuthenticationError()
         {
+            _sut.BasicAuthenticationPage.DeleteAllCookies();
             _sut.NavigateToBasicAuthenticationPage();
             _sut.BasicAuthenticationPage.ClickCancelButton();
 
@@ -40,8 +41,9 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void Alert_AcceptOnce_CreatesNewAlert()
+        public void OK_CreatesNewAuthenticationWindow()
         {
+            _sut.BasicAuthenticationPage.DeleteAllCookies();
             _sut.NavigateToBasicAuthenticationPage();
             _sut.BasicAuthenticationPage.ClickOKButton();
 
@@ -51,8 +53,9 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void Alert_AcceptTwice_RedirectsToAuthenticationError()
+        public void OK_ClickTwice_RedirectsToAuthenticationError()
         {
+            _sut.BasicAuthenticationPage.DeleteAllCookies();
             _sut.NavigateToBasicAuthenticationPage();
             _sut.BasicAuthenticationPage.ClickOKButton();
             _sut.BasicAuthenticationPage.ClickOKButton();
@@ -61,16 +64,9 @@ namespace SeleniumExamples
 
             Assert.That(result, Is.EqualTo("Not authorized"));
         }
-            
-        [Ignore("To be completed")]
-        [Test]
-        public void InvalidCredentials()
-        {
-            Assert.Fail();
-        }
 
         [Test]
-        public void Authenticate()
+        public void OK_ValidCredentials_RedirectsToBasicAuthenticationPage()
         {
             _sut.BasicAuthenticationPage.DeleteAllCookies();
             _sut.NavigateToBasicAuthenticationPage("admin", "admin");

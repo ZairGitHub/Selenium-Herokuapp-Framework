@@ -41,8 +41,7 @@ namespace SeleniumExamples.Pages
             Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/add_remove_elements/");
         }
 
-        public void NavigateToBasicAuthenticationPage(
-            string username = null, string password = null)
+        public void NavigateToBasicAuthenticationPage(string username = null, string password = null)
         {
             //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.BasicAuthentication);
             Driver.Navigate().GoToUrl(

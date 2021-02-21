@@ -73,5 +73,18 @@ namespace SeleniumExamples
 
             Assert.That(result, Is.EqualTo("You entered:"));
         }
+
+        [Test]
+        public void Input_NotPurelyWhitespaces_ReturnInputWithSingleWhitespaceBetweenCharacters()
+        {
+            _sut.NavigateToJavaScriptAlertsPage();
+
+            _sut.JavaScriptAlertsPage.ClickJSPromptButton();
+            _sut.SharedIAlert.EnterInformation("  i     np   u    t      1 ");
+            _sut.SharedIAlert.ClickOKButton();
+            var result = _sut.JavaScriptAlertsPage.ReadResultText();
+
+            Assert.That(result, Is.EqualTo("You entered: i np u t 1"));
+        }
     }
 }

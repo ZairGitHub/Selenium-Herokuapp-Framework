@@ -17,5 +17,7 @@ namespace SeleniumExamples.Pages
         public void ClickOKButton() => Alert.Accept();
 
         public void ClickCancelButton() => Alert.Dismiss();
+
+        public void EnterInformation(string input) => Alert.SendKeys(input);
     }
 }

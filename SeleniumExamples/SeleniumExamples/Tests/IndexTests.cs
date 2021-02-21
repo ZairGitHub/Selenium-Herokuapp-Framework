@@ -62,6 +62,18 @@ namespace SeleniumExamples
         }
 
         [Test]
+        public void DigestAuthenticationLink_OpensDigestAuthenticationPopup()
+        {
+            _sut.NavigateToIndexPage();
+
+            _sut.IndexPage.ClickDigestAuthenticationLink();
+            var result = _sut.SharedIAlert.ReadAuthenticationPopupText();
+            _sut.SharedIAlert.ClickCancelButton();
+
+            Assert.That(result, Contains.Substring("“Protected Area”"));
+        }
+
+        [Test]
         public void FormAuthenticationLink_RedirectsToLoginPage()
         {
             _sut.NavigateToIndexPage();

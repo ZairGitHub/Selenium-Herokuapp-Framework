@@ -76,8 +76,7 @@ namespace SeleniumExamples
                 BasicAuthenticationPage.ValidUsername,
                 BasicAuthenticationPage.ValidPassword);
 
-            // Create tab
-            // Close previous tab
+            _sut.SharedHTML.OpenNewTab();
             _sut.NavigateToBasicAuthenticationPage();
             var result = _sut.SharedHTML.ReadPageHeaderText();
 

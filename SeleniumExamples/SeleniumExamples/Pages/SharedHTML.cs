@@ -46,5 +46,13 @@ namespace SeleniumExamples.Pages
         }
 
         public string ReadPageBodyText() => PageBody.Text;
+
+        public void OpenNewTab()
+        {
+            ((IJavaScriptExecutor)_driver).ExecuteScript("window.open();");
+            _driver.SwitchTo().Window(_driver.WindowHandles[0]);
+            _driver.Close();
+            _driver.SwitchTo().Window(_driver.WindowHandles[0]);
+        }
     }
 }

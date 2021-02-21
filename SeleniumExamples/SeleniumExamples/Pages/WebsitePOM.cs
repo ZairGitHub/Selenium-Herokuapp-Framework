@@ -17,6 +17,7 @@ namespace SeleniumExamples.Pages
             AddRemovePage = new AddRemovePage(Driver);
             FormAuthenticationPage = new FormAuthenticationPage(Driver);
             SecureAreaPage = new SecureAreaPage(Driver);
+            JavaScriptAlertsPage = new JavaScriptAlertsPage(Driver);
         }
 
         public FirefoxDriver Driver { get; private set; }
@@ -32,6 +33,8 @@ namespace SeleniumExamples.Pages
         public FormAuthenticationPage FormAuthenticationPage { get; private set; }
 
         public SecureAreaPage SecureAreaPage { get; private set; }
+
+        public JavaScriptAlertsPage JavaScriptAlertsPage { get; private set; }
 
         public void NavigateToIndexPage()
         {

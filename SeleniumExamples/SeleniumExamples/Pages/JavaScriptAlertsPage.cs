@@ -2,11 +2,11 @@
 
 namespace SeleniumExamples.Pages
 {
-    public class JavaScriptAlerts
+    public class JavaScriptAlertsPage
     {
         private readonly IWebDriver _driver;
 
-        public JavaScriptAlerts(IWebDriver driver) => _driver = driver;
+        public JavaScriptAlertsPage(IWebDriver driver) => _driver = driver;
 
         private IWebElement ButtonJSAlert =>
             _driver.FindElement(By.CssSelector("li:nth-child(1) > button"));

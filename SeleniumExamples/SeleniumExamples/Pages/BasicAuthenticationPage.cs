@@ -16,6 +16,8 @@ namespace SeleniumExamples.Pages
 
         private IWebElement PageBody => _driver.FindElement(By.CssSelector("body"));
 
+        public bool AuthenticationWindowExists() => AlertBasicAuthentication != null;
+
         public void ClickOKButton() => AlertBasicAuthentication.Accept();
 
         public void ClickCancelButton() => AlertBasicAuthentication.Dismiss();

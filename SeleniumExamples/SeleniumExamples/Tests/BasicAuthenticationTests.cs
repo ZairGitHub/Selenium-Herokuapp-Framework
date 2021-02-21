@@ -31,7 +31,7 @@ namespace SeleniumExamples
         [Test]
         public void Alert_Dismiss_RedirectsToAuthenticationError()
         {
-            _sut.NavigateToBasicAuthenticationPage(null, null);
+            _sut.NavigateToBasicAuthenticationPage();
             _sut.BasicAuthenticationPage.ClickCancelButton();
 
             var result = _sut.BasicAuthenticationPage.ReadPageBodyText();
@@ -42,12 +42,12 @@ namespace SeleniumExamples
         [Test]
         public void Alert_AcceptOnce_CreatesNewAlert()
         {
-            NavigateToAuthentication();
-            AlertBasicAuthentication().Accept();
+            _sut.NavigateToBasicAuthenticationPage();
+            _sut.BasicAuthenticationPage.ClickOKButton();
 
-            var result = AlertBasicAuthentication();
+            var result = _sut.BasicAuthenticationPage.AuthenticationWindowExists();
 
-            Assert.That(result, Is.InstanceOf<IAlert>());
+            Assert.That(result, Is.True);
         }
 
         [Test]

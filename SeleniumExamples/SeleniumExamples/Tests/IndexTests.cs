@@ -83,5 +83,16 @@ namespace SeleniumExamples
 
             Assert.That(result, Is.EqualTo("Login Page"));
         }
+
+        [Test]
+        public void JavaScriptAlertsLink_RedirectsToJavaScriptAlertsPage()
+        {
+            _sut.NavigateToIndexPage();
+
+            _sut.IndexPage.ClickJavaScriptAlertsLink();
+            var result = _sut.SharedHTML.ReadPageHeaderText();
+
+            Assert.That(result, Is.EqualTo("JavaScript Alerts"));
+        }
     }
 }

@@ -20,6 +20,9 @@ namespace SeleniumExamples.Pages
         private IWebElement LinkFormAuthentiication =>
             _driver.FindElement(By.LinkText("Form Authentication"));
 
+        private IWebElement LinkJavaScriptAlerts =>
+            _driver.FindElement(By.LinkText("JavaScript Alerts"));
+
         public void ClickAddRemoveElementsLink() => LinkAddRemove.Click();
 
         public void ClickBasicAuthenticationLink()
@@ -36,5 +39,7 @@ namespace SeleniumExamples.Pages
         {
             LinkFormAuthentiication.Click();
         }
+
+        public void ClickJavaScriptAlertsLink() => LinkJavaScriptAlerts.Click();
     }
 }

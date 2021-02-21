@@ -15,7 +15,6 @@ namespace SeleniumExamples.Pages
 
             IndexPage = new IndexPage(Driver);
             AddRemovePage = new AddRemovePage(Driver);
-            BasicAuthenticationPage = new BasicAuthenticationPage(Driver);
             FormAuthenticationPage = new FormAuthenticationPage(Driver);
             SecureAreaPage = new SecureAreaPage(Driver);
         }
@@ -29,8 +28,6 @@ namespace SeleniumExamples.Pages
         public IndexPage IndexPage { get; private set; }
 
         public AddRemovePage AddRemovePage { get; private set; }
-
-        public BasicAuthenticationPage BasicAuthenticationPage { get; private set; }
 
         public FormAuthenticationPage FormAuthenticationPage { get; private set; }
 

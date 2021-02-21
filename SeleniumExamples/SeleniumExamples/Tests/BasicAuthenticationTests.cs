@@ -59,8 +59,8 @@ namespace SeleniumExamples
         public void OK_ValidCredentials_RedirectsToBasicAuthenticationPage()
         {
             CreateWebDriverAndNavigateToBasicAuthenticationPage(
-                _sut.BasicAuthenticationPage.ValidUsername,
-                _sut.BasicAuthenticationPage.ValidPassword);
+                BasicAuthenticationPage.ValidUsername,
+                BasicAuthenticationPage.ValidPassword);
             
             var result = _sut.SharedHTML.ReadPageHeaderText();
 

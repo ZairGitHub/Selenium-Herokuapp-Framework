@@ -1,15 +1,9 @@
-﻿using OpenQA.Selenium;
-
-namespace SeleniumExamples.Pages
+﻿namespace SeleniumExamples.Pages
 {
-    public class BasicAuthenticationPage
+    public static class BasicAuthenticationPage
     {
-        private readonly IWebDriver _driver;
+        public static string ValidUsername => "admin";
 
-        public BasicAuthenticationPage(IWebDriver driver) => _driver = driver;
-
-        public string ValidUsername => "admin";
-
-        public string ValidPassword => "admin";
+        public static string ValidPassword => "admin";
     }
 }

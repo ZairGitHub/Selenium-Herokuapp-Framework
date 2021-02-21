@@ -42,7 +42,8 @@ namespace SeleniumExamples.Pages
         public void NavigateToAddRemovePage()
         {
             //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.AddRemoveElements);
-            Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/add_remove_elements/");
+            Driver.Navigate().GoToUrl(
+                "http://the-internet.herokuapp.com/add_remove_elements/");
         }
 
         public void NavigateToBasicAuthenticationPage(string username = null, string password = null)
@@ -68,7 +69,8 @@ namespace SeleniumExamples.Pages
             else
             {
                 //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.SecureArea);
-                Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/secure");
+                Driver.Navigate().GoToUrl(
+                    "http://the-internet.herokuapp.com/secure");
             }
         }
 

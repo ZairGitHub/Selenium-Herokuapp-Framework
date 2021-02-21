@@ -48,7 +48,8 @@ namespace SeleniumExamples
 
             var result = _sut.FormAuthenticationPage.ReadUpdateText();
 
-            Assert.That(result, Contains.Substring("You logged into a secure area!"));
+            Assert.That(result,
+                Contains.Substring("You logged into a secure area!"));
         }
 
         [Test]
@@ -58,7 +59,8 @@ namespace SeleniumExamples
 
             var result = _sut.FormAuthenticationPage.ReadUpdateText();
 
-            Assert.That(result, Contains.Substring("You must login to view the secure area!"));
+            Assert.That(result,
+                Contains.Substring("You must login to view the secure area!"));
         }
 
         [Test]
@@ -69,7 +71,8 @@ namespace SeleniumExamples
             _sut.SecureAreaPage.ClickLogoutButton();
             var result = _sut.FormAuthenticationPage.ReadUpdateText();
 
-            Assert.That(result, Contains.Substring("You logged out of the secure area!"));
+            Assert.That(result,
+                Contains.Substring("You logged out of the secure area!"));
         }
 
         [Test]
@@ -82,7 +85,8 @@ namespace SeleniumExamples
 
             var result = _sut.SecureAreaPage.ReadUpdateText();
 
-            Assert.That(result, Contains.Substring("You logged into a secure area!"));
+            Assert.That(result,
+                Contains.Substring("You logged into a secure area!"));
         }
     }
 }

@@ -19,8 +19,14 @@ namespace SeleniumExamples.Pages
 
         public void ClickAddRemoveElementsLink() => LinkAddRemove.Click();
 
-        public void ClickBasicAuthenticationLink() => LinkBasicAuthentication.Click();
+        public void ClickBasicAuthenticationLink()
+        {
+            LinkBasicAuthentication.Click();
+        }
 
-        public void ClickFormAuthenticationLink() => LinkFormAuthentiication.Click();
+        public void ClickFormAuthenticationLink()
+        {
+            LinkFormAuthentiication.Click();
+        }
     }
 }

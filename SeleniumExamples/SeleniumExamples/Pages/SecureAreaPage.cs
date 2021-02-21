@@ -8,7 +8,8 @@ namespace SeleniumExamples.Pages
 
         public SecureAreaPage(IWebDriver driver) => _driver = driver;
 
-        private IWebElement ButtonLogOut => _driver.FindElement(By.CssSelector(".icon-2x"));
+        private IWebElement ButtonLogOut =>
+            _driver.FindElement(By.CssSelector(".icon-2x"));
 
         private IWebElement TextUpdate => _driver.FindElement(By.Id("flash"));
 

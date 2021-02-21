@@ -11,11 +11,14 @@ namespace SeleniumExamples.Pages
 
         public FormAuthenticationPage(IWebDriver driver) => _driver = driver;
 
-        private IWebElement ButtonLogin => _driver.FindElement(By.CssSelector(".fa"));
+        private IWebElement ButtonLogin =>
+            _driver.FindElement(By.CssSelector(".fa"));
 
-        private IWebElement FieldUsername => _driver.FindElement(By.Id("username"));
+        private IWebElement FieldUsername =>
+            _driver.FindElement(By.Id("username"));
         
-        private IWebElement FieldPassword => _driver.FindElement(By.Id("password"));
+        private IWebElement FieldPassword =>
+            _driver.FindElement(By.Id("password"));
 
         private IWebElement TextUpdate => _driver.FindElement(By.Id("flash"));
 

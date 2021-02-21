@@ -9,7 +9,8 @@ namespace SeleniumExamples
         private readonly int _pageWaitTime;
         private readonly FirefoxOptions _options;
 
-        public DriverConfig(bool isHeadless, int elementWaitTime, int pageWaitTime)
+        public DriverConfig(
+            bool isHeadless, int elementWaitTime, int pageWaitTime)
         {
             if (isHeadless)
             {

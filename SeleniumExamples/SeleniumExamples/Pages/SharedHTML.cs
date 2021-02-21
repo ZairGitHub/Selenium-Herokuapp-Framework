@@ -14,11 +14,14 @@ namespace SeleniumExamples.Pages
         private IWebElement LinkGitHub =>
             _driver.FindElement(By.CssSelector("img"));
 
-        private IWebElement PageBody => _driver.FindElement(By.CssSelector("body"));
+        private IWebElement PageBody =>
+            _driver.FindElement(By.CssSelector("body"));
 
-        private IWebElement PageHeader2 => _driver.FindElement(By.CssSelector("h2"));
+        private IWebElement PageHeader2 =>
+            _driver.FindElement(By.CssSelector("h2"));
 
-        private IWebElement PageHeader3 => _driver.FindElement(By.CssSelector("h3"));
+        private IWebElement PageHeader3 =>
+            _driver.FindElement(By.CssSelector("h3"));
 
         public void OpenNewTab()
         {

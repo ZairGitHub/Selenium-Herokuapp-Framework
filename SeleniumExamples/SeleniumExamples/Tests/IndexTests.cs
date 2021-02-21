@@ -21,7 +21,7 @@ namespace SeleniumExamples
 
             _sut.SharedHTML.ClickPageFooterLink();
             _sut.SharedHTML.SwitchToTab(1);
-            var result = _sut.IndexPage.ReadPageURL();
+            var result = _sut.Driver.Url;
 
             Assert.That(result, Is.EqualTo("http://elementalselenium.com/"));
         }
@@ -32,7 +32,7 @@ namespace SeleniumExamples
             _sut.NavigateToIndexPage();
 
             _sut.SharedHTML.ClickGitHubImageLink();
-            var result = _sut.IndexPage.ReadPageURL();
+            var result = _sut.Driver.Url;
 
             Assert.That(result,
                 Is.EqualTo("https://github.com/saucelabs/the-internet"));

@@ -17,8 +17,6 @@ namespace SeleniumExamples.Pages
         private IWebElement LinkFormAuthentiication =>
             _driver.FindElement(By.LinkText("Form Authentication"));
 
-        public string ReadPageURL() => _driver.Url;
-
         public void ClickAddRemoveElementsLink() => LinkAddRemove.Click();
 
         public void ClickBasicAuthenticationLink() => LinkBasicAuthentication.Click();

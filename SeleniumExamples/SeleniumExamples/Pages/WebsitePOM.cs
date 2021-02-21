@@ -53,6 +53,12 @@ namespace SeleniumExamples.Pages
                 $"http://{username}:{password}@the-internet.herokuapp.com/basic_auth");
         }
 
+        public void NavigateToDigestAuthenticationPage()
+        {
+            //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.DigestAuthentication);
+            Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/digest_auth");
+        }
+
         public void NavigateToFormAuthenticationPage()
         {
             //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.FormAuthetication);

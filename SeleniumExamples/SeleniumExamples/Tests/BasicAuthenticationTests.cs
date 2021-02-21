@@ -60,7 +60,7 @@ namespace SeleniumExamples
         {
             CreateWebDriverAndNavigateToBasicAuthenticationPage("admin", "admin");
             
-            var result = _sut.IndexPage.ReadPageHeaderText();
+            var result = _sut.SharedHTML.ReadPageHeaderText();
 
             Assert.That(result, Is.EqualTo("Basic Auth"));
 

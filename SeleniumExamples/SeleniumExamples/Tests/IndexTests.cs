@@ -44,7 +44,7 @@ namespace SeleniumExamples
             _sut.NavigateToIndexPage();
 
             _sut.IndexPage.ClickAddRemoveElementsLink();
-            var result = _sut.IndexPage.ReadPageHeaderText();
+            var result = _sut.SharedHTML.ReadPageHeaderText();
             
             Assert.That(result, Is.EqualTo("Add/Remove Elements"));
         }
@@ -66,7 +66,7 @@ namespace SeleniumExamples
             _sut.NavigateToIndexPage();
 
             _sut.IndexPage.ClickFormAuthenticationLink();
-            var result = _sut.IndexPage.ReadPageHeaderText();
+            var result = _sut.SharedHTML.ReadPageHeaderText();
 
             Assert.That(result, Is.EqualTo("Login Page"));
         }

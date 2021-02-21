@@ -62,6 +62,17 @@ namespace SeleniumExamples
         }
 
         [Test]
+        public void CheckboxesLink_OpensCheckboxesPage()
+        {
+            _sut.NavigateToIndexPage();
+
+            _sut.IndexPage.ClickCheckboxesLink();
+            var result = _sut.SharedHTML.ReadPageHeaderText();
+
+            Assert.That(result, Is.EqualTo("Checkboxes"));
+        }
+
+        [Test]
         public void DigestAuthenticationLink_OpensDigestAuthenticationPopup()
         {
             _sut.NavigateToIndexPage();

@@ -46,17 +46,20 @@ namespace SeleniumExamples.Pages
                 "http://the-internet.herokuapp.com/add_remove_elements/");
         }
 
-        public void NavigateToBasicAuthenticationPage(string username = null, string password = null)
+        public void NavigateToBasicAuthenticationPage(
+            string username = null, string password = null)
         {
             //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.BasicAuthentication);
             Driver.Navigate().GoToUrl(
                 $"http://{username}:{password}@the-internet.herokuapp.com/basic_auth");
         }
 
-        public void NavigateToDigestAuthenticationPage()
+        public void NavigateToDigestAuthenticationPage(
+            string username = null, string password = null)
         {
             //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.DigestAuthentication);
-            Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/digest_auth");
+            Driver.Navigate().GoToUrl(
+                $"http://{username}:{password}@the-internet.herokuapp.com/digest_auth");
         }
 
         public void NavigateToFormAuthenticationPage()

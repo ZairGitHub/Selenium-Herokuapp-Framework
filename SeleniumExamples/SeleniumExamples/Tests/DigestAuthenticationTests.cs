@@ -43,7 +43,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void AuthenticatedUser_AuthenticationPersistsWithinWindow()
+        public void AuthenticatedUser_CloseSessionTab_AuthenticationPersistsWithinWindow()
         {
             CreateWebDriverAndNavigateToDigestAuthenticationPage(
                 DigestAuthenticationPage.ValidUsername,

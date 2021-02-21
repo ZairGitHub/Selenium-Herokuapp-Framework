@@ -15,7 +15,7 @@ namespace SeleniumExamples
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void AddButton_CreatesADeleteButtonForEachClick()
+        public void AddButton_CreatesADeleteButton()
         {
             _sut.NavigateToAddRemovePage();
 
@@ -28,7 +28,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void DeleteButton_RemovesADeleteButtonForEachClick()
+        public void DeleteButton_RemovesADeleteButton()
         {
             _sut.NavigateToAddRemovePage();
 

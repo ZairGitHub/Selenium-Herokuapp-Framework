@@ -42,7 +42,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void OKButton_ClickTwice_RedirectsToAuthenticationError()
+        public void OKButton_ClickTwiceWithoutModifyingCredentials_RedirectsToAuthenticationError()
         {
             CreateWebDriverAndNavigateToBasicAuthenticationPage();
 
@@ -70,7 +70,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void AuthenticatedUser_AuthenticationPersistsWithinWindow()
+        public void AuthenticatedUser_CloseSessionTab_AuthenticationPersistsWithinWindow()
         {
             CreateWebDriverAndNavigateToBasicAuthenticationPage(
                 BasicAuthenticationPage.ValidUsername,

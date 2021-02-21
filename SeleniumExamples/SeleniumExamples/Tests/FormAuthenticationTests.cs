@@ -15,7 +15,7 @@ namespace SeleniumExamples
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void LoginButton_NoDetails_DisplaysInvalidUsernameError()
+        public void LoginButton_DisplaysInvalidUsernameError()
         {
             _sut.NavigateToFormAuthenticationPage();
 

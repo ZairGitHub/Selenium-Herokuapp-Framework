@@ -19,12 +19,6 @@ namespace SeleniumExamples.Pages
 
         public string ReadPageURL() => _driver.Url;
 
-        public void SwitchToNextTab()
-        {
-            _driver.SwitchTo().Window(
-                _driver.WindowHandles[_driver.WindowHandles.Count - 1]);
-        }
-
         public void ClickAddRemoveElementsLink() => LinkAddRemove.Click();
 
         public void ClickBasicAuthenticationLink() => LinkBasicAuthentication.Click();

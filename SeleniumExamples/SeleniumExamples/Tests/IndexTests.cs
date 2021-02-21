@@ -20,7 +20,7 @@ namespace SeleniumExamples
             _sut.NavigateToIndexPage();
 
             _sut.SharedHTML.ClickPageFooterLink();
-            _sut.IndexPage.SwitchToNextTab();
+            _sut.SharedHTML.SwitchToTab(1);
             var result = _sut.IndexPage.ReadPageURL();
 
             Assert.That(result, Is.EqualTo("http://elementalselenium.com/"));

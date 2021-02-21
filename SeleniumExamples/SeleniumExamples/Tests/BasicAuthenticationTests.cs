@@ -78,7 +78,7 @@ namespace SeleniumExamples
 
             _sut.SharedHTML.OpenNewTab();
             _sut.SharedHTML.CloseTab(0);
-            _sut.SharedHTML.SwitchToFirstTab();
+            _sut.SharedHTML.SwitchToTab(0);
 
             _sut.NavigateToBasicAuthenticationPage();
             var result = _sut.SharedHTML.ReadPageHeaderText();

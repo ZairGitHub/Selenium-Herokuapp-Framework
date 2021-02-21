@@ -20,14 +20,14 @@ namespace SeleniumExamples.Pages
 
         private IWebElement PageHeader3 => _driver.FindElement(By.CssSelector("h3"));
 
-        public void SwitchToFirstTab()
-        {
-            _driver.SwitchTo().Window(_driver.WindowHandles[0]);
-        }
-
         public void OpenNewTab()
         {
             ((IJavaScriptExecutor)_driver).ExecuteScript("window.open();");
+        }
+
+        public void SwitchToTab(int index)
+        {
+            _driver.SwitchTo().Window(_driver.WindowHandles[index]);
         }
 
         public void CloseTab(int index)

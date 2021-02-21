@@ -46,7 +46,7 @@ namespace SeleniumExamples.Pages
         {
             //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.AddRemoveElements);
             Driver.Navigate().GoToUrl(
-                "http://the-internet.herokuapp.com/add_remove_elements/");
+                "http://the-internet.herokuapp.com/add_remove_elements");
         }
 
         public void NavigateToBasicAuthenticationPage(
@@ -56,6 +56,12 @@ namespace SeleniumExamples.Pages
             Driver.Navigate().GoToUrl(
                 $"http://{username}:{password}@" +
                 $"the-internet.herokuapp.com/basic_auth");
+        }
+
+        public void NavigateToCheckboxesPage()
+        {
+            //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.Checkboxes);
+            Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/checkboxes");
         }
 
         public void NavigateToDigestAuthenticationPage(

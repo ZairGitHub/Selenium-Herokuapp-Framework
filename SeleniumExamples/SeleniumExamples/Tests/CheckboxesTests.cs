@@ -13,5 +13,15 @@ namespace SeleniumExamples
 
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
+
+        [Test]
+        public void Checkbox1()
+        {
+            _sut.NavigateToCheckboxesPage();
+
+            _sut.CheckboxesPage.ClickCheckbox1();
+
+            Assert.Fail();
+        }
     }
 }

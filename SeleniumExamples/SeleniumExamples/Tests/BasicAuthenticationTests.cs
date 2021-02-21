@@ -28,20 +28,15 @@ namespace SeleniumExamples
 
         private IAlert AlertBasicAuthentication() => _driver.SwitchTo().Alert();
         
-        private IWebElement PageBody()
-        {
-            return _driver.FindElement(By.CssSelector("body"));
-        }
-
         [Test]
         public void Alert_Dismiss_RedirectsToAuthenticationError()
         {
-            NavigateToAuthentication();
-            AlertBasicAuthentication().Dismiss();
+            _sut.NavigateToBasicAuthenticationPage(null, null);
+            _sut.BasicAuthenticationPage.ClickCancelButton();
 
-            var result = PageBody().Text;
+            var result = _sut.BasicAuthenticationPage.ReadPageBodyText();
 
-            Assert.That(result, Is.EqualTo(_errorString));
+            Assert.That(result, Is.EqualTo("Not authorized"));
         }
 
         [Test]
@@ -62,7 +57,7 @@ namespace SeleniumExamples
             AlertBasicAuthentication().Accept();
             AlertBasicAuthentication().Accept();
 
-            var result = PageBody().Text;
+            var result = _sut.BasicAuthenticationPage.ReadPageBodyText();
 
             Assert.That(result, Is.EqualTo(_errorString));
         }

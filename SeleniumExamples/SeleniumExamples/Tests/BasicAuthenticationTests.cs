@@ -68,5 +68,22 @@ namespace SeleniumExamples
 
             _sut.CloseDriver();
         }
+
+        [Test]
+        public void AuthenticatedUser_AuthenticationPersistsWithinWindow()
+        {
+            CreateWebDriverAndNavigateToBasicAuthenticationPage(
+                BasicAuthenticationPage.ValidUsername,
+                BasicAuthenticationPage.ValidPassword);
+
+            // Create tab
+            // Close previous tab
+            _sut.NavigateToBasicAuthenticationPage();
+            var result = _sut.SharedHTML.ReadPageHeaderText();
+
+            Assert.That(result, Is.EqualTo("Basic Auth"));
+
+            _sut.CloseDriver();
+        }
     }
 }

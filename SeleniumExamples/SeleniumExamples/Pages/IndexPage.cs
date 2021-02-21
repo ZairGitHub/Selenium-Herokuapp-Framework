@@ -14,6 +14,9 @@ namespace SeleniumExamples.Pages
         private IWebElement LinkBasicAuthentication =>
             _driver.FindElement(By.LinkText("Basic Auth"));
 
+        private IWebElement LinkDigestAuthentication =>
+            _driver.FindElement(By.LinkText("Digest Authentication"));
+
         private IWebElement LinkFormAuthentiication =>
             _driver.FindElement(By.LinkText("Form Authentication"));
 
@@ -22,6 +25,11 @@ namespace SeleniumExamples.Pages
         public void ClickBasicAuthenticationLink()
         {
             LinkBasicAuthentication.Click();
+        }
+
+        public void ClickDigestAuthenticationLink()
+        {
+            LinkDigestAuthentication.Click();
         }
 
         public void ClickFormAuthenticationLink()

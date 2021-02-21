@@ -24,7 +24,30 @@ namespace SeleniumExamples
             var result = _sut.JavaScriptAlertsPage.ReadResultText();
 
             Assert.That(result, Is.EqualTo("You successfully clicked an alert"));
-            
+        }
+
+        [Test]
+        public void Cancel_ConfirmButtonTest()
+        {
+            _sut.NavigateToJavaScriptAlertsPage();
+
+            _sut.JavaScriptAlertsPage.ClickJSConfirmButton();
+            _sut.SharedIAlert.ClickCancelButton();
+            var result = _sut.JavaScriptAlertsPage.ReadResultText();
+
+            Assert.That(result, Is.EqualTo("You clicked: Cancel"));
+        }
+
+        [Test]
+        public void OK_ConfirmButtonTest()
+        {
+            _sut.NavigateToJavaScriptAlertsPage();
+
+            _sut.JavaScriptAlertsPage.ClickJSConfirmButton();
+            _sut.SharedIAlert.ClickOKButton();
+            var result = _sut.JavaScriptAlertsPage.ReadResultText();
+
+            Assert.That(result, Is.EqualTo("You clicked: Ok"));
         }
     }
 }

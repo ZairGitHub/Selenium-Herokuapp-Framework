@@ -29,42 +29,15 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void OK_CreatesNewAuthenticationPopup()
-        {
-            CreateWebDriverAndNavigateToDigestAuthenticationPage();
-
-            _sut.SharedIAlert.ClickOKButton();
-            var result = _sut.SharedIAlert.AuthenticationPopupExists();
-
-            Assert.That(result, Is.True);
-
-            _sut.CloseDriver();
-        }
-
-        [Test]
-        public void OK_ClickTwice_RedirectsToAuthenticationError()
-        {
-            CreateWebDriverAndNavigateToDigestAuthenticationPage();
-
-            _sut.SharedIAlert.ClickOKButton();
-            _sut.SharedIAlert.ClickOKButton();
-            var result = _sut.SharedHTML.ReadPageBodyText();
-
-            Assert.That(result, Is.EqualTo("Not authorized"));
-
-            _sut.CloseDriver();
-        }
-
-        [Test]
-        public void OK_ValidCredentials_RedirectsToBasicAuthenticationPage()
+        public void OK_ValidCredentials_RedirectsToDigestAuthenticationPage()
         {
             CreateWebDriverAndNavigateToDigestAuthenticationPage(
-                BasicAuthenticationPage.ValidUsername,
-                BasicAuthenticationPage.ValidPassword);
+                DigestAuthenticationPage.ValidUsername,
+                DigestAuthenticationPage.ValidPassword);
 
             var result = _sut.SharedHTML.ReadPageHeaderText();
 
-            Assert.That(result, Is.EqualTo("Basic Auth"));
+            Assert.That(result, Is.EqualTo("Digest Auth"));
 
             _sut.CloseDriver();
         }
@@ -73,17 +46,16 @@ namespace SeleniumExamples
         public void AuthenticatedUser_AuthenticationPersistsWithinWindow()
         {
             CreateWebDriverAndNavigateToDigestAuthenticationPage(
-                BasicAuthenticationPage.ValidUsername,
-                BasicAuthenticationPage.ValidPassword);
+                DigestAuthenticationPage.ValidUsername,
+                DigestAuthenticationPage.ValidPassword);
 
             _sut.SharedHTML.OpenNewTab();
             _sut.SharedHTML.CloseTab(0);
             _sut.SharedHTML.SwitchToTab(0);
-
             _sut.NavigateToDigestAuthenticationPage();
             var result = _sut.SharedHTML.ReadPageHeaderText();
 
-            Assert.That(result, Is.EqualTo("Basic Auth"));
+            Assert.That(result, Is.EqualTo("Digest Auth"));
 
             _sut.CloseDriver();
         }

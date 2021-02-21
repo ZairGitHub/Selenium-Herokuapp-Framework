@@ -1,10 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using OpenQA.Selenium;
 
 namespace SeleniumExamples.Pages
 {
-    class CommonIAlert
+    public class SharedIAlert
     {
+        private readonly IWebDriver _driver;
+
+        public SharedIAlert(IWebDriver driver) => _driver = driver;
+
+        private IAlert Alert => _driver.SwitchTo().Alert();
+
+        public string ReadAuthenticationWindowText() => Alert.Text;
     }
 }

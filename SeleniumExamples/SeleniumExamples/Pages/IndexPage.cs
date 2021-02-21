@@ -8,8 +8,6 @@ namespace SeleniumExamples.Pages
 
         public IndexPage(IWebDriver driver) => _driver = driver;
 
-        private IAlert AlertBasicAuthentication => _driver.SwitchTo().Alert();
-
         private IWebElement LinkAddRemove =>
             _driver.FindElement(By.LinkText("Add/Remove Elements"));
 
@@ -30,8 +28,6 @@ namespace SeleniumExamples.Pages
         public void ClickAddRemoveElementsLink() => LinkAddRemove.Click();
 
         public void ClickBasicAuthenticationLink() => LinkBasicAuthentication.Click();
-
-        public string ReadAuthenticationWindowText() => AlertBasicAuthentication.Text;
 
         public void ClickFormAuthenticationLink() => LinkFormAuthentiication.Click();
     }

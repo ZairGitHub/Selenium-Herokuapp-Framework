@@ -10,7 +10,9 @@ namespace SeleniumExamples.Pages
             Driver = new DriverConfig(
                 isHeadless, elementWaitTime, pageWaitTime).Driver;
 
+            SharedIAlert = new SharedIAlert(Driver);
             SharedHTML = new SharedHTML(Driver);
+
             IndexPage = new IndexPage(Driver);
             AddRemovePage = new AddRemovePage(Driver);
             BasicAuthenticationPage = new BasicAuthenticationPage(Driver);
@@ -21,6 +23,8 @@ namespace SeleniumExamples.Pages
         public FirefoxDriver Driver { get; private set; }
 
         public SharedHTML SharedHTML { get; private set; }
+
+        public SharedIAlert SharedIAlert { get; private set; }
 
         public IndexPage IndexPage { get; private set; }
 

@@ -16,7 +16,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void Cancel_RedirectsToEmptyPage()
+        public void CancelButton_RedirectsToEmptyPage()
         {
             CreateWebDriverAndNavigateToDigestAuthenticationPage();
 
@@ -29,7 +29,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void OK_ValidCredentials_RedirectsToDigestAuthenticationPage()
+        public void OKButton_ValidCredentials_RedirectsToDigestAuthenticationPage()
         {
             CreateWebDriverAndNavigateToDigestAuthenticationPage(
                 DigestAuthenticationPage.ValidUsername,

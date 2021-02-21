@@ -16,7 +16,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void Cancel_RedirectsToAuthenticationError()
+        public void CancelButton_RedirectsToAuthenticationError()
         {
             CreateWebDriverAndNavigateToBasicAuthenticationPage();
 
@@ -29,7 +29,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void OK_CreatesNewAuthenticationPopup()
+        public void OKButton_CreatesNewAuthenticationPopup()
         {
             CreateWebDriverAndNavigateToBasicAuthenticationPage();
 
@@ -42,7 +42,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void OK_ClickTwice_RedirectsToAuthenticationError()
+        public void OKButton_ClickTwice_RedirectsToAuthenticationError()
         {
             CreateWebDriverAndNavigateToBasicAuthenticationPage();
 
@@ -56,7 +56,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void OK_ValidCredentials_RedirectsToBasicAuthenticationPage()
+        public void OKButton_ValidCredentials_RedirectsToBasicAuthenticationPage()
         {
             CreateWebDriverAndNavigateToBasicAuthenticationPage(
                 BasicAuthenticationPage.ValidUsername,

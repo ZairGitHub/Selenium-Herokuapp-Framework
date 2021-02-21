@@ -15,7 +15,7 @@ namespace SeleniumExamples
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void Login_NoDetails_DisplaysInvalidUsernameError()
+        public void LoginButton_NoDetails_DisplaysInvalidUsernameError()
         {
             _sut.NavigateToFormAuthenticationPage();
 
@@ -26,7 +26,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void Login_ValidUsernameAndNoPassword_DisplaysInvalidPasswordError()
+        public void LoginButton_ValidUsernameAndNoPassword_DisplaysInvalidPasswordError()
         {
             _sut.NavigateToFormAuthenticationPage();
 
@@ -38,7 +38,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void Login_ValidUsernameAndPassword_RedirectsToSecureAreaPage()
+        public void LoginButton_ValidUsernameAndPassword_RedirectsToSecureAreaPage()
         {
             _sut.NavigateToFormAuthenticationPage();
 
@@ -64,7 +64,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void Logout_RemovesAuthenticationAndRedirectsToFormAuthenticationPage()
+        public void LogoutButton_RemovesAuthenticationAndRedirectsToFormAuthenticationPage()
         {
             _sut.NavigateToSecureAreaPage(true);
 
@@ -76,7 +76,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void Back_Logout_RestoresAuthenticationAndRedirectsUserToSecureArea()
+        public void Back_LogoutButton_RestoresAuthenticationAndRedirectsUserToSecureArea()
         {
             _sut.NavigateToSecureAreaPage(true);
 

@@ -15,7 +15,7 @@ namespace SeleniumExamples
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void AlertButtonTest()
+        public void JSAlertButton_OKButton_UpdatesResultMessage()
         {
             _sut.NavigateToJavaScriptAlertsPage();
 
@@ -27,7 +27,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void Cancel_ConfirmButtonTest()
+        public void JSConfirmButton_CancelButton_UpdatesResultMessage()
         {
             _sut.NavigateToJavaScriptAlertsPage();
 
@@ -39,7 +39,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void OK_ConfirmButtonTest()
+        public void JSConfirmButton_OKButton_UpdatesResultMessage()
         {
             _sut.NavigateToJavaScriptAlertsPage();
 
@@ -51,7 +51,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void Cancel_PromptButtonTest()
+        public void JSPromptButton_CancelButton_UpdatesResultMessage()
         {
             _sut.NavigateToJavaScriptAlertsPage();
 
@@ -63,7 +63,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void OK_PromptButtonTest()
+        public void JSPromptButton_OKButton_UpdatesResultMessage()
         {
             _sut.NavigateToJavaScriptAlertsPage();
 
@@ -75,12 +75,12 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void Input_NotPurelyWhitespaces_ReturnInputWithSingleWhitespaceBetweenCharacters()
+        public void JSPromptButton_InputIsNotPurelyWhitespacesAndOKButton_UpdatesResultMessageWithSingleWhitespaceReplacingInputWhitespaces()
         {
             _sut.NavigateToJavaScriptAlertsPage();
 
             _sut.JavaScriptAlertsPage.ClickJSPromptButton();
-            _sut.SharedIAlert.EnterInformation("  i     np   u    t      1 ");
+            _sut.SharedIAlert.EnterInformation(" i  np  u  t  1 ");
             _sut.SharedIAlert.ClickOKButton();
             var result = _sut.JavaScriptAlertsPage.ReadResultText();
 

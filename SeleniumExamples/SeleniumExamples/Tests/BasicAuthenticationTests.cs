@@ -53,13 +53,13 @@ namespace SeleniumExamples
         [Test]
         public void Alert_AcceptTwice_RedirectsToAuthenticationError()
         {
-            NavigateToAuthentication();
-            AlertBasicAuthentication().Accept();
-            AlertBasicAuthentication().Accept();
+            _sut.NavigateToBasicAuthenticationPage();
+            _sut.BasicAuthenticationPage.ClickOKButton();
+            _sut.BasicAuthenticationPage.ClickOKButton();
 
             var result = _sut.BasicAuthenticationPage.ReadPageBodyText();
 
-            Assert.That(result, Is.EqualTo(_errorString));
+            Assert.That(result, Is.EqualTo("Not authorized"));
         }
             
         [Ignore("To be completed")]

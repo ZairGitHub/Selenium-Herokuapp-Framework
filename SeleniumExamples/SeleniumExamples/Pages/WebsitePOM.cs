@@ -15,6 +15,7 @@ namespace SeleniumExamples.Pages
 
             IndexPage = new IndexPage(Driver);
             AddRemovePage = new AddRemovePage(Driver);
+            CheckboxesPage = new CheckboxesPage(Driver);
             FormAuthenticationPage = new FormAuthenticationPage(Driver);
             SecureAreaPage = new SecureAreaPage(Driver);
             JavaScriptAlertsPage = new JavaScriptAlertsPage(Driver);
@@ -29,6 +30,8 @@ namespace SeleniumExamples.Pages
         public IndexPage IndexPage { get; private set; }
 
         public AddRemovePage AddRemovePage { get; private set; }
+
+        public CheckboxesPage CheckboxesPage { get; private set; }
 
         public FormAuthenticationPage FormAuthenticationPage { get; private set; }
 

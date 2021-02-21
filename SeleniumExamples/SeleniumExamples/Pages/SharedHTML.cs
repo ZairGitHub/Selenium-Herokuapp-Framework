@@ -20,9 +20,20 @@ namespace SeleniumExamples.Pages
 
         private IWebElement PageHeader3 => _driver.FindElement(By.CssSelector("h3"));
 
-        public void ClickPageFooterLink() => LinkFooter.Click();
+        public void SwitchToFirstTab()
+        {
+            _driver.SwitchTo().Window(_driver.WindowHandles[0]);
+        }
 
-        public void ClickGitHubImageLink() => LinkGitHub.Click();
+        public void OpenNewTab()
+        {
+            ((IJavaScriptExecutor)_driver).ExecuteScript("window.open();");
+        }
+
+        public void CloseTab(int index)
+        {
+            _driver.SwitchTo().Window(_driver.WindowHandles[index]).Close();
+        }
 
         public string ReadPageHeaderText()
         {
@@ -47,12 +58,8 @@ namespace SeleniumExamples.Pages
 
         public string ReadPageBodyText() => PageBody.Text;
 
-        public void OpenNewTab()
-        {
-            ((IJavaScriptExecutor)_driver).ExecuteScript("window.open();");
-            _driver.SwitchTo().Window(_driver.WindowHandles[0]);
-            _driver.Close();
-            _driver.SwitchTo().Window(_driver.WindowHandles[0]);
-        }
+        public void ClickPageFooterLink() => LinkFooter.Click();
+
+        public void ClickGitHubImageLink() => LinkGitHub.Click();
     }
 }

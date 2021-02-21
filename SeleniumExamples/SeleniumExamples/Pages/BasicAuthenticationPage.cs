@@ -22,8 +22,6 @@ namespace SeleniumExamples.Pages
 
         public void ClickCancelButton() => AlertBasicAuthentication.Dismiss();
 
-        public void DeleteAllCookies() => _driver.Manage().Cookies.DeleteAllCookies();
-
         public string ReadPageBodyText() => PageBody.Text;
     }
 }

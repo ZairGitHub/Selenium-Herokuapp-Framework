@@ -10,10 +10,6 @@ namespace SeleniumExamples.Pages
 
         private IAlert AlertBasicAuthentication => _driver.SwitchTo().Alert();
 
-        private IWebElement PageHeader2 => _driver.FindElement(By.CssSelector("h2"));
-
-        private IWebElement PageHeader3 => _driver.FindElement(By.CssSelector("h3"));
-
         private IWebElement LinkFooter =>
             _driver.FindElement(By.LinkText("Elemental Selenium"));
 
@@ -35,27 +31,6 @@ namespace SeleniumExamples.Pages
         {
             _driver.SwitchTo().Window(
                 _driver.WindowHandles[_driver.WindowHandles.Count - 1]);
-        }
-
-        public string ReadPageHeaderText()
-        {
-            string result;
-            try
-            {
-                result = PageHeader2.Text;
-            }
-            catch (NoSuchElementException)
-            {
-                try
-                {
-                    result = PageHeader3.Text;
-                }
-                catch (NoSuchElementException e)
-                {
-                    result = e.StackTrace;
-                }
-            }
-            return result;
         }
 
         public void ClickPageFooterLink() => LinkFooter.Click();

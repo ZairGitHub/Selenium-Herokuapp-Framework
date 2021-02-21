@@ -12,15 +12,18 @@ namespace SeleniumExamples.Pages
 
             IndexPage = new IndexPage(Driver);
             AddRemovePage = new AddRemovePage(Driver);
+            BasicAuthenticationPage = new BasicAuthenticationPage(Driver);
             FormAuthenticationPage = new FormAuthenticationPage(Driver);
             SecureAreaPage = new SecureAreaPage(Driver);
         }
-        
+
         public FirefoxDriver Driver { get; private set; }
 
         public IndexPage IndexPage { get; private set; }
 
         public AddRemovePage AddRemovePage { get; private set; }
+
+        public BasicAuthenticationPage BasicAuthenticationPage { get; private set; }
 
         public FormAuthenticationPage FormAuthenticationPage { get; private set; }
 
@@ -36,6 +39,13 @@ namespace SeleniumExamples.Pages
         {
             //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.AddRemoveElements);
             Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/add_remove_elements/");
+        }
+
+        public void NavigateToBasicAuthenticationPage(string username, string password)
+        {
+            //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.BasicAuthentication);
+            Driver.Navigate().GoToUrl(
+                $"http://{username}:{password}@the-internet.herokuapp.com/basic_auth");
         }
 
         public void NavigateToFormAuthenticationPage()

@@ -50,12 +50,12 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void BasicAuthenticationLink_RedirectsToAuthenticationAlert()
+        public void BasicAuthenticationLink_RedirectsToAuthenticationPage()
         {
             _sut.NavigateToIndexPage();
 
             _sut.IndexPage.ClickBasicAuthenticationLink();
-            var result = _sut.IndexPage.ReadBasicAuthenticationAlertText();
+            var result = _sut.IndexPage.ReadAuthenticationWindowText();
 
             Assert.That(result, Contains.Substring("“Restricted Area”"));
         }

@@ -31,7 +31,7 @@ namespace SeleniumExamples.Pages
 
         public void ClickBasicAuthenticationLink() => LinkBasicAuthentication.Click();
 
-        public string ReadBasicAuthenticationAlertText() => AlertBasicAuthentication.Text;
+        public string ReadAuthenticationWindowText() => AlertBasicAuthentication.Text;
 
         public void ClickFormAuthenticationLink() => LinkFormAuthentiication.Click();
     }

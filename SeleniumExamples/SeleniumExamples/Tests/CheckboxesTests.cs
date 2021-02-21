@@ -15,13 +15,14 @@ namespace SeleniumExamples
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void Checkbox1()
+        public void ClickCheckbox1()
         {
             _sut.NavigateToCheckboxesPage();
 
-            _sut.CheckboxesPage.ClickCheckbox1();
+            _sut.CheckboxesPage.ClickCheckBox(1);
+            var result = _sut.CheckboxesPage.IsCheckBoxTicked(1);
 
-            Assert.Fail();
+            Assert.That(result, Is.True);
         }
     }
 }

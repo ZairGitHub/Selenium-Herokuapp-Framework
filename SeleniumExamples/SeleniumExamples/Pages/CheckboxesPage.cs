@@ -14,8 +14,21 @@ namespace SeleniumExamples.Pages
         private IWebElement Checkbox2 =>
             _driver.FindElement(By.CssSelector("input:nth-child(3)"));
 
-        public void ClickCheckbox1() => Checkbox1.Click();
+        public bool IsCheckBoxTicked(int id)
+        {
+            return (id == 1) ? Checkbox1.Selected : Checkbox2.Selected;
+        }
 
-        public void ClickCheckbox2() => Checkbox2.Click();
+        public void ClickCheckBox(int id)
+        {
+            if (id == 1)
+            {
+                Checkbox1.Click();
+            }
+            else
+            {
+                Checkbox2.Click();
+            }
+        }
     }
 }

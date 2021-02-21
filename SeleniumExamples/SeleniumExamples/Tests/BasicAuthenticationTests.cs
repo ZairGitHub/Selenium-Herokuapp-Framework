@@ -11,6 +11,14 @@ namespace SeleniumExamples
         private const string _errorString = "Not authorized";
         private const string _validAuth = "admin";
 
+        private WebsitePOM _sut;
+
+        [OneTimeSetUp]
+        public void OneTimeSetUp() => _sut = new WebsitePOM();
+
+        [OneTimeTearDown]
+        public void OneTimeTearDown() => _sut.CloseDriver();
+
         private IWebDriver _driver;
 
         private void NavigateToAuthentication()
@@ -24,12 +32,6 @@ namespace SeleniumExamples
         {
             return _driver.FindElement(By.CssSelector("body"));
         }
-
-        [OneTimeSetUp]
-        public void OneTimeSetUp() => _driver = new FirefoxDriver();
-        
-        [OneTimeTearDown]
-        public void OneTimeTearDown() => _driver.Quit();
 
         [Test]
         public void Alert_Dismiss_RedirectsToAuthenticationError()
@@ -75,11 +77,10 @@ namespace SeleniumExamples
         [Test]
         public void Authenticate()
         {
-            _driver.Manage().Cookies.DeleteAllCookies();
-            _driver.Navigate().GoToUrl(
-                "http://admin:admin@the-internet.herokuapp.com/basic_auth");
-
-            var result = _driver.FindElement(By.CssSelector("h3")).Text;
+            _sut.BasicAuthenticationPage.DeleteAllCookies();
+            _sut.NavigateToBasicAuthenticationPage("admin", "admin");
+            
+            var result = _sut.IndexPage.ReadPageHeaderText();
 
             Assert.That(result, Is.EqualTo("Basic Auth"));
         }

@@ -11,13 +11,5 @@ namespace SeleniumExamples.Pages
         public string ValidUsername => "admin";
 
         public string ValidPassword => "admin";
-
-        private IAlert AlertBasicAuthentication => _driver.SwitchTo().Alert();
-
-        public bool AuthenticationWindowExists() => AlertBasicAuthentication != null;
-
-        public void ClickOKButton() => AlertBasicAuthentication.Accept();
-
-        public void ClickCancelButton() => AlertBasicAuthentication.Dismiss();
     }
 }

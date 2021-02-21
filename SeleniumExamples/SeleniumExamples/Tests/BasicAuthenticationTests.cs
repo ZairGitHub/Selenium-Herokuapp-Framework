@@ -20,7 +20,7 @@ namespace SeleniumExamples
         {
             CreateWebDriverAndNavigateToBasicAuthenticationPage();
 
-            _sut.BasicAuthenticationPage.ClickCancelButton();
+            _sut.SharedIAlert.ClickCancelButton();
             var result = _sut.SharedHTML.ReadPageBodyText();
 
             Assert.That(result, Is.EqualTo("Not authorized"));
@@ -33,8 +33,8 @@ namespace SeleniumExamples
         {
             CreateWebDriverAndNavigateToBasicAuthenticationPage();
 
-            _sut.BasicAuthenticationPage.ClickOKButton();
-            var result = _sut.BasicAuthenticationPage.AuthenticationWindowExists();
+            _sut.SharedIAlert.ClickOKButton();
+            var result = _sut.SharedIAlert.AuthenticationWindowExists();
 
             Assert.That(result, Is.True);
 
@@ -46,8 +46,8 @@ namespace SeleniumExamples
         {
             CreateWebDriverAndNavigateToBasicAuthenticationPage();
 
-            _sut.BasicAuthenticationPage.ClickOKButton();
-            _sut.BasicAuthenticationPage.ClickOKButton();
+            _sut.SharedIAlert.ClickOKButton();
+            _sut.SharedIAlert.ClickOKButton();
             var result = _sut.SharedHTML.ReadPageBodyText();
 
             Assert.That(result, Is.EqualTo("Not authorized"));

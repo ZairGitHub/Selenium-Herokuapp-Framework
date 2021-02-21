@@ -50,7 +50,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void BasicAuthenticationLink_RedirectsToAuthenticationPage()
+        public void BasicAuthenticationLink_RedirectsToBasicAuthenticationPage()
         {
             _sut.NavigateToIndexPage();
 

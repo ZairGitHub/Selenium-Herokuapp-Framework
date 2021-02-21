@@ -13,6 +13,9 @@ namespace SeleniumExamples
         public static readonly string BasicAuthentication =
             ConfigurationManager.AppSettings["basic_authentication"];
 
+        public static readonly string DigestAuthentication =
+            ConfigurationManager.AppSettings["digest_authentication"];
+
         public static readonly string FormAuthetication =
             ConfigurationManager.AppSettings["form_authentication"];
 

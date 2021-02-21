@@ -12,6 +12,8 @@ namespace SeleniumExamples.Pages
 
         private IWebElement PageHeader3 => _driver.FindElement(By.CssSelector("h3"));
 
+        private IWebElement PageBody => _driver.FindElement(By.CssSelector("body"));
+
         public string ReadPageHeaderText()
         {
             string result;
@@ -32,5 +34,7 @@ namespace SeleniumExamples.Pages
             }
             return result;
         }
+
+        public string ReadPageBodyText() => PageBody.Text;
     }
 }

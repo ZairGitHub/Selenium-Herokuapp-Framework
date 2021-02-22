@@ -39,6 +39,11 @@ namespace SeleniumExamples.Pages
 
         public JavaScriptAlertsPage JavaScriptAlertsPage { get; private set; }
 
+        public void NavigateToInvalidPage()
+        {
+            Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/error");
+        }
+
         public void NavigateToIndexPage()
         {
             //Driver.Navigate().GoToUrl(ConfigReader.Index);
@@ -49,7 +54,7 @@ namespace SeleniumExamples.Pages
         {
             //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.AddRemoveElements);
             Driver.Navigate().GoToUrl(
-                "http://the-internet.herokuapp.com/add_remove_elements");
+                "http://the-internet.herokuapp.com/add_remove_elements/");
         }
 
         public void NavigateToBasicAuthenticationPage(

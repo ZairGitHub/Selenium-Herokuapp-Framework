@@ -31,7 +31,7 @@ namespace SeleniumExamples
         [Test]
         public void OKButton_ClickTwiceWithoutModifyingCredentials_ProducesSameEffectAsCancelButton()
         {
-            _sut.NavigateToBasicAuthenticationPage();
+            CreateWebDriverAndNavigateToDigestAuthenticationPage();
 
             _sut.SharedIAlert.ClickOKButton();
             _sut.SharedIAlert.ClickOKButton();

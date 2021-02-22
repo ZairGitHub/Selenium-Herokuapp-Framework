@@ -19,10 +19,10 @@ namespace SeleniumExamples
         {
             _sut.NavigateToHoversPage();
 
-            _sut.HoversPage.HoverOverImage1();
-            var result = _sut.HoversPage.ReadAnyHeader();
+            _sut.HoversPage.HoverOverImage(1);
+            var result = _sut.HoversPage.ReadSubHeaderText();
 
-            Assert.That(result, Is.EqualTo("name:user1"));
+            Assert.That(result, Is.EqualTo("name: user1"));
         }
     }
 }

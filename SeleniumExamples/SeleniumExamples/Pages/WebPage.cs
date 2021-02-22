@@ -6,6 +6,6 @@ namespace SeleniumExamples.Pages
     {
         protected IWebDriver Driver { get; }
 
-        public WebPage(IWebDriver driver) => Driver = driver;
+        protected WebPage(IWebDriver driver) => Driver = driver;
     }
 }

@@ -5,18 +5,12 @@ namespace SeleniumExamples.Pages
 {
     public sealed class HoversPage : WebPage
     {
-        private Actions _actions;
+        private readonly Actions _actions;
 
-        public HoversPage(IWebDriver driver) : base(driver) { }
-
-        private IWebElement HeaderName1 =>
-            Driver.FindElement(By.CssSelector(".figure:nth-child(3) h5"));
-
-        private IWebElement HeaderName2 =>
-            Driver.FindElement(By.CssSelector(".figure:nth-child(2) h5"));
-
-        private IWebElement HeaderName3 =>
-            Driver.FindElement(By.CssSelector(".figure:nth-child(1) h5"));
+        public HoversPage(IWebDriver driver) : base(driver)
+        {
+            _actions = new Actions(Driver);
+        }
 
         private IWebElement Image1 =>
             Driver.FindElement(By.CssSelector(".figure:nth-child(3) > img"));
@@ -30,13 +24,24 @@ namespace SeleniumExamples.Pages
         private IWebElement LinkViewProfile =>
             Driver.FindElement(By.LinkText("View profile"));
 
-        public void HoverOverImage1()
+        public void HoverOverImage(int id)
         {
-            _actions = new Actions(Driver);
-            _actions.MoveToElement(Image1).Perform();
+            if (id == 1)
+            {
+                _actions.MoveToElement(Image1);
+            }
+            else if (id == 2)
+            {
+                _actions.MoveToElement(Image2);
+            }
+            else
+            {
+                _actions.MoveToElement(Image3);
+            }
+            _actions.Perform();
         }
 
-        public string ReadAnyHeader()
+        public string ReadSubHeaderText()
         {
             return Driver.FindElement(By.CssSelector("h5")).Text;
         }

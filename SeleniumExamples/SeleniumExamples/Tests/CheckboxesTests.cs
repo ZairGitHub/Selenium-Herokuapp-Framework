@@ -15,7 +15,7 @@ namespace SeleniumExamples
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void ClickCheckbox1()
+        public void ClickCheckbox1_TogglesCheckboxesTick()
         {
             _sut.NavigateToCheckboxesPage();
 
@@ -26,7 +26,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void ClickCheckbox2()
+        public void ClickCheckbox2_TogglesCheckboxesTick()
         {
             _sut.NavigateToCheckboxesPage();
 

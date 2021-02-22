@@ -23,7 +23,7 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void OKButton_CreatesNewAuthenticationPopup()
+        public void AuthenticationPopup_OKButton_CreatesNewAuthenticationPopup()
         {
             _sut = CreateDefaultWebsitePOM();
 

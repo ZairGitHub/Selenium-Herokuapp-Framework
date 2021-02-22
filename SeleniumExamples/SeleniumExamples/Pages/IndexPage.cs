@@ -21,6 +21,9 @@ namespace SeleniumExamples.Pages
         private IWebElement LinkFormAuthentiication =>
             Driver.FindElement(By.LinkText("Form Authentication"));
 
+        private IWebElement LinkHovers =>
+            Driver.FindElement(By.LinkText("Hovers"));
+
         private IWebElement LinkJavaScriptAlerts =>
             Driver.FindElement(By.LinkText("JavaScript Alerts"));
 

@@ -13,5 +13,16 @@ namespace SeleniumExamples
 
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
+
+        [Test]
+        public void Hover()
+        {
+            _sut.NavigateToHoversPage();
+
+            _sut.HoversPage.HoverOverImage1();
+            var result = _sut.HoversPage.ReadAnyHeader();
+
+            Assert.That(result, Is.EqualTo("name:user1"));
+        }
     }
 }

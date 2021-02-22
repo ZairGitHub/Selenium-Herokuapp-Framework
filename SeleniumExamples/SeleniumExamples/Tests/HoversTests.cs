@@ -29,5 +29,22 @@ namespace SeleniumExamples
 
             _sut.CloseDriver();
         }
+
+        [TestCase(1)]
+        [TestCase(2)]
+        [TestCase(3)]
+        public void Hover_Links(int id)
+        {
+            _sut = new WebsitePOM();
+            _sut.NavigateToHoversPage();
+
+            _sut.HoversPage.HoverOverImage(id);
+            _sut.HoversPage.ClickViewProfileLink();
+            var result = _sut.Driver.Url;
+
+            Assert.That(result, Is.EqualTo("http://the-internet.herokuapp.com/users/" + id));
+
+            _sut.CloseDriver();
+        }
     }
 }

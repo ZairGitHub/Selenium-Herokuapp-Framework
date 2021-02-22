@@ -14,26 +14,17 @@ namespace SeleniumExamples
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
 
-        [Test]
-        public void ClickCheckbox1_TogglesCheckboxesTick()
+        [TestCase(1)]
+        [TestCase(2)]
+        public void ClickCheckbox_TogglesCheckboxesTick(int id)
         {
             _sut.NavigateToCheckboxesPage();
 
-            _sut.CheckboxesPage.ClickCheckBox(1);
-            var result = _sut.CheckboxesPage.IsCheckBoxTicked(1);
+            var initialState = _sut.CheckboxesPage.IsCheckBoxTicked(id);
+            _sut.CheckboxesPage.ClickCheckBox(id);
+            var endState = _sut.CheckboxesPage.IsCheckBoxTicked(id);
 
-            Assert.That(result, Is.True);
-        }
-
-        [Test]
-        public void ClickCheckbox2_TogglesCheckboxesTick()
-        {
-            _sut.NavigateToCheckboxesPage();
-
-            _sut.CheckboxesPage.ClickCheckBox(2);
-            var result = _sut.CheckboxesPage.IsCheckBoxTicked(2);
-
-            Assert.That(result, Is.False);
+            Assert.That(initialState, Is.Not.EqualTo(endState));
         }
     }
 }

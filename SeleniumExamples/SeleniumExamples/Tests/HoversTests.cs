@@ -8,21 +8,26 @@ namespace SeleniumExamples
     {
         private WebsitePOM _sut;
 
-        [OneTimeSetUp]
+        /*[OneTimeSetUp]
         public void OneTimeSetUp() => _sut = new WebsitePOM();
 
         [OneTimeTearDown]
-        public void OneTimeTearDown() => _sut.CloseDriver();
+        public void OneTimeTearDown() => _sut.CloseDriver();*/
 
-        [Test]
-        public void Hover()
+        [TestCase(1)]
+        [TestCase(2)]
+        [TestCase(3)]
+        public void Hover_SubHeaders(int id)
         {
+            _sut = new WebsitePOM();
             _sut.NavigateToHoversPage();
 
-            _sut.HoversPage.HoverOverImage(1);
-            var result = _sut.HoversPage.ReadSubHeaderText();
+            _sut.HoversPage.HoverOverImage(id);
+            var result = _sut.HoversPage.ReadSubHeaderTextForImage(id);
 
-            Assert.That(result, Is.EqualTo("name: user1"));
+            Assert.That(result, Is.EqualTo("name: user" + id));
+
+            _sut.CloseDriver();
         }
     }
 }

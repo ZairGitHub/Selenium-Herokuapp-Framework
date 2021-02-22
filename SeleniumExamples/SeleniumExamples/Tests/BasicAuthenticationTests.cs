@@ -29,9 +29,9 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void OKButton_ClickTwiceWithoutModifyingCredentials_RedirectsToAuthenticationError()
+        public void OKButton_ClickTwiceWithoutModifyingCredentials_ProducesSameEffectAsCancelButton()
         {
-            CreateWebDriverAndNavigateToBasicAuthenticationPage();
+            _sut.NavigateToBasicAuthenticationPage();
 
             _sut.SharedIAlert.ClickOKButton();
             _sut.SharedIAlert.ClickOKButton();

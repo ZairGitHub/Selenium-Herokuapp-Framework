@@ -4,7 +4,7 @@ namespace SeleniumExamples.Pages
 {
     public class CheckboxesPage
     {
-        private IWebDriver _driver;
+        private readonly IWebDriver _driver;
 
         public CheckboxesPage(IWebDriver driver) => _driver = driver;
 

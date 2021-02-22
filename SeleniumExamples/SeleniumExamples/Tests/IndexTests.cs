@@ -96,6 +96,17 @@ namespace SeleniumExamples
         }
 
         [Test]
+        public void HoversLink_RedirectsToHoversPage()
+        {
+            _sut.NavigateToIndexPage();
+
+            _sut.IndexPage.ClickHoversLink();
+            var result = _sut.SharedHTML.ReadPageHeaderText();
+
+            Assert.That(result, Is.EqualTo("Hovers"));
+        }
+
+        [Test]
         public void JavaScriptAlertsLink_RedirectsToJavaScriptAlertsPage()
         {
             _sut.NavigateToIndexPage();

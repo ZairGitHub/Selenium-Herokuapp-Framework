@@ -2,25 +2,23 @@
 
 namespace SeleniumExamples.Pages
 {
-    public class FormAuthenticationPage
+    public sealed class FormAuthenticationPage : WebPage
     {
         private const string _validUsername = "tomsmith";
         private const string _validPassword = "SuperSecretPassword!";
 
-        private readonly IWebDriver _driver;
-
-        public FormAuthenticationPage(IWebDriver driver) => _driver = driver;
+        public FormAuthenticationPage(IWebDriver driver) : base(driver) { }
 
         private IWebElement ButtonLogin =>
-            _driver.FindElement(By.CssSelector(".fa"));
+            Driver.FindElement(By.CssSelector(".fa"));
 
         private IWebElement FieldUsername =>
-            _driver.FindElement(By.Id("username"));
+            Driver.FindElement(By.Id("username"));
         
         private IWebElement FieldPassword =>
-            _driver.FindElement(By.Id("password"));
+            Driver.FindElement(By.Id("password"));
 
-        private IWebElement TextUpdate => _driver.FindElement(By.Id("flash"));
+        private IWebElement TextUpdate => Driver.FindElement(By.Id("flash"));
 
         public void EnterUsername(string input) => FieldUsername.SendKeys(input);
 

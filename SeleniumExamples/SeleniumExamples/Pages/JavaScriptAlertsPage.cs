@@ -2,22 +2,20 @@
 
 namespace SeleniumExamples.Pages
 {
-    public class JavaScriptAlertsPage
+    public sealed class JavaScriptAlertsPage : WebPage
     {
-        private readonly IWebDriver _driver;
-
-        public JavaScriptAlertsPage(IWebDriver driver) => _driver = driver;
+        public JavaScriptAlertsPage(IWebDriver driver) : base(driver) { }
 
         private IWebElement ButtonJSAlert =>
-            _driver.FindElement(By.CssSelector("li:nth-child(1) > button"));
+            Driver.FindElement(By.CssSelector("li:nth-child(1) > button"));
 
         private IWebElement ButtonJSConfirm =>
-            _driver.FindElement(By.CssSelector("li:nth-child(2) > button"));
+            Driver.FindElement(By.CssSelector("li:nth-child(2) > button"));
 
         private IWebElement ButtonJSPrompt =>
-            _driver.FindElement(By.CssSelector("li:nth-child(3) > button"));
+            Driver.FindElement(By.CssSelector("li:nth-child(3) > button"));
 
-        private IWebElement TextResult => _driver.FindElement(By.Id("result"));
+        private IWebElement TextResult => Driver.FindElement(By.Id("result"));
 
         public void ClickJSAlertButton() => ButtonJSAlert.Click();
 

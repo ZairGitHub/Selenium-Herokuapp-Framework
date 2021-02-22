@@ -2,13 +2,11 @@
 
 namespace SeleniumExamples.Pages
 {
-    public class SharedIAlert
+    public sealed class SharedIAlert : WebPage
     {
-        private readonly IWebDriver _driver;
+        public SharedIAlert(IWebDriver driver) : base(driver) { }
 
-        public SharedIAlert(IWebDriver driver) => _driver = driver;
-
-        private IAlert Alert => _driver.SwitchTo().Alert();
+        private IAlert Alert => Driver.SwitchTo().Alert();
 
         public bool AuthenticationPopupExists() => Alert != null;
 

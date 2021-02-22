@@ -2,29 +2,27 @@
 
 namespace SeleniumExamples.Pages
 {
-    public class IndexPage
+    public sealed class IndexPage : WebPage
     {
-        private readonly IWebDriver _driver;
-
-        public IndexPage(IWebDriver driver) => _driver = driver;
+        public IndexPage(IWebDriver driver) : base(driver) { }
 
         private IWebElement LinkAddRemove =>
-            _driver.FindElement(By.LinkText("Add/Remove Elements"));
+            Driver.FindElement(By.LinkText("Add/Remove Elements"));
 
         private IWebElement LinkBasicAuthentication =>
-            _driver.FindElement(By.LinkText("Basic Auth"));
+            Driver.FindElement(By.LinkText("Basic Auth"));
 
         private IWebElement LinkCheckboxes =>
-            _driver.FindElement(By.LinkText("Checkboxes"));
+            Driver.FindElement(By.LinkText("Checkboxes"));
 
         private IWebElement LinkDigestAuthentication =>
-            _driver.FindElement(By.LinkText("Digest Authentication"));
+            Driver.FindElement(By.LinkText("Digest Authentication"));
 
         private IWebElement LinkFormAuthentiication =>
-            _driver.FindElement(By.LinkText("Form Authentication"));
+            Driver.FindElement(By.LinkText("Form Authentication"));
 
         private IWebElement LinkJavaScriptAlerts =>
-            _driver.FindElement(By.LinkText("JavaScript Alerts"));
+            Driver.FindElement(By.LinkText("JavaScript Alerts"));
 
         public void ClickAddRemoveElementsLink() => LinkAddRemove.Click();
 

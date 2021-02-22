@@ -2,40 +2,38 @@
 
 namespace SeleniumExamples.Pages
 {
-    public class SharedHTML
+    public sealed class SharedHTML : WebPage
     {
-        private readonly IWebDriver _driver;
-
-        public SharedHTML(IWebDriver driver) => _driver = driver;
+        public SharedHTML(IWebDriver driver) : base(driver) { }
 
         private IWebElement LinkFooter =>
-            _driver.FindElement(By.LinkText("Elemental Selenium"));
+            Driver.FindElement(By.LinkText("Elemental Selenium"));
 
         private IWebElement LinkGitHub =>
-            _driver.FindElement(By.CssSelector("img"));
+            Driver.FindElement(By.CssSelector("img"));
 
         private IWebElement PageBody =>
-            _driver.FindElement(By.CssSelector("body"));
+            Driver.FindElement(By.CssSelector("body"));
 
         private IWebElement PageHeader2 =>
-            _driver.FindElement(By.CssSelector("h2"));
+            Driver.FindElement(By.CssSelector("h2"));
 
         private IWebElement PageHeader3 =>
-            _driver.FindElement(By.CssSelector("h3"));
+            Driver.FindElement(By.CssSelector("h3"));
 
         public void OpenNewTab()
         {
-            ((IJavaScriptExecutor)_driver).ExecuteScript("window.open();");
+            ((IJavaScriptExecutor)Driver).ExecuteScript("window.open();");
         }
 
         public void SwitchToTab(int index)
         {
-            _driver.SwitchTo().Window(_driver.WindowHandles[index]);
+            Driver.SwitchTo().Window(Driver.WindowHandles[index]);
         }
 
         public void CloseTab(int index)
         {
-            _driver.SwitchTo().Window(_driver.WindowHandles[index]).Close();
+            Driver.SwitchTo().Window(Driver.WindowHandles[index]).Close();
         }
 
         public string ReadPageHeaderText()

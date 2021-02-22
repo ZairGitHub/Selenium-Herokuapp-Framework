@@ -2,16 +2,14 @@
 
 namespace SeleniumExamples.Pages
 {
-    public class SecureAreaPage
+    public sealed class SecureAreaPage : WebPage
     {
-        private readonly IWebDriver _driver;
-
-        public SecureAreaPage(IWebDriver driver) => _driver = driver;
+        public SecureAreaPage(IWebDriver driver) : base(driver) { }
 
         private IWebElement ButtonLogOut =>
-            _driver.FindElement(By.CssSelector(".icon-2x"));
+            Driver.FindElement(By.CssSelector(".icon-2x"));
 
-        private IWebElement TextUpdate => _driver.FindElement(By.Id("flash"));
+        private IWebElement TextUpdate => Driver.FindElement(By.Id("flash"));
 
         public void ClickLogoutButton() => ButtonLogOut.Click();
 

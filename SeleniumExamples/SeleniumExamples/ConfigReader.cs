@@ -25,6 +25,9 @@ namespace SeleniumExamples
         public static readonly string SecureArea =
             ConfigurationManager.AppSettings["secure_area"];
 
+        public static readonly string Hovers =
+            ConfigurationManager.AppSettings["hovers"];
+
         public static readonly string JavaScriptAlerts =
             ConfigurationManager.AppSettings["javascript_alerts"];
     }

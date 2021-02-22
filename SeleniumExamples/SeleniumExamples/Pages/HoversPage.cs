@@ -12,14 +12,23 @@ namespace SeleniumExamples.Pages
             _actions = new Actions(Driver);
         }
 
+        private IWebElement PageSubHeader1 =>
+            Driver.FindElement(By.CssSelector(".figure:nth-child(3) h5"));
+
+        private IWebElement PageSubHeader2 =>
+            Driver.FindElement(By.CssSelector(".figure:nth-child(4) h5"));
+
+        private IWebElement PageSubHeader3 =>
+            Driver.FindElement(By.CssSelector(".figure:nth-child(5) h5"));
+
         private IWebElement Image1 =>
             Driver.FindElement(By.CssSelector(".figure:nth-child(3) > img"));
 
         private IWebElement Image2 =>
-            Driver.FindElement(By.CssSelector(".figure:nth-child(2) > img"));
+            Driver.FindElement(By.CssSelector(".figure:nth-child(4) > img"));
 
         private IWebElement Image3 =>
-            Driver.FindElement(By.CssSelector(".figure:nth-child(1) > img"));
+            Driver.FindElement(By.CssSelector(".figure:nth-child(5) > img"));
 
         private IWebElement LinkViewProfile =>
             Driver.FindElement(By.LinkText("View profile"));
@@ -41,9 +50,20 @@ namespace SeleniumExamples.Pages
             _actions.Perform();
         }
 
-        public string ReadSubHeaderText()
+        public string ReadSubHeaderTextForImage(int id)
         {
-            return Driver.FindElement(By.CssSelector("h5")).Text;
+            if (id == 1)
+            {
+                return PageSubHeader1.Text;
+            }
+            else if (id == 2)
+            {
+                return PageSubHeader2.Text;
+            }
+            else
+            {
+                return PageSubHeader3.Text;
+            }
         }
 
         public void ClickViewProfileLink() => LinkViewProfile.Click();

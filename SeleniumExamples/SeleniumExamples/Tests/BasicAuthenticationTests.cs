@@ -29,19 +29,6 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void OKButton_CreatesNewAuthenticationPopup()
-        {
-            CreateWebDriverAndNavigateToBasicAuthenticationPage();
-
-            _sut.SharedIAlert.ClickOKButton();
-            var result = _sut.SharedIAlert.AuthenticationPopupExists();
-
-            Assert.That(result, Is.True);
-
-            _sut.CloseDriver();
-        }
-
-        [Test]
         public void OKButton_ClickTwiceWithoutModifyingCredentials_RedirectsToAuthenticationError()
         {
             CreateWebDriverAndNavigateToBasicAuthenticationPage();

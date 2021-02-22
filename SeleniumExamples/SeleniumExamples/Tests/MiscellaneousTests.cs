@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
 using SeleniumExamples.Pages;
 
-namespace SeleniumExamples.Tests
+namespace SeleniumExamples
 {
-    public class SystemTests
+    public class MiscellaneousTests
     {
         private WebsitePOM _sut;
 
@@ -21,6 +21,19 @@ namespace SeleniumExamples.Tests
             var result = _sut.SharedHTML.ReadPageHeaderText();
 
             Assert.That(result, Is.EqualTo("Not Found"));
+        }
+
+        [Test]
+        public void OKButton_CreatesNewAuthenticationPopup()
+        {
+            _sut.NavigateToBasicAuthenticationPage();
+
+            _sut.SharedIAlert.ClickOKButton();
+            var result = _sut.SharedIAlert.AuthenticationPopupExists();
+
+            Assert.That(result, Is.True);
+
+            _sut.CloseDriver();
         }
     }
 }

@@ -15,6 +15,9 @@ namespace SeleniumExamples.Pages
         private IWebElement PageBody =>
             Driver.FindElement(By.CssSelector("body"));
 
+        private IWebElement PageHeader1 =>
+            Driver.FindElement(By.CssSelector("h1"));
+
         private IWebElement PageHeader2 =>
             Driver.FindElement(By.CssSelector("h2"));
 
@@ -41,17 +44,24 @@ namespace SeleniumExamples.Pages
             string result;
             try
             {
-                result = PageHeader2.Text;
+                result = PageHeader1.Text;
             }
             catch (NoSuchElementException)
             {
                 try
                 {
-                    result = PageHeader3.Text;
+                    result = PageHeader2.Text;
                 }
-                catch (NoSuchElementException e)
+                catch (NoSuchElementException)
                 {
-                    result = e.StackTrace;
+                    try
+                    {
+                        result = PageHeader3.Text;
+                    }
+                    catch (NoSuchElementException e)
+                    {
+                        result = e.StackTrace;
+                    }
                 }
             }
             return result;

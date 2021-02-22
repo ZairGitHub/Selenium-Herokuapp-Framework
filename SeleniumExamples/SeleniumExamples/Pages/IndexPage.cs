@@ -46,6 +46,8 @@ namespace SeleniumExamples.Pages
             LinkFormAuthentiication.Click();
         }
 
+        public void ClickHoversLink() => LinkHovers.Click();
+
         public void ClickJavaScriptAlertsLink() => LinkJavaScriptAlerts.Click();
     }
 }

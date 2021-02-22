@@ -102,6 +102,12 @@ namespace SeleniumExamples.Pages
             }
         }
 
+        public void NavigateToHoversPage()
+        {
+            //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.Hovers);
+            Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/hovers");
+        }
+
         public void NavigateToJavaScriptAlertsPage()
         {
             //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.JavaScriptAlerts);

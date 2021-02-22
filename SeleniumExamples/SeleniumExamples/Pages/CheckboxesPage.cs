@@ -2,17 +2,15 @@
 
 namespace SeleniumExamples.Pages
 {
-    public class CheckboxesPage
+    public sealed class CheckboxesPage : WebPage
     {
-        private readonly IWebDriver _driver;
-
-        public CheckboxesPage(IWebDriver driver) => _driver = driver;
-
+        public CheckboxesPage(IWebDriver driver) : base(driver) { }
+        
         private IWebElement Checkbox1 =>
-            _driver.FindElement(By.CssSelector("input:nth-child(1)"));
+            Driver.FindElement(By.CssSelector("input:nth-child(1)"));
 
         private IWebElement Checkbox2 =>
-            _driver.FindElement(By.CssSelector("input:nth-child(3)"));
+            Driver.FindElement(By.CssSelector("input:nth-child(3)"));
 
         public bool IsCheckBoxTicked(int id)
         {

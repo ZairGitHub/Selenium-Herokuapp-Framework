@@ -3,6 +3,7 @@ using SeleniumExamples.Pages;
 
 namespace SeleniumExamples
 {
+    [TestFixture]
     public class MiscellaneousTests
     {
         private WebsitePOM _sut;

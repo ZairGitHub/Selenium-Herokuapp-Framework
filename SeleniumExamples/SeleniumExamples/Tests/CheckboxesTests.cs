@@ -24,5 +24,16 @@ namespace SeleniumExamples
 
             Assert.That(result, Is.True);
         }
+
+        [Test]
+        public void ClickCheckbox2()
+        {
+            _sut.NavigateToCheckboxesPage();
+
+            _sut.CheckboxesPage.ClickCheckBox(2);
+            var result = _sut.CheckboxesPage.IsCheckBoxTicked(2);
+
+            Assert.That(result, Is.False);
+        }
     }
 }

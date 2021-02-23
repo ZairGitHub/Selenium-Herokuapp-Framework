@@ -19,15 +19,12 @@ namespace SeleniumExamples
         [TestCase(3)]
         public void Hover_SubHeaders(int id)
         {
-            _sut = new WebsitePOM();
             _sut.NavigateToHoversPage();
 
             _sut.HoversPage.HoverOverImage(id);
             var result = _sut.HoversPage.ReadSubHeaderTextForImage(id);
 
             Assert.That(result, Is.EqualTo("name: user" + id));
-
-            _sut.CloseDriver();
         }
 
         [TestCase(1)]
@@ -35,7 +32,6 @@ namespace SeleniumExamples
         [TestCase(3)]
         public void Hover_Links(int id)
         {
-            //_sut = new WebsitePOM();
             _sut.NavigateToHoversPage();
 
             _sut.HoversPage.HoverOverImage(id);
@@ -43,8 +39,6 @@ namespace SeleniumExamples
             var result = _sut.Driver.Url;
 
             Assert.That(result, Is.EqualTo("http://the-internet.herokuapp.com/users/" + id));
-
-            //_sut.CloseDriver();
         }
     }
 }

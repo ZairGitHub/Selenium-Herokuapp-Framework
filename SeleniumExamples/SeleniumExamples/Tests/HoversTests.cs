@@ -8,11 +8,11 @@ namespace SeleniumExamples
     {
         private WebsitePOM _sut;
 
-        /*[OneTimeSetUp]
+        [OneTimeSetUp]
         public void OneTimeSetUp() => _sut = new WebsitePOM();
 
         [OneTimeTearDown]
-        public void OneTimeTearDown() => _sut.CloseDriver();*/
+        public void OneTimeTearDown() => _sut.CloseDriver();
 
         [TestCase(1)]
         [TestCase(2)]
@@ -35,7 +35,7 @@ namespace SeleniumExamples
         [TestCase(3)]
         public void Hover_Links(int id)
         {
-            _sut = new WebsitePOM();
+            //_sut = new WebsitePOM();
             _sut.NavigateToHoversPage();
 
             _sut.HoversPage.HoverOverImage(id);
@@ -44,7 +44,7 @@ namespace SeleniumExamples
 
             Assert.That(result, Is.EqualTo("http://the-internet.herokuapp.com/users/" + id));
 
-            _sut.CloseDriver();
+            //_sut.CloseDriver();
         }
     }
 }

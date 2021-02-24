@@ -1,13 +1,14 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 
 namespace SeleniumExamples.Pages
 {
     public class WebsitePOM
     {
-        public WebsitePOM(IWebDriver driver, bool isHeadless = false,
+        public WebsitePOM(Type driverType, bool isHeadless = false,
             int elementWaitTime = 0, int pageWaitTime = -1)
         {
-            Driver = new DriverConfig(driver,
+            Driver = new DriverConfig(driverType,
                 isHeadless, elementWaitTime, pageWaitTime).Driver;
 
             SharedIAlert = new SharedIAlert(Driver);

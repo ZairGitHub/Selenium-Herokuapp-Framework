@@ -26,6 +26,21 @@ namespace SeleniumExamples.Pages
 
         private IWebElement TextUpdate => Driver.FindElement(By.Id("flash"));
 
+        public void NavigateToSecureAreaPage(bool isAuthenticated)
+        {
+            if (isAuthenticated)
+            {
+                NavigateToPage();
+                LogInAsAuthenticatedUser();
+            }
+            else
+            {
+                //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.SecureArea);
+                Driver.Navigate().GoToUrl(
+                    "http://the-internet.herokuapp.com/secure");
+            }
+        }
+
         public void EnterUsername(string input) => FieldUsername.SendKeys(input);
 
         public void EnterPassword(string input) => FieldPassword.SendKeys(input);

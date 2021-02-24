@@ -17,7 +17,7 @@ namespace SeleniumExamples
         [Test]
         public void LoginButton_DisplaysInvalidUsernameError()
         {
-            _sut.NavigateToFormAuthenticationPage();
+            _sut.FormAuthenticationPage.NavigateToPage();
 
             _sut.FormAuthenticationPage.ClickLoginButton();
             var result = _sut.FormAuthenticationPage.ReadUpdateText();
@@ -28,7 +28,7 @@ namespace SeleniumExamples
         [Test]
         public void LoginButton_ValidUsernameAndNoPassword_DisplaysInvalidPasswordError()
         {
-            _sut.NavigateToFormAuthenticationPage();
+            _sut.FormAuthenticationPage.NavigateToPage();
 
             _sut.FormAuthenticationPage.EnterValidUsername();
             _sut.FormAuthenticationPage.ClickLoginButton();
@@ -40,7 +40,7 @@ namespace SeleniumExamples
         [Test]
         public void LoginButton_ValidUsernameAndPassword_RedirectsToSecureAreaPage()
         {
-            _sut.NavigateToFormAuthenticationPage();
+            _sut.FormAuthenticationPage.NavigateToPage();
 
             _sut.FormAuthenticationPage.EnterValidUsername();
             _sut.FormAuthenticationPage.EnterValidPassword();
@@ -55,7 +55,7 @@ namespace SeleniumExamples
         [Test]
         public void DirectlyNavigateToSecureAreaPage_RedirectsToFormAuthenticationPageWithErrorMessage()
         {
-            _sut.NavigateToSecureAreaPage(false);
+            _sut.FormAuthenticationPage.NavigateToSecureAreaPage(false);
 
             var result = _sut.FormAuthenticationPage.ReadUpdateText();
 
@@ -66,7 +66,7 @@ namespace SeleniumExamples
         [Test]
         public void LogoutButton_RemovesAuthenticationAndRedirectsToFormAuthenticationPage()
         {
-            _sut.NavigateToSecureAreaPage(true);
+            _sut.FormAuthenticationPage.NavigateToSecureAreaPage(true);
 
             _sut.SecureAreaPage.ClickLogoutButton();
             var result = _sut.FormAuthenticationPage.ReadUpdateText();
@@ -78,7 +78,7 @@ namespace SeleniumExamples
         [Test]
         public void Back_LogoutButton_RestoresAuthenticationAndRedirectsUserToSecureArea()
         {
-            _sut.NavigateToSecureAreaPage(true);
+            _sut.FormAuthenticationPage.NavigateToSecureAreaPage(true);
 
             _sut.SecureAreaPage.ClickLogoutButton();
             _sut.Driver.Navigate().Back();

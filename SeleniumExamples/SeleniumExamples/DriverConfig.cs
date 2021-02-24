@@ -1,9 +1,11 @@
 ﻿using System;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 
 namespace SeleniumExamples
 {
-    public class DriverConfig
+    public class DriverConfig<T> where T : IWebDriver, new()
     {
         private readonly int _elementWaitTime;
         private readonly int _pageWaitTime;
@@ -14,20 +16,23 @@ namespace SeleniumExamples
         {
             if (isHeadless)
             {
-                _options = new FirefoxOptions();
-                _options.AddArguments("--headless");
-                Driver = new FirefoxDriver(_options);
+                if (typeof(T) == typeof(FirefoxDriver))
+                {
+                    _options = new FirefoxOptions();
+                    _options.AddArguments("--headless");
+                    Driver = new FirefoxDriver(_options);
+                }
             }
             else
             {
-                Driver = new FirefoxDriver();
+                Driver = new T();
             }
             _elementWaitTime = elementWaitTime;
             _pageWaitTime = pageWaitTime;
             ConfigureDriverTimeouts();
         }
 
-        public FirefoxDriver Driver { get; }
+        public IWebDriver Driver { get; set; }
 
         private void ConfigureDriverTimeouts()
         {

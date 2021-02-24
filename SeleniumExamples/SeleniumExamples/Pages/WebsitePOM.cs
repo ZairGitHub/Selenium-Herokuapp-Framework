@@ -1,13 +1,13 @@
-﻿using OpenQA.Selenium.Firefox;
+﻿using OpenQA.Selenium;
 
 namespace SeleniumExamples.Pages
 {
-    public class WebsitePOM
+    public class WebsitePOM<driver> where driver : IWebDriver, new()
     {
         public WebsitePOM(
             bool isHeadless = false, int elementWaitTime = 0, int pageWaitTime = -1)
         {
-            Driver = new DriverConfig(
+            Driver = new DriverConfig<driver>(
                 isHeadless, elementWaitTime, pageWaitTime).Driver;
 
             SharedIAlert = new SharedIAlert(Driver);
@@ -24,7 +24,7 @@ namespace SeleniumExamples.Pages
             JavaScriptAlertsPage = new JavaScriptAlertsPage(Driver);
         }
 
-        public FirefoxDriver Driver { get; private set; }
+        public IWebDriver Driver { get; private set; }
 
         public SharedHTML SharedHTML { get; private set; }
 

@@ -2,9 +2,15 @@
 
 namespace SeleniumExamples.Pages
 {
-    public sealed class IndexPage : WebPage
+    public sealed class IndexPage : WebPage, IPageNavigation
     {
         public IndexPage(IWebDriver driver) : base(driver) { }
+
+        public void NavigateToPage()
+        {
+            //NavigateToURL(ConfigReader.Index);
+            NavigateToURL("http://the-internet.herokuapp.com/error");
+        }
 
         private IWebElement LinkAddRemove =>
             Driver.FindElement(By.LinkText("Add/Remove Elements"));

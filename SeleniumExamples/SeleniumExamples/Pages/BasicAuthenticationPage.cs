@@ -4,6 +4,9 @@ namespace SeleniumExamples.Pages
 {
     public class BasicAuthenticationPage : WebPage, IAlertNavigation
     {
+        private const string _validUsername = "admin";
+        private const string _validPassword = "admin";
+
         public BasicAuthenticationPage(IWebDriver driver) : base(driver) { }
 
         public void NavigateToAuthentication(
@@ -15,8 +18,8 @@ namespace SeleniumExamples.Pages
                 "the-internet.herokuapp.com/basic_auth");
         }
 
-        public string ValidUsername => "admin";
+        public string ValidUsername => _validUsername;
 
-        public string ValidPassword => "admin";
+        public string ValidPassword => _validPassword;
     }
 }

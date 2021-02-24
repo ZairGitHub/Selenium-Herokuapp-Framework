@@ -18,7 +18,8 @@ namespace SeleniumExamples
         [Test]
         public void CancelButton_RedirectsToAuthenticationError()
         {
-            CreateWebDriverAndNavigateToBasicAuthenticationPage();
+            _sut = new WebsitePOM();
+            _sut.BasicAuthenticationPage.NavigateToAuthentication();
 
             _sut.SharedIAlert.ClickCancelButton();
             var result = _sut.SharedHTML.ReadPageBodyText();
@@ -31,7 +32,8 @@ namespace SeleniumExamples
         [Test]
         public void OKButton_ClickTwiceWithoutModifyingCredentials_ProducesSameEffectAsCancelButton()
         {
-            CreateWebDriverAndNavigateToBasicAuthenticationPage();
+            _sut = new WebsitePOM();
+            _sut.BasicAuthenticationPage.NavigateToAuthentication();
 
             _sut.SharedIAlert.ClickOKButton();
             _sut.SharedIAlert.ClickOKButton();
@@ -45,10 +47,11 @@ namespace SeleniumExamples
         [Test]
         public void OKButton_ValidCredentials_RedirectsToBasicAuthenticationPage()
         {
-            CreateWebDriverAndNavigateToBasicAuthenticationPage(
+            _sut = new WebsitePOM();
+            _sut.BasicAuthenticationPage.NavigateToAuthentication(
                 _sut.BasicAuthenticationPage.ValidUsername,
                 _sut.BasicAuthenticationPage.ValidPassword);
-            
+
             var result = _sut.SharedHTML.ReadPageHeaderText();
 
             Assert.That(result, Is.EqualTo("Basic Auth"));
@@ -59,7 +62,8 @@ namespace SeleniumExamples
         [Test]
         public void AuthenticatedUser_CloseSessionTab_AuthenticationPersistsWithinWindow()
         {
-            CreateWebDriverAndNavigateToBasicAuthenticationPage(
+            _sut = new WebsitePOM();
+            _sut.BasicAuthenticationPage.NavigateToAuthentication(
                 _sut.BasicAuthenticationPage.ValidUsername,
                 _sut.BasicAuthenticationPage.ValidPassword);
 

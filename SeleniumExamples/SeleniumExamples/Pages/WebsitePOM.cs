@@ -53,13 +53,6 @@ namespace SeleniumExamples.Pages
             Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
         }
 
-        public void NavigateToAddRemovePage()
-        {
-            //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.AddRemoveElements);
-            Driver.Navigate().GoToUrl(
-                "http://the-internet.herokuapp.com/add_remove_elements/");
-        }
-
         public void NavigateToBasicAuthenticationPage(
             string username = null, string password = null)
         {

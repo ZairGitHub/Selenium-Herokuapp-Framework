@@ -47,12 +47,6 @@ namespace SeleniumExamples.Pages
             Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/error");
         }
 
-        public void NavigateToIndexPage()
-        {
-            //Driver.Navigate().GoToUrl(ConfigReader.Index);
-            Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
-        }
-
         public void NavigateToBasicAuthenticationPage(
             string username = null, string password = null)
         {

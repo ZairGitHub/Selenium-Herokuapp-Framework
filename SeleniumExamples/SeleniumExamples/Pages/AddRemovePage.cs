@@ -3,9 +3,15 @@ using OpenQA.Selenium;
 
 namespace SeleniumExamples.Pages
 {
-    public sealed class AddRemovePage : WebPage
+    public sealed class AddRemovePage : WebPage, IPageNavigation
     {
         public AddRemovePage(IWebDriver driver) : base(driver) { }
+
+        public void NavigateToPage()
+        {
+            NavigateToURL(
+                "http://the-internet.herokuapp.com/add_remove_elements/");
+        }
 
         private IWebElement ButtonAdd =>
             Driver.FindElement(By.CssSelector("button"));

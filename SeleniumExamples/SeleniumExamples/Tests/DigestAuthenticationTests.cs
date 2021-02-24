@@ -8,17 +8,11 @@ namespace SeleniumExamples
     {
         private WebsitePOM _sut;
 
-        private void CreateWebDriverAndNavigateToDigestAuthenticationPage(
-            string username = null, string password = null)
-        {
-            _sut = new WebsitePOM();
-            _sut.NavigateToDigestAuthenticationPage(username, password);
-        }
-
         [Test]
         public void CancelButton_RedirectsToEmptyPage()
         {
-            CreateWebDriverAndNavigateToDigestAuthenticationPage();
+            _sut = new WebsitePOM();
+            _sut.DigestAuthenticationPage.NavigateToAuthentication();
 
             _sut.SharedIAlert.ClickCancelButton();
             var result = _sut.SharedHTML.ReadPageBodyText();
@@ -31,7 +25,8 @@ namespace SeleniumExamples
         [Test]
         public void OKButton_ClickTwiceWithoutModifyingCredentials_ProducesSameEffectAsCancelButton()
         {
-            CreateWebDriverAndNavigateToDigestAuthenticationPage();
+            _sut = new WebsitePOM();
+            _sut.DigestAuthenticationPage.NavigateToAuthentication();
 
             _sut.SharedIAlert.ClickOKButton();
             _sut.SharedIAlert.ClickOKButton();
@@ -45,10 +40,11 @@ namespace SeleniumExamples
         [Test]
         public void OKButton_ValidCredentials_RedirectsToDigestAuthenticationPage()
         {
-            CreateWebDriverAndNavigateToDigestAuthenticationPage(
-                DigestAuthenticationPage.ValidUsername,
-                DigestAuthenticationPage.ValidPassword);
-
+            _sut = new WebsitePOM();
+            _sut.DigestAuthenticationPage.NavigateToAuthentication(
+                _sut.DigestAuthenticationPage.ValidUsername,
+                _sut.DigestAuthenticationPage.ValidPassword);
+            
             var result = _sut.SharedHTML.ReadPageHeaderText();
 
             Assert.That(result, Is.EqualTo("Digest Auth"));
@@ -59,14 +55,15 @@ namespace SeleniumExamples
         [Test]
         public void AuthenticatedUser_CloseSessionTab_AuthenticationPersistsWithinWindow()
         {
-            CreateWebDriverAndNavigateToDigestAuthenticationPage(
-                DigestAuthenticationPage.ValidUsername,
-                DigestAuthenticationPage.ValidPassword);
+            _sut = new WebsitePOM();
+            _sut.DigestAuthenticationPage.NavigateToAuthentication(
+                _sut.DigestAuthenticationPage.ValidUsername,
+                _sut.DigestAuthenticationPage.ValidPassword);
 
             _sut.SharedHTML.OpenNewTab();
             _sut.SharedHTML.CloseTab(0);
             _sut.SharedHTML.SwitchToTab(0);
-            _sut.NavigateToDigestAuthenticationPage();
+            _sut.DigestAuthenticationPage.NavigateToAuthentication();
             var result = _sut.SharedHTML.ReadPageHeaderText();
 
             Assert.That(result, Is.EqualTo("Digest Auth"));

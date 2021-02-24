@@ -17,7 +17,7 @@ namespace SeleniumExamples
         [Test]
         public void JSAlertButton_OKButton_UpdatesResultMessage()
         {
-            _sut.NavigateToJavaScriptAlertsPage();
+            _sut.JavaScriptAlertsPage.NavigateToPage();
 
             _sut.JavaScriptAlertsPage.ClickJSAlertButton();
             _sut.SharedIAlert.ClickOKButton();
@@ -29,7 +29,7 @@ namespace SeleniumExamples
         [Test]
         public void JSConfirmButton_CancelButton_UpdatesResultMessage()
         {
-            _sut.NavigateToJavaScriptAlertsPage();
+            _sut.JavaScriptAlertsPage.NavigateToPage();
 
             _sut.JavaScriptAlertsPage.ClickJSConfirmButton();
             _sut.SharedIAlert.ClickCancelButton();
@@ -41,7 +41,7 @@ namespace SeleniumExamples
         [Test]
         public void JSConfirmButton_OKButton_UpdatesResultMessage()
         {
-            _sut.NavigateToJavaScriptAlertsPage();
+            _sut.JavaScriptAlertsPage.NavigateToPage();
 
             _sut.JavaScriptAlertsPage.ClickJSConfirmButton();
             _sut.SharedIAlert.ClickOKButton();
@@ -53,7 +53,7 @@ namespace SeleniumExamples
         [Test]
         public void JSPromptButton_CancelButton_UpdatesResultMessage()
         {
-            _sut.NavigateToJavaScriptAlertsPage();
+            _sut.JavaScriptAlertsPage.NavigateToPage();
 
             _sut.JavaScriptAlertsPage.ClickJSPromptButton();
             _sut.SharedIAlert.ClickCancelButton();
@@ -65,7 +65,7 @@ namespace SeleniumExamples
         [Test]
         public void JSPromptButton_OKButton_UpdatesResultMessage()
         {
-            _sut.NavigateToJavaScriptAlertsPage();
+            _sut.JavaScriptAlertsPage.NavigateToPage();
 
             _sut.JavaScriptAlertsPage.ClickJSPromptButton();
             _sut.SharedIAlert.ClickOKButton();
@@ -77,7 +77,7 @@ namespace SeleniumExamples
         [Test]
         public void JSPromptButton_InputIsNotPurelyWhitespacesAndOKButton_UpdatesResultMessageWithSingleWhitespaceReplacingInputWhitespaces()
         {
-            _sut.NavigateToJavaScriptAlertsPage();
+            _sut.JavaScriptAlertsPage.NavigateToPage();
 
             _sut.JavaScriptAlertsPage.ClickJSPromptButton();
             _sut.SharedIAlert.EnterInformation(" i  np  u  t  1 ");

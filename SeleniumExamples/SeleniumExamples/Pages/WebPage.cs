@@ -7,5 +7,10 @@ namespace SeleniumExamples.Pages
         protected IWebDriver Driver { get; }
 
         protected WebPage(IWebDriver driver) => Driver = driver;
+
+        protected void NavigateToURL(string url)
+        {
+            Driver.Navigate().GoToUrl(url);
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace SeleniumExamples
         [Test]
         public void DeleteButton_RemovesADeleteButton()
         {
-            _sut.NavigateToAddRemovePage();
+            _sut.AddRemovePage.NavigateToPage();
 
             _sut.AddRemovePage.ClickAddButton();
             _sut.AddRemovePage.ClickAddButton();

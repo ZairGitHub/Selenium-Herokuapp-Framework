@@ -6,7 +6,8 @@ namespace SeleniumExamples.Pages
     {
         public BasicAuthenticationPage(IWebDriver driver) : base(driver) { }
 
-        public void NavigateToAuthentication(string username, string password)
+        public void NavigateToAuthentication(
+            string username = null, string password = null)
         {
             //NavigateToURL(ConfigReader.Index + ConfigReader.BasicAuthentication);
             NavigateToURL(

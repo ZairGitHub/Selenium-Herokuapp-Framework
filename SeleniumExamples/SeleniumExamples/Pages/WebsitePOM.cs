@@ -15,6 +15,7 @@ namespace SeleniumExamples.Pages
 
             IndexPage = new IndexPage(Driver);
             AddRemovePage = new AddRemovePage(Driver);
+            BasicAuthenticationPage = new BasicAuthenticationPage(Driver);
             CheckboxesPage = new CheckboxesPage(Driver);
             FormAuthenticationPage = new FormAuthenticationPage(Driver);
             SecureAreaPage = new SecureAreaPage(Driver);
@@ -32,6 +33,8 @@ namespace SeleniumExamples.Pages
 
         public AddRemovePage AddRemovePage { get; private set; }
 
+        public BasicAuthenticationPage BasicAuthenticationPage { get; private set; }
+
         public CheckboxesPage CheckboxesPage { get; private set; }
 
         public FormAuthenticationPage FormAuthenticationPage { get; private set; }
@@ -45,15 +48,6 @@ namespace SeleniumExamples.Pages
         public void NavigateToInvalidPage()
         {
             Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/error");
-        }
-
-        public void NavigateToBasicAuthenticationPage(
-            string username = null, string password = null)
-        {
-            //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.BasicAuthentication);
-            Driver.Navigate().GoToUrl(
-                $"http://{username}:{password}@" +
-                $"the-internet.herokuapp.com/basic_auth");
         }
 
         public void NavigateToCheckboxesPage()

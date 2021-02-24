@@ -5,18 +5,18 @@ using OpenQA.Selenium.Firefox;
 
 namespace SeleniumExamples
 {
-    public class DriverConfig<T> where T : IWebDriver, new()
+    public class DriverConfig
     {
         private readonly int _elementWaitTime;
         private readonly int _pageWaitTime;
         private readonly FirefoxOptions _options;
 
-        public DriverConfig(
+        public DriverConfig(IWebDriver driver,
             bool isHeadless, int elementWaitTime, int pageWaitTime)
         {
             if (isHeadless)
             {
-                if (typeof(T) == typeof(FirefoxDriver))
+                if (driver is FirefoxDriver)
                 {
                     _options = new FirefoxOptions();
                     _options.AddArguments("--headless");
@@ -25,7 +25,7 @@ namespace SeleniumExamples
             }
             else
             {
-                Driver = new T();
+                Driver = new FirefoxDriver();
             }
             _elementWaitTime = elementWaitTime;
             _pageWaitTime = pageWaitTime;

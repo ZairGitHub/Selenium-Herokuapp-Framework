@@ -1,6 +1,4 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using SeleniumExamples.Pages;
 
 namespace SeleniumExamples
@@ -8,12 +6,12 @@ namespace SeleniumExamples
     [TestFixture]
     public class BasicAuthenticationTests
     {
-        private WebsitePOM<FirefoxDriver> _sut;
+        private WebsitePOM _sut;
 
         [Test]
         public void CancelButton_RedirectsToAuthenticationError()
         {
-            _sut = new WebsitePOM<FirefoxDriver>();
+            _sut = new WebsitePOM(StaticDriver.Type);
             _sut.BasicAuthenticationPage.NavigateToAuthentication();
 
             _sut.SharedIAlert.ClickCancelButton();
@@ -27,7 +25,7 @@ namespace SeleniumExamples
         [Test]
         public void OKButton_ClickTwiceWithoutModifyingCredentials_ProducesSameEffectAsCancelButton()
         {
-            _sut = new WebsitePOM<FirefoxDriver>();
+            _sut = new WebsitePOM(StaticDriver.Type);
             _sut.BasicAuthenticationPage.NavigateToAuthentication();
 
             _sut.SharedIAlert.ClickOKButton();
@@ -42,7 +40,7 @@ namespace SeleniumExamples
         [Test]
         public void OKButton_ValidCredentials_RedirectsToBasicAuthenticationPage()
         {
-            _sut = new WebsitePOM<FirefoxDriver>();
+            _sut = new WebsitePOM(StaticDriver.Type);
             _sut.BasicAuthenticationPage.NavigateToAuthentication(
                 _sut.BasicAuthenticationPage.ValidUsername,
                 _sut.BasicAuthenticationPage.ValidPassword);
@@ -57,7 +55,7 @@ namespace SeleniumExamples
         [Test]
         public void AuthenticatedUser_CloseSessionTab_AuthenticationPersistsWithinWindow()
         {
-            _sut = new WebsitePOM<FirefoxDriver>();
+            _sut = new WebsitePOM(StaticDriver.Type);
             _sut.BasicAuthenticationPage.NavigateToAuthentication(
                 _sut.BasicAuthenticationPage.ValidUsername,
                 _sut.BasicAuthenticationPage.ValidPassword);

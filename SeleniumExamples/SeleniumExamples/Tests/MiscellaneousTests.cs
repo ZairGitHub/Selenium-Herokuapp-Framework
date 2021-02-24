@@ -1,6 +1,4 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using SeleniumExamples.Pages;
 
 namespace SeleniumExamples
@@ -8,10 +6,10 @@ namespace SeleniumExamples
     [TestFixture]
     public class MiscellaneousTests
     {
-        private WebsitePOM<FirefoxDriver> _sut;
+        private WebsitePOM _sut;
 
         [OneTimeSetUp]
-        public void OneTimeSetUp() => _sut = new WebsitePOM<FirefoxDriver>();
+        public void OneTimeSetUp() => _sut = new WebsitePOM(StaticDriver.Type);
 
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();

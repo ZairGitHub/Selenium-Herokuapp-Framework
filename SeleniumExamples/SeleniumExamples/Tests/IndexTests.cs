@@ -17,7 +17,7 @@ namespace SeleniumExamples
         [Test]
         public void PageFooterLink_OpensElementalSeleniumWebsiteInANewTab()
         {
-            _sut.NavigateToIndexPage();
+            _sut.IndexPage.NavigateToPage();
 
             _sut.SharedHTML.ClickPageFooterLink();
             _sut.SharedHTML.SwitchToTab(1);
@@ -29,7 +29,7 @@ namespace SeleniumExamples
         [Test]
         public void GitHubImageLink_RedirectsToGitHubRepository()
         {
-            _sut.NavigateToIndexPage();
+            _sut.IndexPage.NavigateToPage();
 
             _sut.SharedHTML.ClickGitHubImageLink();
             var result = _sut.Driver.Url;
@@ -41,7 +41,7 @@ namespace SeleniumExamples
         [Test]
         public void AddRemoveElementsLink_RedirectsToAddRemovePage()
         {
-            _sut.NavigateToIndexPage();
+            _sut.IndexPage.NavigateToPage();
 
             _sut.IndexPage.ClickAddRemoveElementsLink();
             var result = _sut.SharedHTML.ReadPageHeaderText();
@@ -52,7 +52,7 @@ namespace SeleniumExamples
         [Test]
         public void BasicAuthenticationLink_OpensBasicAuthenticationPopup()
         {
-            _sut.NavigateToIndexPage();
+            _sut.IndexPage.NavigateToPage();
 
             _sut.IndexPage.ClickBasicAuthenticationLink();
             var result = _sut.SharedIAlert.ReadAuthenticationPopupText();
@@ -64,7 +64,7 @@ namespace SeleniumExamples
         [Test]
         public void CheckboxesLink_OpensCheckboxesPage()
         {
-            _sut.NavigateToIndexPage();
+            _sut.IndexPage.NavigateToPage();
 
             _sut.IndexPage.ClickCheckboxesLink();
             var result = _sut.SharedHTML.ReadPageHeaderText();
@@ -75,7 +75,7 @@ namespace SeleniumExamples
         [Test]
         public void DigestAuthenticationLink_OpensDigestAuthenticationPopup()
         {
-            _sut.NavigateToIndexPage();
+            _sut.IndexPage.NavigateToPage();
 
             _sut.IndexPage.ClickDigestAuthenticationLink();
             var result = _sut.SharedIAlert.ReadAuthenticationPopupText();
@@ -87,7 +87,7 @@ namespace SeleniumExamples
         [Test]
         public void FormAuthenticationLink_RedirectsToLoginPage()
         {
-            _sut.NavigateToIndexPage();
+            _sut.IndexPage.NavigateToPage();
 
             _sut.IndexPage.ClickFormAuthenticationLink();
             var result = _sut.SharedHTML.ReadPageHeaderText();
@@ -98,7 +98,7 @@ namespace SeleniumExamples
         [Test]
         public void HoversLink_RedirectsToHoversPage()
         {
-            _sut.NavigateToIndexPage();
+            _sut.IndexPage.NavigateToPage();
 
             _sut.IndexPage.ClickHoversLink();
             var result = _sut.SharedHTML.ReadPageHeaderText();
@@ -109,7 +109,7 @@ namespace SeleniumExamples
         [Test]
         public void JavaScriptAlertsLink_RedirectsToJavaScriptAlertsPage()
         {
-            _sut.NavigateToIndexPage();
+            _sut.IndexPage.NavigateToPage();
 
             _sut.IndexPage.ClickJavaScriptAlertsLink();
             var result = _sut.SharedHTML.ReadPageHeaderText();

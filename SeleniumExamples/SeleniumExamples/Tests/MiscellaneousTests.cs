@@ -27,7 +27,7 @@ namespace SeleniumExamples
         [Test]
         public void AuthenticationPopup_OKButton_CreatesNewAuthenticationPopup()
         {
-            _sut.NavigateToBasicAuthenticationPage();
+            _sut.BasicAuthenticationPage.NavigateToAuthentication();
 
             _sut.SharedIAlert.ClickOKButton();
             var result = _sut.SharedIAlert.AuthenticationPopupExists();

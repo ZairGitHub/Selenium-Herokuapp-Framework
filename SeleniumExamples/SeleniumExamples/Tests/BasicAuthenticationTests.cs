@@ -12,7 +12,7 @@ namespace SeleniumExamples
             string username = null, string password = null)
         {
             _sut = new WebsitePOM();
-            _sut.NavigateToBasicAuthenticationPage(username, password);
+            _sut.BasicAuthenticationPage.NavigateToAuthentication(username, password);
         }
 
         [Test]
@@ -46,8 +46,8 @@ namespace SeleniumExamples
         public void OKButton_ValidCredentials_RedirectsToBasicAuthenticationPage()
         {
             CreateWebDriverAndNavigateToBasicAuthenticationPage(
-                BasicAuthenticationPage.ValidUsername,
-                BasicAuthenticationPage.ValidPassword);
+                _sut.BasicAuthenticationPage.ValidUsername,
+                _sut.BasicAuthenticationPage.ValidPassword);
             
             var result = _sut.SharedHTML.ReadPageHeaderText();
 
@@ -60,13 +60,13 @@ namespace SeleniumExamples
         public void AuthenticatedUser_CloseSessionTab_AuthenticationPersistsWithinWindow()
         {
             CreateWebDriverAndNavigateToBasicAuthenticationPage(
-                BasicAuthenticationPage.ValidUsername,
-                BasicAuthenticationPage.ValidPassword);
+                _sut.BasicAuthenticationPage.ValidUsername,
+                _sut.BasicAuthenticationPage.ValidPassword);
 
             _sut.SharedHTML.OpenNewTab();
             _sut.SharedHTML.CloseTab(0);
             _sut.SharedHTML.SwitchToTab(0);
-            _sut.NavigateToBasicAuthenticationPage();
+            _sut.BasicAuthenticationPage.NavigateToAuthentication();
             var result = _sut.SharedHTML.ReadPageHeaderText();
 
             Assert.That(result, Is.EqualTo("Basic Auth"));

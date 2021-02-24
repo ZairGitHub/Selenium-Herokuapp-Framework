@@ -2,7 +2,7 @@
 
 namespace SeleniumExamples.Pages
 {
-    public class DigestAuthenticationPage : WebPage, IAlertNavigation
+    public sealed class DigestAuthenticationPage : WebPage, IAlertNavigation
     {
         private const string _validUsername = "admin";
         private const string _validPassword = "admin";
@@ -18,8 +18,8 @@ namespace SeleniumExamples.Pages
                 $"the-internet.herokuapp.com/digest_auth");
         }
 
-        public string ValidUsername => "admin";
+        public string ValidUsername => _validUsername;
 
-        public string ValidPassword => "admin";
+        public string ValidPassword => _validPassword;
     }
 }

@@ -2,7 +2,7 @@
 
 namespace SeleniumExamples.Pages
 {
-    public class BasicAuthenticationPage : WebPage, IAlertNavigation
+    public sealed class BasicAuthenticationPage : WebPage, IAlertNavigation
     {
         private const string _validUsername = "admin";
         private const string _validPassword = "admin";

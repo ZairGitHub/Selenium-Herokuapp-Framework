@@ -2,12 +2,12 @@
 
 namespace SeleniumExamples.Pages
 {
-    public class WebsitePOM<driver> where driver : IWebDriver, new()
+    public class WebsitePOM
     {
-        public WebsitePOM(
-            bool isHeadless = false, int elementWaitTime = 0, int pageWaitTime = -1)
+        public WebsitePOM(IWebDriver driver, bool isHeadless = false,
+            int elementWaitTime = 0, int pageWaitTime = -1)
         {
-            Driver = new DriverConfig<driver>(
+            Driver = new DriverConfig(driver,
                 isHeadless, elementWaitTime, pageWaitTime).Driver;
 
             SharedIAlert = new SharedIAlert(Driver);

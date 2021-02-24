@@ -11,12 +11,12 @@ namespace SeleniumExamples
         private readonly int _pageWaitTime;
         private readonly FirefoxOptions _options;
 
-        public DriverConfig(IWebDriver driver,
+        public DriverConfig(Type driverType,
             bool isHeadless, int elementWaitTime, int pageWaitTime)
         {
             if (isHeadless)
             {
-                if (driver is FirefoxDriver)
+                if (driverType == typeof(FirefoxDriver))
                 {
                     _options = new FirefoxOptions();
                     _options.AddArguments("--headless");

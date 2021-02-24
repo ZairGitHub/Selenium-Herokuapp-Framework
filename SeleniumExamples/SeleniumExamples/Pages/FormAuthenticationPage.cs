@@ -2,12 +2,18 @@
 
 namespace SeleniumExamples.Pages
 {
-    public sealed class FormAuthenticationPage : WebPage
+    public sealed class FormAuthenticationPage : WebPage, IPageNavigation
     {
         private const string _validUsername = "tomsmith";
         private const string _validPassword = "SuperSecretPassword!";
 
         public FormAuthenticationPage(IWebDriver driver) : base(driver) { }
+
+        public void NavigateToPage()
+        {
+            //NavigateToURL(ConfigReader.Index + ConfigReader.FormAuthetication);
+            NavigateToURL("http://the-internet.herokuapp.com/login");
+        }
 
         private IWebElement ButtonLogin =>
             Driver.FindElement(By.CssSelector(".fa"));

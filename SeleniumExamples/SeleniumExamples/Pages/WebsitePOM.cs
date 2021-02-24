@@ -53,13 +53,6 @@ namespace SeleniumExamples.Pages
             Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/error");
         }
 
-        public void NavigateToJavaScriptAlertsPage()
-        {
-            //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.JavaScriptAlerts);
-            Driver.Navigate().GoToUrl(
-                "http://the-internet.herokuapp.com/javascript_alerts");
-        }
-
         public void CloseDriver() => Driver.Quit();
     }
 }

@@ -8,13 +8,6 @@ namespace SeleniumExamples
     {
         private WebsitePOM _sut;
 
-        private void CreateWebDriverAndNavigateToBasicAuthenticationPage(
-            string username = null, string password = null)
-        {
-            _sut = new WebsitePOM();
-            _sut.BasicAuthenticationPage.NavigateToAuthentication(username, password);
-        }
-
         [Test]
         public void CancelButton_RedirectsToAuthenticationError()
         {

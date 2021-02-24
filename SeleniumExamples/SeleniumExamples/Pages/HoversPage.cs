@@ -3,9 +3,15 @@ using OpenQA.Selenium.Interactions;
 
 namespace SeleniumExamples.Pages
 {
-    public sealed class HoversPage : WebPage
+    public sealed class HoversPage : WebPage, IPageNavigation
     {
         public HoversPage(IWebDriver driver) : base(driver) { }
+
+        public void NavigateToPage()
+        {
+            //NavigateToURL(ConfigReader.Index + ConfigReader.Hovers);
+            NavigateToURL("http://the-internet.herokuapp.com/hovers");
+        }
 
         private IWebElement PageSubHeader1 =>
             Driver.FindElement(By.CssSelector(".figure:nth-child(3) h5"));

@@ -55,7 +55,7 @@ namespace SeleniumExamples
         [Test]
         public void DirectlyNavigateToSecureAreaPage_RedirectsToFormAuthenticationPageWithErrorMessage()
         {
-            _sut.FormAuthenticationPage.NavigateToSecureAreaPage(false);
+            _sut.SecureAreaPage.NavigateToPage();
 
             var result = _sut.FormAuthenticationPage.ReadUpdateText();
 
@@ -66,7 +66,8 @@ namespace SeleniumExamples
         [Test]
         public void LogoutButton_RemovesAuthenticationAndRedirectsToFormAuthenticationPage()
         {
-            _sut.FormAuthenticationPage.NavigateToSecureAreaPage(true);
+            _sut.FormAuthenticationPage.NavigateToPage();
+            _sut.FormAuthenticationPage.LogInAsAuthenticatedUser();
 
             _sut.SecureAreaPage.ClickLogoutButton();
             var result = _sut.FormAuthenticationPage.ReadUpdateText();
@@ -78,7 +79,8 @@ namespace SeleniumExamples
         [Test]
         public void Back_LogoutButton_RestoresAuthenticationAndRedirectsUserToSecureArea()
         {
-            _sut.FormAuthenticationPage.NavigateToSecureAreaPage(true);
+            _sut.FormAuthenticationPage.NavigateToPage();
+            _sut.FormAuthenticationPage.LogInAsAuthenticatedUser();
 
             _sut.SecureAreaPage.ClickLogoutButton();
             _sut.Driver.Navigate().Back();

@@ -19,7 +19,7 @@ namespace SeleniumExamples
         [TestCase(3)]
         public void Hover_SubHeaders(int id)
         {
-            _sut.NavigateToHoversPage();
+            _sut.HoversPage.NavigateToPage();
 
             _sut.HoversPage.HoverOverImage(id);
             var result = _sut.HoversPage.ReadSubHeaderTextForImage(id);
@@ -32,7 +32,7 @@ namespace SeleniumExamples
         [TestCase(3)]
         public void Hover_Links(int id)
         {
-            _sut.NavigateToHoversPage();
+            _sut.HoversPage.NavigateToPage();
 
             _sut.HoversPage.HoverOverImage(id);
             _sut.HoversPage.ClickViewProfileLink();

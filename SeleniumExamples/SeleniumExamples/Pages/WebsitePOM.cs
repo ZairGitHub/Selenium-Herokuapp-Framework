@@ -50,12 +50,6 @@ namespace SeleniumExamples.Pages
             Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/error");
         }
 
-        public void NavigateToCheckboxesPage()
-        {
-            //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.Checkboxes);
-            Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/checkboxes");
-        }
-
         public void NavigateToDigestAuthenticationPage(
             string username = null, string password = null)
         {

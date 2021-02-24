@@ -13,20 +13,7 @@ namespace SeleniumExamples
         public DriverConfig(Type driverType,
             bool isHeadless, int elementWaitTime, int pageWaitTime)
         {
-            if (driverType == typeof(FirefoxDriver))
-            {
-                if (isHeadless)
-                {
-                    FirefoxOptions options = new FirefoxOptions();
-                    options.AddArguments("--headless");
-                    Driver = new FirefoxDriver(options);
-                }
-                else
-                {
-                    Driver = new FirefoxDriver();
-                }
-            }
-            else if (driverType == typeof(ChromeDriver))
+            if (driverType == typeof(ChromeDriver))
             {
                 if (isHeadless)
                 {
@@ -37,6 +24,19 @@ namespace SeleniumExamples
                 else
                 {
                     Driver = new ChromeDriver();
+                }
+            }
+            else if (driverType == typeof(FirefoxDriver))
+            {
+                if (isHeadless)
+                {
+                    FirefoxOptions options = new FirefoxOptions();
+                    options.AddArguments("--headless");
+                    Driver = new FirefoxDriver(options);
+                }
+                else
+                {
+                    Driver = new FirefoxDriver();
                 }
             }
             _elementWaitTime = elementWaitTime;

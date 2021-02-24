@@ -9,7 +9,6 @@ namespace SeleniumExamples
     {
         private readonly int _elementWaitTime;
         private readonly int _pageWaitTime;
-        private readonly FirefoxOptions _options;
 
         public DriverConfig(Type driverType,
             bool isHeadless, int elementWaitTime, int pageWaitTime)
@@ -18,14 +17,27 @@ namespace SeleniumExamples
             {
                 if (driverType == typeof(FirefoxDriver))
                 {
-                    _options = new FirefoxOptions();
-                    _options.AddArguments("--headless");
-                    Driver = new FirefoxDriver(_options);
+                    FirefoxOptions options = new FirefoxOptions();
+                    options.AddArguments("--headless");
+                    Driver = new FirefoxDriver(options);
+                }
+                else if (driverType == typeof(ChromeDriver))
+                {
+                    ChromeOptions options = new ChromeOptions();
+                    options.AddArguments("--headless");
+                    Driver = new ChromeDriver(options);
                 }
             }
             else
             {
-                Driver = new FirefoxDriver();
+                if (driverType == typeof(FirefoxDriver))
+                {
+                    Driver = new FirefoxDriver();
+                }
+                else if (driverType == typeof(ChromeDriver))
+                {
+                    Driver = new ChromeDriver();
+                }
             }
             _elementWaitTime = elementWaitTime;
             _pageWaitTime = pageWaitTime;

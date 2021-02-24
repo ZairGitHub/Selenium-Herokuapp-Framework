@@ -2,9 +2,15 @@
 
 namespace SeleniumExamples.Pages
 {
-    public sealed class CheckboxesPage : WebPage
+    public sealed class CheckboxesPage : WebPage, IPageNavigation
     {
         public CheckboxesPage(IWebDriver driver) : base(driver) { }
+
+        public void NavigateToPage()
+        {
+            //NavigateToURL(ConfigReader.Index + ConfigReader.Checkboxes);
+            NavigateToURL("http://the-internet.herokuapp.com/checkboxes");
+        }
         
         private IWebElement Checkbox1 =>
             Driver.FindElement(By.CssSelector("input:nth-child(1)"));

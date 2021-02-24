@@ -53,18 +53,11 @@ namespace SeleniumExamples.Pages
             Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/error");
         }
 
-        
-        public void NavigateToFormAuthenticationPage()
-        {
-            //Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.FormAuthetication);
-            Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/login");
-        }
-
         public void NavigateToSecureAreaPage(bool isAuthenticated)
         {
             if (isAuthenticated)
             {
-                NavigateToFormAuthenticationPage();
+                //NavigateToFormAuthenticationPage();
                 FormAuthenticationPage.LogInAsAuthenticatedUser();
             }
             else

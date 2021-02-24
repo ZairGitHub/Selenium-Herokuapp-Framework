@@ -2,9 +2,15 @@
 
 namespace SeleniumExamples.Pages
 {
-    public sealed class JavaScriptAlertsPage : WebPage
+    public sealed class JavaScriptAlertsPage : WebPage, IPageNavigation
     {
         public JavaScriptAlertsPage(IWebDriver driver) : base(driver) { }
+
+        public void NavigateToPage()
+        {
+            //NavigateToURL(ConfigReader.Index + ConfigReader.JavaScriptAlerts);
+            NavigateToURL("http://the-internet.herokuapp.com/javascript_alerts");
+        }
 
         private IWebElement ButtonJSAlert =>
             Driver.FindElement(By.CssSelector("li:nth-child(1) > button"));

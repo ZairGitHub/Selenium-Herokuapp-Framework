@@ -8,6 +8,7 @@ namespace SeleniumExamples
     {
         private WebsitePOM _sut;
 
+        [Ignore("Alert cannot be accessed in ChromeDriver")]
         [Test]
         public void CancelButton_RedirectsToAuthenticationError()
         {

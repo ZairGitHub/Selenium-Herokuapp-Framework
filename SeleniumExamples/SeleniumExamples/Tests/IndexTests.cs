@@ -49,6 +49,7 @@ namespace SeleniumExamples
             Assert.That(result, Is.EqualTo("Add/Remove Elements"));
         }
 
+        [Ignore("Alert cannot be accessed in ChromeDriver")]
         [Test]
         public void BasicAuthenticationLink_OpensBasicAuthenticationPopup()
         {
@@ -72,6 +73,7 @@ namespace SeleniumExamples
             Assert.That(result, Is.EqualTo("Checkboxes"));
         }
 
+        [Ignore("Alert cannot be accessed in ChromeDriver")]
         [Test]
         public void DigestAuthenticationLink_OpensDigestAuthenticationPopup()
         {

@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System.Drawing;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 
 namespace SeleniumExamples.Pages
 {
@@ -71,6 +73,11 @@ namespace SeleniumExamples.Pages
 
         public void ClickPageFooterLink() => LinkFooter.Click();
 
-        public void ClickGitHubImageLink() => LinkGitHub.Click();
+        public void ClickGitHubImageLink()
+        {
+            Point position = LinkGitHub.Location;
+            new Actions(Driver)
+                .MoveByOffset(position.X, position.Y).Click().Perform();
+        }
     }
 }

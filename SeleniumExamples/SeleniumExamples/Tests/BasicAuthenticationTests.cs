@@ -23,21 +23,6 @@ namespace SeleniumExamples
         }
 
         [Test]
-        public void OKButton_ClickTwiceWithoutModifyingCredentials_ProducesSameEffectAsCancelButton()
-        {
-            _sut = new WebsitePOM(StaticDriver.Type);
-            _sut.BasicAuthenticationPage.NavigateToAuthentication();
-
-            _sut.SharedIAlert.ClickOKButton();
-            _sut.SharedIAlert.ClickOKButton();
-            var result = _sut.SharedHTML.ReadPageBodyText();
-
-            Assert.That(result, Is.EqualTo("Not authorized"));
-
-            _sut.CloseDriver();
-        }
-
-        [Test]
         public void OKButton_ValidCredentials_RedirectsToBasicAuthenticationPage()
         {
             _sut = new WebsitePOM(StaticDriver.Type);

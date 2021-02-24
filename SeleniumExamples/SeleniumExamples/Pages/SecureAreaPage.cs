@@ -2,9 +2,15 @@
 
 namespace SeleniumExamples.Pages
 {
-    public sealed class SecureAreaPage : WebPage
+    public sealed class SecureAreaPage : WebPage, IPageNavigation
     {
         public SecureAreaPage(IWebDriver driver) : base(driver) { }
+
+        public void NavigateToPage()
+        {
+            //NavigateToURL(ConfigReader.Index + ConfigReader.SecureArea);
+            NavigateToURL("http://the-internet.herokuapp.com/secure");
+        }
 
         private IWebElement ButtonLogOut =>
             Driver.FindElement(By.CssSelector(".icon-2x"));

@@ -7,6 +7,7 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class IndexSteps
     {
+        private string _result;
         private WebsitePOM _sut;
 
         [BeforeScenario]
@@ -24,12 +25,16 @@ namespace SeleniumExamples.Steps
             _sut.IndexPage.ClickAddRemoveElementsLink();
         }
 
-        [Then(@"I should be redirected to the Add/Remove Elements Page")]
-        public void ThenIShouldBeRedirectedToTheAddRemoveElementsPage()
+        [When(@"I read the page header text")]
+        public void WhenIReadThePageHeaderText()
         {
-            var result = _sut.SharedHTML.ReadPageHeaderText();
+            _result = _sut.SharedHTML.ReadPageHeaderText();
+        }
 
-            Assert.That(result, Is.EqualTo("Add/Remove Elements"));
+        [Then(@"the text should inform me that I am on the Add/Remove Elements Page")]
+        public void ThenTheTextShouldInformMeThatIAmOnTheAddRemoveElementsPage()
+        {
+            Assert.That(_result, Is.EqualTo("Add/Remove Elements"));
         }
     }
 }

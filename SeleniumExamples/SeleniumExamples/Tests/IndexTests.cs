@@ -23,7 +23,7 @@ namespace SeleniumExamples
             _sut.SharedHTML.SwitchToTab(1);
             var result = _sut.SharedHTML.ReadPageHeaderText();
 
-            Assert.That(result, Is.EqualTo("Elemental Selenium"));
+            Assert.That(result, Is.EqualTo("http://elementalselenium.com"));
         }
 
         [Test]

@@ -25,3 +25,8 @@ Scenario: Digest Authentication Form
 	When the user clicks the Digest Authentication link
 	And the user reads the popup text
 	Then the text should inform the user that they are attempting to reach the correct "“Protected Area”" page
+
+Scenario: Form Authentication Page
+	When the user clicks the Form Authentication link
+	And the user reads the page header text
+	Then the text should inform the user that they are on the correct "Login page" page

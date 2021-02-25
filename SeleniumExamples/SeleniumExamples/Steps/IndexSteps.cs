@@ -25,7 +25,7 @@ namespace SeleniumExamples.Steps
             _sut.IndexPage.ClickAddRemoveElementsLink();
         }
 
-        [When(@"the user clicks the Basic Authentication Link")]
+        [When(@"the user clicks the Basic Authentication link")]
         public void WhenTheUserClicksTheBasicAuthenticationLink()
         {
             _sut.IndexPage.ClickBasicAuthenticationLink();
@@ -37,7 +37,7 @@ namespace SeleniumExamples.Steps
             _sut.IndexPage.ClickCheckboxesLink();
         }
 
-        [When(@"the user clicks the Digest Authentication Link")]
+        [When(@"the user clicks the Digest Authentication link")]
         public void WhenTheUserClicksTheDigestAuthenticationLink()
         {
             _sut.IndexPage.ClickDigestAuthenticationLink();

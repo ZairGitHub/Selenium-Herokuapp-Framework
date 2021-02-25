@@ -14,7 +14,7 @@ Scenario: Add/Remove Elements Page
 Scenario: Basic Authentication Form
 	When the user clicks the Basic Authentication Link
 	And the user reads the popup text
-	Then the text should inform the user that they are attempting to reach the Basic Authentication page
+	Then the text should inform the user that they are attempting to reach the correct "“Restricted Area”" page
 
 Scenario: Checkboxes Page
 	When the user clicks the Checkboxes link
@@ -24,4 +24,4 @@ Scenario: Checkboxes Page
 Scenario: Digest Authentication Form
 	When the user clicks the Digest Authentication Link
 	And the user reads the popup text
-	Then the text should inform the user that they are attempting to reach the Digest Authentication page
+	Then the text should inform the user that they are attempting to reach the correct "“Protected Area”" page

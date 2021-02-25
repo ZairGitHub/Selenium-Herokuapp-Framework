@@ -4,9 +4,9 @@
 	so that I can navigate to other areas of the website
 
 Background:
-	Given I am on the Index page
+	Given the user is on the Index page
 
 Scenario: Add/Remove Elements Page
-	When I click the Add/Remove Elements link
-	And I read the page header text
-	Then the text should inform me that I am on the Add/Remove Elements Page
+	When the user clicks the Add/Remove Elements link
+	And the user reads the page header text
+	Then the text should inform the user that they are on the Add/Remove Elements Page

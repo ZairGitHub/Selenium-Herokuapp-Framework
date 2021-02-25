@@ -21,7 +21,13 @@ namespace SeleniumExamples.Steps
         {
             _sut.IndexPage.NavigateToPage();
         }
-        
+
+        [When(@"the user clicks the link in the footer of the page")]
+        public void WhenTheUserClicksTheLinkInTheFooterOfThePage()
+        {
+            _sut.SharedHTML.ClickPageFooterLink();
+        }
+
         [When(@"the user clicks the Add/Remove Elements link")]
         public void WhenTheUserClicksTheAddRemoveElementsLink()
         {
@@ -62,6 +68,12 @@ namespace SeleniumExamples.Steps
         public void WhenTheUserClicksTheJavaScriptAlertsLink()
         {
             _sut.IndexPage.ClickJavaScriptAlertsLink();
+        }
+
+        [When(@"the user switches to the newly created tab (.*)")]
+        public void WhenTheUserSwitchesToTheNewlyCreatedTab(int index)
+        {
+            _sut.SharedHTML.SwitchToTab(index);
         }
 
         [When(@"the user reads the page header text")]

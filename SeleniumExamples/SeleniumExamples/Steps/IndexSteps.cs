@@ -25,16 +25,34 @@ namespace SeleniumExamples.Steps
             _sut.IndexPage.ClickAddRemoveElementsLink();
         }
 
+        [When(@"the user clicks the Basic Authentication Link")]
+        public void WhenTheUserClicksTheBasicAuthenticationLink()
+        {
+            _sut.IndexPage.ClickBasicAuthenticationLink();
+        }
+
         [When(@"the user reads the page header text")]
         public void WhenTheUserReadsThePageHeaderText()
         {
             _result = _sut.SharedHTML.ReadPageHeaderText();
         }
 
-        [Then(@"the text should inform the user that they are on the Add/Remove Elements Page")]
+        [When(@"the user reads the popup text")]
+        public void WhenTheUserReadsThePopupText()
+        {
+            _result = _sut.SharedIAlert.ReadAuthenticationPopupText();
+        }
+
+        [Then(@"the text should inform the user that they are on the Add/Remove Elements page")]
         public void ThenTheTextShouldInformTheUserThatTheyAreOnTheAddRemoveElementsPage()
         {
             Assert.That(_result, Is.EqualTo("Add/Remove Elements"));
+        }
+
+        [Then(@"the text should inform the user that they are attempting to reach the Basic Authentication page")]
+        public void ThenTheTextShouldInformTheUserThatTheyAreAttemptingToReachTheBasicAuthenticationPage()
+        {
+            Assert.That(_result, Contains.Substring("“Restricted Area”"));
         }
     }
 }

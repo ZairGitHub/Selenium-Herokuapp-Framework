@@ -8,4 +8,7 @@ Background:
 
 Scenario: Add Button
 	When the user clicks the add button
-	Then a delete button should be created
+	And the user clicks the add button
+	And the user clicks the add button
+	And the user counts the number of delete buttons
+	Then the number of delete buttons should be equal to 3

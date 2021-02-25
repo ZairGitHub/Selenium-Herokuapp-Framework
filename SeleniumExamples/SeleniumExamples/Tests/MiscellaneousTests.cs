@@ -36,5 +36,15 @@ namespace SeleniumExamples
 
             Assert.That(result, Is.True);
         }
+
+        [Test]
+        public void WebsiteIsDown_AlwaysRedirectsToApplicationErrorPage()
+        {
+            _sut.IndexPage.NavigateToPage();
+
+            var result = _sut.Driver.Title;
+
+            Assert.That(result, Is.EqualTo("Application Error"));
+        }
     }
 }

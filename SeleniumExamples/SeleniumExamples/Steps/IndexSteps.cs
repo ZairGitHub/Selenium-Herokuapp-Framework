@@ -61,17 +61,10 @@ namespace SeleniumExamples.Steps
             Assert.That(_result, Is.EqualTo(pageHeader));
         }
 
-        [Then(@"the text should inform the user that they are attempting to reach the Digest Authentication page")]
-        public void ThenTheTextShouldInformTheUserThatTheyAreAttemptingToReachTheDigestAuthenticationPage()
+        [Then(@"the text should inform the user that they are attempting to reach the correct ""(.*)"" page")]
+        public void ThenTheTextShouldInformTheUserThatTheyAreAttemptingToReachTheCorrectPage(string pageAuthenticationArea)
         {
-            Assert.That(_result, Contains.Substring("“Protected Area”"));
-        }
-
-
-        [Then(@"the text should inform the user that they are attempting to reach the Basic Authentication page")]
-        public void ThenTheTextShouldInformTheUserThatTheyAreAttemptingToReachTheBasicAuthenticationPage()
-        {
-            Assert.That(_result, Contains.Substring("“Restricted Area”"));
+            Assert.That(_result, Contains.Substring(pageAuthenticationArea));
         }
     }
 }

@@ -10,7 +10,7 @@ Scenario: Elemental Selenium Website
 	When the user clicks the link in the footer of the page
 	And the user switches to the newly created tab 1
 	And the user reads the page url
-	Then the url should inform the user that they have been redirected to the correct "http://elementalselenium.com" website 
+	Then the url should inform the user that they have been redirected to the correct "http://elementalselenium.com/" website 
 
 Scenario: GitHub Website Repository
 	When the user clicks the GitHub image
@@ -22,6 +22,7 @@ Scenario: Add/Remove Elements Page
 	And the user reads the page header text
 	Then the text should inform the user that they are on the correct "Add/Remove Elements" page
 
+@ignore
 Scenario: Basic Authentication Form
 	When the user clicks the Basic Authentication link
 	And the user reads the popup text
@@ -32,6 +33,7 @@ Scenario: Checkboxes Page
 	And the user reads the page header text
 	Then the text should inform the user that they are on the correct "Checkboxes" page
 
+@ignore
 Scenario: Digest Authentication Form
 	When the user clicks the Digest Authentication link
 	And the user reads the popup text
@@ -40,7 +42,7 @@ Scenario: Digest Authentication Form
 Scenario: Form Authentication Page
 	When the user clicks the Form Authentication link
 	And the user reads the page header text
-	Then the text should inform the user that they are on the correct "Login page" page
+	Then the text should inform the user that they are on the correct "Login Page" page
 
 Scenario: Hovers Page
 	When the user clicks the Hovers link

@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
-using TechTalk.SpecFlow;
 using SeleniumExamples.Pages;
+using TechTalk.SpecFlow;
 
 namespace SeleniumExamples.Steps
 {

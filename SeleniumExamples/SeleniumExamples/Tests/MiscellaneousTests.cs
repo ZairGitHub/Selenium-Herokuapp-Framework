@@ -37,6 +37,7 @@ namespace SeleniumExamples
             Assert.That(result, Is.True);
         }
 
+        [Ignore("Only usable when the website is down")]
         [Test]
         public void WebsiteIsDown_AlwaysRedirectsToApplicationErrorPage()
         {

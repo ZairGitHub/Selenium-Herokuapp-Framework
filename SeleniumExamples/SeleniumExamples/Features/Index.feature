@@ -20,3 +20,8 @@ Scenario: Checkboxes Page
 	When the user clicks the Checkboxes link
 	And the user reads the page header text
 	Then the text should inform the user that they are on the correct "Checkboxes" page
+
+Scenario: Digest Authentication Form
+	When the user clicks the Digest Authentication Link
+	And the user reads the popup text
+	Then the text should inform the user that they are attempting to reach the Digest Authentication page

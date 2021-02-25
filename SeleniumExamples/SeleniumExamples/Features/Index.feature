@@ -35,3 +35,8 @@ Scenario: Hovers Page
 	When the user clicks the Hovers link
 	And the user reads the page header text
 	Then the text should inform the user that they are on the correct "Hovers" page
+
+Scenario: JavaScript Alerts Page
+	When the user clicks the JavaScript Alerts link
+	And the user reads the page header text
+	Then the text should inform the user that they are on the correct "JavaScript Alerts" page

@@ -43,6 +43,12 @@ namespace SeleniumExamples.Steps
             _sut.IndexPage.ClickDigestAuthenticationLink();
         }
 
+        [When(@"the user clicks the Form Authentication link")]
+        public void WhenTheUserClicksTheFormAuthenticationLink()
+        {
+            _sut.IndexPage.ClickFormAuthenticationLink();
+        }
+
         [When(@"the user reads the page header text")]
         public void WhenTheUserReadsThePageHeaderText()
         {

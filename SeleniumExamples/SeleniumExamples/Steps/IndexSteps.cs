@@ -28,6 +28,12 @@ namespace SeleniumExamples.Steps
             _sut.SharedHTML.ClickPageFooterLink();
         }
 
+        [When(@"the user clicks the GitHub image")]
+        public void WhenTheUserClicksTheGitHubImage()
+        {
+            _sut.SharedHTML.ClickGitHubImageLink();
+        }
+
         [When(@"the user clicks the Add/Remove Elements link")]
         public void WhenTheUserClicksTheAddRemoveElementsLink()
         {

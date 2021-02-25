@@ -6,6 +6,12 @@
 Background:
 	Given the user is on the Index page
 
+Scenario: Elemental Selenium Website Page
+	When the user clicks the link in the footer of the page
+	And the user switches to the newly created tab 1
+	And the user reads the page header text
+	Then the text should inform the user that they are on the correct "Elemental Selenium" page
+
 Scenario: Add/Remove Elements Page
 	When the user clicks the Add/Remove Elements link
 	And the user reads the page header text

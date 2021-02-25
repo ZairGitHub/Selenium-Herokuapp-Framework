@@ -37,6 +37,12 @@ namespace SeleniumExamples.Steps
             _sut.IndexPage.ClickCheckboxesLink();
         }
 
+        [When(@"the user clicks the Digest Authentication Link")]
+        public void WhenTheUserClicksTheDigestAuthenticationLink()
+        {
+            _sut.IndexPage.ClickDigestAuthenticationLink();
+        }
+
         [When(@"the user reads the page header text")]
         public void WhenTheUserReadsThePageHeaderText()
         {
@@ -54,6 +60,13 @@ namespace SeleniumExamples.Steps
         {
             Assert.That(_result, Is.EqualTo(pageHeader));
         }
+
+        [Then(@"the text should inform the user that they are attempting to reach the Digest Authentication page")]
+        public void ThenTheTextShouldInformTheUserThatTheyAreAttemptingToReachTheDigestAuthenticationPage()
+        {
+            Assert.That(_result, Contains.Substring("“Protected Area”"));
+        }
+
 
         [Then(@"the text should inform the user that they are attempting to reach the Basic Authentication page")]
         public void ThenTheTextShouldInformTheUserThatTheyAreAttemptingToReachTheBasicAuthenticationPage()

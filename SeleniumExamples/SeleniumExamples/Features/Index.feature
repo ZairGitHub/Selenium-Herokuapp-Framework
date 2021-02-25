@@ -12,6 +12,11 @@ Scenario: Elemental Selenium Website
 	And the user reads the page url
 	Then the url should inform the user that they have been redirected to the correct "http://elementalselenium.com" website 
 
+Scenario: GitHub Website Repository
+	When the user clicks the GitHub image
+	And the user reads the page url
+	Then the url should inform the user that they have been redirected to the correct "https://github.com/saucelabs/the-internet" website 
+
 Scenario: Add/Remove Elements Page
 	When the user clicks the Add/Remove Elements link
 	And the user reads the page header text

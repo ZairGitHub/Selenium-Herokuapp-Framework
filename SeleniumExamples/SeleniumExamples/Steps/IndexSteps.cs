@@ -58,6 +58,12 @@ namespace SeleniumExamples.Steps
             _sut.IndexPage.ClickHoversLink();
         }
 
+        [When(@"the user clicks the JavaScript Alerts link")]
+        public void WhenTheUserClicksTheJavaScriptAlertsLink()
+        {
+            _sut.IndexPage.ClickJavaScriptAlertsLink();
+        }
+
         [When(@"the user reads the page header text")]
         public void WhenTheUserReadsThePageHeaderText()
         {

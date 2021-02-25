@@ -17,7 +17,10 @@ namespace SeleniumExamples.Steps
         public void AfterScenario() => _sut.CloseDriver();
 
         [Given(@"the user is on the Index page")]
-        public void GivenTheUserIsOnTheIndexPage() => _sut.IndexPage.NavigateToPage();
+        public void GivenTheUserIsOnTheIndexPage()
+        {
+            _sut.IndexPage.NavigateToPage();
+        }
         
         [When(@"the user clicks the Add/Remove Elements link")]
         public void WhenTheUserClicksTheAddRemoveElementsLink()
@@ -47,6 +50,12 @@ namespace SeleniumExamples.Steps
         public void WhenTheUserClicksTheFormAuthenticationLink()
         {
             _sut.IndexPage.ClickFormAuthenticationLink();
+        }
+
+        [When(@"the user clicks the Hovers link")]
+        public void WhenTheUserClicksTheHoversLink()
+        {
+            _sut.IndexPage.ClickHoversLink();
         }
 
         [When(@"the user reads the page header text")]

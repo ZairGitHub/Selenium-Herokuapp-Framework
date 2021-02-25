@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using SeleniumExamples.Pages;
 
-namespace SeleniumExamples
+namespace SeleniumExamples.Tests
 {
     [TestFixture]
     public class JavaScriptAlertsTests

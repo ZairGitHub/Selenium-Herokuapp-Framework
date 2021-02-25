@@ -36,7 +36,7 @@ namespace SeleniumExamples.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Index Page Navigation", "\tAs a user,\r\n\tI want to be able to select links on the index page,\r\n\tso that I ca" +
-                    "n navigate to other areas of the website", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "n navigate to other areas of the website.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         

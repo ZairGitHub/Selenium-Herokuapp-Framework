@@ -15,3 +15,8 @@ Scenario: Basic Authentication Form
 	When the user clicks the Basic Authentication Link
 	And the user reads the popup text
 	Then the text should inform the user that they are attempting to reach the Basic Authentication page
+
+Scenario: Checkboxes Page
+	When the user clicks the Checkboxes link
+	And the user reads the page header text
+	Then the text should inform the user that they are on the Checkboxes page

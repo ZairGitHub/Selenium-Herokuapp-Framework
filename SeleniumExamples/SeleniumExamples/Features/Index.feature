@@ -9,7 +9,7 @@ Background:
 Scenario: Add/Remove Elements Page
 	When the user clicks the Add/Remove Elements link
 	And the user reads the page header text
-	Then the text should inform the user that they are on the Add/Remove Elements page
+	Then the text should inform the user that they are on the correct "Add/Remove Elements" page
 
 Scenario: Basic Authentication Form
 	When the user clicks the Basic Authentication Link
@@ -19,4 +19,4 @@ Scenario: Basic Authentication Form
 Scenario: Checkboxes Page
 	When the user clicks the Checkboxes link
 	And the user reads the page header text
-	Then the text should inform the user that they are on the Checkboxes page
+	Then the text should inform the user that they are on the correct "Checkboxes" page

@@ -49,22 +49,16 @@ namespace SeleniumExamples.Steps
             _result = _sut.SharedIAlert.ReadAuthenticationPopupText();
         }
 
-        [Then(@"the text should inform the user that they are on the Add/Remove Elements page")]
-        public void ThenTheTextShouldInformTheUserThatTheyAreOnTheAddRemoveElementsPage()
+        [Then(@"the text should inform the user that they are on the correct ""(.*)"" page")]
+        public void ThenTheTextShouldInformTheUserThatTheyAreOnTheCorrectPage(string pageHeader)
         {
-            Assert.That(_result, Is.EqualTo("Add/Remove Elements"));
+            Assert.That(_result, Is.EqualTo(pageHeader));
         }
 
         [Then(@"the text should inform the user that they are attempting to reach the Basic Authentication page")]
         public void ThenTheTextShouldInformTheUserThatTheyAreAttemptingToReachTheBasicAuthenticationPage()
         {
             Assert.That(_result, Contains.Substring("“Restricted Area”"));
-        }
-
-        [Then(@"the text should inform the user that they are on the Checkboxes page")]
-        public void ThenTheTextShouldInformTheUserThatTheyAreOnTheCheckboxesPage()
-        {
-            Assert.That(_result, Is.EqualTo("Checkboxes"));
         }
     }
 }

@@ -7,5 +7,5 @@ Background:
 	Given I am on the Index page
 
 Scenario: Add/Remove Elements Page
-	When I click the "Add/Remove Elements" link
-	Then I should be redirected to the "Add/Remove Elements" Page
+	When I click the Add/Remove Elements link
+	Then I should be redirected to the Add/Remove Elements Page

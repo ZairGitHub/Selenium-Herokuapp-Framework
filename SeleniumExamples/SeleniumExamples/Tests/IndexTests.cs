@@ -21,9 +21,9 @@ namespace SeleniumExamples
 
             _sut.SharedHTML.ClickPageFooterLink();
             _sut.SharedHTML.SwitchToTab(1);
-            var result = _sut.Driver.Url;
+            var result = _sut.SharedHTML.ReadPageHeaderText();
 
-            Assert.That(result, Is.EqualTo("http://elementalselenium.com/"));
+            Assert.That(result, Is.EqualTo("Elemental Selenium"));
         }
 
         [Test]

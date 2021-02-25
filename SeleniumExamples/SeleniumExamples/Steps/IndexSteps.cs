@@ -31,6 +31,12 @@ namespace SeleniumExamples.Steps
             _sut.IndexPage.ClickBasicAuthenticationLink();
         }
 
+        [When(@"the user clicks the Checkboxes link")]
+        public void WhenTheUserClicksTheCheckboxesLink()
+        {
+            _sut.IndexPage.ClickCheckboxesLink();
+        }
+
         [When(@"the user reads the page header text")]
         public void WhenTheUserReadsThePageHeaderText()
         {
@@ -53,6 +59,12 @@ namespace SeleniumExamples.Steps
         public void ThenTheTextShouldInformTheUserThatTheyAreAttemptingToReachTheBasicAuthenticationPage()
         {
             Assert.That(_result, Contains.Substring("“Restricted Area”"));
+        }
+
+        [Then(@"the text should inform the user that they are on the Checkboxes page")]
+        public void ThenTheTextShouldInformTheUserThatTheyAreOnTheCheckboxesPage()
+        {
+            Assert.That(_result, Is.EqualTo("Checkboxes"));
         }
     }
 }

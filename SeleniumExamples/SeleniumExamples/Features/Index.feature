@@ -30,3 +30,8 @@ Scenario: Form Authentication Page
 	When the user clicks the Form Authentication link
 	And the user reads the page header text
 	Then the text should inform the user that they are on the correct "Login page" page
+
+Scenario: Hovers Page
+	When the user clicks the Hovers link
+	And the user reads the page header text
+	Then the text should inform the user that they are on the correct "Hovers" page

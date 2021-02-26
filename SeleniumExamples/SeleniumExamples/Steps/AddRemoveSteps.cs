@@ -7,7 +7,6 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class AddRemoveSteps
     {
-        private int _result;
         private WebsitePOM _sut;
 
         [BeforeScenario]
@@ -37,16 +36,12 @@ namespace SeleniumExamples.Steps
             _sut.AddRemovePage.ClickAnyDeleteButton();
         }
 
-        [When(@"the user counts the number of delete buttons")]
-        public void WhenTheUserCountsTheNumberOfDeleteButtons()
-        {
-            _result = _sut.AddRemovePage.CountNumberOfDeleteButtons();
-        }
-
         [Then(@"the number of delete buttons should be equal to (.*)")]
         public void ThenTheNumberOfDeleteButtonsShouldBeEqualTo(int numberOfDeleteButtons)
         {
-            Assert.That(_result, Is.EqualTo(numberOfDeleteButtons));
+            var result = _sut.AddRemovePage.CountNumberOfDeleteButtons();
+
+            Assert.That(result, Is.EqualTo(numberOfDeleteButtons));
         }
     }
 }

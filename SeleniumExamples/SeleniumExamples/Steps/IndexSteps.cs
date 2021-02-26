@@ -7,7 +7,6 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class IndexSteps
     {
-        private string _result;
         private WebsitePOM _sut;
 
         [BeforeScenario]
@@ -82,32 +81,28 @@ namespace SeleniumExamples.Steps
             _sut.SharedHTML.SwitchToTab(index);
         }
 
-        [When(@"the user reads the popup text")]
-        public void WhenTheUserReadsThePopupText()
-        {
-            _result = _sut.SharedIAlert.ReadAuthenticationPopupText();
-        }
-
         [Then(@"the page url should indicate that the user has been redirected to the correct ""(.*)"" website")]
         public void ThenThePageUrlShouldIndicateThatTheUserHasBeenRedirectedToTheCorrectWebsite(string url)
         {
-            _result = _sut.Driver.Url;
+            var result = _sut.Driver.Url;
 
-            Assert.That(_result, Is.EqualTo(url));
+            Assert.That(result, Is.EqualTo(url));
         }
 
         [Then(@"the page header text should inform the user that they are on the correct ""(.*)"" page")]
         public void ThenThePageHeaderTextShouldInformTheUserThatTheyAreOnTheCorrectPage(string pageHeader)
         {
-            _result = _sut.SharedHTML.ReadPageHeaderText();
+            var result = _sut.SharedHTML.ReadPageHeaderText();
 
-            Assert.That(_result, Is.EqualTo(pageHeader));
+            Assert.That(result, Is.EqualTo(pageHeader));
         }
 
-        [Then(@"the text should inform the user that they are attempting to reach the correct ""(.*)"" page")]
-        public void ThenTheTextShouldInformTheUserThatTheyAreAttemptingToReachTheCorrectPage(string pageAuthenticationArea)
+        [Then(@"the popup text should inform the user that they are attempting to reach the correct ""(.*)"" page")]
+        public void ThenThePopupTextShouldInformTheUserThatTheyAreAttemptingToReachTheCorrectPage(string pageAuthenticationArea)
         {
-            Assert.That(_result, Contains.Substring(pageAuthenticationArea));
+            var result = _sut.SharedIAlert.ReadAuthenticationPopupText();
+
+            Assert.That(result, Is.EqualTo(pageAuthenticationArea));
         }
     }
 }

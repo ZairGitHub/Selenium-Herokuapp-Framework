@@ -11,3 +11,9 @@ Scenario: Interacting with a basic JavaScript alert
 	When the user clicks the JSAlert button
     And the user clicks the OK button on the popup
 	Then the page should display the result text "You successfully clicked an alert" for the interaction
+
+@javascript-confirm
+Scenario: Interacting with JavaScript confirm alert
+    When the user clicks the JSConfirm button
+    And the user clicks the cancel button on the popup
+    Then the page should display the result text ""You clicked: Cancel"" for the interaction

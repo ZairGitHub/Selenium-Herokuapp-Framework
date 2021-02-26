@@ -21,6 +21,12 @@ namespace SeleniumExamples.Steps
             _sut.FormAuthenticationPage.NavigateToPage();
         }
 
+        [When(@"the user directly navigates to the Secure Area page")]
+        public void WhenTheUserDirectlyNavigatesToTheSecureAreaPage()
+        {
+            _sut.SecureAreaPage.NavigateToPage();
+        }
+
         [When(@"the user enters a valid username")]
         public void WhenTheUserEntersAValidUsername()
         {
@@ -39,10 +45,16 @@ namespace SeleniumExamples.Steps
             _sut.FormAuthenticationPage.ClickLoginButton();
         }
 
-        [When(@"the user directly navigates to the Secure Area page")]
-        public void WhenTheUserDirectlyNavigatesToTheSecureAreaPage()
+        [When(@"the user is logged in")]
+        public void WhenTheUserIsLoggedIn()
         {
-            _sut.SecureAreaPage.NavigateToPage();
+            _sut.FormAuthenticationPage.LogInAsAuthenticatedUser();
+        }
+
+        [When(@"the user clicks the logout button")]
+        public void WhenTheUserClicksTheLogoutButton()
+        {
+            _sut.SecureAreaPage.ClickLogoutButton();
         }
 
         [Then(@"a help message containing the following text ""(.*)"" should be displayed")]

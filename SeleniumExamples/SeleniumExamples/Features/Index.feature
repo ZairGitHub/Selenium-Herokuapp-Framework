@@ -9,13 +9,12 @@ Background:
 Scenario: Navigate to Elemental Selenium website
 	When the user clicks the link in the footer of the page
 	And the user switches to the newly created tab 1
-	And the user reads the page url
-	Then the url should inform the user that they have been redirected to the correct "http://elementalselenium.com/" website 
+	Then the page url should indicate that the user has been redirected to the correct "http://elementalselenium.com/" website 
 
 Scenario: Navigate to GitHub website repository
 	When the user clicks the GitHub image
 	And the user reads the page url
-	Then the url should inform the user that they have been redirected to the correct "https://github.com/saucelabs/the-internet" website 
+	Then the page url should indicate that the user has been redirected to the correct "https://github.com/saucelabs/the-internet" website 
 
 Scenario: Navigate to Add/Remove Elements page
 	When the user clicks the Add/Remove Elements link

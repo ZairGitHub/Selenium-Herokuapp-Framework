@@ -1,4 +1,4 @@
-﻿Feature: DigestAuthentication
+﻿Feature: Digest Authentication Form
 	As a user,
 	I want to be able to authenticate my credentials,
 	so that I can access the Digest Authentication page.

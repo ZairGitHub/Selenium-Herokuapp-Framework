@@ -6,7 +6,11 @@
 Background:
 	Given the user is on the Checkboxes page
 
-Scenario: Toggle checkboxes
+Scenario Outline: Toggle checkboxes
 	And the user toggles the checkbox <id>
 	When the user checks the checkbox <id> state
-	Then the checkbox <id> state should be toggled
+	Then the checkbox state should be toggled
+	Examples:
+	| id |
+	| 1  |
+	| 2  |

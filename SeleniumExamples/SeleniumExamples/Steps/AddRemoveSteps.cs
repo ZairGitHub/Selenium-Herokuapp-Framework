@@ -27,13 +27,17 @@ namespace SeleniumExamples.Steps
         {
             _sut.AddRemovePage.ClickAddButton();
         }
-        
-        [Then(@"a delete button should be created")]
-        public void ThenADeleteButtonShouldBeCreated()
-        {
-            var result = _sut.AddRemovePage.CountNumberOfDeleteButtons();
 
-            Assert.That(result, Is.EqualTo(0));
+        [When(@"the user counts the number of delete buttons")]
+        public void WhenTheUserCountsTheNumberOfDeleteButtons()
+        {
+            _result = _sut.AddRemovePage.CountNumberOfDeleteButtons();
+        }
+
+        [Then(@"the number of delete buttons should be equal to (.*)")]
+        public void ThenTheNumberOfDeleteButtonsShouldBeEqualTo(int numberOfDeleteButtons)
+        {
+            Assert.That(_result, Is.EqualTo(numberOfDeleteButtons));
         }
     }
 }

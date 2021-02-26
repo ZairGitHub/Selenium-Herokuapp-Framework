@@ -27,18 +27,24 @@ namespace SeleniumExamples.Steps
             _sut.FormAuthenticationPage.EnterValidUsername();
         }
 
+        [When(@"the user enters a valid password")]
+        public void WhenTheUserEntersAValidPassword()
+        {
+            _sut.FormAuthenticationPage.EnterValidPassword();
+        }
+
         [When(@"the user clicks the login button")]
         public void WhenTheUserClicksTheLoginButton()
         {
             _sut.FormAuthenticationPage.ClickLoginButton();
         }
-        
-        [Then(@"an error message containing the following text ""(.*)"" should be displayed")]
-        public void ThenAnErrorMessageContainingTheFollowingTextShouldBeDisplayed(string errorMessage)
+
+        [Then(@"a help message containing the following text ""(.*)"" should be displayed")]
+        public void ThenAHelpMessageContainingTheFollowingTextShouldBeDisplayed(string helpMessage)
         {
             var result = _sut.FormAuthenticationPage.ReadUpdateText();
 
-            Assert.That(result, Contains.Substring(errorMessage));
+            Assert.That(result, Contains.Substring(helpMessage));
         }
     }
 }

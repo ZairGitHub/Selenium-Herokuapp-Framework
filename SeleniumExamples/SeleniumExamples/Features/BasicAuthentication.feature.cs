@@ -118,12 +118,14 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Logging in with valid credentials redirects user to authentication page")]
-        public virtual void LoggingInWithValidCredentialsRedirectsUserToAuthenticationPage()
+        [NUnit.Framework.DescriptionAttribute("Logging in with valid credentials redirects user to the Basic Authentication page" +
+            "")]
+        public virtual void LoggingInWithValidCredentialsRedirectsUserToTheBasicAuthenticationPage()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logging in with valid credentials redirects user to authentication page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logging in with valid credentials redirects user to the Basic Authentication page" +
+                    "", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

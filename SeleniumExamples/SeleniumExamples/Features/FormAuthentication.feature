@@ -20,3 +20,7 @@ Scenario: Logging in with a valid username and a valid password redirects user t
     And the user enters a valid password
     And the user clicks the login button
     Then a help message containing the following text "You logged into a secure area!" should be displayed
+
+Scenario: Directly navigating to the Secure Area page displays an appropriate error message
+    When the user directly navigates to the Secure Area page
+    Then a help message containing the following text "You must login to view the secure area!" should be displayed

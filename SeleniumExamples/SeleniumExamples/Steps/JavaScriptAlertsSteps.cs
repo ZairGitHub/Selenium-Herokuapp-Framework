@@ -30,6 +30,12 @@ namespace SeleniumExamples.Steps
             _sut.JavaScriptAlertsPage.ClickJSConfirmButton();
         }
 
+        [When(@"the user clicks the JSPrompt button")]
+        public void WhenTheUserClicksTheJSPromptButton()
+        {
+            _sut.JavaScriptAlertsPage.ClickJSPromptButton();
+        }
+
         [When(@"the user clicks the cancel button")]
         public void WhenTheUserClicksTheCancelButton()
         {

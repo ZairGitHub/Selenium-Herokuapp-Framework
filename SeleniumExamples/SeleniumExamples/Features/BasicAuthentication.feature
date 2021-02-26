@@ -11,5 +11,4 @@ Scenario: Cancel button cancels authentication
 
 Scenario: OK button redirects to authentication page with valid credentials
     Given the user is on the Basic Authentication form with valid credentials
-    When the user clicks the OK button
     Then the page header text should inform the user that they successfully authenticated their credentials

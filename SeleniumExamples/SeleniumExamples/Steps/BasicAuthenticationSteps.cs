@@ -34,12 +34,6 @@ namespace SeleniumExamples.Steps
         {
             _sut.SharedIAlert.ClickCancelButton();
         }
-
-        [When(@"the user clicks the OK button")]
-        public void WhenTheUserClicksTheOKButton()
-        {
-            _sut.SharedIAlert.ClickOKButton();
-        }
         
         [Then(@"the page header text should inform the user that they failed to authenticate their credentials")]
         public void ThenThePageHeaderTextShouldInformTheUserThatTheyFailedToAuthenticateTheirCredentials()

@@ -148,9 +148,6 @@ this.ScenarioInitialize(scenarioInfo);
     testRunner.Given("the user is on the Basic Authentication form with valid credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 14
-    testRunner.When("the user clicks the OK button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 15
     testRunner.Then("the page header text should inform the user that they successfully authenticated " +
                         "their credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

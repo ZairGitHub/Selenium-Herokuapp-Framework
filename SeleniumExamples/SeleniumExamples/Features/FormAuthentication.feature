@@ -25,7 +25,13 @@ Scenario: Directly navigating to the Secure Area page displays an appropriate er
     When the user directly navigates to the Secure Area page
     Then a help message containing the following text "You must login to view the secure area!" should be displayed
 
-Scenario: Logging out redirects the user back to the Form Authentication page
+Scenario: Logging out removes authentication and redirects the user back to the Form Authentication page
     When the user is logged in
     And the user clicks the logout button
     Then a help message containing the following text "You logged out of the secure area!" should be displayed
+
+Scenario: Navigating back after logging out restores authentication and redirects the user back to the Secure Area page
+    When the user is logged in
+    And the user clicks the logout button
+    And the user uses the browser's back button
+    Then a help message containing the following text "You logged into a secure area!" should be displayed

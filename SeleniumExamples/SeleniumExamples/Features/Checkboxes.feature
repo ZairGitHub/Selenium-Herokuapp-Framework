@@ -1,11 +1,12 @@
 ﻿Feature: Checkboxes
 	As a user,
-	I want to be select and deselect checkboxes,
+	I want to be toggle the state of checkboxes,
 	so that I can interact with checkbox elements on the website.
 
-@mytag
-Scenario: Add two numbers
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+Background:
+	Given the user is on the Checkboxes page
+
+Scenario: Toggle checkboxes
+	And the user toggles the checkbox <id>
+	When the user checks the checkbox <id> state
+	Then the checkbox <id> state should be toggled

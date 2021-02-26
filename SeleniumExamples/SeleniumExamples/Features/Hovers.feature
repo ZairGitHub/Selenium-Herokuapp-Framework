@@ -3,9 +3,14 @@
 	I want to be hover over elements to reveal new elements,
 	so that I can interact with hidden elements on the website.
 
-@mytag
-Scenario: Add two numbers
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+Background:
+    Given the user is on the Hovers page
+
+Scenario Outline: Hovering over an image reveals additional name information
+	When the user hovers over the image <id>
+	Then the user should be able to see additional name information for the image
+    Examples:
+	| id |
+	| 1  |
+	| 2  |
+	| 3  |

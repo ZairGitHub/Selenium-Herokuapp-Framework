@@ -111,7 +111,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 10
  testRunner.Then("the page header text should inform the user that their credentials could not be a" +
-                        "uthenticated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "uthenticated \"Not authorized\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -149,7 +149,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 14
     testRunner.Then("the page header text should inform the user that their credentials have successfu" +
-                        "lly been authenticated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "lly been authenticated \"Basic Auth\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -193,7 +193,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 20
     testRunner.Then("the page header text should inform the user that their credentials have successfu" +
-                        "lly been authenticated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "lly been authenticated \"Basic Auth\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

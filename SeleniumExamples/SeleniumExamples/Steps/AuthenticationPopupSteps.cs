@@ -49,20 +49,20 @@ namespace SeleniumExamples.Steps
             _sut.BasicAuthenticationPage.NavigateToAuthentication();
         }
 
-        [Then(@"the page header text should inform the user that their credentials could not be authenticated")]
-        public void ThenThePageHeaderTextShouldInformTheUserThatTheirCredentialsCouldNotBeAuthenticated()
+        [Then(@"the page header text should inform the user that their credentials could not be authenticated ""(.*)""")]
+        public void ThenThePageHeaderTextShouldInformTheUserThatTheirCredentialsCouldNotBeAuthenticated(string pageHeader)
         {
             var result = _sut.SharedHTML.ReadPageHeaderText();
 
-            Assert.That(result, Is.EqualTo("Not authorized"));
+            Assert.That(result, Is.EqualTo(pageHeader));
         }
 
-        [Then(@"the page header text should inform the user that their credentials have successfully been authenticated")]
-        public void ThenThePageHeaderTextShouldInformTheUserThatTheirCredentialsHaveSuccessfullyBeenAuthenticated()
+        [Then(@"the page header text should inform the user that their credentials have successfully been authenticated ""(.*)""")]
+        public void ThenThePageHeaderTextShouldInformTheUserThatTheirCredentialsHaveSuccessfullyBeenAuthenticated(string pageHeader)
         {
             var result = _sut.SharedHTML.ReadPageHeaderText();
 
-            Assert.That(result, Is.EqualTo("Basic Auth"));
+            Assert.That(result, Is.EqualTo(pageHeader));
         }
     }
 }

@@ -35,6 +35,14 @@ namespace SeleniumExamples.Steps
             _sut.DigestAuthenticationPage.NavigateToAuthentication();
         }
 
+        [Given(@"the user is on the Digest Authentication form with valid credentials")]
+        public void GivenTheUserIsOnTheDigestAuthenticationFormWithValidCredentials()
+        {
+            _sut.DigestAuthenticationPage.NavigateToAuthentication(
+                _sut.DigestAuthenticationPage.ValidUsername,
+                _sut.DigestAuthenticationPage.ValidPassword);
+        }
+
         [When(@"the user clicks the cancel button")]
         public void WhenTheUserClicksTheCancelButton()
         {

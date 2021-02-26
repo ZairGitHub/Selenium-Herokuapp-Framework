@@ -174,12 +174,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Navigate to Add/Remove Elements page")]
+        [NUnit.Framework.CategoryAttribute("hypertext")]
         public virtual void NavigateToAddRemoveElementsPage()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "hypertext"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigate to Add/Remove Elements page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 20
+#line 21
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -202,15 +204,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 21
+#line 22
  testRunner.When("the user clicks the Add/Remove Elements link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 22
+#line 23
  testRunner.And("the user reads the page header text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 23
- testRunner.Then("the text should inform the user that they are on the correct \"Add/Remove Elements" +
-                        "\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 24
+ testRunner.Then("the page header text should inform the user that they are on the correct \"Add/Rem" +
+                        "ove Elements\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -225,7 +227,7 @@ this.FeatureBackground();
                     "ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigate to Basic Authentication form", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 26
+#line 27
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -248,13 +250,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 27
+#line 28
  testRunner.When("the user clicks the Basic Authentication link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 28
+#line 29
  testRunner.And("the user reads the popup text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 29
+#line 30
  testRunner.Then("the text should inform the user that they are attempting to reach the correct \"“R" +
                         "estricted Area”\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -264,12 +266,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Navigate to Checkboxes page")]
+        [NUnit.Framework.CategoryAttribute("hypertext")]
         public virtual void NavigateToCheckboxesPage()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "hypertext"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigate to Checkboxes page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 31
+#line 33
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -292,14 +296,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 32
+#line 34
  testRunner.When("the user clicks the Checkboxes link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 33
- testRunner.And("the user reads the page header text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 34
- testRunner.Then("the text should inform the user that they are on the correct \"Checkboxes\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 35
+ testRunner.Then("the page header text should inform the user that they are on the correct \"Checkbo" +
+                        "xes\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -314,7 +316,7 @@ this.FeatureBackground();
                     "ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigate to Digest Authentication form", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 37
+#line 38
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -337,13 +339,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 38
+#line 39
  testRunner.When("the user clicks the Digest Authentication link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 39
+#line 40
  testRunner.And("the user reads the popup text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 40
+#line 41
  testRunner.Then("the text should inform the user that they are attempting to reach the correct \"“P" +
                         "rotected Area”\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -353,12 +355,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Navigate to Form Authentication page")]
+        [NUnit.Framework.CategoryAttribute("hypertext")]
         public virtual void NavigateToFormAuthenticationPage()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "hypertext"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigate to Form Authentication page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 42
+#line 44
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -381,14 +385,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 43
+#line 45
  testRunner.When("the user clicks the Form Authentication link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 44
- testRunner.And("the user reads the page header text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 45
- testRunner.Then("the text should inform the user that they are on the correct \"Login Page\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 46
+ testRunner.Then("the page header text should inform the user that they are on the correct \"Login P" +
+                        "age\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -396,12 +398,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Navigate to Hovers page")]
+        [NUnit.Framework.CategoryAttribute("hypertext")]
         public virtual void NavigateToHoversPage()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "hypertext"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigate to Hovers page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 47
+#line 49
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -424,14 +428,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 48
+#line 50
  testRunner.When("the user clicks the Hovers link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 49
- testRunner.And("the user reads the page header text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 50
- testRunner.Then("the text should inform the user that they are on the correct \"Hovers\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 51
+ testRunner.Then("the page header text should inform the user that they are on the correct \"Hovers\"" +
+                        " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -439,12 +441,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Navigate to JavaScript Alerts page")]
+        [NUnit.Framework.CategoryAttribute("hypertext")]
         public virtual void NavigateToJavaScriptAlertsPage()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "hypertext"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigate to JavaScript Alerts page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 52
+#line 54
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -467,15 +471,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 53
+#line 55
  testRunner.When("the user clicks the JavaScript Alerts link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 54
- testRunner.And("the user reads the page header text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 55
- testRunner.Then("the text should inform the user that they are on the correct \"JavaScript Alerts\" " +
-                        "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 56
+ testRunner.Then("the page header text should inform the user that they are on the correct \"JavaScr" +
+                        "ipt Alerts\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

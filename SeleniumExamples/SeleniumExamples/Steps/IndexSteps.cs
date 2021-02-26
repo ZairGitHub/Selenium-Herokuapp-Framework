@@ -82,12 +82,6 @@ namespace SeleniumExamples.Steps
             _sut.SharedHTML.SwitchToTab(index);
         }
 
-        [When(@"the user reads the page header text")]
-        public void WhenTheUserReadsThePageHeaderText()
-        {
-            _result = _sut.SharedHTML.ReadPageHeaderText();
-        }
-
         [When(@"the user reads the popup text")]
         public void WhenTheUserReadsThePopupText()
         {
@@ -97,14 +91,16 @@ namespace SeleniumExamples.Steps
         [Then(@"the page url should indicate that the user has been redirected to the correct ""(.*)"" website")]
         public void ThenThePageUrlShouldIndicateThatTheUserHasBeenRedirectedToTheCorrectWebsite(string url)
         {
-            var result = _sut.Driver.Url;
+            _result = _sut.Driver.Url;
 
-            Assert.That(result, Is.EqualTo(url));
+            Assert.That(_result, Is.EqualTo(url));
         }
 
-        [Then(@"the text should inform the user that they are on the correct ""(.*)"" page")]
-        public void ThenTheTextShouldInformTheUserThatTheyAreOnTheCorrectPage(string pageHeader)
+        [Then(@"the page header text should inform the user that they are on the correct ""(.*)"" page")]
+        public void ThenThePageHeaderTextShouldInformTheUserThatTheyAreOnTheCorrectPage(string pageHeader)
         {
+            _result = _sut.SharedHTML.ReadPageHeaderText();
+
             Assert.That(_result, Is.EqualTo(pageHeader));
         }
 

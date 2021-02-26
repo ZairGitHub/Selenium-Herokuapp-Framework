@@ -8,7 +8,7 @@ Background:
 
 Scenario Outline: Hovering over an image reveals additional name information
 	When the user hovers over the image <id>
-	Then the user should be able to see additional name information for the image
+	Then the user should be able to see additional name information for the image <id>
     Examples:
 	| id |
 	| 1  |

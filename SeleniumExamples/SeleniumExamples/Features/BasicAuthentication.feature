@@ -4,12 +4,12 @@
 	so that I can access the Basic Authentication page.
 
 @ignore
-Scenario: Cancel button cancels authentication
+Scenario: Cancelling the login popup cancels authentication
     Given the user is on the Basic Authentication form with no credentials
 	When the user clicks the cancel button
 	Then the page header text should inform the user that their credentials could not be authenticated "Not authorized"
 
-Scenario: OK button redirects to authentication page with valid credentials
+Scenario: Logging in with valid credentials redirects user to authentication page
     Given the user is on the Basic Authentication form with valid credentials
     Then the page header text should inform the user that their credentials have successfully been authenticated "Basic Auth"
 

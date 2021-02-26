@@ -21,16 +21,16 @@ namespace SeleniumExamples.Steps
         {
             _sut.CheckboxesPage.NavigateToPage();
         }
-        
-        [Given(@"the user toggles the checkbox (.*)")]
-        public void GivenTheUserTogglesTheCheckbox(int id)
+
+        [Given(@"the user clicks on a checkbox (.*)")]
+        public void GivenTheUserClicksOnACheckbox(int id)
         {
             _initialState = _sut.CheckboxesPage.IsCheckBoxTicked(id);
             _sut.CheckboxesPage.ClickCheckBox(id);
         }
 
-        [Then(@"the checkbox (.*) state should be toggled")]
-        public void ThenTheCheckboxStateShouldBeToggled(int id)
+        [Then(@"the state of the checkbox (.*) should be toggled")]
+        public void ThenTheStateOfTheCheckboxShouldBeToggled(int id)
         {
             var endState = _sut.CheckboxesPage.IsCheckBoxTicked(id);
 

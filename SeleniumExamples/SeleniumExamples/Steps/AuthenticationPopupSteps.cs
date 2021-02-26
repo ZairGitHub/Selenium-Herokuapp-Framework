@@ -40,8 +40,8 @@ namespace SeleniumExamples.Steps
                 _sut.DigestAuthenticationPage.ValidPassword);
         }
 
-        [When(@"the user clicks the cancel button")]
-        public void WhenTheUserClicksTheCancelButton()
+        [When(@"the user clicks the cancel button on the popup")]
+        public void WhenTheUserClicksTheCancelButtonOnThePopup()
         {
             _sut.SharedIAlert.ClickCancelButton();
         }

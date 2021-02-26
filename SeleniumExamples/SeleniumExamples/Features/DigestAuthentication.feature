@@ -6,7 +6,7 @@
 @ignore
 Scenario: Cancelling the login popup cancels authentication
     Given the user is on the Digest Authentication form with no credentials
-	When the user clicks the cancel button
+	When the user clicks the cancel button on the popup
 	Then the page header text should inform the user that their credentials could not be authenticated ""
 
 Scenario: Logging in with valid credentials redirects user to the Digest Authentication page

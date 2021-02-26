@@ -34,17 +34,31 @@ namespace SeleniumExamples.Steps
         {
             _sut.SharedIAlert.ClickCancelButton();
         }
-        
-        [Then(@"the page header text should inform the user that they failed to authenticate their credentials")]
-        public void ThenThePageHeaderTextShouldInformTheUserThatTheyFailedToAuthenticateTheirCredentials()
+
+        [When(@"the user opens a new tab and closes their previous tab")]
+        public void WhenTheUserOpensANewTabAndClosesTheirPreviousTab()
+        {
+            _sut.SharedHTML.OpenNewTab();
+            _sut.SharedHTML.CloseTab(0);
+            _sut.SharedHTML.SwitchToTab(0);
+        }
+
+        [When(@"the user navigates to the Basic Authentication form with no credentials")]
+        public void WhenTheUserNavigatesToTheBasicAuthenticationFormWithNoCredentials()
+        {
+            _sut.BasicAuthenticationPage.NavigateToAuthentication();
+        }
+
+        [Then(@"the page header text should inform the user that their credentials could not be authenticated")]
+        public void ThenThePageHeaderTextShouldInformTheUserThatTheirCredentialsCouldNotBeAuthenticated()
         {
             var result = _sut.SharedHTML.ReadPageHeaderText();
 
             Assert.That(result, Is.EqualTo("Not authorized"));
         }
 
-        [Then(@"the page header text should inform the user that they successfully authenticated their credentials")]
-        public void ThenThePageHeaderTextShouldInformTheUserThatTheySuccessfullyAuthenticatedTheirCredentials()
+        [Then(@"the page header text should inform the user that their credentials have successfully been authenticated")]
+        public void ThenThePageHeaderTextShouldInformTheUserThatTheirCredentialsHaveSuccessfullyBeenAuthenticated()
         {
             var result = _sut.SharedHTML.ReadPageHeaderText();
 

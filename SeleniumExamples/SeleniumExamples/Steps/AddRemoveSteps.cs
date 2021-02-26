@@ -28,6 +28,12 @@ namespace SeleniumExamples.Steps
             _sut.AddRemovePage.ClickAddButton();
         }
 
+        [When(@"the user clicks any delete button")]
+        public void WhenTheUserClicksAnyDeleteButton()
+        {
+            _sut.AddRemovePage.ClickAnyDeleteButton();
+        }
+
         [When(@"the user counts the number of delete buttons")]
         public void WhenTheUserCountsTheNumberOfDeleteButtons()
         {

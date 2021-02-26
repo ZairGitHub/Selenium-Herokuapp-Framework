@@ -15,16 +15,30 @@ namespace SeleniumExamples.Steps
         [AfterScenario]
         public void AfterScenario() => _sut.CloseDriver();
 
-        [Given(@"the user is on the Basic Authentication Form")]
-        public void GivenTheUserIsOnTheBasicAuthenticationForm()
+        [Given(@"the user is on the Basic Authentication form with no credentials")]
+        public void GivenTheUserIsOnTheBasicAuthenticationFormWithNoCredentials()
         {
             _sut.BasicAuthenticationPage.NavigateToAuthentication();
         }
-        
+
+        [Given(@"the user is on the Basic Authentication form with valid credentials")]
+        public void GivenTheUserIsOnTheBasicAuthenticationFormWithValidCredentials()
+        {
+            _sut.BasicAuthenticationPage.NavigateToAuthentication(
+                _sut.BasicAuthenticationPage.ValidUsername,
+                _sut.BasicAuthenticationPage.ValidPassword);
+        }
+
         [When(@"the user clicks the cancel button")]
         public void WhenTheUserClicksTheCancelButton()
         {
             _sut.SharedIAlert.ClickCancelButton();
+        }
+
+        [When(@"the user clicks the OK button")]
+        public void WhenTheUserClicksTheOKButton()
+        {
+            _sut.SharedIAlert.ClickOKButton();
         }
         
         [Then(@"the page header text should inform the user that they failed to authenticate their credentials")]
@@ -33,6 +47,14 @@ namespace SeleniumExamples.Steps
             var result = _sut.SharedHTML.ReadPageHeaderText();
 
             Assert.That(result, Is.EqualTo("Not authorized"));
+        }
+
+        [Then(@"the page header text should inform the user that they successfully authenticated their credentials")]
+        public void ThenThePageHeaderTextShouldInformTheUserThatTheySuccessfullyAuthenticatedTheirCredentials()
+        {
+            var result = _sut.SharedHTML.ReadPageHeaderText();
+
+            Assert.That(result, Is.EqualTo("Basic Auth"));
         }
     }
 }

@@ -48,6 +48,12 @@ namespace SeleniumExamples.Steps
             _sut.SharedIAlert.ClickOKButton();
         }
 
+        [When(@"the user enters the text ""(.*)""")]
+        public void WhenTheUserEntersTheText(string input)
+        {
+            _sut.SharedIAlert.EnterInformation(input);
+        }
+
         [Then(@"the page should display the result text ""(.*)"" for the interaction")]
         public void ThenThePageShouldDisplayTheResultTextForTheInteraction(string resultText)
         {

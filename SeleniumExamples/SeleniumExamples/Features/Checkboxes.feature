@@ -8,7 +8,7 @@ Background:
 
 Scenario Outline: Toggle checkboxes
 	And the user toggles the checkbox <id>
-	Then the checkbox state should be toggled
+	Then the checkbox <id> state should be toggled
 	Examples:
 	| id |
 	| 1  |

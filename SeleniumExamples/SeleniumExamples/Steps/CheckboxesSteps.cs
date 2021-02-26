@@ -8,7 +8,6 @@ namespace SeleniumExamples.Steps
     public class CheckboxesSteps
     {
         private bool _initialState;
-        private bool _endState;
         private WebsitePOM _sut;
 
         [BeforeScenario]
@@ -29,17 +28,13 @@ namespace SeleniumExamples.Steps
             _initialState = _sut.CheckboxesPage.IsCheckBoxTicked(id);
             _sut.CheckboxesPage.ClickCheckBox(id);
         }
-        
-        [When(@"the user checks the checkbox (.*) state")]
-        public void WhenTheUserChecksTheCheckboxState(int id)
+
+        [Then(@"the checkbox (.*) state should be toggled")]
+        public void ThenTheCheckboxStateShouldBeToggled(int id)
         {
-            _endState = _sut.CheckboxesPage.IsCheckBoxTicked(id);
-        }
-        
-        [Then(@"the checkbox state should be toggled")]
-        public void ThenTheCheckboxStateShouldBeToggled()
-        {
-            Assert.That(_endState, Is.Not.EqualTo(_initialState));
+            var endState = _sut.CheckboxesPage.IsCheckBoxTicked(id);
+
+            Assert.That(endState, Is.Not.EqualTo(_initialState));
         }
     }
 }

@@ -120,10 +120,7 @@ this.FeatureBackground();
  testRunner.And(string.Format("the user toggles the checkbox {0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
- testRunner.When(string.Format("the user checks the checkbox {0} state", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 12
- testRunner.Then("the checkbox state should be toggled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the checkbox {0} state should be toggled", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

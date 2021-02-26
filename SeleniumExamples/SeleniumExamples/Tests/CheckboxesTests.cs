@@ -24,7 +24,7 @@ namespace SeleniumExamples.Tests
             _sut.CheckboxesPage.ClickCheckBox(id);
             var endState = _sut.CheckboxesPage.IsCheckBoxTicked(id);
 
-            Assert.That(initialState, Is.Not.EqualTo(endState));
+            Assert.That(endState, Is.Not.EqualTo(initialState));
         }
     }
 }

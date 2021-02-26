@@ -7,10 +7,7 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class HoversSteps
     {
-        private WebsitePOM _sut;
-
-        [BeforeScenario]
-        public void BeforeScenario() => _sut = new WebsitePOM(StaticDriver.Type);
+        private readonly WebsitePOM _sut = new WebsitePOM(StaticDriver.Type);
 
         [AfterScenario]
         public void AfterScenario() => _sut.CloseDriver();

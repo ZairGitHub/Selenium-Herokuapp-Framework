@@ -20,25 +20,22 @@ Scenario: Navigate to GitHub website repository
 @hypertext
 Scenario: Navigate to Add/Remove Elements page
 	When the user clicks the Add/Remove Elements link
-	And the user reads the page header text
 	Then the page header text should inform the user that they are on the correct "Add/Remove Elements" page
 
-@ignore
+@ignore @authentication-popup
 Scenario: Navigate to Basic Authentication form
 	When the user clicks the Basic Authentication link
-	And the user reads the popup text
-	Then the text should inform the user that they are attempting to reach the correct "“Restricted Area”" page
+	Then the popup text should inform the user that they are attempting to reach the correct "“Restricted Area”" page
 
 @hypertext
 Scenario: Navigate to Checkboxes page
 	When the user clicks the Checkboxes link
 	Then the page header text should inform the user that they are on the correct "Checkboxes" page
 
-@ignore
+@ignore @authentication-popup
 Scenario: Navigate to Digest Authentication form
 	When the user clicks the Digest Authentication link
-	And the user reads the popup text
-	Then the text should inform the user that they are attempting to reach the correct "“Protected Area”" page
+	Then the popup text should inform the user that they are attempting to reach the correct "“Protected Area”" page
 
 @hypertext
 Scenario: Navigate to Form Authentication page

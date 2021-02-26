@@ -20,7 +20,13 @@ namespace SeleniumExamples.Steps
         {
             _sut.FormAuthenticationPage.NavigateToPage();
         }
-        
+
+        [When(@"the user enters a valid username")]
+        public void WhenTheUserEntersAValidUsername()
+        {
+            _sut.FormAuthenticationPage.EnterValidUsername();
+        }
+
         [When(@"the user clicks the login button")]
         public void WhenTheUserClicksTheLoginButton()
         {

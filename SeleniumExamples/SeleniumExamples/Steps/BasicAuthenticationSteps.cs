@@ -5,7 +5,7 @@ using TechTalk.SpecFlow;
 namespace SeleniumExamples.Steps
 {
     [Binding]
-    public class BasicAuthenticationFormSteps
+    public class BasicAuthenticationSteps
     {
         private WebsitePOM _sut;
 

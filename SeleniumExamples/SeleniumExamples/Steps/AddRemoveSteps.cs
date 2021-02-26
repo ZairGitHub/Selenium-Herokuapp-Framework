@@ -21,16 +21,19 @@ namespace SeleniumExamples.Steps
         {
             _sut.AddRemovePage.NavigateToPage();
         }
-        
-        [When(@"the user clicks the add button")]
-        public void WhenTheUserClicksTheAddButton()
+
+        [When(@"the user clicks the add button three times")]
+        public void WhenTheUserClicksTheAddButtonThreeTimes()
         {
+            _sut.AddRemovePage.ClickAddButton();
+            _sut.AddRemovePage.ClickAddButton();
             _sut.AddRemovePage.ClickAddButton();
         }
 
-        [When(@"the user clicks any delete button")]
-        public void WhenTheUserClicksAnyDeleteButton()
+        [When(@"the user clicks any delete button two times")]
+        public void WhenTheUserClicksAnyDeleteButtonTwoTimes()
         {
+            _sut.AddRemovePage.ClickAnyDeleteButton();
             _sut.AddRemovePage.ClickAnyDeleteButton();
         }
 

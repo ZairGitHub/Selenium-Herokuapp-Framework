@@ -6,11 +6,17 @@
 Background:
 	Given the user is on the Form Authentication page
 
-Scenario: Logging in with no credentials displays a username error
+Scenario: Logging in with no credentials displays a username error message
 	When the user clicks the login button
-	Then an error message containing the following text "Your username is invalid!" should be displayed
+	Then a help message containing the following text "Your username is invalid!" should be displayed
 
-Scenario: Logging in with a valid username and no password displays a password error
+Scenario: Logging in with a valid username and no password displays a password error message
     When the user enters a valid username
     And the user clicks the login button
-    Then an error message containing the following text "Your password is invalid!" should be displayed
+    Then a help message containing the following text "Your password is invalid!" should be displayed
+
+Scenario: Logging in with a valid username and a valid password redirects user to the Secure Area page
+    When the user enters a valid username
+    And the user enters a valid password
+    And the user clicks the login button
+    Then a help message containing the following text "You logged into a secure area!" should be displayed

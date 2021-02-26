@@ -23,3 +23,9 @@ Scenario: Interacting with JavaScript confirm alert using the OK button
     When the user clicks the JSConfirm button
     And the user clicks the OK button
     Then the page should display the result text "You clicked: Ok" for the interaction
+
+@javascript-prompt
+Scenario: Interacting with JavaScript prompt alert using the cancel button
+    When the user clicks the JSPrompt button
+    And the user clicks the cancel button
+    Then the page should display the result text "You entered: null" for the interaction

@@ -57,6 +57,12 @@ namespace SeleniumExamples.Steps
             _sut.SecureAreaPage.ClickLogoutButton();
         }
 
+        [When(@"the user uses the back button of the browser")]
+        public void WhenTheUserUsesTheBackButtonOfTheBrowser()
+        {
+            _sut.Driver.Navigate().Back();
+        }
+
         [Then(@"a help message containing the following text ""(.*)"" should be displayed")]
         public void ThenAHelpMessageContainingTheFollowingTextShouldBeDisplayed(string helpMessage)
         {

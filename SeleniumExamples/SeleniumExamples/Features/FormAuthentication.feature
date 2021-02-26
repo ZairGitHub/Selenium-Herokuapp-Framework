@@ -33,5 +33,5 @@ Scenario: Logging out removes authentication and redirects the user back to the 
 Scenario: Navigating back after logging out restores authentication and redirects the user back to the Secure Area page
     When the user is logged in
     And the user clicks the logout button
-    And the user uses the browser's back button
+    And the user uses the back button of the browser
     Then a help message containing the following text "You logged into a secure area!" should be displayed

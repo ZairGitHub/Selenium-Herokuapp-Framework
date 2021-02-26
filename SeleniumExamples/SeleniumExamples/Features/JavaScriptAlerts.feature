@@ -3,9 +3,11 @@
 	I want to be to handle information from within JavaScript alerts,
 	so that I interact with JavaScript alerts on the website.
 
-@mytag
-Scenario: Add two numbers
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+Background:
+	Given the user is on the JavaScriptAlerts page
+
+@javascript-alert
+Scenario: Interacting with a basic JavaScript alert
+	When the user clicks the JSAlert button
+    And the user clicks the OK button
+	Then the page should display the result text "You successfully clicked an alert" for the interaction

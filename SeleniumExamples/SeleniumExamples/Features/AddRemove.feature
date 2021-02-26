@@ -1,4 +1,4 @@
-﻿Feature: Add/Remove Elements
+﻿Feature: Add/Remove Elements Page
 	As a user,
 	I want to be able to add and remove elements,
 	so that I can create and delete elements on the website.

@@ -1,4 +1,4 @@
-﻿Feature: Checkboxes
+﻿Feature: Checkboxes Page
 	As a user,
 	I want to be toggle the state of checkboxes,
 	so that I can interact with checkbox elements on the website.

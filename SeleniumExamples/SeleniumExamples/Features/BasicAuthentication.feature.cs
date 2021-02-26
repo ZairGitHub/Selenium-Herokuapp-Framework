@@ -107,7 +107,7 @@ this.ScenarioInitialize(scenarioInfo);
     testRunner.Given("the user is on the Basic Authentication form with no credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
- testRunner.When("the user clicks the cancel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the user clicks the cancel button on the popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
  testRunner.Then("the page header text should inform the user that their credentials could not be a" +

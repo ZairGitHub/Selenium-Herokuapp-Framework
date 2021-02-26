@@ -24,8 +24,20 @@ namespace SeleniumExamples.Steps
             _sut.JavaScriptAlertsPage.ClickJSAlertButton();
         }
 
-        [When(@"the user clicks the OK button on the popup")]
-        public void WhenTheUserClicksTheOKButtonOnThePopup()
+        [When(@"the user clicks the JSConfirm button")]
+        public void WhenTheUserClicksTheJSConfirmButton()
+        {
+            _sut.JavaScriptAlertsPage.ClickJSConfirmButton();
+        }
+
+        [When(@"the user clicks the cancel button")]
+        public void WhenTheUserClicksTheCancelButton()
+        {
+            _sut.SharedIAlert.ClickCancelButton();
+        }
+
+        [When(@"the user clicks the OK button")]
+        public void WhenTheUserClicksTheOKButton()
         {
             _sut.SharedIAlert.ClickOKButton();
         }

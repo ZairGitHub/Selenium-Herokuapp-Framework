@@ -12,3 +12,12 @@ Scenario: Add Button
 	And the user clicks the add button
 	And the user counts the number of delete buttons
 	Then the number of delete buttons should be equal to 3
+
+Scenario: Delete Button
+	When the user clicks the add button
+	And the user clicks the add button
+	And the user clicks the add button
+	And the user clicks any delete button
+	And the user clicks any delete button
+	And the user counts the number of delete buttons
+	Then the number of delete buttons should be equal to 1

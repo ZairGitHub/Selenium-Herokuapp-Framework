@@ -9,6 +9,9 @@ namespace SeleniumExamples.Steps
     {
         private readonly WebsitePOM _sut = new WebsitePOM(StaticDriver.Type);
 
+        [AfterScenario]
+        public void AfterScenario() => _sut.CloseDriver();
+
         [Given(@"the user is on the JavaScriptAlerts page")]
         public void GivenTheUserIsOnTheJavaScriptAlertsPage()
         {

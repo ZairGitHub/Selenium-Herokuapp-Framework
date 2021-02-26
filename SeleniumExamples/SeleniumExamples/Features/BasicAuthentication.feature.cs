@@ -156,12 +156,12 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Successful authenticatation persists within window browser")]
-        public virtual void SuccessfulAuthenticatationPersistsWithinWindowBrowser()
+        [NUnit.Framework.DescriptionAttribute("Successful authenticatation session persists within window browser")]
+        public virtual void SuccessfulAuthenticatationSessionPersistsWithinWindowBrowser()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful authenticatation persists within window browser", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful authenticatation session persists within window browser", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 16
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

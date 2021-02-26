@@ -13,7 +13,7 @@ Scenario: Logging in with valid credentials redirects user to authentication pag
     Given the user is on the Basic Authentication form with valid credentials
     Then the page header text should inform the user that their credentials have successfully been authenticated "Basic Auth"
 
-Scenario: Successful authenticatation persists within window browser
+Scenario: Successful authenticatation session persists within window browser
     Given the user is on the Basic Authentication form with valid credentials
     When the user opens a new tab and closes their previous tab
     And the user navigates to the Basic Authentication form with no credentials

@@ -39,7 +39,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void AuthenticatedUser_CloseSessionTab_AuthenticationPersistsWithinWindow()
+        public void AuthenticatedUser_CloseSessionTab_AuthenticationSessionPersistsWithinWindow()
         {
             _sut = new WebsitePOM(StaticDriver.Type);
             _sut.BasicAuthenticationPage.NavigateToAuthentication(

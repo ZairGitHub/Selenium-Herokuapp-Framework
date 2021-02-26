@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework;
+using SeleniumExamples.Pages;
 using TechTalk.SpecFlow;
 
 namespace SeleniumExamples.Steps
@@ -6,28 +7,32 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class JavaScriptAlertsSteps
     {
+        private readonly WebsitePOM _sut = new WebsitePOM(StaticDriver.Type);
+
         [Given(@"the user is on the JavaScriptAlerts page")]
         public void GivenTheUserIsOnTheJavaScriptAlertsPage()
         {
-            ScenarioContext.Current.Pending();
+            _sut.JavaScriptAlertsPage.NavigateToPage();
         }
         
         [When(@"the user clicks the JSAlert button")]
         public void WhenTheUserClicksTheJSAlertButton()
         {
-            ScenarioContext.Current.Pending();
+            _sut.JavaScriptAlertsPage.ClickJSAlertButton();
         }
-        
-        [When(@"the user clicks the OK button")]
-        public void WhenTheUserClicksTheOKButton()
+
+        [When(@"the user clicks the OK button on the popup")]
+        public void WhenTheUserClicksTheOKButtonOnThePopup()
         {
-            ScenarioContext.Current.Pending();
+            _sut.SharedIAlert.ClickOKButton();
         }
-        
+
         [Then(@"the page should display the result text ""(.*)"" for the interaction")]
-        public void ThenThePageShouldDisplayTheResultTextForTheInteraction(string p0)
+        public void ThenThePageShouldDisplayTheResultTextForTheInteraction(string resultText)
         {
-            ScenarioContext.Current.Pending();
+            var result = _sut.JavaScriptAlertsPage.ReadResultText();
+
+            Assert.That(result, Is.EqualTo(resultText));
         }
     }
 }

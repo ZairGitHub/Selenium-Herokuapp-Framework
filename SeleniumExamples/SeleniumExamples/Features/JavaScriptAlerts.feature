@@ -9,5 +9,5 @@ Background:
 @javascript-alert
 Scenario: Interacting with a basic JavaScript alert
 	When the user clicks the JSAlert button
-    And the user clicks the OK button
+    And the user clicks the OK button on the popup
 	Then the page should display the result text "You successfully clicked an alert" for the interaction

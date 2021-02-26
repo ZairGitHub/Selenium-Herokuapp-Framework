@@ -39,6 +39,12 @@ namespace SeleniumExamples.Steps
             _sut.FormAuthenticationPage.ClickLoginButton();
         }
 
+        [When(@"the user directly navigates to the Secure Area page")]
+        public void WhenTheUserDirectlyNavigatesToTheSecureAreaPage()
+        {
+            _sut.SecureAreaPage.NavigateToPage();
+        }
+
         [Then(@"a help message containing the following text ""(.*)"" should be displayed")]
         public void ThenAHelpMessageContainingTheFollowingTextShouldBeDisplayed(string helpMessage)
         {

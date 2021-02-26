@@ -6,14 +6,15 @@
 Background:
 	Given the user is on the Index page
 
+@external-website
 Scenario: Navigate to Elemental Selenium website
 	When the user clicks the link in the footer of the page
 	And the user switches to the newly created tab 1
 	Then the page url should indicate that the user has been redirected to the correct "http://elementalselenium.com/" website 
 
+@external-website
 Scenario: Navigate to GitHub website repository
 	When the user clicks the GitHub image
-	And the user reads the page url
 	Then the page url should indicate that the user has been redirected to the correct "https://github.com/saucelabs/the-internet" website 
 
 Scenario: Navigate to Add/Remove Elements page

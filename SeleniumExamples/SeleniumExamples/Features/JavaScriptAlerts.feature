@@ -35,3 +35,10 @@ Scenario: Interacting with JavaScript prompt alert using the OK button
     When the user clicks the JSPrompt button
     And the user clicks the OK button
     Then the page should display the result text "You entered:" for the interaction
+
+@javascript-prompt
+Scenario: Interacting with JavaScript prompt alert using the OK button
+    When the user clicks the JSPrompt button
+    And the user enters the text " i  np  u  t  1 "
+    And the user clicks the OK button
+    Then the page should display the result text "You entered: i np u t 1" for the interaction

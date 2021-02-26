@@ -84,12 +84,12 @@ namespace SeleniumExamples.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add Button")]
-        public virtual void AddButton()
+        [NUnit.Framework.DescriptionAttribute("Add button creates a new element")]
+        public virtual void AddButtonCreatesANewElement()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add button creates a new element", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -133,12 +133,12 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Delete Button")]
-        public virtual void DeleteButton()
+        [NUnit.Framework.DescriptionAttribute("Delete button deletes created element")]
+        public virtual void DeleteButtonDeletesCreatedElement()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete Button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete button deletes created element", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 16
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

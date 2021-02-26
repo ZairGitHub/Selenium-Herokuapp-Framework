@@ -84,12 +84,12 @@ namespace SeleniumExamples.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Elemental Selenium Website")]
+        [NUnit.Framework.DescriptionAttribute("Elemental Selenium website")]
         public virtual void ElementalSeleniumWebsite()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Elemental Selenium Website", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Elemental Selenium website", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -131,12 +131,12 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("GitHub Website Repository")]
+        [NUnit.Framework.DescriptionAttribute("GitHub website repository")]
         public virtual void GitHubWebsiteRepository()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("GitHub Website Repository", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("GitHub website repository", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 15
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -175,12 +175,12 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add/Remove Elements Page")]
+        [NUnit.Framework.DescriptionAttribute("Add/Remove Elements page")]
         public virtual void AddRemoveElementsPage()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add/Remove Elements Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add/Remove Elements page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -219,14 +219,14 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Basic Authentication Form")]
+        [NUnit.Framework.DescriptionAttribute("Basic Authentication form")]
         [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         public virtual void BasicAuthenticationForm()
         {
             string[] tagsOfScenario = new string[] {
                     "ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Basic Authentication Form", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Basic Authentication form", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 26
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -265,12 +265,12 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Checkboxes Page")]
+        [NUnit.Framework.DescriptionAttribute("Checkboxes page")]
         public virtual void CheckboxesPage()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Checkboxes Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Checkboxes page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 31
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -308,14 +308,14 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Digest Authentication Form")]
+        [NUnit.Framework.DescriptionAttribute("Digest Authentication form")]
         [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         public virtual void DigestAuthenticationForm()
         {
             string[] tagsOfScenario = new string[] {
                     "ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Digest Authentication Form", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Digest Authentication form", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 37
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -354,12 +354,12 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Form Authentication Page")]
+        [NUnit.Framework.DescriptionAttribute("Form Authentication page")]
         public virtual void FormAuthenticationPage()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Form Authentication Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Form Authentication page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 42
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -397,12 +397,12 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Hovers Page")]
+        [NUnit.Framework.DescriptionAttribute("Hovers page")]
         public virtual void HoversPage()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Hovers Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Hovers page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 47
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -440,12 +440,12 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("JavaScript Alerts Page")]
+        [NUnit.Framework.DescriptionAttribute("JavaScript Alerts page")]
         public virtual void JavaScriptAlertsPage()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("JavaScript Alerts Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("JavaScript Alerts page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 52
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

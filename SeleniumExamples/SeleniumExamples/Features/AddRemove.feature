@@ -6,14 +6,14 @@
 Background:
 	Given the user is on the Add/Remove page
 
-Scenario: Add Button
+Scenario: Add button creates a new element
 	When the user clicks the add button
 	And the user clicks the add button
 	And the user clicks the add button
 	And the user counts the number of delete buttons
 	Then the number of delete buttons should be equal to 3
 
-Scenario: Delete Button
+Scenario: Delete button deletes created element
 	When the user clicks the add button
 	And the user clicks the add button
 	And the user clicks the add button

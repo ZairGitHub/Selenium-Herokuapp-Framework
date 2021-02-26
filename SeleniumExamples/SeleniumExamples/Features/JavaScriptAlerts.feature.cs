@@ -130,14 +130,14 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Interacting with JavaScript confirm alert")]
+        [NUnit.Framework.DescriptionAttribute("Interacting with JavaScript confirm alert using the cancel button")]
         [NUnit.Framework.CategoryAttribute("javascript-confirm")]
-        public virtual void InteractingWithJavaScriptConfirmAlert()
+        public virtual void InteractingWithJavaScriptConfirmAlertUsingTheCancelButton()
         {
             string[] tagsOfScenario = new string[] {
                     "javascript-confirm"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Interacting with JavaScript confirm alert", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Interacting with JavaScript confirm alert using the cancel button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 16
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -170,6 +170,51 @@ this.FeatureBackground();
 #line 19
     testRunner.Then("the page should display the result text \"You clicked: Cancel\" for the interaction" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Interacting with JavaScript confirm alert using the OK button")]
+        [NUnit.Framework.CategoryAttribute("javascript-confirm")]
+        public virtual void InteractingWithJavaScriptConfirmAlertUsingTheOKButton()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "javascript-confirm"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Interacting with JavaScript confirm alert using the OK button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 22
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line hidden
+#line 23
+    testRunner.When("the user clicks the JSConfirm button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 24
+    testRunner.And("the user clicks the OK button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 25
+    testRunner.Then("the page should display the result text \"You clicked: Ok\" for the interaction", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

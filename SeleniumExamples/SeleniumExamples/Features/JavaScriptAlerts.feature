@@ -13,7 +13,13 @@ Scenario: Interacting with a basic JavaScript alert
 	Then the page should display the result text "You successfully clicked an alert" for the interaction
 
 @javascript-confirm
-Scenario: Interacting with JavaScript confirm alert
+Scenario: Interacting with JavaScript confirm alert using the cancel button
     When the user clicks the JSConfirm button
     And the user clicks the cancel button
     Then the page should display the result text "You clicked: Cancel" for the interaction
+
+@javascript-confirm
+Scenario: Interacting with JavaScript confirm alert using the OK button
+    When the user clicks the JSConfirm button
+    And the user clicks the OK button
+    Then the page should display the result text "You clicked: Ok" for the interaction

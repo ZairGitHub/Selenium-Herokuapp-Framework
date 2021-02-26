@@ -63,6 +63,12 @@ namespace SeleniumExamples.Steps
             _sut.BasicAuthenticationPage.NavigateToAuthentication();
         }
 
+        [When(@"the user navigates to the Digest Authentication form with no credentials")]
+        public void WhenTheUserNavigatesToTheDigestAuthenticationFormWithNoCredentials()
+        {
+            _sut.DigestAuthenticationPage.NavigateToAuthentication();
+        }
+
         [Then(@"the page header text should inform the user that their credentials could not be authenticated ""(.*)""")]
         public void ThenThePageHeaderTextShouldInformTheUserThatTheirCredentialsCouldNotBeAuthenticated(string pageHeader)
         {

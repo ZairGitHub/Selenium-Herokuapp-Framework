@@ -9,9 +9,7 @@ namespace SeleniumExamples.Pages
 
         public void NavigateToPage()
         {
-            //NavigateToURL(ConfigReader.Index + ConfigReader.AddRemoveElements);
-            NavigateToURL(
-                "http://the-internet.herokuapp.com/add_remove_elements/");
+            NavigateToURL(ConfigReader.Index + ConfigReader.AddRemoveElements);
         }
 
         private IWebElement ButtonAdd =>

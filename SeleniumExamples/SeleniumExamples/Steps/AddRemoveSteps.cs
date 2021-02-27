@@ -7,11 +7,10 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class AddRemoveSteps
     {
-        private readonly WebsitePOM _sut = new WebsitePOM(StaticDriver.Type);
+        private readonly WebsitePOM _sut;
 
-        [AfterScenario]
-        public void AfterScenario() => _sut.CloseDriver();
-
+        public AddRemoveSteps(WebsitePOM sut) => _sut = sut;
+        
         [Given(@"the user is on the Add/Remove page")]
         public void GivenTheUserIsOnTheAddRemovePage()
         {

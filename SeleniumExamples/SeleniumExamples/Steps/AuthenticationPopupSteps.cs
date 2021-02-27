@@ -7,10 +7,9 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class AuthenticationPopupSteps
     {
-        private readonly WebsitePOM _sut = new WebsitePOM(StaticDriver.Type);
+        private readonly WebsitePOM _sut;
 
-        [AfterScenario]
-        public void AfterScenario() => _sut.CloseDriver();
+        public AuthenticationPopupSteps(WebsitePOM sut) => _sut = sut;
 
         [Given(@"the user is on the Basic Authentication form with no credentials")]
         public void GivenTheUserIsOnTheBasicAuthenticationFormWithNoCredentials()

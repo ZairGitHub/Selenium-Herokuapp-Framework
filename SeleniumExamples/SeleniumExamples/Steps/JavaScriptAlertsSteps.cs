@@ -7,11 +7,10 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class JavaScriptAlertsSteps
     {
-        private readonly WebsitePOM _sut = new WebsitePOM(StaticDriver.Type);
+        private readonly WebsitePOM _sut;
 
-        [AfterScenario]
-        public void AfterScenario() => _sut.CloseDriver();
-
+        public JavaScriptAlertsSteps(WebsitePOM sut) => _sut = sut;
+        
         [Given(@"the user is on the JavaScriptAlerts page")]
         public void GivenTheUserIsOnTheJavaScriptAlertsPage()
         {

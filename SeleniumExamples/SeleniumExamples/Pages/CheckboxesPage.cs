@@ -8,8 +8,7 @@ namespace SeleniumExamples.Pages
 
         public void NavigateToPage()
         {
-            //NavigateToURL(ConfigReader.Index + ConfigReader.Checkboxes);
-            NavigateToURL("http://the-internet.herokuapp.com/checkboxes");
+            NavigateToURL(ConfigReader.Index + ConfigReader.Checkboxes);
         }
         
         private IWebElement Checkbox1 =>

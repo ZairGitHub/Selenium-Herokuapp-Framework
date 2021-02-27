@@ -7,10 +7,9 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class IndexSteps
     {
-        private readonly WebsitePOM _sut = new WebsitePOM(StaticDriver.Type);
+        private readonly WebsitePOM _sut;
 
-        [AfterScenario]
-        public void AfterScenario() => _sut.CloseDriver();
+        public IndexSteps(WebsitePOM sut) => _sut = sut;
 
         [Given(@"the user is on the Index page")]
         public void GivenTheUserIsOnTheIndexPage()

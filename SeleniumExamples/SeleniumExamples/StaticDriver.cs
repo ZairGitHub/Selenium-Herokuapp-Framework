@@ -6,8 +6,10 @@ namespace SeleniumExamples
 {
     public static class StaticDriver
     {
-        public static Type Type = typeof(ChromeDriver);
+        private static readonly Type _chrome = typeof(ChromeDriver);
 
-        //public static Type Type => typeof(FirefoxDriver);
+        private static readonly Type _firefox = typeof(FirefoxDriver);
+
+        public static readonly Type Type = _chrome;
     }
 }

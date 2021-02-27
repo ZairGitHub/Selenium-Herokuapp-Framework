@@ -7,12 +7,11 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class CheckboxesSteps
     {
-        private readonly WebsitePOM _sut = new WebsitePOM(StaticDriver.Type);
+        private readonly WebsitePOM _sut;
+
+        public CheckboxesSteps(WebsitePOM sut) => _sut = sut;
 
         private bool _initialState;
-
-        [AfterScenario]
-        public void AfterScenario() => _sut.CloseDriver();
 
         [Given(@"the user is on the Checkboxes page")]
         public void GivenTheUserIsOnTheCheckboxesPage()

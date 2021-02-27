@@ -8,8 +8,8 @@ namespace SeleniumExamples.Pages
 
         public void NavigateToPage()
         {
-            //NavigateToURL(ConfigReader.Index);
-            NavigateToURL("http://the-internet.herokuapp.com/");
+            NavigateToURL(ConfigReader.Index);
+            //NavigateToURL("http://the-internet.herokuapp.com/");
         }
 
         private IWebElement LinkAddRemove =>

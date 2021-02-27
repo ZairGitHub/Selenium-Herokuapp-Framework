@@ -9,10 +9,16 @@ namespace SeleniumExamples.Pages
 
         public DigestAuthenticationPage(IWebDriver driver) : base(driver) { }
 
-        public void NavigateToAuthentication(
-            string username = null, string password = null)
+        public void NavigateToAuthentication()
         {
             //NavigateToURL(ConfigReader.Index + ConfigReader.DigestAuthentication);
+            NavigateToURL(
+                $"http://{null}:{null}@" +
+               "the-internet.herokuapp.com/digest_auth");
+        }
+
+        public void NavigateToAuthentication(string username, string password)
+        {
             NavigateToURL(
                 $"http://{username}:{password}@" +
                 $"the-internet.herokuapp.com/digest_auth");

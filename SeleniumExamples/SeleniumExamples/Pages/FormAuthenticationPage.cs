@@ -11,8 +11,7 @@ namespace SeleniumExamples.Pages
 
         public void NavigateToPage()
         {
-            //NavigateToURL(ConfigReader.Index + ConfigReader.FormAuthetication);
-            NavigateToURL("http://the-internet.herokuapp.com/login");
+            NavigateToURL(ConfigReader.Index + ConfigReader.FormAuthetication);
         }
 
         private IWebElement ButtonLogin =>

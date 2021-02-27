@@ -9,7 +9,7 @@ namespace SeleniumExamples.Pages
 
         public void NavigateToPage()
         {
-            NavigateToURL("http://the-internet.herokuapp.com/hovers");
+            NavigateToURL(ConfigReader.Index + ConfigReader.Hovers);
         }
 
         private IWebElement PageSubHeader1 =>

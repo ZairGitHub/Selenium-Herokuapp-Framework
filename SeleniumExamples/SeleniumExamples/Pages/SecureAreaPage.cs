@@ -8,7 +8,7 @@ namespace SeleniumExamples.Pages
 
         public void NavigateToPage()
         {
-            NavigateToURL("http://the-internet.herokuapp.com/secure");
+            NavigateToURL(ConfigReader.Index + ConfigReader.SecureArea);
         }
 
         private IWebElement ButtonLogOut =>

@@ -7,10 +7,9 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class FormAuthenticationPageSteps
     {
-        private readonly WebsitePOM _sut = new WebsitePOM(StaticDriver.Type);
+        private readonly WebsitePOM _sut;
 
-        [AfterScenario]
-        public void AfterScenario() => _sut.CloseDriver();
+        public FormAuthenticationPageSteps(WebsitePOM sut) => _sut = sut;
 
         [Given(@"the user is on the Form Authentication page")]
         public void GivenTheUserIsOnTheFormAuthenticationPage()

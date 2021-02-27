@@ -51,7 +51,7 @@ namespace SeleniumExamples.Pages
 
         public void NavigateToInvalidPage()
         {
-            Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/error");
+            Driver.Navigate().GoToUrl(ConfigReader.Index + ConfigReader.Invalid);
         }
 
         public void CloseDriver() => Driver.Quit();

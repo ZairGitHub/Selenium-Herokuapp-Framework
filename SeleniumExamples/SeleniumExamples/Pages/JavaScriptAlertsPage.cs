@@ -8,8 +8,7 @@ namespace SeleniumExamples.Pages
 
         public void NavigateToPage()
         {
-            //NavigateToURL(ConfigReader.Index + ConfigReader.JavaScriptAlerts);
-            NavigateToURL("http://the-internet.herokuapp.com/javascript_alerts");
+            NavigateToURL(ConfigReader.Index + ConfigReader.JavaScriptAlerts);
         }
 
         private IWebElement ButtonJSAlert =>

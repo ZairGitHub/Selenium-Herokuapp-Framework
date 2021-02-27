@@ -7,6 +7,9 @@ namespace SeleniumExamples
         public static readonly string Index =
             ConfigurationManager.AppSettings["index"];
 
+        public static readonly string Invalid =
+            ConfigurationManager.AppSettings["invalid"];
+
         public static readonly string AddRemoveElements =
             ConfigurationManager.AppSettings["add_remove_elements"];
 

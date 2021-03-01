@@ -31,13 +31,19 @@ namespace SeleniumExamples
         public static readonly string Frames =
             ConfigurationManager.AppSettings["frames"];
 
-        public static readonly string SecureArea =
-            ConfigurationManager.AppSettings["secure_area"];
-
         public static readonly string Hovers =
             ConfigurationManager.AppSettings["hovers"];
 
+        public static readonly string IFrame =
+            ConfigurationManager.AppSettings["iframe"];
+
+        public static readonly string NestedFrames =
+            ConfigurationManager.AppSettings["nested_frames"];
+
         public static readonly string JavaScriptAlerts =
             ConfigurationManager.AppSettings["javascript_alerts"];
+
+        public static readonly string SecureArea =
+            ConfigurationManager.AppSettings["secure_area"];
     }
 }

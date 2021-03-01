@@ -2,8 +2,6 @@
 {
     public interface IAlertNavigation
     {
-        void NavigateToInvalidAuthentication();
-
-        void NavigateToValidAuthentication();
+        void NavigatePastAuthentication();
     }
 }

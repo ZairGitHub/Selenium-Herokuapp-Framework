@@ -2,6 +2,8 @@
 {
     public interface IAlertNavigation
     {
+        void NavigateToAuthentication();
+
         void NavigatePastAuthentication();
     }
 }

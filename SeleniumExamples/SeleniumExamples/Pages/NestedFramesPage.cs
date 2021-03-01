@@ -63,7 +63,7 @@ namespace SeleniumExamples.Pages
             }
             else
             {
-                SwitchToFrame(FrameBottom);
+                SwitchToFrame(FrameRight);
             }
         }
 

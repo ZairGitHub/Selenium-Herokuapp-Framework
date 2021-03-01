@@ -14,6 +14,21 @@ namespace SeleniumExamples.Tests
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
 
+        [TestCase(NestedFramesPage.NestedFrame.Left, "LEFT")]
+        [TestCase(NestedFramesPage.NestedFrame.Middle, "MIDDLE")]
+        [TestCase(NestedFramesPage.NestedFrame.Right, "RIGHT")]
+        public void TopFrameNestedFramesText(NestedFramesPage.NestedFrame frame, string expected)
+        {
+            _sut.NestedFramesPage.NavigateToPage();
+
+            _sut.NestedFramesPage.SwitchToParentFrame(
+                NestedFramesPage.ParentFrame.Top);
+            _sut.NestedFramesPage.SwitchToNestedFrame(frame);
+            var result = _sut.SharedHTML.ReadPageBodyText();
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
         [Test]
         public void LeftFrameText()
         {

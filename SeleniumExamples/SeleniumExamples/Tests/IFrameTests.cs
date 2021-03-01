@@ -52,5 +52,19 @@ namespace SeleniumExamples.Tests
 
             Assert.That(result, Is.EqualTo(_defaultTextString));
         }
+
+        [Test]
+        public void Redo()
+        {
+            _sut.IFramePage.NavigateToPage();
+
+            _sut.IFramePage.EnterText(_input);
+            _sut.IFramePage.ClickUndoButton();
+            _sut.IFramePage.ClickRedoButton();
+
+            var result = _sut.IFramePage.ReadText();
+
+            Assert.That(result, Is.EqualTo(_defaultTextString + _input));
+        }
     }
 }

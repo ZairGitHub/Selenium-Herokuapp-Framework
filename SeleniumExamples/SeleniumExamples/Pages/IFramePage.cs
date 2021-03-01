@@ -41,7 +41,7 @@ namespace SeleniumExamples.Pages
         public void ClickRedoButton()
         {
             Driver.SwitchTo().DefaultContent();
-            ButtonUndo.Click();
+            ButtonRedo.Click();
             Driver.SwitchTo().Frame(0);
         }
 

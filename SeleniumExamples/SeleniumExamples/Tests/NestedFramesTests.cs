@@ -19,7 +19,8 @@ namespace SeleniumExamples.Tests
         [TestCase(NestedFrame.Left, "LEFT")]
         [TestCase(NestedFrame.Middle, "MIDDLE")]
         [TestCase(NestedFrame.Right, "RIGHT")]
-        public void TopParentFrameNestedFramesText(NestedFrame nestedFrame, string expected)
+        public void TopParentFrame_NestedFramesHaveTheCorrectText(
+            NestedFrame nestedFrame, string nestedFrameText)
         {
             _sut.NestedFramesPage.NavigateToPage();
 
@@ -27,11 +28,11 @@ namespace SeleniumExamples.Tests
             _sut.NestedFramesPage.SwitchToNestedFrame(nestedFrame);
             var result = _sut.SharedHTML.ReadPageBodyText();
 
-            Assert.That(result, Is.EqualTo(expected));
+            Assert.That(result, Is.EqualTo(nestedFrameText));
         }
 
         [Test]
-        public void BottomParentFrameText()
+        public void BottomParentFrame_HasTheCorrectText()
         {
             _sut.NestedFramesPage.NavigateToPage();
 

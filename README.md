@@ -59,7 +59,8 @@ More pages of sut
 4. Inherit from `WebPage.cs` and implement either the `IPageNavigation` or `IAlertNavigation` interface
 5. Add property to `PageFactory.cs` to reference created class
 6. Add property assignment in constructor of `PageFactory.cs`
-7. Reference class in tests using `PageFactory.newPageClass.methods()`
+7. Add IndexPage test to validate page navigation
+8. Reference class in tests using `PageFactory.newPageClass.methods()`
 
 `Static Driver.cs` to switch between drivers
 `DriverConfig.cs` to extend common driver configuration

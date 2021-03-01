@@ -14,6 +14,9 @@ namespace SeleniumExamples.Pages
         private IWebElement TextParagraph =>
             Driver.FindElement(By.CssSelector("p"));
 
+        private IWebElement ButtonSelectAll =>
+            Driver.FindElement(By.CssSelector(".tox-statusbar__path-item"));
+
         public void EnterText(string text)
         {
             Driver.SwitchTo().Frame(0);
@@ -21,5 +24,13 @@ namespace SeleniumExamples.Pages
         }
 
         public string ReadText() => TextParagraph.Text;
+
+        public string ReadHighlightedText()
+        {
+            return ((IJavaScriptExecutor)Driver).ExecuteScript(
+                "return window.getSelection().toString();") as string;
+        }
+
+        public void SelectAllText() => ButtonSelectAll.Click();
     }
 }

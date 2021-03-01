@@ -6,6 +6,19 @@ namespace SeleniumExamples.Pages
     {
         public NestedFramesPage(IWebDriver driver) : base(driver) { }
 
+        public enum ParentFrame
+        {
+            Top,
+            Bottom
+        }
+
+        public enum NestedFrame
+        {
+            Left,
+            Middle,
+            Right
+        }
+
         public void NavigateToPage()
         {
             NavigateToURL(ConfigReader.Index + ConfigReader.NestedFrames);
@@ -25,6 +38,36 @@ namespace SeleniumExamples.Pages
 
         private IWebElement FrameBottom =>
             Driver.FindElement(By.Name("frame-bottom"));
+
+        public void SwitchToParentFrame(ParentFrame frame)
+        {
+            if (frame == ParentFrame.Top)
+            {
+                SwitchToFrame(FrameTop);
+            }
+            else
+            {
+                SwitchToFrame(FrameBottom);
+            }
+        }
+
+        public void SwitchToNestedFrame(NestedFrame frame)
+        {
+            if (frame == NestedFrame.Left)
+            {
+                SwitchToFrame(FrameLeft);
+            }
+            else if (frame == NestedFrame.Middle)
+            {
+                SwitchToFrame(FrameMiddle);
+            }
+            else
+            {
+                SwitchToFrame(FrameBottom);
+            }
+        }
+
+        private void SwitchToFrame(IWebElement frame) => Driver.SwitchTo().Frame(frame);
 
         public void SwitchToNestedLeftFrame()
         {

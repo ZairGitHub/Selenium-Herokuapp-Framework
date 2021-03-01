@@ -35,6 +35,9 @@ namespace SeleniumExamples.Pages
         private IWebElement LinkJavaScriptAlerts =>
             Driver.FindElement(By.LinkText("JavaScript Alerts"));
 
+        private IWebElement LinkNestedFrames =>
+            Driver.FindElement(By.LinkText("Nested Frames"));
+
         public void ClickAddRemoveElementsLink() => LinkAddRemove.Click();
 
         public void ClickBasicAuthenticationLink()
@@ -59,5 +62,7 @@ namespace SeleniumExamples.Pages
         public void ClickHoversLink() => LinkHovers.Click();
 
         public void ClickJavaScriptAlertsLink() => LinkJavaScriptAlerts.Click();
+
+        public void ClickNestedFramesLink() => LinkNestedFrames.Click();
     }
 }

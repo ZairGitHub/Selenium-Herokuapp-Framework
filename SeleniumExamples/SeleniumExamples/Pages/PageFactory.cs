@@ -25,7 +25,6 @@ namespace SeleniumExamples.Pages
             IFramePage = new IFramePage(Driver);
             JavaScriptAlertsPage = new JavaScriptAlertsPage(Driver);
             NestedFramesPage = new NestedFramesPage(Driver);
-            SecureAreaPage = new SecureAreaPage(Driver);
         }
 
         public IWebDriver Driver { get; private set; }
@@ -55,8 +54,6 @@ namespace SeleniumExamples.Pages
         public JavaScriptAlertsPage JavaScriptAlertsPage { get; private set; }
 
         public NestedFramesPage NestedFramesPage { get; private set; }
-
-        public SecureAreaPage SecureAreaPage { get; private set; }
 
         public void NavigateToInvalidPage()
         {

@@ -7,12 +7,17 @@ namespace SeleniumExamples.Pages
         private const string _validUsername = "tomsmith";
         private const string _validPassword = "SuperSecretPassword!";
 
-        public FormAuthenticationPage(IWebDriver driver) : base(driver) { }
+        public FormAuthenticationPage(IWebDriver driver) : base(driver)
+        {
+            SecureAreaPage = new SecureAreaPage(Driver);
+        }
 
         public void NavigateToPage()
         {
             NavigateToURL(ConfigReader.Index + ConfigReader.FormAuthetication);
         }
+
+        public SecureAreaPage SecureAreaPage { get; private set; }
 
         private IWebElement ButtonLogin =>
             Driver.FindElement(By.CssSelector(".fa"));

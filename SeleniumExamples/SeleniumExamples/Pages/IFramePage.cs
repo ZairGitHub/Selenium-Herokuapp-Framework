@@ -10,5 +10,13 @@ namespace SeleniumExamples.Pages
         {
             NavigateToURL(ConfigReader.Index + ConfigReader.IFrame);
         }
+
+        private IWebElement TextParagraph =>
+            Driver.FindElement(By.CssSelector("p"));
+
+        public void EnterText(string text)
+        {
+            TextParagraph.SendKeys(text);
+        }
     }
 }

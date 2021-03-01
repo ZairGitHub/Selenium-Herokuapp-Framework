@@ -19,7 +19,7 @@ namespace SeleniumExamples.Tests
         {
             _sut.NestedFramesPage.NavigateToPage();
 
-            _sut.NestedFramesPage.SwitchToLeftFrame();
+            _sut.NestedFramesPage.SwitchToNestedLeftFrame();
             var result = _sut.SharedHTML.ReadPageBodyText();
 
             Assert.That(result, Is.EqualTo("LEFT"));

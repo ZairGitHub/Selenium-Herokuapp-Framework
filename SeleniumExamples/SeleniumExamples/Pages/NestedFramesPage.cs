@@ -6,15 +6,23 @@ namespace SeleniumExamples.Pages
     {
         public NestedFramesPage(IWebDriver driver) : base(driver) { }
 
+        private IWebElement FrameTop =>
+            Driver.FindElement(By.Name("frame-top"));
+
+        private IWebElement FrameLeft =>
+            Driver.FindElement(By.Name("frame-left"));
+
+        private IWebElement FrameBottom =>
+            Driver.FindElement(By.Name("frame-bottom"));
+
         public void NavigateToPage()
         {
             NavigateToURL(ConfigReader.Index + ConfigReader.NestedFrames);
         }
 
-        public void SwitchToLeftFrame()
+        public void SwitchToNestedLeftFrame()
         {
-            Driver.SwitchTo().Frame(Driver.FindElement(By.CssSelector("[name = 'frame-top']"))); //0
-            Driver.SwitchTo().Frame(Driver.FindElement(By.CssSelector("[name = 'frame-left']"))); //0
+            Driver.SwitchTo().Frame(FrameTop).SwitchTo().Frame(FrameLeft);
         }
     }
 }

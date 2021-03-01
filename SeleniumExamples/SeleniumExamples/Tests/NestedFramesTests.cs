@@ -3,6 +3,8 @@ using SeleniumExamples.Pages;
 
 namespace SeleniumExamples.Tests
 {
+    using static NestedFramesPage;
+
     [TestFixture]
     public class NestedFramesTests
     {
@@ -14,15 +16,14 @@ namespace SeleniumExamples.Tests
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
 
-        [TestCase(NestedFramesPage.NestedFrame.Left, "LEFT")]
-        [TestCase(NestedFramesPage.NestedFrame.Middle, "MIDDLE")]
-        [TestCase(NestedFramesPage.NestedFrame.Right, "RIGHT")]
-        public void TopFrameNestedFramesText(NestedFramesPage.NestedFrame frame, string expected)
+        [TestCase(NestedFrame.Left, "LEFT")]
+        [TestCase(NestedFrame.Middle, "MIDDLE")]
+        [TestCase(NestedFrame.Right, "RIGHT")]
+        public void TopFrameNestedFramesText(NestedFrame frame, string expected)
         {
             _sut.NestedFramesPage.NavigateToPage();
 
-            _sut.NestedFramesPage.SwitchToParentFrame(
-                NestedFramesPage.ParentFrame.Top);
+            _sut.NestedFramesPage.SwitchToParentFrame(ParentFrame.Top);
             _sut.NestedFramesPage.SwitchToNestedFrame(frame);
             var result = _sut.SharedHTML.ReadPageBodyText();
 

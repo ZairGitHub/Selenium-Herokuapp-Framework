@@ -9,7 +9,7 @@ namespace SeleniumExamples.Pages
 
         public FormAuthenticationPage(IWebDriver driver) : base(driver)
         {
-            SecureAreaPage = new SecureAreaPage(Driver);
+            SecureAreaPage = new SecureAreaPage(driver);
         }
 
         public void NavigateToPage()

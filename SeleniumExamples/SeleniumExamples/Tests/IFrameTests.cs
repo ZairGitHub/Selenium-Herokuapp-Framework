@@ -20,10 +20,10 @@ namespace SeleniumExamples.Tests
         [Test]
         public void IFrame_CanProcessInputText()
         {
-            _sut.IFramePage.NavigateToPage();
+            _sut.FramesPage.IFramePage.NavigateToPage();
 
-            _sut.IFramePage.EnterText(_input);
-            var result = _sut.IFramePage.ReadText();
+            _sut.FramesPage.IFramePage.EnterText(_input);
+            var result = _sut.FramesPage.IFramePage.ReadText();
 
             Assert.That(result, Is.EqualTo(_defaultTextString + _input));
         }

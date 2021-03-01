@@ -68,20 +68,5 @@ namespace SeleniumExamples.Pages
         }
 
         private void SwitchToFrame(IWebElement frame) => Driver.SwitchTo().Frame(frame);
-
-        public void SwitchToNestedLeftFrame()
-        {
-            Driver.SwitchTo().Frame(FrameTop).SwitchTo().Frame(FrameLeft);
-        }
-
-        public void SwitchToNestedMiddleFrame()
-        {
-            Driver.SwitchTo().Frame(FrameTop).SwitchTo().Frame(FrameMiddle);
-        }
-
-        public void SwitchToNestedRightFrame()
-        {
-            Driver.SwitchTo().Frame(FrameTop).SwitchTo().Frame(FrameRight);
-        }
     }
 }

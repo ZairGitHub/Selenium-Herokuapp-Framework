@@ -129,5 +129,17 @@ namespace SeleniumExamples.Tests
 
             Assert.That(result, Is.EqualTo("JavaScript Alerts"));
         }
+
+        [Test]
+        public void NestedFramesLink_RedirectsToNestedFramesPage()
+        {
+            _sut.IndexPage.NavigateToPage();
+
+            _sut.IndexPage.ClickNestedFramesLink();
+            var result = _sut.Driver.Url;
+
+            Assert.That(result,
+                Is.EqualTo(ConfigReader.Index + ConfigReader.NestedFrames));
+        }
     }
 }

@@ -29,18 +29,6 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void SelectAllText()
-        {
-            _sut.IFramePage.NavigateToPage();
-
-            _sut.IFramePage.SelectAllText();
-            _sut.IFramePage.EnterText(_input);
-            var result = _sut.IFramePage.ReadText();
-
-            Assert.That(result, Is.EqualTo(_input));
-        }
-
-        [Test]
         public void Undo()
         {
             _sut.IFramePage.NavigateToPage();
@@ -65,6 +53,18 @@ namespace SeleniumExamples.Tests
             var result = _sut.IFramePage.ReadText();
 
             Assert.That(result, Is.EqualTo(_defaultTextString + _input));
+        }
+
+        [Test]
+        public void SelectAllText()
+        {
+            _sut.IFramePage.NavigateToPage();
+
+            _sut.IFramePage.SelectAllText();
+            _sut.IFramePage.EnterText(_input);
+            var result = _sut.IFramePage.ReadText();
+
+            Assert.That(result, Is.EqualTo(_input));
         }
     }
 }

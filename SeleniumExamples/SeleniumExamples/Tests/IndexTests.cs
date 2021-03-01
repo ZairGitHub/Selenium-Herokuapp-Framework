@@ -98,6 +98,17 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
+        public void FramesLink_RedirectsToFramesPage()
+        {
+            _sut.IndexPage.NavigateToPage();
+
+            _sut.IndexPage.ClickFramesLink();
+            var result = _sut.SharedHTML.ReadPageHeaderText();
+
+            Assert.That(result, Is.EqualTo("Frames"));
+        }
+
+        [Test]
         public void HoversLink_RedirectsToHoversPage()
         {
             _sut.IndexPage.NavigateToPage();

@@ -18,7 +18,7 @@ namespace SeleniumExamples.Tests
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void InputText()
+        public void IFrame_CanProcessInputText()
         {
             _sut.IFramePage.NavigateToPage();
 

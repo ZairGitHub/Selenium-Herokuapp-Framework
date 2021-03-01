@@ -20,7 +20,7 @@ namespace SeleniumExamples.Steps
         [Given(@"the user is on the Basic Authentication form with valid credentials")]
         public void GivenTheUserIsOnTheBasicAuthenticationFormWithValidCredentials()
         {
-            _sut.BasicAuthenticationPage.NavigateToAuthentication();
+            _sut.BasicAuthenticationPage.NavigatePastAuthentication();
         }
 
         [Given(@"the user is on the Digest Authentication form with no credentials")]
@@ -32,7 +32,7 @@ namespace SeleniumExamples.Steps
         [Given(@"the user is on the Digest Authentication form with valid credentials")]
         public void GivenTheUserIsOnTheDigestAuthenticationFormWithValidCredentials()
         {
-            _sut.DigestAuthenticationPage.NavigateToAuthentication();
+            _sut.DigestAuthenticationPage.NavigatePastAuthentication();
         }
 
         [When(@"the user clicks the cancel button on the popup")]

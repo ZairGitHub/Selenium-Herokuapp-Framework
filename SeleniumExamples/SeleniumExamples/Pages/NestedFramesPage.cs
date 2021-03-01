@@ -13,7 +13,8 @@ namespace SeleniumExamples.Pages
 
         public void SwitchToLeftFrame()
         {
-            Driver.SwitchTo().Frame(0);
+            Driver.SwitchTo().Frame(Driver.FindElement(By.CssSelector("[name = 'frame-top']"))); //0
+            Driver.SwitchTo().Frame(Driver.FindElement(By.CssSelector("[name = 'frame-left']"))); //0
         }
     }
 }

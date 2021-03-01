@@ -17,6 +17,9 @@ namespace SeleniumExamples.Pages
         private IWebElement ButtonSelectAll =>
             Driver.FindElement(By.CssSelector(".tox-statusbar__path-item"));
 
+        private IWebElement ButtonUndo => Driver.FindElement(By.CssSelector(
+                ".tox-toolbar__group:nth-child(1) > .tox-tbtn:nth-child(1)"));
+
         public void EnterText(string text)
         {
             Driver.SwitchTo().Frame(0);
@@ -24,6 +27,13 @@ namespace SeleniumExamples.Pages
         }
 
         public string ReadText() => TextParagraph.Text;
+
+        public void ClickUndoButton()
+        {
+            Driver.SwitchTo().DefaultContent();
+            ButtonUndo.Click();
+            Driver.SwitchTo().Frame(0);
+        }
 
         public string ReadHighlightedText()
         {

@@ -9,16 +9,16 @@ namespace SeleniumExamples.Pages
 
         public BasicAuthenticationPage(IWebDriver driver) : base(driver) { }
 
-        public void NavigateToAuthentication()
+        public void NavigateToInvalidAuthentication()
         {
             NavigateToURL(ConfigReader.Index + ConfigReader.BasicAuthentication);
         }
 
-        public void NavigateToAuthentication(string username, string password)
+        public void NavigateToValidAuthentication()
         {    
             NavigateToURL(
-                $"http://{username}:{password}@" +
-                "the-internet.herokuapp.com/basic_auth");
+                $"http://{_validUsername}:{_validPassword}@" +
+                ConfigReader.Base + ConfigReader.BasicAuthentication);
         }
 
         public string ValidUsername => _validUsername;

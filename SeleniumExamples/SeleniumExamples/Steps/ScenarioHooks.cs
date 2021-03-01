@@ -17,8 +17,7 @@ namespace SeleniumExamples.Steps
         [BeforeScenario]
         public void BeforeScenario()
         {
-            PageFactory sut = new PageFactory(StaticDriver.Type);
-            _container.RegisterInstanceAs(sut);
+            _container.RegisterInstanceAs(new PageFactory(StaticDriver.Type, true));
         }
 
         [AfterScenario]

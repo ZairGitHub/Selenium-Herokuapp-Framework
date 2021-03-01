@@ -20,6 +20,9 @@ namespace SeleniumExamples.Pages
         private IWebElement FrameMiddle =>
             Driver.FindElement(By.Name("frame-middle"));
 
+        private IWebElement FrameRight =>
+            Driver.FindElement(By.Name("frame-right"));
+
         private IWebElement FrameBottom =>
             Driver.FindElement(By.Name("frame-bottom"));
 
@@ -31,6 +34,11 @@ namespace SeleniumExamples.Pages
         public void SwitchToNestedMiddleFrame()
         {
             Driver.SwitchTo().Frame(FrameTop).SwitchTo().Frame(FrameMiddle);
+        }
+
+        public void SwitchToNestedRightFrame()
+        {
+            Driver.SwitchTo().Frame(FrameTop).SwitchTo().Frame(FrameRight);
         }
     }
 }

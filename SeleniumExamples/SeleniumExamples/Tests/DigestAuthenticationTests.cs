@@ -27,9 +27,7 @@ namespace SeleniumExamples.Tests
         public void OKButton_ValidCredentials_RedirectsToDigestAuthenticationPage()
         {
             _sut = new WebsitePOM(StaticDriver.Type);
-            _sut.DigestAuthenticationPage.NavigateToAuthentication(
-                _sut.DigestAuthenticationPage.ValidUsername,
-                _sut.DigestAuthenticationPage.ValidPassword);
+            _sut.DigestAuthenticationPage.NavigatePastAuthentication();
             
             var result = _sut.SharedHTML.ReadPageHeaderText();
 
@@ -42,9 +40,7 @@ namespace SeleniumExamples.Tests
         public void AuthenticatedUser_CloseSessionTab_AuthenticationSessionPersistsWithinWindow()
         {
             _sut = new WebsitePOM(StaticDriver.Type);
-            _sut.DigestAuthenticationPage.NavigateToAuthentication(
-                _sut.DigestAuthenticationPage.ValidUsername,
-                _sut.DigestAuthenticationPage.ValidPassword);
+            _sut.DigestAuthenticationPage.NavigatePastAuthentication();
 
             _sut.SharedHTML.OpenNewTab();
             _sut.SharedHTML.CloseTab(0);

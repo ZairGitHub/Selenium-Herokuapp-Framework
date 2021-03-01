@@ -24,5 +24,16 @@ namespace SeleniumExamples.Tests
 
             Assert.That(result, Is.EqualTo("LEFT"));
         }
+
+        [Test]
+        public void MiddleFrameText()
+        {
+            _sut.NestedFramesPage.NavigateToPage();
+
+            _sut.NestedFramesPage.SwitchToNestedMiddleFrame();
+            var result = _sut.SharedHTML.ReadPageBodyText();
+
+            Assert.That(result, Is.EqualTo("MIDDLE"));
+        }
     }
 }

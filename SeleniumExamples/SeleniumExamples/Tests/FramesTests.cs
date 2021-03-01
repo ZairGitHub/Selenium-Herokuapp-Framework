@@ -25,5 +25,17 @@ namespace SeleniumExamples.Tests
             Assert.That(result,
                 Is.EqualTo(ConfigReader.Index + ConfigReader.NestedFrames));
         }
+
+        [Test]
+        public void IFrameLink_RedirectsToNestedFramesPage()
+        {
+            _sut.FramesPage.NavigateToPage();
+
+            _sut.FramesPage.ClickIFrameLink();
+            var result = _sut.Driver.Url;
+
+            Assert.That(result,
+                Is.EqualTo(ConfigReader.Index + ConfigReader.IFrame));
+        }
     }
 }

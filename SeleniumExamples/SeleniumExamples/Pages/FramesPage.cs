@@ -6,16 +6,16 @@ namespace SeleniumExamples.Pages
     {
         public FramesPage(IWebDriver driver) : base(driver) { }
 
+        public void NavigateToPage()
+        {
+            NavigateToURL(ConfigReader.Index + ConfigReader.Frames);
+        }
+
         private IWebElement LinkNestedFrames =>
             Driver.FindElement(By.LinkText("Nested Frames"));
 
         private IWebElement LinkIFrame =>
             Driver.FindElement(By.LinkText("iFrame"));
-
-        public void NavigateToPage()
-        {
-            NavigateToURL(ConfigReader.Index + ConfigReader.Frames);
-        }
 
         public void ClickNestedFramesLink() => LinkNestedFrames.Click();
 

@@ -16,7 +16,10 @@ namespace SeleniumExamples.Pages
 
         public void EnterText(string text)
         {
+            Driver.SwitchTo().Frame(0);
             TextParagraph.SendKeys(text);
         }
+
+        public string ReadText() => TextParagraph.Text;
     }
 }

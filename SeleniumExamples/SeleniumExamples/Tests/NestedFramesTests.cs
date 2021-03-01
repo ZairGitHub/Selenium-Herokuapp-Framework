@@ -19,7 +19,7 @@ namespace SeleniumExamples.Tests
         [TestCase(NestedFrame.Left, "LEFT")]
         [TestCase(NestedFrame.Middle, "MIDDLE")]
         [TestCase(NestedFrame.Right, "RIGHT")]
-        public void TopFrameNestedFramesText(NestedFrame nestedFrame, string expected)
+        public void TopParentFrameNestedFramesText(NestedFrame nestedFrame, string expected)
         {
             _sut.NestedFramesPage.NavigateToPage();
 
@@ -28,6 +28,17 @@ namespace SeleniumExamples.Tests
             var result = _sut.SharedHTML.ReadPageBodyText();
 
             Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void BottomParentFrameText()
+        {
+            _sut.NestedFramesPage.NavigateToPage();
+
+            _sut.NestedFramesPage.SwitchToParentFrame(ParentFrame.Bottom);
+            var result = _sut.SharedHTML.ReadPageBodyText();
+
+            Assert.That(result, Is.EqualTo("BOTTOM"));
         }
     }
 }

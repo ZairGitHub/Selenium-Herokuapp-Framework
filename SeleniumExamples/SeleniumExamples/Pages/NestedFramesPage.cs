@@ -2,9 +2,9 @@
 
 namespace SeleniumExamples.Pages
 {
-    public sealed class NestedFrames : WebPage, IPageNavigation
+    public sealed class NestedFramesPage : WebPage, IPageNavigation
     {
-        public NestedFrames(IWebDriver driver) : base(driver) { }
+        public NestedFramesPage(IWebDriver driver) : base(driver) { }
 
         public enum Frame
         {

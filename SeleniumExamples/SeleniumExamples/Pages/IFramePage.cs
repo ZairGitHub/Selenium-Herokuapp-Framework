@@ -2,9 +2,9 @@
 
 namespace SeleniumExamples.Pages
 {
-    public sealed class IFrame : WebPage, IPageNavigation
+    public sealed class IFramePage : WebPage, IPageNavigation
     {
-        public IFrame(IWebDriver driver) : base(driver) { }
+        public IFramePage(IWebDriver driver) : base(driver) { }
 
         public void NavigateToPage()
         {

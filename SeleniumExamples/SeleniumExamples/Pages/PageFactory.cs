@@ -22,9 +22,9 @@ namespace SeleniumExamples.Pages
             FormAuthenticationPage = new FormAuthenticationPage(Driver);
             FramesPage = new FramesPage(Driver);
             HoversPage = new HoversPage(Driver);
-            IFramePage = new IFrame(Driver);
+            IFramePage = new IFramePage(Driver);
             JavaScriptAlertsPage = new JavaScriptAlertsPage(Driver);
-            NestedFramesPage = new NestedFrames(Driver);
+            NestedFramesPage = new NestedFramesPage(Driver);
             SecureAreaPage = new SecureAreaPage(Driver);
         }
 
@@ -50,11 +50,11 @@ namespace SeleniumExamples.Pages
 
         public HoversPage HoversPage { get; private set; }
 
-        public IFrame IFramePage { get; private set; }
+        public IFramePage IFramePage { get; private set; }
 
         public JavaScriptAlertsPage JavaScriptAlertsPage { get; private set; }
 
-        public NestedFrames NestedFramesPage { get; private set; }
+        public NestedFramesPage NestedFramesPage { get; private set; }
 
         public SecureAreaPage SecureAreaPage { get; private set; }
 

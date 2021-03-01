@@ -27,44 +27,5 @@ namespace SeleniumExamples.Tests
 
             Assert.That(result, Is.EqualTo(_defaultTextString + _input));
         }
-
-        [Test]
-        public void Undo()
-        {
-            _sut.IFramePage.NavigateToPage();
-
-            _sut.IFramePage.EnterText(_input);
-            _sut.IFramePage.ClickUndoButton();
-
-            var result = _sut.IFramePage.ReadText();
-
-            Assert.That(result, Is.EqualTo(_defaultTextString));
-        }
-
-        [Test]
-        public void Redo()
-        {
-            _sut.IFramePage.NavigateToPage();
-
-            _sut.IFramePage.EnterText(_input);
-            _sut.IFramePage.ClickUndoButton();
-            _sut.IFramePage.ClickRedoButton();
-
-            var result = _sut.IFramePage.ReadText();
-
-            Assert.That(result, Is.EqualTo(_defaultTextString + _input));
-        }
-
-        [Test]
-        public void SelectAllText()
-        {
-            _sut.IFramePage.NavigateToPage();
-
-            _sut.IFramePage.SelectAllText();
-            _sut.IFramePage.EnterText(_input);
-            var result = _sut.IFramePage.ReadText();
-
-            Assert.That(result, Is.EqualTo(_input));
-        }
     }
 }

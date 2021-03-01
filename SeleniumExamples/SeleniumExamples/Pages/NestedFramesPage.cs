@@ -6,22 +6,14 @@ namespace SeleniumExamples.Pages
     {
         public NestedFramesPage(IWebDriver driver) : base(driver) { }
 
-        public enum Frame
-        {
-            Left,
-            Middle,
-            Right,
-            Bottom
-        }
-
         public void NavigateToPage()
         {
             NavigateToURL(ConfigReader.Index + ConfigReader.NestedFrames);
         }
 
-        public void SwitchToFrame(Frame name)
+        public void SwitchToLeftFrame()
         {
-            Driver.SwitchTo().Frame((int)name);
+            Driver.SwitchTo().Frame(0);
         }
     }
 }

@@ -11,21 +11,13 @@ namespace SeleniumExamples.Pages
 
         public void NavigateToAuthentication()
         {
-            //NavigateToURL(ConfigReader.Index + ConfigReader.DigestAuthentication);
-            NavigateToURL(
-                $"http://{null}:{null}@" +
-               "the-internet.herokuapp.com/digest_auth");
+            NavigateToURL(ConfigReader.Index + ConfigReader.DigestAuthentication);
         }
-
-        public void NavigateToAuthentication(string username, string password)
+        
+        public void NavigatePastAuthentication()
         {
-            NavigateToURL(
-                $"http://{username}:{password}@" +
-                $"the-internet.herokuapp.com/digest_auth");
+            NavigateToURL($"http://{_validUsername}:{_validPassword}@" +
+                ConfigReader.Base + ConfigReader.DigestAuthentication);
         }
-
-        public string ValidUsername => _validUsername;
-
-        public string ValidPassword => _validPassword;
     }
 }

@@ -8,7 +8,7 @@ namespace SeleniumExamples.Tests
     {
         private WebsitePOM _sut;
 
-        [Ignore("Alert cannot be accessed in ChromeDriver")]
+        [Ignore("Authentication alerts cannot be interacted with in ChromeDriver")]
         [Test]
         public void CancelButton_RedirectsToAuthenticationError()
         {

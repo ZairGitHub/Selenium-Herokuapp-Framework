@@ -49,7 +49,7 @@ namespace SeleniumExamples.Tests
             Assert.That(result, Is.EqualTo("Add/Remove Elements"));
         }
 
-        [Ignore("Alert cannot be accessed in ChromeDriver")]
+        [Ignore("Authentication alerts cannot be interacted with in ChromeDriver")]
         [Test]
         public void BasicAuthenticationLink_OpensBasicAuthenticationPopup()
         {
@@ -73,7 +73,7 @@ namespace SeleniumExamples.Tests
             Assert.That(result, Is.EqualTo("Checkboxes"));
         }
 
-        [Ignore("Alert cannot be accessed in ChromeDriver")]
+        [Ignore("Authentication alerts cannot be interacted with in ChromeDriver")]
         [Test]
         public void DigestAuthenticationLink_OpensDigestAuthenticationPopup()
         {

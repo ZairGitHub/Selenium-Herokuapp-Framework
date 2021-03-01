@@ -24,7 +24,7 @@ namespace SeleniumExamples.Tests
             Assert.That(result, Is.EqualTo("Not Found"));
         }
 
-        [Ignore("Alert cannot be accessed in ChromeDriver")]
+        [Ignore("Authentication alerts cannot be interacted with in ChromeDriver")]
         [Test]
         public void AuthenticationPopup_OKButton_CreatesNewAuthenticationPopup()
         {

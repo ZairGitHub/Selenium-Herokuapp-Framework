@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using OpenQA.Selenium;
 
 namespace SeleniumExamples.Pages
 {
-    class NestedFrames
+    public sealed class NestedFrames : WebPage, IPageNavigation
     {
+        public NestedFrames(IWebDriver driver) : base(driver) { }
+
+        public void NavigateToPage()
+        {
+            NavigateToURL(ConfigReader.Index + ConfigReader.NestedFrames);
+        }
     }
 }

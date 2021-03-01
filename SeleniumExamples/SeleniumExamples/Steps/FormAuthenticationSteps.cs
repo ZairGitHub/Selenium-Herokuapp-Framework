@@ -20,7 +20,7 @@ namespace SeleniumExamples.Steps
         [When(@"the user directly navigates to the Secure Area page")]
         public void WhenTheUserDirectlyNavigatesToTheSecureAreaPage()
         {
-            _sut.SecureAreaPage.NavigateToPage();
+            _sut.FormAuthenticationPage.SecureAreaPage.NavigateToPage();
         }
 
         [When(@"the user enters a valid username")]
@@ -50,7 +50,7 @@ namespace SeleniumExamples.Steps
         [When(@"the user clicks the logout button")]
         public void WhenTheUserClicksTheLogoutButton()
         {
-            _sut.SecureAreaPage.ClickLogoutButton();
+            _sut.FormAuthenticationPage.SecureAreaPage.ClickLogoutButton();
         }
 
         [When(@"the user uses the back button of the browser")]

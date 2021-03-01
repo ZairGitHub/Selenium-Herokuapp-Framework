@@ -55,7 +55,7 @@ namespace SeleniumExamples.Tests
         [Test]
         public void DirectlyNavigateToSecureAreaPage_RedirectsToFormAuthenticationPageWithErrorMessage()
         {
-            _sut.SecureAreaPage.NavigateToPage();
+            _sut.FormAuthenticationPage.SecureAreaPage.NavigateToPage();
 
             var result = _sut.FormAuthenticationPage.ReadUpdateText();
 
@@ -69,7 +69,7 @@ namespace SeleniumExamples.Tests
             _sut.FormAuthenticationPage.NavigateToPage();
             _sut.FormAuthenticationPage.LogInAsAuthenticatedUser();
 
-            _sut.SecureAreaPage.ClickLogoutButton();
+            _sut.FormAuthenticationPage.SecureAreaPage.ClickLogoutButton();
             var result = _sut.FormAuthenticationPage.ReadUpdateText();
 
             Assert.That(result,
@@ -82,10 +82,10 @@ namespace SeleniumExamples.Tests
             _sut.FormAuthenticationPage.NavigateToPage();
             _sut.FormAuthenticationPage.LogInAsAuthenticatedUser();
 
-            _sut.SecureAreaPage.ClickLogoutButton();
+            _sut.FormAuthenticationPage.SecureAreaPage.ClickLogoutButton();
             _sut.Driver.Navigate().Back();
 
-            var result = _sut.SecureAreaPage.ReadUpdateText();
+            var result = _sut.FormAuthenticationPage.SecureAreaPage.ReadUpdateText();
 
             Assert.That(result,
                 Contains.Substring("You logged into a secure area!"));

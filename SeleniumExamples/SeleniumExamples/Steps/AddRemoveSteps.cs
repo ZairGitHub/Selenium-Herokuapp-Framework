@@ -7,9 +7,9 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class AddRemoveSteps
     {
-        private readonly WebsitePOM _sut;
+        private readonly PageFactory _sut;
 
-        public AddRemoveSteps(WebsitePOM sut) => _sut = sut;
+        public AddRemoveSteps(PageFactory sut) => _sut = sut;
         
         [Given(@"the user is on the Add/Remove page")]
         public void GivenTheUserIsOnTheAddRemovePage()

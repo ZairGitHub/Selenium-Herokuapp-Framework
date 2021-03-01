@@ -7,9 +7,9 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class FormAuthenticationPageSteps
     {
-        private readonly WebsitePOM _sut;
+        private readonly PageFactory _sut;
 
-        public FormAuthenticationPageSteps(WebsitePOM sut) => _sut = sut;
+        public FormAuthenticationPageSteps(PageFactory sut) => _sut = sut;
 
         [Given(@"the user is on the Form Authentication page")]
         public void GivenTheUserIsOnTheFormAuthenticationPage()

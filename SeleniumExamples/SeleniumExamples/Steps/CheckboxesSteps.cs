@@ -7,9 +7,9 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class CheckboxesSteps
     {
-        private readonly WebsitePOM _sut;
+        private readonly PageFactory _sut;
 
-        public CheckboxesSteps(WebsitePOM sut) => _sut = sut;
+        public CheckboxesSteps(PageFactory sut) => _sut = sut;
 
         private bool _initialState;
 

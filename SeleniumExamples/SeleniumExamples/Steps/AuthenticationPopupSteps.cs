@@ -7,9 +7,9 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class AuthenticationPopupSteps
     {
-        private readonly WebsitePOM _sut;
+        private readonly PageFactory _sut;
 
-        public AuthenticationPopupSteps(WebsitePOM sut) => _sut = sut;
+        public AuthenticationPopupSteps(PageFactory sut) => _sut = sut;
 
         [Given(@"the user is on the Basic Authentication form with no credentials")]
         public void GivenTheUserIsOnTheBasicAuthenticationFormWithNoCredentials()

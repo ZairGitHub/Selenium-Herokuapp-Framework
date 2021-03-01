@@ -7,9 +7,9 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class JavaScriptAlertsSteps
     {
-        private readonly WebsitePOM _sut;
+        private readonly PageFactory _sut;
 
-        public JavaScriptAlertsSteps(WebsitePOM sut) => _sut = sut;
+        public JavaScriptAlertsSteps(PageFactory sut) => _sut = sut;
         
         [Given(@"the user is on the JavaScriptAlerts page")]
         public void GivenTheUserIsOnTheJavaScriptAlertsPage()

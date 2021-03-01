@@ -7,9 +7,9 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class HoversSteps
     {
-        private readonly WebsitePOM _sut;
+        private readonly PageFactory _sut;
 
-        public HoversSteps(WebsitePOM sut) => _sut = sut;
+        public HoversSteps(PageFactory sut) => _sut = sut;
 
         [Given(@"the user is on the Hovers page")]
         public void GivenTheUserIsOnTheHoversPage()

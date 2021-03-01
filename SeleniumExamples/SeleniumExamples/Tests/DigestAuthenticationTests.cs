@@ -6,13 +6,13 @@ namespace SeleniumExamples.Tests
     [TestFixture]
     public class DigestAuthenticationTests
     {
-        private WebsitePOM _sut;
+        private PageFactory _sut;
 
         [Ignore("Authentication alerts cannot be interacted with in ChromeDriver")]
         [Test]
         public void CancelButton_RedirectsToEmptyPage()
         {
-            _sut = new WebsitePOM(StaticDriver.Type);
+            _sut = new PageFactory(StaticDriver.Type);
             _sut.DigestAuthenticationPage.NavigateToAuthentication();
 
             _sut.SharedIAlert.ClickCancelButton();
@@ -26,7 +26,7 @@ namespace SeleniumExamples.Tests
         [Test]
         public void OKButton_ValidCredentials_RedirectsToDigestAuthenticationPage()
         {
-            _sut = new WebsitePOM(StaticDriver.Type);
+            _sut = new PageFactory(StaticDriver.Type);
             _sut.DigestAuthenticationPage.NavigatePastAuthentication();
             
             var result = _sut.SharedHTML.ReadPageHeaderText();
@@ -39,7 +39,7 @@ namespace SeleniumExamples.Tests
         [Test]
         public void AuthenticatedUser_CloseSessionTab_AuthenticationSessionPersistsWithinWindow()
         {
-            _sut = new WebsitePOM(StaticDriver.Type);
+            _sut = new PageFactory(StaticDriver.Type);
             _sut.DigestAuthenticationPage.NavigatePastAuthentication();
 
             _sut.SharedHTML.OpenNewTab();

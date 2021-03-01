@@ -3,9 +3,9 @@ using OpenQA.Selenium;
 
 namespace SeleniumExamples.Pages
 {
-    public class WebsitePOM
+    public class PageFactory
     {
-        public WebsitePOM(Type driverType, bool isHeadless = false,
+        public PageFactory(Type driverType, bool isHeadless = false,
             int elementWaitTime = 0, int pageWaitTime = -1)
         {
             Driver = new DriverConfig(driverType,

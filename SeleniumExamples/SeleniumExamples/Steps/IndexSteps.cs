@@ -7,9 +7,9 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class IndexSteps
     {
-        private readonly WebsitePOM _sut;
+        private readonly PageFactory _sut;
 
-        public IndexSteps(WebsitePOM sut) => _sut = sut;
+        public IndexSteps(PageFactory sut) => _sut = sut;
 
         [Given(@"the user is on the Index page")]
         public void GivenTheUserIsOnTheIndexPage()

@@ -17,14 +17,14 @@ namespace SeleniumExamples.Steps
         [BeforeScenario]
         public void BeforeScenario()
         {
-            WebsitePOM sut = new WebsitePOM(StaticDriver.Type);
+            PageFactory sut = new PageFactory(StaticDriver.Type);
             _container.RegisterInstanceAs(sut);
         }
 
         [AfterScenario]
         public void AfterScenario()
         {
-            _container.Resolve<WebsitePOM>().CloseDriver();
+            _container.Resolve<PageFactory>().CloseDriver();
         }
     }
 }

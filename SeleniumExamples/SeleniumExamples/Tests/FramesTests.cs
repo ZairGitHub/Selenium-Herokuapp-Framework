@@ -32,10 +32,9 @@ namespace SeleniumExamples.Tests
             _sut.FramesPage.NavigateToPage();
 
             _sut.FramesPage.ClickIFrameLink();
-            var result = _sut.Driver.Url;
+            var result = _sut.SharedHTML.ReadPageHeaderText();
 
-            Assert.That(result,
-                Is.EqualTo(ConfigReader.Index + ConfigReader.IFrame));
+            Assert.That(result, Contains.Substring("iFrame"));
         }
     }
 }

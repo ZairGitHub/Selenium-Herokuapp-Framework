@@ -4,7 +4,15 @@ namespace SeleniumExamples.Pages
 {
     public sealed class FramesPage : WebPage, IPageNavigation
     {
-        public FramesPage(IWebDriver driver) : base(driver) { }
+        public FramesPage(IWebDriver driver) : base(driver)
+        {
+            IFramePage = new IFramePage(driver);
+            NestedFramesPage = new NestedFramesPage(driver);
+        }
+
+        public IFramePage IFramePage { get; private set; }
+
+        public NestedFramesPage NestedFramesPage { get; private set; }
 
         public void NavigateToPage()
         {

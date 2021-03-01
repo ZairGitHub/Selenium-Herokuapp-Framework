@@ -6,6 +6,7 @@ namespace SeleniumExamples.Tests
     [TestFixture]
     public class IFrameTests
     {
+        private const string _input = "input";
         private PageFactory _sut;
 
         [OneTimeSetUp]
@@ -19,10 +20,22 @@ namespace SeleniumExamples.Tests
         {
             _sut.IFramePage.NavigateToPage();
 
-            _sut.IFramePage.EnterText(OpenQA.Selenium.Keys.Backspace);
+            _sut.IFramePage.EnterText(_input);
             var result = _sut.IFramePage.ReadText();
 
-            Assert.That(result, Is.EqualTo("Your content goes here"));
+            Assert.That(result, Is.EqualTo("Your content goes here." + _input));
+        }
+
+        [Test]
+        public void SelectAllText()
+        {
+            _sut.IFramePage.NavigateToPage();
+
+            _sut.IFramePage.SelectAllText();
+            _sut.IFramePage.EnterText(_input);
+            var result = _sut.IFramePage.ReadText();
+
+            Assert.That(result, Is.EqualTo(_input));
         }
     }
 }

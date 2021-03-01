@@ -20,6 +20,7 @@ namespace SeleniumExamples.Pages
             CheckboxesPage = new CheckboxesPage(Driver);
             DigestAuthenticationPage = new DigestAuthenticationPage(Driver);
             FormAuthenticationPage = new FormAuthenticationPage(Driver);
+            FramesPage = new FramesPage(Driver);
             SecureAreaPage = new SecureAreaPage(Driver);
             HoversPage = new HoversPage(Driver);
             JavaScriptAlertsPage = new JavaScriptAlertsPage(Driver);
@@ -42,6 +43,8 @@ namespace SeleniumExamples.Pages
         public DigestAuthenticationPage DigestAuthenticationPage { get; private set; }
 
         public FormAuthenticationPage FormAuthenticationPage { get; private set; }
+
+        public FramesPage FramesPage { get; private set; }
 
         public SecureAreaPage SecureAreaPage { get; private set; }
 

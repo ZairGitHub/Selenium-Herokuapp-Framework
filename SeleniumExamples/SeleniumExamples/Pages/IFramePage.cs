@@ -20,6 +20,9 @@ namespace SeleniumExamples.Pages
         private IWebElement ButtonUndo => Driver.FindElement(By.CssSelector(
                 ".tox-toolbar__group:nth-child(1) > .tox-tbtn:nth-child(1)"));
 
+        private IWebElement ButtonRedo => Driver.FindElement(By.CssSelector(
+                ".tox-toolbar__group:nth-child(1) > .tox-tbtn:nth-child(2)"));
+
         public void EnterText(string text)
         {
             Driver.SwitchTo().Frame(0);
@@ -29,6 +32,13 @@ namespace SeleniumExamples.Pages
         public string ReadText() => TextParagraph.Text;
 
         public void ClickUndoButton()
+        {
+            Driver.SwitchTo().DefaultContent();
+            ButtonUndo.Click();
+            Driver.SwitchTo().Frame(0);
+        }
+
+        public void ClickRedoButton()
         {
             Driver.SwitchTo().DefaultContent();
             ButtonUndo.Click();

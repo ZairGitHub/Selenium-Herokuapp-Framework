@@ -25,10 +25,6 @@ namespace SeleniumExamples.Pages
 
         private IWebElement TextUpdate => Driver.FindElement(By.Id("flash"));
 
-        public void EnterUsername(string input) => FieldUsername.SendKeys(input);
-
-        public void EnterPassword(string input) => FieldPassword.SendKeys(input);
-
         public void EnterValidUsername() => FieldUsername.SendKeys(_validUsername);
 
         public void EnterValidPassword() => FieldPassword.SendKeys(_validPassword);

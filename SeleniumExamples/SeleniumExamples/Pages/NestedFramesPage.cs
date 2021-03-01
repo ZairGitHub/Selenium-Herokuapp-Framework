@@ -45,7 +45,7 @@ namespace SeleniumExamples.Pages
             {
                 SwitchToFrame(FrameTop);
             }
-            else
+            else if (frame == ParentFrame.Bottom)
             {
                 SwitchToFrame(FrameBottom);
             }
@@ -61,12 +61,15 @@ namespace SeleniumExamples.Pages
             {
                 SwitchToFrame(FrameMiddle);
             }
-            else
+            else if (frame == NestedFrame.Right)
             {
                 SwitchToFrame(FrameRight);
             }
         }
 
-        private void SwitchToFrame(IWebElement frame) => Driver.SwitchTo().Frame(frame);
+        private void SwitchToFrame(IWebElement frame)
+        {
+            Driver.SwitchTo().Frame(frame);
+        }
     }
 }

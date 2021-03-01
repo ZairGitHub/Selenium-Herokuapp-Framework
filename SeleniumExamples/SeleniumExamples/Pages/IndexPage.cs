@@ -26,6 +26,9 @@ namespace SeleniumExamples.Pages
         private IWebElement LinkFormAuthentiication =>
             Driver.FindElement(By.LinkText("Form Authentication"));
 
+        private IWebElement LinkFrames =>
+            Driver.FindElement(By.LinkText("Frames"));
+
         private IWebElement LinkHovers =>
             Driver.FindElement(By.LinkText("Hovers"));
 
@@ -50,6 +53,8 @@ namespace SeleniumExamples.Pages
         {
             LinkFormAuthentiication.Click();
         }
+
+        public void ClickFramesLink() => LinkFrames.Click();
 
         public void ClickHoversLink() => LinkHovers.Click();
 

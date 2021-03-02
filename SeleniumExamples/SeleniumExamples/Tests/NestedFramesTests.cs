@@ -41,5 +41,36 @@ namespace SeleniumExamples.Tests
 
             Assert.That(result, Is.EqualTo("BOTTOM"));
         }
+
+        [Test]
+        public void ALeft()
+        {
+            _sut.NestedFramesPage.NavigateToPage();
+
+            _sut.NestedFramesPage.ResizeLeftAndMiddleFrames(10);
+        }
+
+        [Test]
+        public void ARight()
+        {
+            _sut.NestedFramesPage.NavigateToPage();
+
+            _sut.NestedFramesPage.ResizeMiddleAndRightFrames(10);
+        }
+
+        [TestCase(ParentFrame.Top, -50)]
+        [TestCase(ParentFrame.Top, 50)]
+        [TestCase(ParentFrame.Bottom, -50)]
+        [TestCase(ParentFrame.Bottom, 50)]
+        public void ABottom(ParentFrame frame, int offSet)
+        {
+            _sut.NestedFramesPage.NavigateToPage();
+
+            var initial = _sut.NestedFramesPage.GetFramePosition(frame);
+            _sut.NestedFramesPage.ResizeTopAndBottomFrames(offSet);
+            var end = _sut.NestedFramesPage.GetFramePosition(frame);
+
+            Assert.That(end, Is.EqualTo(initial + offSet));
+        }
     }
 }

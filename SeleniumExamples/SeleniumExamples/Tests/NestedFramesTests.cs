@@ -8,6 +8,8 @@ namespace SeleniumExamples.Tests
     [TestFixture]
     public class NestedFramesTests
     {
+        private const int valueOf50 = 50;
+
         private PageFactory _sut;
 
         [OneTimeSetUp]
@@ -42,33 +44,43 @@ namespace SeleniumExamples.Tests
             Assert.That(result, Is.EqualTo("BOTTOM"));
         }
 
-        [Test]
-        public void ALeft()
+        [TestCase(-valueOf50)]
+        [TestCase(valueOf50)]
+        public void ALeft(int offset)
         {
             _sut.NestedFramesPage.NavigateToPage();
+            var initialSize = _sut.NestedFramesPage.ReadNestedFrameSize();
 
-            _sut.NestedFramesPage.ResizeLeftAndMiddleFrames(10);
+            _sut.NestedFramesPage.ResizeLeftAndMiddleFrames(offset);
+            var endSize = _sut.NestedFramesPage.ReadNestedFrameSize();
+
+            Assert.That(endSize, Is.EqualTo(initialSize + offset));
         }
 
-        [Test]
-        public void ARight()
+        [TestCase(-valueOf50)]
+        [TestCase(valueOf50)]
+        public void ARight(int offset)
         {
             _sut.NestedFramesPage.NavigateToPage();
+            var initialSize = _sut.NestedFramesPage.ReadNestedFrameSize();
 
-            _sut.NestedFramesPage.ResizeMiddleAndRightFrames(10);
+            _sut.NestedFramesPage.ResizeRightAndMiddleFrames(offset);
+            var endSize = _sut.NestedFramesPage.ReadNestedFrameSize();
+
+            Assert.That(endSize, Is.EqualTo(initialSize + offset));
         }
 
-        [TestCase(-50)]
-        [TestCase(50)]
-        public void ABottom(int offSet)
+        [TestCase(-valueOf50)]
+        [TestCase(valueOf50)]
+        public void ABottom(int offset)
         {
             _sut.NestedFramesPage.NavigateToPage();
+            var initialSize = _sut.NestedFramesPage.ReadParentFrameSize();
 
-            var initial = _sut.NestedFramesPage.GetFrameSize();
-            _sut.NestedFramesPage.ResizeTopAndBottomFrames(offSet);
-            var end = _sut.NestedFramesPage.GetFrameSize();
+            _sut.NestedFramesPage.ResizeTopAndBottomFrames(offset);
+            var endSize = _sut.NestedFramesPage.ReadParentFrameSize();
 
-            Assert.That(end, Is.EqualTo(initial + offSet));
+            Assert.That(endSize, Is.EqualTo(initialSize + offset));
         }
     }
 }

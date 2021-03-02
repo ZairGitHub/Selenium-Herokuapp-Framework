@@ -102,7 +102,7 @@ namespace SeleniumExamples.Pages
             SwitchToFrame(FrameTop);
             IWebElement frame = FrameMiddle;
             new Actions(Driver)
-                    .MoveToElement(frame, frame.Size.Width - (frame.Size.Width + 1), 0)
+                    .MoveToElement(frame, frame.Size.Width, 0)
                     .ClickAndHold()
                     .MoveByOffset(pixelOffset, 0)
                     .Perform();

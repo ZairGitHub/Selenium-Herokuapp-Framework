@@ -15,7 +15,6 @@ namespace SeleniumExamples.Pages
 
         public enum NestedFrame
         {
-            None,
             Left,
             Middle,
             Right
@@ -72,27 +71,30 @@ namespace SeleniumExamples.Pages
             }
         }
 
-        public int GetFrameSize(NestedFrame nestedFrame = NestedFrame.None)
+        public int ReadParentFrameSize() => FrameTop.Size.Height;
+
+        public int ReadNestedFrameSize() => FrameMiddle.Size.Width;
+
+        public void ResizeTopAndBottomFrames(int pixelOffset)
         {
-            if (nestedFrame == NestedFrame.None)
-            {
-                return FrameTop.Size.Height;
-            }
-            return 0;
+            new Actions(Driver).MoveToElement(FrameSet)
+                .ClickAndHold()
+                .MoveByOffset(0, pixelOffset)
+                .Perform();
         }
 
-        public void ResizeLeftAndMiddleFrames(int pixels)
+        public void ResizeLeftAndMiddleFrames(int pixelOffset)
         {
             SwitchToFrame(FrameTop);
             IWebElement frame = FrameMiddle;
             new Actions(Driver)
                     .MoveToElement(frame, frame.Size.Width - (frame.Size.Width + 1), 0)
                     .ClickAndHold()
-                    .MoveByOffset(pixels, 0)
+                    .MoveByOffset(pixelOffset, 0)
                     .Perform();
         }
 
-        public void ResizeMiddleAndRightFrames(int pixels)
+        public void ResizeRightAndMiddleFrames(int pixels)
         {
             SwitchToFrame(FrameTop);
             IWebElement frame = FrameMiddle;
@@ -100,14 +102,6 @@ namespace SeleniumExamples.Pages
                 .MoveToElement(frame, frame.Size.Width, 0)
                 .ClickAndHold()
                 .MoveByOffset(pixels, 0)
-                .Perform();
-        }
-
-        public void ResizeTopAndBottomFrames(int pixels)
-        {
-            new Actions(Driver).MoveToElement(FrameSet)
-                .ClickAndHold()
-                .MoveByOffset(0, pixels)
                 .Perform();
         }
 

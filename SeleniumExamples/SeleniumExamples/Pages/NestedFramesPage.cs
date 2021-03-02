@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 
 namespace SeleniumExamples.Pages
 {
@@ -24,6 +25,9 @@ namespace SeleniumExamples.Pages
             NavigateToURL(ConfigReader.Index + ConfigReader.NestedFrames);
         }
 
+        private IWebElement FrameSet =>
+            Driver.FindElement(By.CssSelector("frameset"));
+
         private IWebElement FrameTop =>
             Driver.FindElement(By.Name("frame-top"));
 
@@ -38,6 +42,13 @@ namespace SeleniumExamples.Pages
 
         private IWebElement FrameBottom =>
             Driver.FindElement(By.Name("frame-bottom"));
+
+        public void MoveBottomFrame()
+        {
+            var element = FrameSet;
+            Actions builder = new Actions(Driver);
+            builder.MoveToElement(element).ClickAndHold().MoveByOffset(100, 0).Perform();
+        }
 
         public void SwitchToParentFrame(ParentFrame frame)
         {

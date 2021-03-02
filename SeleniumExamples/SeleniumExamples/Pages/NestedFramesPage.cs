@@ -15,6 +15,7 @@ namespace SeleniumExamples.Pages
 
         public enum NestedFrame
         {
+            None,
             Left,
             Middle,
             Right
@@ -71,6 +72,15 @@ namespace SeleniumExamples.Pages
             }
         }
 
+        public int GetFrameSize(NestedFrame nestedFrame = NestedFrame.None)
+        {
+            if (nestedFrame == NestedFrame.None)
+            {
+                return FrameTop.Size.Height;
+            }
+            return 0;
+        }
+
         public void ResizeLeftAndMiddleFrames(int pixels)
         {
             SwitchToFrame(FrameTop);
@@ -80,16 +90,6 @@ namespace SeleniumExamples.Pages
                 .ClickAndHold()
                 .MoveByOffset(pixels, 0)
                 .Perform();
-        }
-
-        public int GetFramePosition(ParentFrame parentFrame)
-        {
-            return FrameTop.Size.Height;
-        }
-
-        public void GetFramePosition(NestedFrame nestedFrame)
-        {
-            
         }
 
         public void ResizeMiddleAndRightFrames(int pixels)

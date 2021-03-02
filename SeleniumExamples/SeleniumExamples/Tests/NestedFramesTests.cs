@@ -18,16 +18,15 @@ namespace SeleniumExamples.Tests
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
 
-        [TestCase(NestedFrame.Left, "LEFT")]
-        [TestCase(NestedFrame.Middle, "MIDDLE")]
-        [TestCase(NestedFrame.Right, "RIGHT")]
+        [TestCase(Frame.Left, "LEFT")]
+        [TestCase(Frame.Middle, "MIDDLE")]
+        [TestCase(Frame.Right, "RIGHT")]
         public void TopParentFrame_NestedFramesHaveTheCorrectText(
-            NestedFrame nestedFrame, string nestedFrameText)
+            Frame nestedFrame, string nestedFrameText)
         {
             _sut.NestedFramesPage.NavigateToPage();
 
-            _sut.NestedFramesPage.SwitchToParentFrame(ParentFrame.Top);
-            _sut.NestedFramesPage.SwitchToNestedFrame(nestedFrame);
+            _sut.NestedFramesPage.SwitchToFrame(nestedFrame);
             var result = _sut.SharedHTML.ReadPageBodyText();
 
             Assert.That(result, Is.EqualTo(nestedFrameText));
@@ -38,7 +37,7 @@ namespace SeleniumExamples.Tests
         {
             _sut.NestedFramesPage.NavigateToPage();
 
-            _sut.NestedFramesPage.SwitchToParentFrame(ParentFrame.Bottom);
+            _sut.NestedFramesPage.SwitchToFrame(Frame.Bottom);
             var result = _sut.SharedHTML.ReadPageBodyText();
 
             Assert.That(result, Is.EqualTo("BOTTOM"));

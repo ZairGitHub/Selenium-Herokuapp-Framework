@@ -43,36 +43,6 @@ namespace SeleniumExamples.Pages
         private IWebElement FrameBottom =>
             Driver.FindElement(By.Name("frame-bottom"));
 
-        public void ResizeLeftAndMiddleFrames(int pixels)
-        {
-            SwitchToFrame(FrameTop);
-            IWebElement frame = FrameLeft;
-            new Actions(Driver)
-                .MoveToElement(frame, frame.Size.Width, frame.Size.Height / 2)
-                .ClickAndHold()
-                .MoveByOffset(pixels, 0)
-                .Perform();
-        }
-
-        public void ResizeMiddleAndRightFrames(int pixels)
-        {
-            SwitchToFrame(FrameTop);
-            IWebElement frame = FrameMiddle;
-            new Actions(Driver)
-                .MoveToElement(frame, frame.Size.Width, frame.Size.Height / 2)
-                .ClickAndHold()
-                .MoveByOffset(pixels, 0)
-                .Perform();
-        }
-
-        public void ResizeTopAndBottomFrames(int pixels)
-        {            
-            new Actions(Driver).MoveToElement(FrameSet)
-                .ClickAndHold()
-                .MoveByOffset(0, pixels)
-                .Perform();
-        }
-
         public void SwitchToParentFrame(ParentFrame frame)
         {
             if (frame == ParentFrame.Top)
@@ -99,6 +69,46 @@ namespace SeleniumExamples.Pages
             {
                 SwitchToFrame(FrameRight);
             }
+        }
+
+        public void ResizeLeftAndMiddleFrames(int pixels)
+        {
+            SwitchToFrame(FrameTop);
+            IWebElement frame = FrameLeft;
+            new Actions(Driver)
+                .MoveToElement(frame, frame.Size.Width, frame.Size.Height / 2)
+                .ClickAndHold()
+                .MoveByOffset(pixels, 0)
+                .Perform();
+        }
+
+        public int GetFramePosition(ParentFrame parentFrame)
+        {
+            return FrameTop.Size.Height;
+        }
+
+        public void GetFramePosition(NestedFrame nestedFrame)
+        {
+            
+        }
+
+        public void ResizeMiddleAndRightFrames(int pixels)
+        {
+            SwitchToFrame(FrameTop);
+            IWebElement frame = FrameMiddle;
+            new Actions(Driver)
+                .MoveToElement(frame, frame.Size.Width, frame.Size.Height / 2)
+                .ClickAndHold()
+                .MoveByOffset(pixels, 0)
+                .Perform();
+        }
+
+        public void ResizeTopAndBottomFrames(int pixels)
+        {
+            new Actions(Driver).MoveToElement(FrameSet)
+                .ClickAndHold()
+                .MoveByOffset(0, pixels)
+                .Perform();
         }
 
         private void SwitchToFrame(IWebElement frame)

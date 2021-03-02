@@ -58,17 +58,15 @@ namespace SeleniumExamples.Tests
             _sut.NestedFramesPage.ResizeMiddleAndRightFrames(10);
         }
 
-        [TestCase(ParentFrame.Top, -50)]
-        [TestCase(ParentFrame.Top, 50)]
-        [TestCase(ParentFrame.Bottom, -50)]
-        [TestCase(ParentFrame.Bottom, 50)]
-        public void ABottom(ParentFrame frame, int offSet)
+        [TestCase(-50)]
+        [TestCase(50)]
+        public void ABottom(int offSet)
         {
             _sut.NestedFramesPage.NavigateToPage();
 
-            var initial = _sut.NestedFramesPage.GetFramePosition(frame);
+            var initial = _sut.NestedFramesPage.GetFrameSize();
             _sut.NestedFramesPage.ResizeTopAndBottomFrames(offSet);
-            var end = _sut.NestedFramesPage.GetFramePosition(frame);
+            var end = _sut.NestedFramesPage.GetFrameSize();
 
             Assert.That(end, Is.EqualTo(initial + offSet));
         }

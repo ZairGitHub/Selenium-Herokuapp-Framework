@@ -43,11 +43,12 @@ namespace SeleniumExamples.Pages
         private IWebElement FrameBottom =>
             Driver.FindElement(By.Name("frame-bottom"));
 
-        public void MoveBottomFrame()
-        {
-            var element = FrameSet;
-            Actions builder = new Actions(Driver);
-            builder.MoveToElement(element).ClickAndHold().MoveByOffset(100, 0).Perform();
+        public void MoveBottomFrame(int pixels)
+        {            
+            new Actions(Driver).MoveToElement(FrameSet)
+                .ClickAndHold()
+                .MoveByOffset(0, pixels)
+                .Perform();
         }
 
         public void SwitchToParentFrame(ParentFrame frame)

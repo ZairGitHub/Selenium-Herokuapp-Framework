@@ -45,6 +45,7 @@ namespace SeleniumExamples.Pages
 
         public void SwitchToParentFrame(ParentFrame frame)
         {
+            SwitchToDefaultFrame();
             if (frame == ParentFrame.Top)
             {
                 SwitchToFrame(FrameTop);
@@ -57,6 +58,8 @@ namespace SeleniumExamples.Pages
 
         public void SwitchToNestedFrame(NestedFrame frame)
         {
+            SwitchToDefaultFrame();
+            SwitchToFrame(FrameTop);
             if (frame == NestedFrame.Left)
             {
                 SwitchToFrame(FrameLeft);
@@ -71,12 +74,22 @@ namespace SeleniumExamples.Pages
             }
         }
 
-        public int ReadParentFrameSize() => FrameTop.Size.Height;
+        public int ReadParentFrameSize()
+        {
+            SwitchToDefaultFrame();
+            return FrameTop.Size.Height;
+        }
 
-        public int ReadNestedFrameSize() => FrameMiddle.Size.Width;
+        public int ReadNestedFrameSize()
+        {
+            SwitchToDefaultFrame();
+            SwitchToFrame(FrameTop);
+            return FrameMiddle.Size.Width;
+        }
 
         public void ResizeTopAndBottomFrames(int pixelOffset)
         {
+            SwitchToDefaultFrame();
             new Actions(Driver).MoveToElement(FrameSet)
                 .ClickAndHold()
                 .MoveByOffset(0, pixelOffset)
@@ -85,6 +98,7 @@ namespace SeleniumExamples.Pages
 
         public void ResizeLeftAndMiddleFrames(int pixelOffset)
         {
+            SwitchToDefaultFrame();
             SwitchToFrame(FrameTop);
             IWebElement frame = FrameMiddle;
             new Actions(Driver)
@@ -96,6 +110,7 @@ namespace SeleniumExamples.Pages
 
         public void ResizeRightAndMiddleFrames(int pixels)
         {
+            SwitchToDefaultFrame();
             SwitchToFrame(FrameTop);
             IWebElement frame = FrameMiddle;
             new Actions(Driver)
@@ -109,5 +124,7 @@ namespace SeleniumExamples.Pages
         {
             Driver.SwitchTo().Frame(frame);
         }
+
+        private void SwitchToDefaultFrame() => Driver.SwitchTo().DefaultContent();
     }
 }

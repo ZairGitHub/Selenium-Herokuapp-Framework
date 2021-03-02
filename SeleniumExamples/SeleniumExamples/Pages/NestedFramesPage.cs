@@ -84,12 +84,12 @@ namespace SeleniumExamples.Pages
         public void ResizeLeftAndMiddleFrames(int pixels)
         {
             SwitchToFrame(FrameTop);
-            IWebElement frame = FrameLeft;
+            IWebElement frame = FrameMiddle;
             new Actions(Driver)
-                .MoveToElement(frame, frame.Size.Width, frame.Size.Height / 2)
-                .ClickAndHold()
-                .MoveByOffset(pixels, 0)
-                .Perform();
+                    .MoveToElement(frame, frame.Size.Width - (frame.Size.Width + 1), 0)
+                    .ClickAndHold()
+                    .MoveByOffset(pixels, 0)
+                    .Perform();
         }
 
         public void ResizeMiddleAndRightFrames(int pixels)
@@ -97,7 +97,7 @@ namespace SeleniumExamples.Pages
             SwitchToFrame(FrameTop);
             IWebElement frame = FrameMiddle;
             new Actions(Driver)
-                .MoveToElement(frame, frame.Size.Width, frame.Size.Height / 2)
+                .MoveToElement(frame, frame.Size.Width, 0)
                 .ClickAndHold()
                 .MoveByOffset(pixels, 0)
                 .Perform();

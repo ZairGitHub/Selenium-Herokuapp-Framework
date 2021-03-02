@@ -21,26 +21,15 @@ namespace SeleniumExamples.Tests
         [TestCase(Frame.Left, "LEFT")]
         [TestCase(Frame.Middle, "MIDDLE")]
         [TestCase(Frame.Right, "RIGHT")]
-        public void TopParentFrame_NestedFramesHaveTheCorrectText(
-            Frame nestedFrame, string nestedFrameText)
+        [TestCase(Frame.Bottom, "BOTTOM")]
+        public void AllFrames_HaveTheCorrectTextBody(Frame frame, string frameText)
         {
             _sut.NestedFramesPage.NavigateToPage();
 
-            _sut.NestedFramesPage.SwitchToFrame(nestedFrame);
+            _sut.NestedFramesPage.SwitchToFrame(frame);
             var result = _sut.SharedHTML.ReadPageBodyText();
 
-            Assert.That(result, Is.EqualTo(nestedFrameText));
-        }
-
-        [Test]
-        public void BottomParentFrame_HasTheCorrectText()
-        {
-            _sut.NestedFramesPage.NavigateToPage();
-
-            _sut.NestedFramesPage.SwitchToFrame(Frame.Bottom);
-            var result = _sut.SharedHTML.ReadPageBodyText();
-
-            Assert.That(result, Is.EqualTo("BOTTOM"));
+            Assert.That(result, Is.EqualTo(frameText));
         }
 
         [TestCase(-valueOf50)]

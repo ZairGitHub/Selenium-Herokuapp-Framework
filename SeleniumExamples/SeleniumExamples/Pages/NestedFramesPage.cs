@@ -132,13 +132,13 @@ namespace SeleniumExamples.Pages
             SwitchToFrame(FrameTop);
             IWebElement frame = FrameMiddle;
             new Actions(Driver)
-                    .MoveToElement(frame, frame.Size.Width, 0)
-                    .ClickAndHold()
-                    .MoveByOffset(pixelOffset, 0)
-                    .Perform();
+                .MoveToElement(frame, frame.Size.Width - (frame.Size.Width + 1), 0)
+                .ClickAndHold()
+                .MoveByOffset(pixelOffset, 0)
+                .Perform();
         }
 
-        public void ResizeRightAndMiddleFrames(int pixels)
+        public void ResizeRightAndMiddleFrames(int pixelOffset)
         {
             SwitchToDefaultFrame();
             SwitchToFrame(FrameTop);
@@ -146,7 +146,7 @@ namespace SeleniumExamples.Pages
             new Actions(Driver)
                 .MoveToElement(frame, frame.Size.Width, 0)
                 .ClickAndHold()
-                .MoveByOffset(pixels, 0)
+                .MoveByOffset(pixelOffset, 0)
                 .Perform();
         }
 

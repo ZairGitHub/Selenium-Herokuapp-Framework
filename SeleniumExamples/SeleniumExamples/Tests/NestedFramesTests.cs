@@ -53,7 +53,7 @@ namespace SeleniumExamples.Tests
             _sut.NestedFramesPage.ResizeLeftAndMiddleFrames(offset);
             var endSize = _sut.NestedFramesPage.ReadNestedFrameSize();
 
-            Assert.That(endSize, Is.EqualTo(initialSize + offset));
+            Assert.That(endSize, Is.EqualTo(initialSize - offset));
         }
 
         [TestCase(-valueOf50)]

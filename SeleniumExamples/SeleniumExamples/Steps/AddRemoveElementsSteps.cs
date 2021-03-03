@@ -5,37 +5,37 @@ using TechTalk.SpecFlow;
 namespace SeleniumExamples.Steps
 {
     [Binding]
-    public class AddRemoveSteps
+    public class AddRemoveElementsSteps
     {
         private readonly PageFactory _sut;
 
-        public AddRemoveSteps(PageFactory sut) => _sut = sut;
+        public AddRemoveElementsSteps(PageFactory sut) => _sut = sut;
         
-        [Given(@"the user is on the Add/Remove page")]
-        public void GivenTheUserIsOnTheAddRemovePage()
+        [Given(@"the user is on the Add/Remove Elements page")]
+        public void GivenTheUserIsOnTheAddRemoveElementsPage()
         {
-            _sut.AddRemovePage.NavigateToPage();
+            _sut.AddRemoveElementsPage.NavigateToPage();
         }
 
         [When(@"the user clicks the add button three times")]
         public void WhenTheUserClicksTheAddButtonThreeTimes()
         {
-            _sut.AddRemovePage.ClickAddButton();
-            _sut.AddRemovePage.ClickAddButton();
-            _sut.AddRemovePage.ClickAddButton();
+            _sut.AddRemoveElementsPage.ClickAddButton();
+            _sut.AddRemoveElementsPage.ClickAddButton();
+            _sut.AddRemoveElementsPage.ClickAddButton();
         }
 
         [When(@"the user clicks any delete button two times")]
         public void WhenTheUserClicksAnyDeleteButtonTwoTimes()
         {
-            _sut.AddRemovePage.ClickAnyDeleteButton();
-            _sut.AddRemovePage.ClickAnyDeleteButton();
+            _sut.AddRemoveElementsPage.ClickAnyDeleteButton();
+            _sut.AddRemoveElementsPage.ClickAnyDeleteButton();
         }
 
         [Then(@"the number of delete buttons should be equal to (.*)")]
         public void ThenTheNumberOfDeleteButtonsShouldBeEqualTo(int numberOfDeleteButtons)
         {
-            var result = _sut.AddRemovePage.CountNumberOfDeleteButtons();
+            var result = _sut.AddRemoveElementsPage.CountNumberOfDeleteButtons();
 
             Assert.That(result, Is.EqualTo(numberOfDeleteButtons));
         }

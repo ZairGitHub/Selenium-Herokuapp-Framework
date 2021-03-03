@@ -15,7 +15,7 @@ namespace SeleniumExamples.Pages
             SharedHTML = new SharedHTML(Driver);
 
             IndexPage = new IndexPage(Driver);
-            AddRemovePage = new AddRemovePage(Driver);
+            AddRemoveElementsPage = new AddRemoveElementsPage(Driver);
             BasicAuthenticationPage = new BasicAuthenticationPage(Driver);
             CheckboxesPage = new CheckboxesPage(Driver);
             DigestAuthenticationPage = new DigestAuthenticationPage(Driver);
@@ -35,7 +35,7 @@ namespace SeleniumExamples.Pages
 
         public IndexPage IndexPage { get; private set; }
 
-        public AddRemovePage AddRemovePage { get; private set; }
+        public AddRemoveElementsPage AddRemoveElementsPage { get; private set; }
 
         public BasicAuthenticationPage BasicAuthenticationPage { get; private set; }
 

@@ -4,7 +4,7 @@
 	so that I can create and delete elements on the website.
 
 Background:
-	Given the user is on the Add/Remove page
+	Given the user is on the Add/Remove Elements page
 
 Scenario: Add button creates a new element
 	When the user clicks the add button three times

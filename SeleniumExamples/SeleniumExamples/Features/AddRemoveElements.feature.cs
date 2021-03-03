@@ -28,7 +28,7 @@ namespace SeleniumExamples.Features
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "AddRemove.feature"
+#line 1 "AddRemoveElements.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
@@ -79,7 +79,7 @@ namespace SeleniumExamples.Features
 #line 6
 #line hidden
 #line 7
- testRunner.Given("the user is on the Add/Remove page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the user is on the Add/Remove Elements page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         

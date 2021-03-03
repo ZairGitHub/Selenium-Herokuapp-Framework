@@ -3,9 +3,9 @@ using OpenQA.Selenium;
 
 namespace SeleniumExamples.Pages
 {
-    public sealed class AddRemovePage : WebPage, IPageNavigation
+    public sealed class AddRemoveElementsPage : WebPage, IPageNavigation
     {
-        public AddRemovePage(IWebDriver driver) : base(driver) { }
+        public AddRemoveElementsPage(IWebDriver driver) : base(driver) { }
 
         public void NavigateToPage()
         {

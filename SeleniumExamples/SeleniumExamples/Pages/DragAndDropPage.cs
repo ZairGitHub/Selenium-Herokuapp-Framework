@@ -2,9 +2,9 @@
 
 namespace SeleniumExamples.Pages
 {
-    public sealed class DragDropPage : WebPage, IPageNavigation
+    public sealed class DragAndDropPage : WebPage, IPageNavigation
     {
-        public DragDropPage(IWebDriver driver) : base(driver) { }
+        public DragAndDropPage(IWebDriver driver) : base(driver) { }
 
         public void NavigateToPage()
         {

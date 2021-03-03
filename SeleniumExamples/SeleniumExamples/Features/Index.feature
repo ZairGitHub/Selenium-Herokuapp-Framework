@@ -43,6 +43,11 @@ Scenario: Navigate to Form Authentication page
 	Then the page header text should inform the user that they are on the correct "Login Page" page
 
 @hypertext
+Scenario: Navigate to Frames page
+	When the user clicks the Frames link
+	Then the page header text should inform the user that they are on the correct "Frames" page
+
+@hypertext
 Scenario: Navigate to Hovers page
 	When the user clicks the Hovers link
 	Then the page header text should inform the user that they are on the correct "Hovers" page
@@ -51,3 +56,8 @@ Scenario: Navigate to Hovers page
 Scenario: Navigate to JavaScript Alerts page
 	When the user clicks the JavaScript Alerts link
 	Then the page header text should inform the user that they are on the correct "JavaScript Alerts" page
+
+@hypertext
+Scenario: Navigate to Nested Frames page
+	When the user clicks the Nested Frames link
+	Then the page url should inform the user that they are on the correct "nested_frames" page

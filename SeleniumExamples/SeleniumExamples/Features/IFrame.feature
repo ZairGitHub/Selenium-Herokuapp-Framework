@@ -1,13 +1,11 @@
 ﻿Feature: iFrame Page
 	As a user,
-	I want to be able to select links on the frames page,
-	so that I can navigate to other areas of the website.
+	I want to the website to support iFrames,
+	so that I can interact with iFrame elements on the website.
 
 Background:
 	Given the user is on the iFrame Page
 
-Scenario: Add two numbers
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+Scenario: iFrame can process interactions through text input
+	When the user enters the text "input" using their keyboard
+	Then the iFrame should append the input text to its default content text

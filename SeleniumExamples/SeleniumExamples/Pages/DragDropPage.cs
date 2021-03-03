@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using OpenQA.Selenium;
 
 namespace SeleniumExamples.Pages
 {
-    class DragDropPage
+    public sealed class DragDropPage : WebPage, IPageNavigation
     {
+        public DragDropPage(IWebDriver driver) : base(driver) { }
+
+        public void NavigateToPage()
+        {
+            NavigateToURL(ConfigReader.Index + ConfigReader.DragAndDrop);
+        }
     }
 }

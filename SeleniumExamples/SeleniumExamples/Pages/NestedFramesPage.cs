@@ -104,13 +104,13 @@ namespace SeleniumExamples.Pages
             }
         }
 
-        public int ReadParentFrameSize()
+        public int ReadParentFramesSize()
         {
             SwitchToDefaultFrame();
             return FrameTop.Size.Height;
         }
 
-        public int ReadNestedFrameSize()
+        public int ReadNestedFramesSize()
         {
             SwitchToDefaultFrame();
             SwitchToFrame(FrameTop);

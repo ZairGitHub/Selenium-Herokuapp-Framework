@@ -17,7 +17,7 @@ namespace SeleniumExamples.Steps
         [BeforeScenario]
         public void BeforeScenario()
         {
-            _container.RegisterInstanceAs(new PageFactory(StaticDriver.Type, true));
+            _container.RegisterInstanceAs(new PageFactory(StaticDriver.Type));
         }
 
         [AfterScenario]

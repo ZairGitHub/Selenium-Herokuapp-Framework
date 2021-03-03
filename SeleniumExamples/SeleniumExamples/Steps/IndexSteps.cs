@@ -59,6 +59,12 @@ namespace SeleniumExamples.Steps
             _sut.IndexPage.ClickFormAuthenticationLink();
         }
 
+        [When(@"the user clicks the Frames link")]
+        public void WhenTheUserClicksTheFramesLink()
+        {
+            _sut.IndexPage.ClickFramesLink();
+        }
+
         [When(@"the user clicks the Hovers link")]
         public void WhenTheUserClicksTheHoversLink()
         {
@@ -69,6 +75,12 @@ namespace SeleniumExamples.Steps
         public void WhenTheUserClicksTheJavaScriptAlertsLink()
         {
             _sut.IndexPage.ClickJavaScriptAlertsLink();
+        }
+
+        [When(@"the user clicks the Nested Frames link")]
+        public void WhenTheUserClicksTheNestedFramesLink()
+        {
+            _sut.IndexPage.ClickNestedFramesLink();
         }
 
         [When(@"the user switches to the newly created tab (.*)")]
@@ -99,6 +111,14 @@ namespace SeleniumExamples.Steps
             var result = _sut.SharedIAlert.ReadAuthenticationPopupText();
 
             Assert.That(result, Is.EqualTo(pageAuthenticationArea));
+        }
+
+        [Then(@"the page url should inform the user that they are on the correct ""(.*)"" page")]
+        public void ThenThePageUrlShouldInformTheUserThatTheyAreOnTheCorrectPage(string url)
+        {
+            var result = _sut.Driver.Url;
+
+            Assert.That(result, Is.EqualTo(ConfigReader.Index + url));
         }
     }
 }

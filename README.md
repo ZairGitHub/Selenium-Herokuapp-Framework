@@ -1,14 +1,12 @@
 # Selenium-Example-Framework
 
-This project serves a practical investigation to explore the many different ways in which the Selenium open source testing automation tool can be used to test various web functionality. It consists of a repository holding a C# .NET Core Selenium automated testing framework for testing the http://the-internet.herokuapp.com website. This website features pages which have been deliberately designed to capture prominent and ugly functionality found on the web.
+This project serves a practical investigation to explore the many different ways in which the Selenium open source testing automation tool can be used to test various web functionality. It consists of a repository holding a C# .NET Core Selenium automated testing framework for testing the http://the-internet.herokuapp.com website. This website, also known as the system under test (SUT), has been selected as it features a healthy selection of pages which have been deliberately designed to capture prominent and ugly functionality found on the web.
 
 ## Design
 
 ### POM
 
-Page Object Model
-PageFactory class depreciated
-`PageFactory.cs`
+Page Object Model design pattern. Modular design, scalable framework, smoother maintainence. Model pages as classes controlled and managed by a central page object. Custom `PageFactory.cs` class. [Previously packaged PageFactory class depreciated in C# due to properties](https://alexanderontesting.com/2018/05/21/c-and-the-disappearing-pagefactory-my-next-steps-in-selenium-testing/) but still exists in other languages which do not support properties such as Java.
 
 ### Polymorphism
 
@@ -27,7 +25,7 @@ Page structure (common methods and contract implementation)
 
 ## Testing
 
-The framework supports the execution of regular automated tests and BDD (Behaviour-Driven Development) tests.
+The framework supports the execution of regular automated tests and Behaviour-Driven Development (BDD) tests.
 Comparison
 
 ### Regular tests

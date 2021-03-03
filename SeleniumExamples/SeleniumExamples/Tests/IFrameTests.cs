@@ -6,9 +6,6 @@ namespace SeleniumExamples.Tests
     [TestFixture]
     public class IFrameTests
     {
-        private const string _defaultTextString = "Your content goes here.";
-        private const string _input = "input";
-
         private PageFactory _sut;
 
         [OneTimeSetUp]
@@ -21,11 +18,12 @@ namespace SeleniumExamples.Tests
         public void IFrame_CanProcessInputText()
         {
             _sut.FramesPage.IFramePage.NavigateToPage();
+            var input = "input";
 
-            _sut.FramesPage.IFramePage.EnterText(_input);
+            _sut.FramesPage.IFramePage.EnterText(input);
             var result = _sut.FramesPage.IFramePage.ReadText();
 
-            Assert.That(result, Is.EqualTo(_defaultTextString + _input));
+            Assert.That(result, Is.EqualTo("Your content goes here." + input));
         }
     }
 }

@@ -36,11 +36,19 @@ Scenario Outline: Top and bottom parent frames can be resized using their shared
 	| 50	 |
 
 @frame-border
-Scenario: Left and middle nested frames can be resized using their shared border
-	When the user resizes the left and middle nested frames using their shared border
+Scenario Outline: Left and middle nested frames can be resized using their shared border
+	When the user resizes the left and middle nested frames using their shared border <offset>
 	Then the sizes of the nested frames should be different to their original sizes
+	Examples:
+	| offset |
+	| -50	 |
+	| 50	 |
 
 @frame-border
-Scenario: Right and middle nested frames can be resized using their shared border
-	When the user resizes the right and middle nested frames using their shared border
+Scenario Outline: Right and middle nested frames can be resized using their shared border
+	When the user resizes the right and middle nested frames using their shared border <offset>
 	Then the sizes of the nested frames should be different to their original sizes
+	Examples:
+	| offset |
+	| -50	 |
+	| 50	 |

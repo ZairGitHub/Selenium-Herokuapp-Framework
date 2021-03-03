@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="SeleniumExamples.Pages.PageFactory">
-    <Position X="0.5" Y="2" Width="2.25" />
+    <Position X="0.75" Y="2" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAQAACAAABAABAAAAAABAAJAiABiAAgAAAAAAAIEAA=</HashCode>
       <FileName>Pages\PageFactory.cs</FileName>
@@ -20,7 +20,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SeleniumExamples.Pages.WebPage">
-    <Position X="3.25" Y="3" Width="1.5" />
+    <Position X="3.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pages\WebPage.cs</FileName>
@@ -77,14 +77,14 @@
     </TypeIdentifier>
   </Class>
   <Interface Name="SeleniumExamples.Pages.IPageNavigation">
-    <Position X="11.25" Y="1.5" Width="1.5" />
+    <Position X="11" Y="1.5" Width="2" />
     <TypeIdentifier>
       <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pages\IPageNavigation.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SeleniumExamples.Pages.IAlertNavigation">
-    <Position X="11.25" Y="4.5" Width="2" />
+    <Position X="11" Y="4.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pages\IAlertNavigation.cs</FileName>

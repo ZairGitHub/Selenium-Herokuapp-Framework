@@ -16,7 +16,7 @@ Page Object Model (POM) design pattern. Modular design, scalable framework, smoo
 
 All visitable pages of the SUT inherit from abstract `WebPage.cs` class. Ensures pages only ever rely a single instance of an `IWebDriver` to optimise test execution time. Also contains a `NavigateToUrl()` method to standardise page navigation across all derived pages.
 
-## Composition
+### Composition
 
 `IAlertNavigation.cs` interface for pages requiring credential authentication with an authentication alert.
 `IPageNavigation.cs` interface for non-authentication alert pages.
@@ -53,23 +53,22 @@ More readable (Gherkin)
 - Bypass by directly sending credentials via url string
 - `MiscellaneousTests.cs` exclusive to regular tests
 
-### Extending framework
-
-POM
+## Extending the framework
 
 More pages of sut
+Navigation to page
 1. Add property to `IndexPage.cs`
 2. Add method to `IndexPage.cs`
 3. Add IndexPage test to validate page navigation
 
-1. Add key to `Testhost.dll.config`
-2. Add property to `ConfigReader.cs`
-3. Create a class to represent page
-4. Inherit from `WebPage.cs` and implement either the `IPageNavigation` or `IAlertNavigation` interface
+POM page class setup
+1. Add key-value pair to `Testhost.dll.config`
+2. Add `static readonly string` property to `ConfigReader.cs`
+3. Create a class to represent page in the Pages folder
+4. Inherit from `WebPage.cs` and implement either the `IPageNavigation.cs` or `IAlertNavigation.cs` interface
 5. Add property to `PageFactory.cs` to reference created class
-6. Add property assignment in constructor of `PageFactory.cs`
+6. Add property assignment in constructor of `PageFactory.cs` to pass driver to class
 7. Reference class in tests using `PageFactory.newPageClass.methods()`
 
 `Static Driver.cs` to switch between drivers
 `DriverConfig.cs` to extend common driver configuration
-

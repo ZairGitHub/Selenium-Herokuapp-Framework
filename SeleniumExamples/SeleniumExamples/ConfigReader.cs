@@ -25,6 +25,9 @@ namespace SeleniumExamples
         public static readonly string DigestAuthentication =
             ConfigurationManager.AppSettings["digest_authentication"];
 
+        public static readonly string DragAndDrop =
+            ConfigurationManager.AppSettings["drag_and_drop"];
+
         public static readonly string FormAuthetication =
             ConfigurationManager.AppSettings["form_authentication"];
 

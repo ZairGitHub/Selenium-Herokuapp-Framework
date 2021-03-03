@@ -304,11 +304,19 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Left and middle nested frames can be resized using their shared border")]
         [NUnit.Framework.CategoryAttribute("frame-border")]
-        public virtual void LeftAndMiddleNestedFramesCanBeResizedUsingTheirSharedBorder()
+        [NUnit.Framework.TestCaseAttribute("-50", null)]
+        [NUnit.Framework.TestCaseAttribute("50", null)]
+        public virtual void LeftAndMiddleNestedFramesCanBeResizedUsingTheirSharedBorder(string offset, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "frame-border"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("offset", offset);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Left and middle nested frames can be resized using their shared border", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 39
 this.ScenarioInitialize(scenarioInfo);
@@ -334,10 +342,11 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 40
- testRunner.When("the user resizes the left and middle nested frames using their shared border", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("the user resizes the left and middle nested frames using their shared border {0}", offset), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 41
- testRunner.Then("the sizes of the nested frames should be different to their original sizes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the sizes of the nested frames should be different to their original sizes (left " +
+                        "border)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -346,13 +355,21 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Right and middle nested frames can be resized using their shared border")]
         [NUnit.Framework.CategoryAttribute("frame-border")]
-        public virtual void RightAndMiddleNestedFramesCanBeResizedUsingTheirSharedBorder()
+        [NUnit.Framework.TestCaseAttribute("-50", null)]
+        [NUnit.Framework.TestCaseAttribute("50", null)]
+        public virtual void RightAndMiddleNestedFramesCanBeResizedUsingTheirSharedBorder(string offset, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "frame-border"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("offset", offset);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Right and middle nested frames can be resized using their shared border", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 44
+#line 48
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -375,11 +392,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 45
- testRunner.When("the user resizes the right and middle nested frames using their shared border", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 49
+ testRunner.When(string.Format("the user resizes the right and middle nested frames using their shared border {0}" +
+                            "", offset), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 46
- testRunner.Then("the sizes of the nested frames should be different to their original sizes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 50
+ testRunner.Then("the sizes of the nested frames should be different to their original sizes (right" +
+                        " border)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

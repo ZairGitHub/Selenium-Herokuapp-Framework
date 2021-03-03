@@ -54,16 +54,18 @@ namespace SeleniumExamples.Steps
             _sut.NestedFramesPage.ResizeTopAndBottomFrames(_offset);
         }
 
-        [When(@"the user resizes the left and middle nested frames using their shared border")]
-        public void WhenTheUserResizesTheLeftAndMiddleNestedFramesUsingTheirSharedBorder()
+        [When(@"the user resizes the left and middle nested frames using their shared border (.*)")]
+        public void WhenTheUserResizesTheLeftAndMiddleNestedFramesUsingTheirSharedBorder(int offset)
         {
+            _offset = offset;
             _initialSize = _sut.NestedFramesPage.ReadNestedFramesSize();
             _sut.NestedFramesPage.ResizeLeftAndMiddleFrames(_offset);
         }
 
-        [When(@"the user resizes the right and middle nested frames using their shared border")]
-        public void WhenTheUserResizesTheRightAndMiddleNestedFramesUsingTheirSharedBorder()
+        [When(@"the user resizes the right and middle nested frames using their shared border (.*)")]
+        public void WhenTheUserResizesTheRightAndMiddleNestedFramesUsingTheirSharedBorder(int offset)
         {
+            _offset = offset;
             _initialSize = _sut.NestedFramesPage.ReadNestedFramesSize();
             _sut.NestedFramesPage.ResizeRightAndMiddleFrames(_offset);
         }
@@ -84,8 +86,16 @@ namespace SeleniumExamples.Steps
             Assert.That(_endSize, Is.EqualTo(_initialSize + _offset));
         }
 
-        [Then(@"the sizes of the nested frames should be different to their original sizes")]
-        public void ThenTheSizesOfTheNestedFramesShouldBeDifferentToTheirOriginalSizes()
+        [Then(@"the sizes of the nested frames should be different to their original sizes \(left border\)")]
+        public void ThenTheSizesOfTheNestedFramesShouldBeDifferentToTheirOriginalSizesLeftBorder()
+        {
+            var _endSize = _sut.NestedFramesPage.ReadNestedFramesSize();
+
+            Assert.That(_endSize, Is.EqualTo(_initialSize - _offset));
+        }
+
+        [Then(@"the sizes of the nested frames should be different to their original sizes \(right border\)")]
+        public void ThenTheSizesOfTheNestedFramesShouldBeDifferentToTheirOriginalSizesRightBorder()
         {
             var _endSize = _sut.NestedFramesPage.ReadNestedFramesSize();
 

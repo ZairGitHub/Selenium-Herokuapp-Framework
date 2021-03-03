@@ -39,7 +39,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void AddRemoveElementsLink_RedirectsToAddRemovePage()
+        public void AddRemoveElementsLink_RedirectsToAddRemoveElementsPage()
         {
             _sut.IndexPage.NavigateToPage();
 
@@ -84,6 +84,17 @@ namespace SeleniumExamples.Tests
             _sut.SharedIAlert.ClickCancelButton();
 
             Assert.That(result, Contains.Substring("“Protected Area”"));
+        }
+
+        [Test]
+        public void DragAndDropLink_RedirectsToDragAndDropPage()
+        {
+            _sut.IndexPage.NavigateToPage();
+
+            _sut.IndexPage.ClickDragAndDropLink();
+            var result = _sut.SharedHTML.ReadPageHeaderText();
+
+            Assert.That(result, Is.EqualTo("Drag and Drop"));
         }
 
         [Test]

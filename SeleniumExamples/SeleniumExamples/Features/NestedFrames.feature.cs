@@ -35,8 +35,8 @@ namespace SeleniumExamples.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Nested Frames Page", "\tAs a user,\r\n\tI want to be able to distinguish between frames on the same page,\r\n" +
-                    "\tso that I can interact with different frames on the website.", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Nested Frames Page", "\tAs a user,\r\n\tI want to be able to navigate between different frames,\r\n\tso that I" +
+                    " can interact with pages than hold multiple frames.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         

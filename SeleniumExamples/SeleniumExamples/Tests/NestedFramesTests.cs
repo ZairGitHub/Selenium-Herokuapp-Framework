@@ -8,7 +8,7 @@ namespace SeleniumExamples.Tests
     [TestFixture]
     public class NestedFramesTests
     {
-        private const int valueOf50 = 50;
+        private const int _valueOf50 = 50;
 
         private PageFactory _sut;
 
@@ -32,8 +32,8 @@ namespace SeleniumExamples.Tests
             Assert.That(result, Is.EqualTo(frameText));
         }
 
-        [TestCase(-valueOf50)]
-        [TestCase(valueOf50)]
+        [TestCase(-_valueOf50)]
+        [TestCase(_valueOf50)]
         public void TopAndBottomParentFrames_CanBeResizedUsingTheirSharedBorder(int offset)
         {
             _sut.NestedFramesPage.NavigateToPage();
@@ -45,8 +45,8 @@ namespace SeleniumExamples.Tests
             Assert.That(endSize, Is.EqualTo(initialSize + offset));
         }
 
-        [TestCase(-valueOf50)]
-        [TestCase(valueOf50)]
+        [TestCase(-_valueOf50)]
+        [TestCase(_valueOf50)]
         public void LeftAndMiddleNestedFrames_CanBeResizedUsingTheirSharedBorder(int offset)
         {
             _sut.NestedFramesPage.NavigateToPage();
@@ -58,8 +58,8 @@ namespace SeleniumExamples.Tests
             Assert.That(endSize, Is.EqualTo(initialSize - offset));
         }
 
-        [TestCase(-valueOf50)]
-        [TestCase(valueOf50)]
+        [TestCase(-_valueOf50)]
+        [TestCase(_valueOf50)]
         public void RightAndMiddleNestedFrames_CanBeResizedUsingTheirSharedBorder(int offset)
         {
             _sut.NestedFramesPage.NavigateToPage();

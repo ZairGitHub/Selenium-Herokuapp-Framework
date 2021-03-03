@@ -9,7 +9,11 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class NestedFramesSteps
     {
+        private const int _offsetValueOf50 = 50;
+
         private readonly PageFactory _sut;
+
+        private int _initialSize;
 
         public NestedFramesSteps(PageFactory sut) => _sut = sut;
 
@@ -43,12 +47,27 @@ namespace SeleniumExamples.Steps
             _sut.NestedFramesPage.SwitchToFrame(Frame.Bottom);
         }
 
+        [When(@"the user resizes the top and bottom parent frames using their shared border")]
+        public void WhenTheUserResizesTheTopAndBottomParentFramesUsingTheirSharedBorder()
+        {
+            _initialSize = _sut.NestedFramesPage.ReadParentFramesSize();
+            _sut.NestedFramesPage.ResizeTopAndBottomFrames(_offsetValueOf50);
+        }
+
         [Then(@"the body of the frame should display the correct text ""(.*)""")]
         public void ThenTheBodyOfTheFrameShouldDisplayTheCorrectText(string frameText)
         {
             var result = _sut.SharedHTML.ReadPageBodyText();
 
             Assert.That(result, Is.EqualTo(frameText));
+        }
+
+        [Then(@"the sizes of the parent frames should be different to their original sizes")]
+        public void ThenTheSizesOfTheFramesShouldBeDifferentToTheirOriginalSizes()
+        {
+            var _endSize = _sut.NestedFramesPage.ReadParentFramesSize();
+
+            Assert.That(_endSize, Is.EqualTo(_initialSize + _offsetValueOf50));
         }
     }
 }

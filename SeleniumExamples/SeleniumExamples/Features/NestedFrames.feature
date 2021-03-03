@@ -27,6 +27,6 @@ Scenario: Bottom frame displays the correct text
 	Then the body of the frame should display the correct text "BOTTOM"
 	
 @frame-border
-Scenario: Top and bottom frames can be resized using their shared border
-	When the user resizes the top and bottom frames using their shared border
-	Then the sizes of the frames should be different to their original sizes
+Scenario: Top and bottom parent frames can be resized using their shared border
+	When the user resizes the top and bottom parent frames using their shared border
+	Then the sizes of the parent frames should be different to their original sizes

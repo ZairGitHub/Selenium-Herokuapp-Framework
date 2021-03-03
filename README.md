@@ -1,21 +1,23 @@
 # Selenium-Example-Framework
 
-This project serves a practical investigation to explore the many different ways in which the Selenium open source testing automation tool can be used to test various web functionality. It consists of a repository holding a C# .NET Core Selenium automated testing framework for testing the http://the-internet.herokuapp.com website. This website, also known as the system under test (SUT), has been selected as it features a healthy selection of pages which have been deliberately designed to capture prominent and ugly functionality found on the web.
+Repository featuring C# .NET Core Selenium automated testing framework which has been designed to test the http://the-internet.herokuapp.com website. This website being tested against, or otherwise more concisely referred to as the system under test (SUT), has been selected for featuring a healthy selection of pages that have been deliberately designed to capture prominent and ugly functionality found on the web. The framework supports the execution of regular automated tests and Behaviour-Driven Development (BDD) tests in the Google Chrome and Mozilla Firefox web browsers.
 
-## Design
-
-### POM
-
-Page Object Model design pattern. Modular design, scalable framework, smoother maintainence. Model pages as classes controlled and managed by a central page object. Custom `PageFactory.cs` class. [Previously packaged PageFactory class depreciated in C# due to properties](https://alexanderontesting.com/2018/05/21/c-and-the-disappearing-pagefactory-my-next-steps-in-selenium-testing/) but still exists in other languages which do not support properties such as Java.
-
-### Polymorphism
-
-All pages inherit from `WebPage.cs`
-Page structure (common methods and contract implementation)
+## Framework Design
 
 ### Class Diagram
 
+### Page Object Model
 
+Page Object Model (POM) design pattern. Modular design, scalable framework, smoother maintainence. Model pages as classes controlled and managed by a central page object. Custom `PageFactory.cs` class. [Previously packaged PageFactory class depreciated in C# due to properties](https://alexanderontesting.com/2018/05/21/c-and-the-disappearing-pagefactory-my-next-steps-in-selenium-testing/) but still exists in other languages which do not support properties such as Java.
+
+### Inheritance
+
+All visitable pages of the SUT inherit from abstract `WebPage.cs` class. Ensures pages only ever rely a single instance of an `IWebDriver` to optimise test execution time. Also contains a `NavigateToUrl()` method to standardise page navigation across all derived pages.
+
+## Composition
+
+`IAlertNavigation.cs` interface for pages requiring credential authentication with an authentication alert.
+`IPageNavigation.cs` interface for non-authentication alert pages.
 
 ### Drivers
 
@@ -25,7 +27,6 @@ Page structure (common methods and contract implementation)
 
 ## Testing
 
-The framework supports the execution of regular automated tests and Behaviour-Driven Development (BDD) tests.
 Comparison
 
 ### Regular tests

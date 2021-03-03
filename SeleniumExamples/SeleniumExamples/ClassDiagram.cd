@@ -56,21 +56,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SeleniumExamples.Features.BasicAuthenticationFormFeature" Collapsed="true">
-    <Position X="8.25" Y="4.75" Width="2.5" />
+    <Position X="8.25" Y="4" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAEAAAACgCUAAIgACAAAAIAAAAAAABg=</HashCode>
       <FileName>Features\BasicAuthentication.feature.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SeleniumExamples.Steps.AuthenticationPopupSteps" Collapsed="true">
-    <Position X="8.25" Y="5.5" Width="2.5" />
+    <Position X="8.25" Y="4.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAGAAAAYgAABQAABAAAAIEAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Steps\AuthenticationPopupSteps.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SeleniumExamples.Tests.BasicAuthenticationTests" Collapsed="true">
-    <Position X="8.25" Y="4" Width="2.5" />
+    <Position X="8.25" Y="5.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAQACAAAAAAAAAAAAAAABAAAAAACAAAAAA=</HashCode>
       <FileName>Tests\BasicAuthenticationTests.cs</FileName>

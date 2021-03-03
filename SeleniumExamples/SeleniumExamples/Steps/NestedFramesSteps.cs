@@ -4,6 +4,8 @@ using TechTalk.SpecFlow;
 
 namespace SeleniumExamples.Steps
 {
+    using static NestedFramesPage;
+
     [Binding]
     public class NestedFramesSteps
     {
@@ -14,19 +16,21 @@ namespace SeleniumExamples.Steps
         [Given(@"the user is on the Nested Frames page")]
         public void GivenTheUserIsOnTheNestedFramesPage()
         {
-            ScenarioContext.Current.Pending();
+            _sut.NestedFramesPage.NavigateToPage();
         }
         
-        [When(@"the user switches to the frame Frame\.Left")]
-        public void WhenTheUserSwitchesToTheFrameFrame_Left()
+        [When(@"the user switches to the left frame")]
+        public void WhenTheUserSwitchesToTheLeftFrame()
         {
-            ScenarioContext.Current.Pending();
+            _sut.NestedFramesPage.SwitchToFrame(Frame.Left);
         }
-        
-        [Then(@"the body of the frame should display the correct text LEFT")]
-        public void ThenTheBodyOfTheFrameShouldDisplayTheCorrectTextLEFT()
+
+        [Then(@"the body of the frame should display the correct text ""(.*)""")]
+        public void ThenTheBodyOfTheFrameShouldDisplayTheCorrectText(string frameText)
         {
-            ScenarioContext.Current.Pending();
+            var result = _sut.SharedHTML.ReadPageBodyText();
+
+            Assert.That(result, Is.EqualTo(frameText));
         }
     }
 }

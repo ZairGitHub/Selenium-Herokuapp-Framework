@@ -6,7 +6,7 @@
 Background:
 	Given the user is on the Nested Frames page
 
-@mytag
+@frame-text
 Scenario: Left frame displays the correct text
 	When the user switches to the left frame
 	Then the body of the frame should display the correct text "LEFT"

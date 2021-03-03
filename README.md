@@ -33,17 +33,17 @@ Comparison
 
 ### Regular tests
 
-Faster to construct
-Faster to run
-Less readable
+- Faster to construct
+- Faster to run
+- Less readable
 
 ### BDD tests
 
-Feature and step files
-Slower to construct
-Slower to run
-Reusability of steps
-More readable (Gherkin)
+- Feature and step files
+- Slower to construct
+- Slower to run
+- Reusability of steps
+- More readable (Gherkin)
 
 ### General
 
@@ -72,3 +72,5 @@ POM page class setup
 
 `Static Driver.cs` to switch between drivers
 `DriverConfig.cs` to extend common driver configuration
+
+Compatibility for different browsers outside of Chrome and Firefox

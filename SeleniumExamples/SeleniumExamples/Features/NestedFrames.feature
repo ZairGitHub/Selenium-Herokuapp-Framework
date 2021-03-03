@@ -1,7 +1,7 @@
 ﻿Feature: Nested Frames Page
 	As a user,
-	I want to be able to distinguish between frames on the same page,
-	so that I can interact with different frames on the website.
+	I want to be able to navigate between different frames,
+	so that I can interact with pages than hold multiple frames.
 
 Background:
 	Given the user is on the Nested Frames page

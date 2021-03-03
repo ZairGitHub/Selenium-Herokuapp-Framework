@@ -23,7 +23,7 @@ namespace SeleniumExamples.Pages
         private IWebElement LinkDigestAuthentication =>
             Driver.FindElement(By.LinkText("Digest Authentication"));
 
-        private IWebElement LinkDragDrop =>
+        private IWebElement LinkDragAndDrop =>
             Driver.FindElement(By.LinkText("Drag and Drop"));
 
         private IWebElement LinkFormAuthentiication =>
@@ -55,7 +55,7 @@ namespace SeleniumExamples.Pages
             LinkDigestAuthentication.Click();
         }
 
-        public void ClickDragAndDropLink() => LinkDragDrop.Click();
+        public void ClickDragAndDropLink() => LinkDragAndDrop.Click();
 
         public void ClickFormAuthenticationLink()
         {

@@ -19,7 +19,7 @@ namespace SeleniumExamples.Pages
             BasicAuthenticationPage = new BasicAuthenticationPage(Driver);
             CheckboxesPage = new CheckboxesPage(Driver);
             DigestAuthenticationPage = new DigestAuthenticationPage(Driver);
-            DragDropPage = new DragDropPage(Driver);
+            DragAndDropPage = new DragAndDropPage(Driver);
             FormAuthenticationPage = new FormAuthenticationPage(Driver);
             FramesPage = new FramesPage(Driver);
             HoversPage = new HoversPage(Driver);
@@ -43,7 +43,7 @@ namespace SeleniumExamples.Pages
 
         public DigestAuthenticationPage DigestAuthenticationPage { get; private set; }
 
-        public DragDropPage DragDropPage { get; private set; }
+        public DragAndDropPage DragAndDropPage { get; private set; }
 
         public FormAuthenticationPage FormAuthenticationPage { get; private set; }
 

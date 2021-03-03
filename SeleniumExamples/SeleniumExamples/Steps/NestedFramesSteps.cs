@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework;
+using SeleniumExamples.Pages;
 using TechTalk.SpecFlow;
 
 namespace SeleniumExamples.Steps
@@ -6,6 +7,10 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class NestedFramesSteps
     {
+        private readonly PageFactory _sut;
+
+        public NestedFramesSteps(PageFactory sut) => _sut = sut;
+
         [Given(@"the user is on the Nested Frames page")]
         public void GivenTheUserIsOnTheNestedFramesPage()
         {

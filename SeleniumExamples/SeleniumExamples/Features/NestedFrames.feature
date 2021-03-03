@@ -30,3 +30,13 @@ Scenario: Bottom frame displays the correct text
 Scenario: Top and bottom parent frames can be resized using their shared border
 	When the user resizes the top and bottom parent frames using their shared border
 	Then the sizes of the parent frames should be different to their original sizes
+
+@frame-border
+Scenario: Left and middle nested frames can be resized using their shared border
+	When the user resizes the left and middle nested frames using their shared border
+	Then the sizes of the nested frames should be different to their original sizes
+
+@frame-border
+Scenario: Right and middle nested frames can be resized using their shared border
+	When the user resizes the right and middle nested frames using their shared border
+	Then the sizes of the nested frames should be different to their original sizes

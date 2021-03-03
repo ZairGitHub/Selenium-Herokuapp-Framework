@@ -7,8 +7,9 @@ Background:
 	Given the user is on the Nested Frames page
 
 @mytag
-Scenario: Add two numbers
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+Scenario Outline: All frames display the correct text
+	When the user switches to the frame <frame>
+	Then the body of the frame should display the correct text <text>
+	Examples:
+	| frame | text |
+	| Frame.Left | LEFT |

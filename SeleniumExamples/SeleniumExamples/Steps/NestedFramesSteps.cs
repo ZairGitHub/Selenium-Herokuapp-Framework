@@ -25,6 +25,24 @@ namespace SeleniumExamples.Steps
             _sut.NestedFramesPage.SwitchToFrame(Frame.Left);
         }
 
+        [When(@"the user switches to the middle frame")]
+        public void WhenTheUserSwitchesToTheMiddleFrame()
+        {
+            _sut.NestedFramesPage.SwitchToFrame(Frame.Middle);
+        }
+
+        [When(@"the user switches to the right frame")]
+        public void WhenTheUserSwitchesToTheRightFrame()
+        {
+            _sut.NestedFramesPage.SwitchToFrame(Frame.Right);
+        }
+
+        [When(@"the user switches to the bottom frame")]
+        public void WhenTheUserSwitchesToTheBottomFrame()
+        {
+            _sut.NestedFramesPage.SwitchToFrame(Frame.Bottom);
+        }
+
         [Then(@"the body of the frame should display the correct text ""(.*)""")]
         public void ThenTheBodyOfTheFrameShouldDisplayTheCorrectText(string frameText)
         {

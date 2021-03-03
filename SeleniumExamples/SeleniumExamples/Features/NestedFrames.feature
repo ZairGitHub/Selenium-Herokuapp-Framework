@@ -22,7 +22,7 @@ Scenario: Right frame displays the correct text
 	Then the body of the frame should display the correct text "RIGHT"
 
 @frame-text
-Scenario: Right frame displays the correct text
+Scenario: Bottom frame displays the correct text
 	When the user switches to the bottom frame
 	Then the body of the frame should display the correct text "BOTTOM"
 	

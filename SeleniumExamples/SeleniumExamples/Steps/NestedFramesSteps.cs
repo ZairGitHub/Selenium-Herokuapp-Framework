@@ -54,6 +54,20 @@ namespace SeleniumExamples.Steps
             _sut.NestedFramesPage.ResizeTopAndBottomFrames(_offsetValueOf50);
         }
 
+        [When(@"the user resizes the left and middle nested frames using their shared border")]
+        public void WhenTheUserResizesTheLeftAndMiddleNestedFramesUsingTheirSharedBorder()
+        {
+            _initialSize = _sut.NestedFramesPage.ReadNestedFramesSize();
+            _sut.NestedFramesPage.ResizeLeftAndMiddleFrames(_offsetValueOf50);
+        }
+
+        [When(@"the user resizes the right and middle nested frames using their shared border")]
+        public void WhenTheUserResizesTheRightAndMiddleNestedFramesUsingTheirSharedBorder()
+        {
+            _initialSize = _sut.NestedFramesPage.ReadNestedFramesSize();
+            _sut.NestedFramesPage.ResizeRightAndMiddleFrames(_offsetValueOf50);
+        }
+
         [Then(@"the body of the frame should display the correct text ""(.*)""")]
         public void ThenTheBodyOfTheFrameShouldDisplayTheCorrectText(string frameText)
         {
@@ -66,6 +80,14 @@ namespace SeleniumExamples.Steps
         public void ThenTheSizesOfTheFramesShouldBeDifferentToTheirOriginalSizes()
         {
             var _endSize = _sut.NestedFramesPage.ReadParentFramesSize();
+
+            Assert.That(_endSize, Is.EqualTo(_initialSize + _offsetValueOf50));
+        }
+
+        [Then(@"the sizes of the nested frames should be different to their original sizes")]
+        public void ThenTheSizesOfTheNestedFramesShouldBeDifferentToTheirOriginalSizes()
+        {
+            var _endSize = _sut.NestedFramesPage.ReadNestedFramesSize();
 
             Assert.That(_endSize, Is.EqualTo(_initialSize + _offsetValueOf50));
         }

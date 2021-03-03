@@ -6,6 +6,8 @@ Repository featuring C# .NET Core Selenium automated testing framework which has
 
 ### Class Diagram
 
+<img src="images/class-diagram.png" width="100%" height="100%">
+
 ### Page Object Model
 
 Page Object Model (POM) design pattern. Modular design, scalable framework, smoother maintainence. Model pages as classes controlled and managed by a central page object. Custom `PageFactory.cs` class. [Previously packaged PageFactory class depreciated in C# due to properties](https://alexanderontesting.com/2018/05/21/c-and-the-disappearing-pagefactory-my-next-steps-in-selenium-testing/) but still exists in other languages which do not support properties such as Java.

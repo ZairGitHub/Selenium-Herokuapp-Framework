@@ -27,9 +27,13 @@ Scenario: Bottom frame displays the correct text
 	Then the body of the frame should display the correct text "BOTTOM"
 	
 @frame-border
-Scenario: Top and bottom parent frames can be resized using their shared border
-	When the user resizes the top and bottom parent frames using their shared border
+Scenario Outline: Top and bottom parent frames can be resized using their shared border
+	When the user resizes the top and bottom parent frames using their shared border <offset>
 	Then the sizes of the parent frames should be different to their original sizes
+	Examples:
+	| offset |
+	| -50	 |
+	| 50	 |
 
 @frame-border
 Scenario: Left and middle nested frames can be resized using their shared border

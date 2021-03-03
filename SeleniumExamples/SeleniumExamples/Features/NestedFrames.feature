@@ -10,4 +10,19 @@ Background:
 Scenario: Left frame displays the correct text
 	When the user switches to the left frame
 	Then the body of the frame should display the correct text "LEFT"
+
+@frame-text
+Scenario: Middle frame displays the correct text
+	When the user switches to the middle frame
+	Then the body of the frame should display the correct text "MIDDLE"
+
+@frame-text
+Scenario: Right frame displays the correct text
+	When the user switches to the right frame
+	Then the body of the frame should display the correct text "RIGHT"
+
+@frame-text
+Scenario: Right frame displays the correct text
+	When the user switches to the bottom frame
+	Then the body of the frame should display the correct text "BOTTOM"
 	

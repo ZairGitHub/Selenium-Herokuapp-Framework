@@ -9,11 +9,10 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class NestedFramesSteps
     {
-        private const int _offsetValueOf50 = 50;
-
         private readonly PageFactory _sut;
 
         private int _initialSize;
+        private int _offset;
 
         public NestedFramesSteps(PageFactory sut) => _sut = sut;
 
@@ -47,41 +46,42 @@ namespace SeleniumExamples.Steps
             _sut.NestedFramesPage.SwitchToFrame(Frame.Bottom);
         }
 
-        [When(@"the user resizes the top and bottom parent frames using their shared border")]
-        public void WhenTheUserResizesTheTopAndBottomParentFramesUsingTheirSharedBorder()
+        [When(@"the user resizes the top and bottom parent frames using their shared border (.*)")]
+        public void WhenTheUserResizesTheTopAndBottomParentFramesUsingTheirSharedBorder(int offset)
         {
+            _offset = offset;
             _initialSize = _sut.NestedFramesPage.ReadParentFramesSize();
-            _sut.NestedFramesPage.ResizeTopAndBottomFrames(_offsetValueOf50);
+            _sut.NestedFramesPage.ResizeTopAndBottomFrames(_offset);
         }
 
         [When(@"the user resizes the left and middle nested frames using their shared border")]
         public void WhenTheUserResizesTheLeftAndMiddleNestedFramesUsingTheirSharedBorder()
         {
             _initialSize = _sut.NestedFramesPage.ReadNestedFramesSize();
-            _sut.NestedFramesPage.ResizeLeftAndMiddleFrames(_offsetValueOf50);
+            _sut.NestedFramesPage.ResizeLeftAndMiddleFrames(_offset);
         }
 
         [When(@"the user resizes the right and middle nested frames using their shared border")]
         public void WhenTheUserResizesTheRightAndMiddleNestedFramesUsingTheirSharedBorder()
         {
             _initialSize = _sut.NestedFramesPage.ReadNestedFramesSize();
-            _sut.NestedFramesPage.ResizeRightAndMiddleFrames(_offsetValueOf50);
+            _sut.NestedFramesPage.ResizeRightAndMiddleFrames(_offset);
         }
 
         [Then(@"the body of the frame should display the correct text ""(.*)""")]
         public void ThenTheBodyOfTheFrameShouldDisplayTheCorrectText(string frameText)
         {
             var result = _sut.SharedHTML.ReadPageBodyText();
-
+            
             Assert.That(result, Is.EqualTo(frameText));
         }
 
         [Then(@"the sizes of the parent frames should be different to their original sizes")]
-        public void ThenTheSizesOfTheFramesShouldBeDifferentToTheirOriginalSizes()
+        public void ThenTheSizesOfTheParentFramesShouldBeDifferentToTheirOriginalSizes()
         {
             var _endSize = _sut.NestedFramesPage.ReadParentFramesSize();
 
-            Assert.That(_endSize, Is.EqualTo(_initialSize + _offsetValueOf50));
+            Assert.That(_endSize, Is.EqualTo(_initialSize + _offset));
         }
 
         [Then(@"the sizes of the nested frames should be different to their original sizes")]
@@ -89,7 +89,7 @@ namespace SeleniumExamples.Steps
         {
             var _endSize = _sut.NestedFramesPage.ReadNestedFramesSize();
 
-            Assert.That(_endSize, Is.EqualTo(_initialSize + _offsetValueOf50));
+            Assert.That(_endSize, Is.EqualTo(_initialSize + _offset));
         }
     }
 }

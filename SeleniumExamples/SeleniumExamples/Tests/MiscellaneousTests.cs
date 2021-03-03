@@ -39,7 +39,7 @@ namespace SeleniumExamples.Tests
 
         [Ignore("Only usable when the website is down")]
         [Test]
-        public void WebsiteIsDown_AlwaysRedirectsToApplicationErrorPage()
+        public void WebsiteIsDown_NavigateToAnyPage_RedirectsToApplicationErrorPage()
         {
             _sut.IndexPage.NavigateToPage();
 

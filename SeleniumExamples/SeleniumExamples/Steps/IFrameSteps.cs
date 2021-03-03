@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework;
+using SeleniumExamples.Pages;
 using TechTalk.SpecFlow;
 
 namespace SeleniumExamples.Steps
@@ -6,22 +7,31 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class IFrameSteps
     {
+        private readonly PageFactory _sut;
+
+        private string _inputText;
+
+        public IFrameSteps(PageFactory sut) => _sut = sut;
+
         [Given(@"the user is on the iFrame Page")]
         public void GivenTheUserIsOnTheIFramePage()
         {
-            ScenarioContext.Current.Pending();
+            _sut.FramesPage.IFramePage.NavigateToPage();
         }
         
         [When(@"the user enters the text ""(.*)"" using their keyboard")]
-        public void WhenTheUserEntersTheTextUsingTheirKeyboard(string p0)
+        public void WhenTheUserEntersTheTextUsingTheirKeyboard(string input)
         {
-            ScenarioContext.Current.Pending();
+            _inputText = input;
+            _sut.FramesPage.IFramePage.EnterText(input);
         }
         
         [Then(@"the iFrame should append the input text to its default content text")]
         public void ThenTheIFrameShouldAppendTheInputTextToItsDefaultContentText()
         {
-            ScenarioContext.Current.Pending();
+            var result = _sut.FramesPage.IFramePage.ReadText();
+
+            Assert.That(result, Is.EqualTo("Your content goes here." + _inputText));
         }
     }
 }

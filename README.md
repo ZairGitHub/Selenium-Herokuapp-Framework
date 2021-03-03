@@ -1,13 +1,8 @@
 # Selenium-Example-Framework
 
-## Introduction
-
-System under test
+This project serves a practical investigation to explore the many different ways in which the Selenium open source testing automation tool can be used to test various web functionality. It consists of a repository holding a C# .NET Core Selenium automated testing framework for testing the http://the-internet.herokuapp.com website. This website features pages which have been deliberately designed to capture prominent and ugly functionality found on the web.
 
 ## Design
-
-All pages inherit from `WebPage.cs`
-Page structure (common methods and contract implementation)
 
 ### POM
 
@@ -15,7 +10,14 @@ Page Object Model
 PageFactory class depreciated
 `PageFactory.cs`
 
+### Polymorphism
+
+All pages inherit from `WebPage.cs`
+Page structure (common methods and contract implementation)
+
 ### Class Diagram
+
+
 
 ### Drivers
 
@@ -25,21 +27,22 @@ PageFactory class depreciated
 
 ## Testing
 
+The framework supports the execution of regular automated tests and BDD (Behaviour-Driven Development) tests.
 Comparison
 
-### NUnit tests
+### Regular tests
 
 Faster to construct
 Faster to run
 Less readable
 
-### SpecFlow
+### BDD tests
 
-Feature files
+Feature and step files
 Slower to construct
 Slower to run
 Reusability of steps
-More readable
+More readable (Gherkin)
 
 ### General
 
@@ -47,6 +50,7 @@ More readable
 - `ChromeDriver` cannot interact with elements
 - `FirefoxDriver` can `Accept()` `Dismiss()` but cannot send string information
 - Bypass by directly sending credentials via url string
+- `MiscellaneousTests.cs` exclusive to regular tests
 
 ### Extending framework
 

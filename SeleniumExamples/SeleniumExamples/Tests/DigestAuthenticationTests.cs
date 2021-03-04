@@ -10,7 +10,7 @@ namespace SeleniumExamples.Tests
 
         [Ignore("Authentication alerts cannot be interacted with in ChromeDriver")]
         [Test]
-        public void CancelButton_RedirectsToEmptyPage()
+        public void ClickCancelButton_RedirectsToEmptyPage()
         {
             _sut = new PageFactory(StaticDriver.Type);
             _sut.DigestAuthenticationPage.NavigateToAuthentication();
@@ -24,7 +24,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void OKButton_ValidCredentials_RedirectsToDigestAuthenticationPage()
+        public void ClickOKButton_ValidCredentials_RedirectsToDigestAuthenticationPage()
         {
             _sut = new PageFactory(StaticDriver.Type);
             _sut.DigestAuthenticationPage.NavigatePastAuthentication();

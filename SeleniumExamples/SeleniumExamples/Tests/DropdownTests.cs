@@ -15,7 +15,18 @@ namespace SeleniumExamples.Tests
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void Option1()
+        public void Option0()
+        {
+            _sut.DropdownPage.NavigateToPage();
+
+            var result = _sut.DropdownPage.ReadDropdownText();
+
+            Assert.That(result, Is.EqualTo("Please select an option"));
+        }
+
+
+        [Test]
+        public void ClickOption1()
         {
             _sut.DropdownPage.NavigateToPage();
 

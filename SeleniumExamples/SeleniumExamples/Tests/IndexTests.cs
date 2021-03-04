@@ -15,7 +15,7 @@ namespace SeleniumExamples.Tests
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void PageFooterLink_OpensElementalSeleniumWebsiteInANewTab()
+        public void ClickPageFooterLink_OpensElementalSeleniumWebsiteInANewTab()
         {
             _sut.IndexPage.NavigateToPage();
 
@@ -27,7 +27,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void GitHubImageLink_RedirectsToGitHubRepository()
+        public void ClickGitHubImageLink_RedirectsToGitHubRepository()
         {
             _sut.IndexPage.NavigateToPage();
 
@@ -39,7 +39,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void AddRemoveElementsLink_RedirectsToAddRemoveElementsPage()
+        public void ClickAddRemoveElementsLink_RedirectsToAddRemoveElementsPage()
         {
             _sut.IndexPage.NavigateToPage();
 
@@ -51,7 +51,7 @@ namespace SeleniumExamples.Tests
 
         [Ignore("Authentication alerts cannot be interacted with in ChromeDriver")]
         [Test]
-        public void BasicAuthenticationLink_OpensBasicAuthenticationPopup()
+        public void ClickBasicAuthenticationLink_OpensBasicAuthenticationPopup()
         {
             _sut.IndexPage.NavigateToPage();
 
@@ -63,7 +63,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void CheckboxesLink_OpensCheckboxesPage()
+        public void ClickCheckboxesLink_OpensCheckboxesPage()
         {
             _sut.IndexPage.NavigateToPage();
 
@@ -75,7 +75,7 @@ namespace SeleniumExamples.Tests
 
         [Ignore("Authentication alerts cannot be interacted with in ChromeDriver")]
         [Test]
-        public void DigestAuthenticationLink_OpensDigestAuthenticationPopup()
+        public void ClickDigestAuthenticationLink_OpensDigestAuthenticationPopup()
         {
             _sut.IndexPage.NavigateToPage();
 
@@ -87,7 +87,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void DragAndDropLink_RedirectsToDragAndDropPage()
+        public void ClickDragAndDropLink_RedirectsToDragAndDropPage()
         {
             _sut.IndexPage.NavigateToPage();
 
@@ -98,7 +98,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void DropdownLink_RedirectsToDropdownPage()
+        public void ClickDropdownLink_RedirectsToDropdownPage()
         {
             _sut.IndexPage.NavigateToPage();
 
@@ -109,7 +109,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void FormAuthenticationLink_RedirectsToLoginPage()
+        public void ClickFormAuthenticationLink_RedirectsToLoginPage()
         {
             _sut.IndexPage.NavigateToPage();
 
@@ -120,7 +120,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void FramesLink_RedirectsToFramesPage()
+        public void ClickFramesLink_RedirectsToFramesPage()
         {
             _sut.IndexPage.NavigateToPage();
 
@@ -131,7 +131,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void HoversLink_RedirectsToHoversPage()
+        public void ClickHoversLink_RedirectsToHoversPage()
         {
             _sut.IndexPage.NavigateToPage();
 
@@ -142,7 +142,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void JavaScriptAlertsLink_RedirectsToJavaScriptAlertsPage()
+        public void ClickJavaScriptAlertsLink_RedirectsToJavaScriptAlertsPage()
         {
             _sut.IndexPage.NavigateToPage();
 
@@ -153,7 +153,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void NestedFramesLink_RedirectsToNestedFramesPage()
+        public void ClickNestedFramesLink_RedirectsToNestedFramesPage()
         {
             _sut.IndexPage.NavigateToPage();
 

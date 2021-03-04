@@ -16,7 +16,7 @@ namespace SeleniumExamples.Tests
 
         [TestCase(1)]
         [TestCase(2)]
-        public void ClickCheckbox_TogglesCheckboxesTick(int id)
+        public void ClickCheckbox_CheckboxId_TogglesCheckboxesTick(int id)
         {
             _sut.CheckboxesPage.NavigateToPage();
             var initialState = _sut.CheckboxesPage.IsCheckBoxTicked(id);

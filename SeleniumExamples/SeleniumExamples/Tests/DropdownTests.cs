@@ -24,26 +24,16 @@ namespace SeleniumExamples.Tests
             Assert.That(result, Is.EqualTo("Please select an option"));
         }
 
-        [Test]
-        public void ClickOption1_SelectsOption1FromTheDropdownList()
+        [TestCase(1)]
+        [TestCase(2)]
+        public void ClickDropdownOption_OptionId_SelectsOptionIdFromTheDropdownList(int id)
         {
             _sut.DropdownPage.NavigateToPage();
 
-            _sut.DropdownPage.ClickDropdownOption(1);
+            _sut.DropdownPage.ClickDropdownOption(id);
             var result = _sut.DropdownPage.ReadDropdownText();
 
-            Assert.That(result, Is.EqualTo("Option 1"));
-        }
-
-        [Test]
-        public void ClickOption2_SelectsOption2FromTheDropdownList()
-        {
-            _sut.DropdownPage.NavigateToPage();
-
-            _sut.DropdownPage.ClickDropdownOption(2);
-            var result = _sut.DropdownPage.ReadDropdownText();
-
-            Assert.That(result, Is.EqualTo("Option 2"));
+            Assert.That(result, Is.EqualTo("Option " + id));
         }
     }
 }

@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using OpenQA.Selenium;
 
 namespace SeleniumExamples.Pages
 {
-    class DropdownPage
+    public sealed class DropdownPage : WebPage, IPageNavigation
     {
+        public DropdownPage(IWebDriver driver) : base(driver) { }
+
+        public void NavigateToPage()
+        {
+            NavigateToURL(ConfigReader.Index + ConfigReader.Dropdown);
+        }
     }
 }

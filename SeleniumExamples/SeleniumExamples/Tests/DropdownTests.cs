@@ -35,5 +35,16 @@ namespace SeleniumExamples.Tests
 
             Assert.That(result, Is.EqualTo("Option 1"));
         }
+
+        [Test]
+        public void ClickOption2()
+        {
+            _sut.DropdownPage.NavigateToPage();
+
+            _sut.DropdownPage.ClickOption2();
+            var result = _sut.DropdownPage.ReadDropdownText();
+
+            Assert.That(result, Is.EqualTo("Option 2"));
+        }
     }
 }

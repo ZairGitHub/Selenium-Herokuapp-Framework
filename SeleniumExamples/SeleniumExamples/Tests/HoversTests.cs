@@ -17,7 +17,7 @@ namespace SeleniumExamples.Tests
         [TestCase(1)]
         [TestCase(2)]
         [TestCase(3)]
-        public void Hover_SubHeaders(int id)
+        public void HoverOverImage_ImageId_DiplaysCorrectSubHeaders(int id)
         {
             _sut.HoversPage.NavigateToPage();
 
@@ -30,7 +30,7 @@ namespace SeleniumExamples.Tests
         [TestCase(1)]
         [TestCase(2)]
         [TestCase(3)]
-        public void Hover_Links(int id)
+        public void HoverOverImage_ImageId_DisplaysCorrectLinks(int id)
         {
             _sut.HoversPage.NavigateToPage();
 

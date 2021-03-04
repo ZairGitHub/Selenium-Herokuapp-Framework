@@ -43,6 +43,11 @@ Scenario: Navigate to Drag and Drop page
 	Then the page header text should inform the user that they are on the correct "Drag and Drop" page
 
 @hypertext
+Scenario: Navigate to Dropdown page
+	When the user clicks the Dropdown link
+	Then the page header text should inform the user that they are on the correct "Dropdown List" page
+
+@hypertext
 Scenario: Navigate to Form Authentication page
 	When the user clicks the Form Authentication link
 	Then the page header text should inform the user that they are on the correct "Login Page" page

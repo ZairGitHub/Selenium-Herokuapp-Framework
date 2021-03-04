@@ -98,6 +98,17 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
+        public void DropdownLink_RedirectsToDropdownPage()
+        {
+            _sut.IndexPage.NavigateToPage();
+
+            _sut.IndexPage.ClickDropdownLink();
+            var result = _sut.SharedHTML.ReadPageHeaderText();
+
+            Assert.That(result, Is.EqualTo("Dropdown List"));
+        }
+
+        [Test]
         public void FormAuthenticationLink_RedirectsToLoginPage()
         {
             _sut.IndexPage.NavigateToPage();

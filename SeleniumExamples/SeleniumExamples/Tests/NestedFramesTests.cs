@@ -22,7 +22,7 @@ namespace SeleniumExamples.Tests
         [TestCase(Frame.Middle, "MIDDLE")]
         [TestCase(Frame.Right, "RIGHT")]
         [TestCase(Frame.Bottom, "BOTTOM")]
-        public void AllFrames_HaveTheCorrectTextBody(Frame frame, string frameText)
+        public void SwitchToFrame_FrameEnum_ReturnsCorrectTextBody(Frame frame, string frameText)
         {
             _sut.NestedFramesPage.NavigateToPage();
 
@@ -34,7 +34,7 @@ namespace SeleniumExamples.Tests
 
         [TestCase(-_valueOf50)]
         [TestCase(_valueOf50)]
-        public void TopAndBottomParentFrames_CanBeResizedUsingTheirSharedBorder(int offset)
+        public void ResizeTopAndBottomFrames_OffsetValue_ResizesTopAndBottomFrames(int offset)
         {
             _sut.NestedFramesPage.NavigateToPage();
             var initialSize = _sut.NestedFramesPage.ReadParentFramesSize();
@@ -47,7 +47,7 @@ namespace SeleniumExamples.Tests
 
         [TestCase(-_valueOf50)]
         [TestCase(_valueOf50)]
-        public void LeftAndMiddleNestedFrames_CanBeResizedUsingTheirSharedBorder(int offset)
+        public void ResizeLeftAndMiddleFrames_OffsetValue_ResizesLeftAndMiddleFrames(int offset)
         {
             _sut.NestedFramesPage.NavigateToPage();
             var initialSize = _sut.NestedFramesPage.ReadNestedFramesSize();
@@ -60,7 +60,7 @@ namespace SeleniumExamples.Tests
 
         [TestCase(-_valueOf50)]
         [TestCase(_valueOf50)]
-        public void RightAndMiddleNestedFrames_CanBeResizedUsingTheirSharedBorder(int offset)
+        public void ResizeRightAndMiddleFrames_OffsetValue_ResizesRightAndMiddleFrames(int offset)
         {
             _sut.NestedFramesPage.NavigateToPage();
             var initialSize = _sut.NestedFramesPage.ReadNestedFramesSize();

@@ -120,7 +120,8 @@ namespace SeleniumExamples.Pages
         public void ResizeTopAndBottomFrames(int pixelOffset)
         {
             SwitchToDefaultFrame();
-            new Actions(Driver).MoveToElement(FrameSet)
+            new Actions(Driver)
+                .MoveToElement(FrameSet)
                 .ClickAndHold()
                 .MoveByOffset(0, pixelOffset)
                 .Perform();

@@ -15,7 +15,7 @@ namespace SeleniumExamples.Tests
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void NestedFramesLink_RedirectsToNestedFramesPage()
+        public void ClickNestedFramesLink_RedirectsToNestedFramesPage()
         {
             _sut.FramesPage.NavigateToPage();
 
@@ -27,7 +27,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void IFrameLink_RedirectsToNestedFramesPage()
+        public void ClickIFrameLink_RedirectsToNestedFramesPage()
         {
             _sut.FramesPage.NavigateToPage();
 

@@ -15,7 +15,7 @@ namespace SeleniumExamples.Tests
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void Option0()
+        public void DefaultSelection_DoesNotSelectAnyOptionsFromTheDropdownList()
         {
             _sut.DropdownPage.NavigateToPage();
 
@@ -26,7 +26,7 @@ namespace SeleniumExamples.Tests
 
 
         [Test]
-        public void ClickOption1()
+        public void ClickOption1_SelectsOption1FromTheDropdownList()
         {
             _sut.DropdownPage.NavigateToPage();
 
@@ -37,7 +37,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void ClickOption2()
+        public void ClickOption2_SelectsOption2FromTheDropdownList()
         {
             _sut.DropdownPage.NavigateToPage();
 

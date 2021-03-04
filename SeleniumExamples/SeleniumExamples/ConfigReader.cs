@@ -28,6 +28,9 @@ namespace SeleniumExamples
         public static readonly string DragAndDrop =
             ConfigurationManager.AppSettings["drag_and_drop"];
 
+        public static readonly string Dropdown =
+            ConfigurationManager.AppSettings["dropdown"];
+
         public static readonly string FormAuthetication =
             ConfigurationManager.AppSettings["form_authentication"];
 

@@ -6,8 +6,5 @@
 Background:
 	Given the user is on the Dropdown page
 
-Scenario: The dropdown list initially informs the user of additonal options to select
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+Scenario: The dropdown list does not select an option without user input
+	Then the dropdown list should not display a selected option

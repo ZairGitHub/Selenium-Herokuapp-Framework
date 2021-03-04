@@ -38,6 +38,11 @@ Scenario: Navigate to Digest Authentication form
 	Then the popup text should inform the user that they are attempting to reach the correct "“Protected Area”" page
 
 @hypertext
+Scenario: Navigate to Drag and Drop page
+	When the user clicks the Drag and Drop link
+	Then the page header text should inform the user that they are on the correct "Drag and Drop" page
+
+@hypertext
 Scenario: Navigate to Form Authentication page
 	When the user clicks the Form Authentication link
 	Then the page header text should inform the user that they are on the correct "Login Page" page

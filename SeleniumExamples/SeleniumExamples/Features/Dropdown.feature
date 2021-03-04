@@ -9,6 +9,10 @@ Background:
 Scenario: The dropdown list does not select an option without user input
 	Then the dropdown list should display the following text "Please select an option"
 
-Scenario: The dropdown list displays the selected option of the user
+Scenario Outline: The dropdown list displays the selected option of the user
 	When the user selects Option <id> from the dropdown list
 	Then the dropdown list should display the following text "Option "
+	Examples:
+	| id |
+	| 1  |
+	| 2  |

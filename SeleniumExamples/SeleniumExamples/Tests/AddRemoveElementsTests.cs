@@ -28,7 +28,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void DeleteButton_RemovesADeleteButton()
+        public void DeleteButton_RemovesACreatedDeleteButton()
         {
             _sut.AddRemoveElementsPage.NavigateToPage();
 

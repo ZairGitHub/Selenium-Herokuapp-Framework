@@ -22,14 +22,14 @@ namespace SeleniumExamples.Steps
         [Given(@"the user clicks on a checkbox (.*)")]
         public void GivenTheUserClicksOnACheckbox(int id)
         {
-            _initialState = _sut.CheckboxesPage.IsCheckBoxTicked(id);
-            _sut.CheckboxesPage.ClickCheckBox(id);
+            _initialState = _sut.CheckboxesPage.IsCheckboxTicked(id);
+            _sut.CheckboxesPage.ClickCheckbox(id);
         }
 
         [Then(@"the state of the checkbox (.*) should be toggled")]
         public void ThenTheStateOfTheCheckboxShouldBeToggled(int id)
         {
-            var endState = _sut.CheckboxesPage.IsCheckBoxTicked(id);
+            var endState = _sut.CheckboxesPage.IsCheckboxTicked(id);
 
             Assert.That(endState, Is.Not.EqualTo(_initialState));
         }

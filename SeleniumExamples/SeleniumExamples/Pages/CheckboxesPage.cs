@@ -17,12 +17,12 @@ namespace SeleniumExamples.Pages
         private IWebElement Checkbox2 =>
             Driver.FindElement(By.CssSelector("input:nth-child(3)"));
 
-        public bool IsCheckBoxTicked(int id)
+        public bool IsCheckboxTicked(int id)
         {
             return (id == 1) ? Checkbox1.Selected : Checkbox2.Selected;
         }
 
-        public void ClickCheckBox(int id)
+        public void ClickCheckbox(int id)
         {
             if (id == 1)
             {

@@ -53,6 +53,12 @@ namespace SeleniumExamples.Steps
             _sut.IndexPage.ClickDigestAuthenticationLink();
         }
 
+        [When(@"the user clicks the Drag and Drop link")]
+        public void WhenTheUserClicksTheDragAndDropLink()
+        {
+            _sut.IndexPage.ClickDragAndDropLink();
+        }
+
         [When(@"the user clicks the Form Authentication link")]
         public void WhenTheUserClicksTheFormAuthenticationLink()
         {

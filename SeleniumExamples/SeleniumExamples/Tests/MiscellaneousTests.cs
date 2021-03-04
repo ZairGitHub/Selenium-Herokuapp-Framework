@@ -26,7 +26,7 @@ namespace SeleniumExamples.Tests
 
         [Ignore("Authentication alerts cannot be interacted with in ChromeDriver")]
         [Test]
-        public void AuthenticationPopup_OKButton_CreatesNewAuthenticationPopup()
+        public void AuthenticationPopup_ClickOKButton_CreatesNewAuthenticationPopup()
         {
             _sut.BasicAuthenticationPage.NavigateToAuthentication();
 

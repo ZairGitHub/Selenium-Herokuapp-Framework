@@ -24,7 +24,6 @@ namespace SeleniumExamples.Tests
             Assert.That(result, Is.EqualTo("Please select an option"));
         }
 
-
         [Test]
         public void ClickOption1_SelectsOption1FromTheDropdownList()
         {

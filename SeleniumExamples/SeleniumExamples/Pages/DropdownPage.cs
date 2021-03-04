@@ -1,11 +1,10 @@
-﻿using OpenQA.Selenium;
+﻿using System.Collections.ObjectModel;
+using OpenQA.Selenium;
 
 namespace SeleniumExamples.Pages
 {
     public sealed class DropdownPage : WebPage, IPageNavigation
     {
-        private int _selectedOption = 0;
-
         public DropdownPage(IWebDriver driver) : base(driver) { }
 
         public void NavigateToPage()
@@ -22,34 +21,35 @@ namespace SeleniumExamples.Pages
         private IWebElement DropdownOption2 =>
             Driver.FindElement(By.CssSelector("option:nth-child(3)"));
 
+        private ReadOnlyCollection<IWebElement> DropDownOptions =>
+            Driver.FindElements(By.CssSelector("option"));
+
         public string ReadDropdownText()
         {
+            foreach(IWebElement dropdownOption in DropDownOptions)
+            {
+                if (dropdownOption.Selected == true)
+                return c.Text;
+            }
+
             string dropdownText = null;
-            if (_selectedOption == 0)
+            if (DropdownOption0.Selected)
             {
                 dropdownText = DropdownOption0.Text;
             }
-            else if (_selectedOption == 1)
+            else if (DropdownOption1.Selected)
             {
                 dropdownText = DropdownOption1.Text;
             }
-            else if (_selectedOption == 2)
+            else if (DropdownOption2.Selected)
             {
                 dropdownText = DropdownOption2.Text;
             }
             return dropdownText;
         }
 
-        public void ClickOption1()
-        {
-            _selectedOption = 1;
-            DropdownOption1.Click();
-        }
+        public void ClickOption1() => DropdownOption1.Click();
 
-        public void ClickOption2()
-        {
-            _selectedOption = 2;
-            DropdownOption2.Click();
-        }
+        public void ClickOption2() => DropdownOption2.Click();
     }
 }

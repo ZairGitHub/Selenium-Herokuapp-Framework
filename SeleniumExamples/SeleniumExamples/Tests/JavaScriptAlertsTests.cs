@@ -15,7 +15,7 @@ namespace SeleniumExamples.Tests
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void JSAlertButton_OKButton_UpdatesResultMessage()
+        public void ClickJSAlertButton_ClickOKButton_UpdatesResultMessage()
         {
             _sut.JavaScriptAlertsPage.NavigateToPage();
 
@@ -27,7 +27,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void JSConfirmButton_CancelButton_UpdatesResultMessage()
+        public void ClickJSConfirmButton_ClickCancelButton_UpdatesResultMessage()
         {
             _sut.JavaScriptAlertsPage.NavigateToPage();
 
@@ -39,7 +39,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void JSConfirmButton_OKButton_UpdatesResultMessage()
+        public void ClickJSConfirmButton_ClickOKButton_UpdatesResultMessage()
         {
             _sut.JavaScriptAlertsPage.NavigateToPage();
 
@@ -51,7 +51,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void JSPromptButton_CancelButton_UpdatesResultMessage()
+        public void ClickJSPromptButton_ClickCancelButton_UpdatesResultMessage()
         {
             _sut.JavaScriptAlertsPage.NavigateToPage();
 
@@ -63,7 +63,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void JSPromptButton_OKButton_UpdatesResultMessage()
+        public void ClickJSPromptButton_ClickOKButton_UpdatesResultMessage()
         {
             _sut.JavaScriptAlertsPage.NavigateToPage();
 
@@ -75,7 +75,7 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
-        public void JSPromptButton_InputIsNotPurelyWhitespacesAndOKButton_UpdatesResultMessageWithSingleWhitespaceReplacingInputWhitespaces()
+        public void ClickJSPromptButton_InputIsNotPurelyWhitespacesAndClickOKButton_UpdatesResultMessageWithSingleWhitespaceReplacingInputWhitespaces()
         {
             _sut.JavaScriptAlertsPage.NavigateToPage();
 

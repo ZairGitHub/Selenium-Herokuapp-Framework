@@ -33,8 +33,16 @@ namespace SeleniumExamples.Pages
             return null;
         }
 
-        public void ClickOption1() => DropdownOption1.Click();
-
-        public void ClickOption2() => DropdownOption2.Click();
+        public void ClickDropdownOption(int id)
+        {
+            if (id == 1)
+            {
+                DropdownOption1.Click();
+            }
+            else if (id == 2)
+            {
+                DropdownOption2.Click();
+            }
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace SeleniumExamples.Tests
         {
             _sut.DropdownPage.NavigateToPage();
 
-            _sut.DropdownPage.ClickOption1();
+            _sut.DropdownPage.ClickDropdownOption(1);
             var result = _sut.DropdownPage.ReadDropdownText();
 
             Assert.That(result, Is.EqualTo("Option 1"));
@@ -40,7 +40,7 @@ namespace SeleniumExamples.Tests
         {
             _sut.DropdownPage.NavigateToPage();
 
-            _sut.DropdownPage.ClickOption2();
+            _sut.DropdownPage.ClickDropdownOption(2);
             var result = _sut.DropdownPage.ReadDropdownText();
 
             Assert.That(result, Is.EqualTo("Option 2"));

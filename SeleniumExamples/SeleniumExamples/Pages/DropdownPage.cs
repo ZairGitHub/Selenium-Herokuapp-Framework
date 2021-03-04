@@ -12,9 +12,6 @@ namespace SeleniumExamples.Pages
             NavigateToURL(ConfigReader.Index + ConfigReader.Dropdown);
         }
 
-        private IWebElement DropdownOption0 =>
-            Driver.FindElement(By.CssSelector("option:nth-child(1)"));
-
         private IWebElement DropdownOption1 =>
             Driver.FindElement(By.CssSelector("option:nth-child(2)"));
 
@@ -28,24 +25,12 @@ namespace SeleniumExamples.Pages
         {
             foreach(IWebElement dropdownOption in DropDownOptions)
             {
-                if (dropdownOption.Selected == true)
-                return c.Text;
+                if (dropdownOption.Selected)
+                {
+                    return dropdownOption.Text;
+                }
             }
-
-            string dropdownText = null;
-            if (DropdownOption0.Selected)
-            {
-                dropdownText = DropdownOption0.Text;
-            }
-            else if (DropdownOption1.Selected)
-            {
-                dropdownText = DropdownOption1.Text;
-            }
-            else if (DropdownOption2.Selected)
-            {
-                dropdownText = DropdownOption2.Text;
-            }
-            return dropdownText;
+            return null;
         }
 
         public void ClickOption1() => DropdownOption1.Click();

@@ -7,4 +7,4 @@ Background:
 	Given the user is on the Dropdown page
 
 Scenario: The dropdown list does not select an option without user input
-	Then the dropdown list should not display a selected option
+	Then the dropdown list should display the following text "Please select an option"

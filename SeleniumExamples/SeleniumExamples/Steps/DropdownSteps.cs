@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework;
+using SeleniumExamples.Pages;
 using TechTalk.SpecFlow;
 
 namespace SeleniumExamples.Steps
@@ -6,16 +7,22 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class DropdownSteps
     {
+        private readonly PageFactory _sut;
+
+        public DropdownSteps(PageFactory sut) => _sut = sut;
+
         [Given(@"the user is on the Dropdown page")]
         public void GivenTheUserIsOnTheDropdownPage()
         {
-            ScenarioContext.Current.Pending();
+            _sut.DropdownPage.NavigateToPage();
         }
-        
-        [Then(@"the dropdown list should not display a selected option")]
-        public void ThenTheDropdownListShouldNotDisplayASelectedOption()
+
+        [Then(@"the dropdown list should display the following text ""(.*)""")]
+        public void ThenTheDropdownListShouldDisplayTheFollowingText(string dropdownText)
         {
-            ScenarioContext.Current.Pending();
+            var result = _sut.DropdownPage.ReadDropdownText();
+
+            Assert.That(result, Is.EqualTo(dropdownText));
         }
     }
 }

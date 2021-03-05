@@ -4,52 +4,52 @@ namespace SeleniumExamples
 {
     public static class ConfigReader
     {
-        public static readonly string Base =
+        public static string Base =>
             ConfigurationManager.AppSettings["base"];
 
-        public static readonly string Index =
+        public static string Index =>
             ConfigurationManager.AppSettings["index"];
 
-        public static readonly string Invalid =
+        public static string Invalid =>
             ConfigurationManager.AppSettings["invalid"];
 
-        public static readonly string AddRemoveElements =
+        public static string AddRemoveElements =>
             ConfigurationManager.AppSettings["add_remove_elements"];
 
-        public static readonly string BasicAuthentication =
+        public static string BasicAuthentication =>
             ConfigurationManager.AppSettings["basic_authentication"];
 
-        public static readonly string Checkboxes =
+        public static string Checkboxes =>
             ConfigurationManager.AppSettings["checkboxes"];
 
-        public static readonly string DigestAuthentication =
+        public static string DigestAuthentication =>
             ConfigurationManager.AppSettings["digest_authentication"];
 
-        public static readonly string DragAndDrop =
+        public static string DragAndDrop =>
             ConfigurationManager.AppSettings["drag_and_drop"];
 
-        public static readonly string Dropdown =
+        public static string Dropdown =>
             ConfigurationManager.AppSettings["dropdown"];
 
-        public static readonly string FormAuthetication =
+        public static string FormAuthetication =>
             ConfigurationManager.AppSettings["form_authentication"];
 
-        public static readonly string Frames =
+        public static string Frames =>
             ConfigurationManager.AppSettings["frames"];
 
-        public static readonly string Hovers =
+        public static string Hovers =>
             ConfigurationManager.AppSettings["hovers"];
 
-        public static readonly string IFrame =
+        public static string IFrame =>
             ConfigurationManager.AppSettings["iframe"];
 
-        public static readonly string NestedFrames =
+        public static string NestedFrames =>
             ConfigurationManager.AppSettings["nested_frames"];
 
-        public static readonly string JavaScriptAlerts =
+        public static string JavaScriptAlerts =>
             ConfigurationManager.AppSettings["javascript_alerts"];
 
-        public static readonly string SecureArea =
+        public static string SecureArea =>
             ConfigurationManager.AppSettings["secure_area"];
     }
 }

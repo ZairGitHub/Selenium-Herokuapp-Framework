@@ -10,6 +10,6 @@ namespace SeleniumExamples
 
         private static readonly Type _firefox = typeof(FirefoxDriver);
 
-        public static readonly Type Type = _chrome;
+        public static Type Type => _chrome;
     }
 }

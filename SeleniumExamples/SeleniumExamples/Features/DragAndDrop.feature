@@ -10,7 +10,7 @@ Scenario: Dragging a draggable element over another draggable element swaps thei
 	And I drag a draggable element and drop it on top of another draggable element
 	Then the contents of the elements should be swapped "true"
 
-Scenario: Dragging a swapped draggable element back onto another swapped draggable element other restores their original positions
+Scenario: Dragging a swapped draggable element back onto another swapped draggable element restores their original positions
 	And I drag a draggable element and drop it on top of another draggable element
 	And I drag a draggable element and drop it on top of another draggable element
 	Then the contents of the elements should be swapped "false"

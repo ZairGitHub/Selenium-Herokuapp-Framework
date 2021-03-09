@@ -16,10 +16,7 @@ namespace SeleniumExamples.Pages
         private IWebElement ColumnAHeader =>
             Driver.FindElement(By.CssSelector("#column-a > header"));
 
-        private IWebElement ColumnBHeader =>
-            Driver.FindElement(By.CssSelector("#column-b > header"));
-
-        public void SwapPositions()
+        public void SwapColumnContents()
         {
             try
             {
@@ -38,10 +35,7 @@ namespace SeleniumExamples.Pages
                 throw;
             }
         }
-        
-        public bool HaveColumnPositionsBeenSwapped()
-        {
-            return ColumnAHeader.Text != "A";
-        }
+
+        public bool HaveColumnContentsBeenSwapped() => ColumnAHeader.Text != "A";
     }
 }

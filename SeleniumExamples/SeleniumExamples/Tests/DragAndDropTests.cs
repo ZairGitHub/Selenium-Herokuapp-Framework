@@ -14,8 +14,6 @@ namespace SeleniumExamples.Tests
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
 
-        [Ignore("Actions.DragAndDrop() not supported in HTML5." +
-            "Requires execution of custom JavaScript helper code.")]
         [Test]
         public void SwapPositions_SwapsThePositionsOfTwoElements()
         {

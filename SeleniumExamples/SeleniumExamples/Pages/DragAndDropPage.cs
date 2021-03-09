@@ -1,5 +1,6 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
+﻿using System;
+using System.IO;
+using OpenQA.Selenium;
 
 namespace SeleniumExamples.Pages
 {
@@ -12,10 +13,6 @@ namespace SeleniumExamples.Pages
             NavigateToURL(ConfigReader.Index + ConfigReader.DragAndDrop);
         }
 
-        private IWebElement ColumnA => Driver.FindElement(By.Id("column-a"));
-        
-        private IWebElement ColumnB => Driver.FindElement(By.Id("column-b"));
-
         private IWebElement ColumnAHeader =>
             Driver.FindElement(By.CssSelector("#column-a > header"));
 
@@ -24,15 +21,27 @@ namespace SeleniumExamples.Pages
 
         public void SwapPositions()
         {
-            new Actions(Driver)
-                .DragAndDrop(ColumnA, ColumnB)
-                .Perform();
+            try
+            {
+                string jsContents = File.ReadAllText(
+                    AppContext.BaseDirectory + @"Helpers\simulate-drag-drop.js");
+
+                ((IJavaScriptExecutor)Driver).ExecuteScript(jsContents +
+                    "$('#column-a').simulateDragDrop({dropTarget: '#column-b'});");
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("Unable to complete operation. File not found.");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         
         public bool HaveColumnPositionsBeenSwapped()
         {
             return ColumnAHeader.Text != "A";
-            //32 //247
         }
     }
 }

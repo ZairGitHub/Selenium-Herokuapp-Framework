@@ -24,7 +24,7 @@ namespace SeleniumExamples.Pages
             try
             {
                 string jsContents = File.ReadAllText(
-                    AppContext.BaseDirectory + @"Helpers\simulate-drag-drop.jss");
+                    AppContext.BaseDirectory + @"Helpers\simulate-drag-drop.js");
 
                 ((IJavaScriptExecutor)Driver).ExecuteScript(jsContents +
                     "$('#column-a').simulateDragDrop({dropTarget: '#column-b'});");

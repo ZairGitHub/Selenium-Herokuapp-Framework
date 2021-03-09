@@ -16,7 +16,7 @@ namespace SeleniumExamples.Pages
         private IWebElement ColumnAHeader =>
             Driver.FindElement(By.CssSelector("#column-a > header"));
 
-        public void SwapColumnContents()
+        public void SwapDraggableContents()
         {
             try
             {
@@ -36,6 +36,9 @@ namespace SeleniumExamples.Pages
             }
         }
 
-        public bool HaveColumnContentsBeenSwapped() => ColumnAHeader.Text != "A";
+        public bool HaveDraggableContentsBeenSwapped()
+        {
+            return ColumnAHeader.Text != "A";
+        }
     }
 }

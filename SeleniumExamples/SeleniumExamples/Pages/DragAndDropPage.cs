@@ -13,10 +13,6 @@ namespace SeleniumExamples.Pages
             NavigateToURL(ConfigReader.Index + ConfigReader.DragAndDrop);
         }
 
-        private IWebElement ColumnA => Driver.FindElement(By.Id("column-a"));
-        
-        private IWebElement ColumnB => Driver.FindElement(By.Id("column-b"));
-
         private IWebElement ColumnAHeader =>
             Driver.FindElement(By.CssSelector("#column-a > header"));
 
@@ -25,11 +21,22 @@ namespace SeleniumExamples.Pages
 
         public void SwapPositions()
         {
-            string jsContents = File.ReadAllText(
-                AppContext.BaseDirectory + @"Helpers\simulate-drag-drop.js");
-            
-            ((IJavaScriptExecutor)Driver).ExecuteScript(jsContents +
-                "$('#column-a').simulateDragDrop({ dropTarget: '#column-b'});");
+            try
+            {
+                string jsContents = File.ReadAllText(
+                    AppContext.BaseDirectory + @"Helpers\simulate-drag-drop.jss");
+
+                ((IJavaScriptExecutor)Driver).ExecuteScript(jsContents +
+                    "$('#column-a').simulateDragDrop({dropTarget: '#column-b'});");
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("Unable to complete operation. File not found.");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         
         public bool HaveColumnPositionsBeenSwapped()

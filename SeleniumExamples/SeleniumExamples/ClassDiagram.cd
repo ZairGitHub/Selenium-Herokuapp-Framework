@@ -3,19 +3,18 @@
   <Class Name="SeleniumExamples.Pages.PageFactory">
     <Position X="0.75" Y="2" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAQAACAAABAABAAAAAABAAJAiABiAAgAAAAAAAIEAA=</HashCode>
+      <HashCode>AAAQAACAAABAABAAAACABAAJAiABgAAoAAAAAAAIEAA=</HashCode>
       <FileName>Pages\PageFactory.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="AddRemovePage" />
       <Property Name="BasicAuthenticationPage" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="SeleniumExamples.Pages.AddRemovePage">
+  <Class Name="SeleniumExamples.Pages.AddRemoveElementsPage">
     <Position X="5.5" Y="0.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>CgAAAAAAAAAAAAACgAAAAAAAAABAAAABAAAAAAABAAA=</HashCode>
-      <FileName>Pages\AddRemovePage.cs</FileName>
+      <FileName>Pages\AddRemoveElementsPage.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -34,25 +33,18 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="SeleniumExamples.Tests.AddRemoveTests" Collapsed="true">
-    <Position X="8.25" Y="2.5" Width="2.5" />
-    <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAQAIAAAAAAAAgAAAAAAAAAAAAAAAAAAIA=</HashCode>
-      <FileName>Tests\AddRemoveTests.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SeleniumExamples.Steps.AddRemoveSteps" Collapsed="true">
+  <Class Name="SeleniumExamples.Steps.AddRemoveElementsSteps" Collapsed="true">
     <Position X="8.25" Y="1.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AACCAAAAAAIQAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Steps\AddRemoveSteps.cs</FileName>
+      <HashCode>AACAAAAAAAIQAAAAAQAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Steps\AddRemoveElementsSteps.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SeleniumExamples.Features.AddRemoveElementsPageFeature" Collapsed="true">
     <Position X="8.25" Y="1" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAIAAAAAABAAEAAIAAgCUAAAgACAAAAIAAAAAAAAg=</HashCode>
-      <FileName>Features\AddRemove.feature.cs</FileName>
+      <FileName>Features\AddRemoveElements.feature.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SeleniumExamples.Features.BasicAuthenticationFormFeature" Collapsed="true">
@@ -72,8 +64,15 @@
   <Class Name="SeleniumExamples.Tests.BasicAuthenticationTests" Collapsed="true">
     <Position X="8.25" Y="5.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAQACAAAAAAAAAAAAAAABAAAAAACAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAEACAQAAAA=</HashCode>
       <FileName>Tests\BasicAuthenticationTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeleniumExamples.Tests.AddRemoveElementsTests" Collapsed="true">
+    <Position X="8.25" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAgAAAAAQAAAAAAAAAAgAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Tests\AddRemoveElementsTests.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="SeleniumExamples.Pages.IPageNavigation">

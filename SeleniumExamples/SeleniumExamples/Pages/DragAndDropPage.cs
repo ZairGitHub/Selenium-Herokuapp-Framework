@@ -24,9 +24,12 @@ namespace SeleniumExamples.Pages
 
         public void SwapPositions()
         {
+            ((IJavaScriptExecutor)Driver).ExecuteScript(
+                "simulateDragDrop(ColumnA, ColumnB)");
+            /*
             new Actions(Driver)
                 .DragAndDrop(ColumnA, ColumnB)
-                .Perform();
+                .Perform();*/
         }
         
         public bool HaveColumnPositionsBeenSwapped()

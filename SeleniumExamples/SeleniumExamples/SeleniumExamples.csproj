@@ -19,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Helpers\simulate-drag-drop.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Testhost.dll.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

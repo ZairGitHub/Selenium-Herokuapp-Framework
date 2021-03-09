@@ -1,7 +1,6 @@
-﻿using System.IO;
-using System.Reflection;
+﻿using System;
+using System.IO;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 
 namespace SeleniumExamples.Pages
 {
@@ -26,9 +25,8 @@ namespace SeleniumExamples.Pages
 
         public void SwapPositions()
         {
-            StreamReader jsFile = new StreamReader(
-                @"");
-
+            StreamReader jsFile = new StreamReader(AppContext.BaseDirectory + @"Helpers\simulate-drag-drop.js");
+            
             string jsContents = jsFile.ReadToEnd();
             
             ((IJavaScriptExecutor)Driver).ExecuteScript(jsContents +

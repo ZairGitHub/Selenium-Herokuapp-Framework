@@ -1,7 +1,7 @@
 ﻿Feature: JavaScriptAlerts Page
 	As a user,
 	I want to be to handle information from within JavaScript alerts,
-	so that I interact with JavaScript alerts on the website.
+	so that I can interact with JavaScript alerts on the website.
 
 Background:
 	Given the user is on the JavaScriptAlerts page

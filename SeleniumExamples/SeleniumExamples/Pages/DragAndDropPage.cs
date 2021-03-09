@@ -25,18 +25,16 @@ namespace SeleniumExamples.Pages
 
         public void SwapPositions()
         {
-            StreamReader jsFile = new StreamReader(AppContext.BaseDirectory + @"Helpers\simulate-drag-drop.js");
-            
-            string jsContents = jsFile.ReadToEnd();
+            string jsContents = File.ReadAllText(
+                AppContext.BaseDirectory + @"Helpers\simulate-drag-drop.js");
             
             ((IJavaScriptExecutor)Driver).ExecuteScript(jsContents +
-                "simulateDragDrop({sourceNode: '#{ColumnA}'}, {destinationNode: '#{ColumnB}'})");
+                "$('#column-a').simulateDragDrop({ dropTarget: '#column-b'});");
         }
         
         public bool HaveColumnPositionsBeenSwapped()
         {
             return ColumnAHeader.Text != "A";
-            //32 //247
         }
     }
 }

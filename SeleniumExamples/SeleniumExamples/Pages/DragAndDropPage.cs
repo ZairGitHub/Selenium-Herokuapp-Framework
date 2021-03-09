@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System.IO;
+using System.Reflection;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 
 namespace SeleniumExamples.Pages
@@ -24,12 +26,13 @@ namespace SeleniumExamples.Pages
 
         public void SwapPositions()
         {
-            ((IJavaScriptExecutor)Driver).ExecuteScript(
-                "simulateDragDrop(ColumnA, ColumnB)");
-            /*
-            new Actions(Driver)
-                .DragAndDrop(ColumnA, ColumnB)
-                .Perform();*/
+            StreamReader jsFile = new StreamReader(
+                @"");
+
+            string jsContents = jsFile.ReadToEnd();
+            
+            ((IJavaScriptExecutor)Driver).ExecuteScript(jsContents +
+                "simulateDragDrop({sourceNode: '#{ColumnA}'}, {destinationNode: '#{ColumnB}'})");
         }
         
         public bool HaveColumnPositionsBeenSwapped()

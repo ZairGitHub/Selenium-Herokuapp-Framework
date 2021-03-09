@@ -6,8 +6,6 @@
 Background:
 	Given the user is on the Drag and Drop Page
 
-Scenario: Add two numbers
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+Scenario: Dragging a draggable element over another draggable element swaps their positions
+	And I drag a draggable element and drop it on top of another draggable element
+	Then the contents of the elements should be swapped "true"

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework;
+using SeleniumExamples.Pages;
 using TechTalk.SpecFlow;
 
 namespace SeleniumExamples.Steps
@@ -6,22 +7,28 @@ namespace SeleniumExamples.Steps
     [Binding]
     public class DragAndDropSteps
     {
+        private readonly PageFactory _sut;
+
+        public DragAndDropSteps(PageFactory sut) => _sut = sut;
+
         [Given(@"the user is on the Drag and Drop Page")]
         public void GivenTheUserIsOnTheDragAndDropPage()
         {
-            ScenarioContext.Current.Pending();
+            _sut.DragAndDropPage.NavigateToPage();
         }
         
         [Given(@"I drag a draggable element and drop it on top of another draggable element")]
         public void GivenIDragADraggableElementAndDropItOnTopOfAnotherDraggableElement()
         {
-            ScenarioContext.Current.Pending();
+            _sut.DragAndDropPage.SwapDraggableContents();
         }
         
         [Then(@"the contents of the elements should be swapped ""(.*)""")]
-        public void ThenTheContentsOfTheElementsShouldBeSwapped(string p0)
+        public void ThenTheContentsOfTheElementsShouldBeSwapped(bool hasSwapped)
         {
-            ScenarioContext.Current.Pending();
+            var result = _sut.DragAndDropPage.HaveDraggableContentsBeenSwapped();
+
+            Assert.That(result, Is.EqualTo(hasSwapped));
         }
     }
 }

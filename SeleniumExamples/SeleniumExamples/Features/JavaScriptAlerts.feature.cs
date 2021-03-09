@@ -36,7 +36,7 @@ namespace SeleniumExamples.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "JavaScriptAlerts Page", "\tAs a user,\r\n\tI want to be to handle information from within JavaScript alerts,\r\n" +
-                    "\tso that I interact with JavaScript alerts on the website.", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "\tso that I can interact with JavaScript alerts on the website.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         

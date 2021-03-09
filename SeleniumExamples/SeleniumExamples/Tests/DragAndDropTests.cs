@@ -15,24 +15,24 @@ namespace SeleniumExamples.Tests
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void SwapColumnContents_SwapsTheColumnContentsOfTwoElements()
+        public void SwapDraggableContents_SwapsTheDraggableContentsOfTwoElements()
         {
             _sut.DragAndDropPage.NavigateToPage();
 
-            _sut.DragAndDropPage.SwapColumnContents();
-            var result = _sut.DragAndDropPage.HaveColumnContentsBeenSwapped();
+            _sut.DragAndDropPage.SwapDraggableContents();
+            var result = _sut.DragAndDropPage.HaveDraggableContentsBeenSwapped();
 
             Assert.That(result, Is.True);
         }
 
         [Test]
-        public void SwapColumnContents_CalledTwice_ReturnsColumnContentsToTheirOriginalElements()
+        public void SwapDraggableContents_CalledTwice_ReturnsDraggableContentsToTheirOriginalElements()
         {
             _sut.DragAndDropPage.NavigateToPage();
 
-            _sut.DragAndDropPage.SwapColumnContents();
-            _sut.DragAndDropPage.SwapColumnContents();
-            var result = _sut.DragAndDropPage.HaveColumnContentsBeenSwapped();
+            _sut.DragAndDropPage.SwapDraggableContents();
+            _sut.DragAndDropPage.SwapDraggableContents();
+            var result = _sut.DragAndDropPage.HaveDraggableContentsBeenSwapped();
 
             Assert.That(result, Is.False);
         }

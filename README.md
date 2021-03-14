@@ -10,7 +10,7 @@ Repository featuring C# .NET Core Selenium automated testing framework which has
 
 ### Page Object Model
 
-The framework has been designed with conformity to the Page Object Model (POM), a commonly used design pattern when forming Selenium automated tests. It consists of a central object repository to model the SUT where each tested page is assigned to its own class. These page objects hold `private` properties to correspond to the many web elements of the page, and `public` methods which describe how an end user is expected to interact with a given element.
+The framework has been designed with conformity to the Page Object Model (POM), a commonly used design pattern when forming Selenium automated tests. It consists of a central object repository to model the SUT where each tested page is assigned to its own class. These page objects hold `private` properties to correspond to the many web elements of the page, and `public` methods to describe how an end user is expected to interact with a given element.
 
 This design allows for pages to be modified in isolation without concern for affecting the other components of the system. Ultimately speaking, the POM provides a modular framework that reduces code duplication whilst also strengthening desirable system aspects such as readability, scalability, and extensibility. It should be noted that C# was [previously packaged with a PageFactory class that has since been depreciated and replaced by C# properties](https://alexanderontesting.com/2018/05/21/c-and-the-disappearing-pagefactory-my-next-steps-in-selenium-testing/).
 

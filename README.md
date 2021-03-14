@@ -16,7 +16,7 @@ This design allows for pages to be modified in isolation without concern for aff
 
 ### Inheritance
 
-All visitable pages of the SUT inherit from abstract `WebPage.cs` class. Ensures pages only ever rely a single instance of an `IWebDriver` to optimise test execution time. Also contains a `NavigateToUrl()` method to standardise page navigation across all derived pages.
+All visitable pages of the SUT inherit from the abstract `WebPage.cs` class. It consists of `protected` attributes to form a common template to structure the common features found across all visitable pages. It is in this class that the `IWebDriver` testing automation tool is defined and shared using its constructor. This approach not only reduces the need to assign `IWebDriver` definitions in derived pages, but it also optimises test execution time by ensuring that these pages can only ever rely on a single instance of an `IWebDriver` at any given time. Finally, it contains a simple `NavigateToUrl()` method to standardise the methodology in which pages are navigated to.
 
 ### Composition
 

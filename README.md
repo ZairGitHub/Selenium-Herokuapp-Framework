@@ -24,7 +24,7 @@ All visitable pages of the SUT implement an interface of either `IAlertNagivatio
 
 ### Drivers
 
-The type of the Selenium WebDriver used in the framework can be globally controlled in the `StaticDriver.cs` class. The class holds private fields corresponding to the two currently supported types of web drivers (`ChromeDriver` for Google Chrome and `FirefoxDriver` for Mozilla FireFox) and a get-only `Type` property that determines the driver type to be executed against when running the automated tests. The `Type` property is set to use the Chrome driver by default and this can be toggled to instaead use the Firefox driver by changing its assignment field. The `PageFactory.cs` class does not specify a default value for the `IWebDriver` to be passed into the `DriverConfig.cs` class and this is a deliberate design decision to ensure that the assignment of the driver can only exist from a single source.
+The type of the Selenium WebDriver used in the framework can be globally controlled in the `StaticDriver.cs` class. The class holds private fields corresponding to the two currently supported types of web drivers (`ChromeDriver` for Google Chrome and `FirefoxDriver` for Mozilla FireFox) and a read-only `Type` property that determines the driver type to be executed against when running the automated tests. The `Type` property is set to use the Chrome driver by default and this can be modified to instead use the Firefox driver by changing the property's assignment field. The `PageFactory.cs` class deliberatly does not specify a default value for the `IWebDriver` to be passed into the `DriverConfig.cs` class to ensure that the assignment of the `IWebDriver` can only exist from a single source.
 
 ## Testing
 

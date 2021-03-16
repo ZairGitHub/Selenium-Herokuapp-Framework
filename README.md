@@ -28,7 +28,7 @@ The type of the Selenium WebDriver used in the framework can be globally control
 
 ## Testing
 
-The framework's test suite uniquely supports the execution of standard automated tests and BDD tests. These have been created to aid a learning exercise which focuses on understanding the implementation differences and the advantages and disadvantages each approach bears against one another. My findings are as follows: 
+The framework's test suite uniquely supports the execution of standard automated tests written in NUnit and BDD tests written in SpecFlow. These have been created to aid a learning exercise which focuses on understanding the implementation differences and the advantages and disadvantages each approach bears against one another. My findings are as follows: 
 
 ### Test Suite Comparison
 
@@ -39,21 +39,20 @@ The framework's test suite uniquely supports the execution of standard automated
 | Readability     | Weaker   | Stronger |
 | Reusability     | Weaker   | Stronger |
 
-### Writing Speed
+#### Writing Speed
 
-The writing speed attribute assesses the time and effort required to write a given test. One of the immediate advantages regular tests have over BDD tests is that only one testing file is ever required to test a given page whereas BDD will require two for a feature and steps file respectively. Regular tests gain further strength in this attribute with their sole focus for only defining the technical implementation of a test. BDD tests are required to also describe the implementation details of a test in their feature files in addition to the technical implementation itself which they define within an appropriate steps file.
+This attribute assesses the time and effort required to write a given test. One of the immediate advantages standard tests have over BDD tests is that only one testing file is ever required to test a given page whereas BDD will require two for a feature and steps file respectively. Standard tests gain further strength in this attribute with their sole focus for only defining the technical implementation of a test. BDD tests are required to also describe the implementation details of a test in their feature files in addition to the technical implementation itself which they define within an appropriate steps file.
+
+#### Execution Speed
+
+This attribute assesses the time taken for the test suite to run its tests. Logically speaking, these should be equal given that they are testing the exact same thing in the exact same way but there is an unfortunate restriction with SpecFlow hooks which prevents this from being the case. The tests in the standard testing suite rely on a single instance of the driver for all of the tests in a given test class by using the `[OneTimeSetUp]` and `[OneTimeTearDown]` attributes. Hooks do support attributes that achieve this same effect yet their compatibility is oddly restricted to only support static methods. Consequently, the BDD test suite has been forced to rely on the `[BeforeScenario]` and `[AfterScenario]` hooks (defined in the `ScenarioHooks.cs` file) which results in a new driver instance being created and disposed of for each scenario (test) that is run, slowing down the overall execution speed of the suite.
 
 ### Regular tests
 
-- Faster to construct
-- Faster to run
 - Less readable
 
 ### BDD tests
 
-- Feature and step files
-- Slower to construct
-- Slower to run
 - Reusability of steps
 - More readable (Gherkin)
 

@@ -28,16 +28,20 @@ The type of the Selenium WebDriver used in the framework can be globally control
 
 ## Testing
 
-The framework's test suite uniquely supports the execution of standard automated tests and BDD tests. These have been created to aid a learning exercise which focuses on understanding the implementation differences and the advantages and disadvantages each approach bears against one another.
+The framework's test suite uniquely supports the execution of standard automated tests and BDD tests. These have been created to aid a learning exercise which focuses on understanding the implementation differences and the advantages and disadvantages each approach bears against one another. My findings are as follows: 
 
 ### Test Suite Comparison
 
 | Attribute       | Standard | BDD      |
 |---------------- | -------- | -------- |
-| Writing speed   | Faster   | Slower   |
-| Execution speed | Faster   | Slower   |
+| Writing Speed   | Faster   | Slower   |
+| Execution Speed | Faster   | Slower   |
 | Readability     | Weaker   | Stronger |
 | Reusability     | Weaker   | Stronger |
+
+### Writing Speed
+
+The writing speed attribute assesses the time and effort required to write a given test. One of the immediate advantages regular tests have over BDD tests is that only one testing file is ever required to test a given page whereas BDD will require two for a feature and steps file respectively. Regular tests gain further strength in this attribute with their sole focus for only defining the technical implementation of a test. BDD tests are required to also describe the implementation details of a test in their feature files in addition to the technical implementation itself which they define within an appropriate steps file.
 
 ### Regular tests
 

@@ -1,6 +1,6 @@
 # Selenium-Herokuapp-Framework
 
-Repository featuring a C# .NET Core Selenium automated testing framework that has been designed to test the http://the-internet.herokuapp.com website. This website under test, or otherwise more generally referred to as the system under test (SUT), has been selected for featuring a healthy selection of pages that have been deliberately designed to [capture prominent and ugly functionality found on the web](https://github.com/saucelabs/the-internet). The framework supports the execution of regular automated tests and Behaviour-Driven Development (BDD) tests in the Google Chrome and Mozilla Firefox web browsers.
+Repository featuring a C# .NET Core Selenium automated testing framework that has been designed to test the http://the-internet.herokuapp.com website. This website under test, or otherwise more generally referred to as the system under test (SUT), has been selected for featuring a healthy selection of pages that have been deliberately designed to [capture prominent and ugly functionality found on the web](https://github.com/saucelabs/the-internet). The framework supports the execution of standard automated tests and Behaviour-Driven Development (BDD) tests in the Google Chrome and Mozilla Firefox web browsers.
 
 ## Framework Design
 
@@ -28,7 +28,7 @@ The type of the Selenium WebDriver used in the framework can be globally control
 
 ## Testing
 
-Comparison
+The framework's test suite uniquely supports the execution of standard automated tests and BDD tests. These have been created to aid a learning exercise which focuses on understanding the implementation differences and the advantages and disadvantages each approach bears against one another.
 
 ### Regular tests
 

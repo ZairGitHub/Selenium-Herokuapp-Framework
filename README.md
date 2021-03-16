@@ -16,7 +16,7 @@ Ultimately speaking, the POM provides a modular framework that reduces code dupl
 
 ### Inheritance
 
-All visitable pages of the SUT inherit from the abstract `WebPage.cs` class. It consists of `protected` attributes to form a template that stores and defines the common features shared across all visitable pages. This class holds a critical read-only `IWebDriver` property that is shared to its derived pages through the use of its constructor. This design decision not only reduces the need to repeatedly create `IWebDriver` definitions in derived pages, but it also optimises test execution time by ensuring that these pages can only ever rely on a single instance of an `IWebDriver` at any given time. Lastly, the class holds a simple `NavigateToUrl()` method to standardise the methodology in which the pages are accessed via url navigation.
+All visitable pages of the SUT inherit from the abstract `WebPage.cs` class. It consists of `protected` attributes which forms a template that lists the common features that are shared across all visitable pages. This class holds a critical read-only `IWebDriver` property that can only be shared to its derived pages through the use of its constructor. This design decision not only reduces the need to repeatedly create `IWebDriver` field definitions for all of the derived pages, but it also optimises test execution time by ensuring that these pages can only ever rely on a single instance of an `IWebDriver` at any given time. Lastly, the class holds a simple `NavigateToUrl()` method to standardise the methodology in which the pages are accessed when directly navigating to them via their url.
 
 ### Composition
 

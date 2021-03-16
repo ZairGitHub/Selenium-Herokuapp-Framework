@@ -47,13 +47,13 @@ This attribute assesses the time and effort required to write a given test. One 
 
 This attribute assesses the time taken to run a test. Logically speaking, these should be equal given that they are testing the exact same thing in the exact same way but there is an unfortunate restriction with SpecFlow hooks which prevents this from being the case. The tests in the standard testing suite rely on a single instance of the Selenium WebDriver for all of the tests in a given test class by using the `[OneTimeSetUp]` and `[OneTimeTearDown]` attributes. Hooks do support attributes that achieve this same effect yet their compatibility is oddly restricted to only support static methods. Consequently, the BDD test suite has been forced to rely on the `[BeforeScenario]` and `[AfterScenario]` hooks (defined in the `ScenarioHooks.cs` file) which results in a new driver instance being created and disposed of for each scenario (test) that is run, slowing down the overall execution speed of the suite.
 
-### Readability
+#### Readability
 
 - Feature files
 - User stories
 - Gherkin
 
-### Reusability
+#### Reusability
 
 - Reusability of steps
 

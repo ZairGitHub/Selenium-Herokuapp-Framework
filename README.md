@@ -47,16 +47,17 @@ This attribute assesses the time and effort required to write a given test. One 
 
 This attribute assesses the time taken for the test suite to run its tests. Logically speaking, these should be equal given that they are testing the exact same thing in the exact same way but there is an unfortunate restriction with SpecFlow hooks which prevents this from being the case. The tests in the standard testing suite rely on a single instance of the driver for all of the tests in a given test class by using the `[OneTimeSetUp]` and `[OneTimeTearDown]` attributes. Hooks do support attributes that achieve this same effect yet their compatibility is oddly restricted to only support static methods. Consequently, the BDD test suite has been forced to rely on the `[BeforeScenario]` and `[AfterScenario]` hooks (defined in the `ScenarioHooks.cs` file) which results in a new driver instance being created and disposed of for each scenario (test) that is run, slowing down the overall execution speed of the suite.
 
-### Regular tests
+### Readability
 
-- Less readable
+- Feature files
+- User stories
+- Gherkin
 
-### BDD tests
+### Reusability
 
 - Reusability of steps
-- More readable (Gherkin)
 
-### General
+### Other Notes
 
 `IAlert` authentication access issues
 - `ChromeDriver` cannot interact with elements
@@ -64,7 +65,7 @@ This attribute assesses the time taken for the test suite to run its tests. Logi
 - Bypass by directly sending credentials via url string
 - `MiscellaneousTests.cs` exclusive to regular tests
 
-## Extending the framework
+## Extending the Framework
 
 More pages of sut
 Navigation to page

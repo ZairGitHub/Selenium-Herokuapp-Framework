@@ -20,7 +20,7 @@ All visitable pages of the SUT inherit from the abstract `WebPage.cs` class. It 
 
 ### Composition
 
-All visitable pages of the SUT implement an interface of either `IAlertNagivation.cs` or `IPageNavigation.cs`. Both interfaces hold methods which serve as wrappers for the inherited `NavigateToUrl()` method. The `IAlertNavigation` interface is applied to any visitable pages whose access is blocked by an authentication alert, and the `IPageNavigation` is used for all the other visitable pages. Ideally, a single `IPageNavigation` interface should ever be used for the framework, but there is currently an issue with authentication alerts where keyboard information can not be directly passed into the authentication fields of the alert pop-up. Having identified this, the `IAlertNavigation` interface serves to mimic page navigation behaviours for instances where a simple url string is insufficient.
+All visitable pages of the SUT implement an interface of either `IAlertNagivation.cs` or `IPageNavigation.cs`. Both interfaces hold methods which serve as wrappers for the inherited `NavigateToUrl()` method. The `IAlertNavigation` interface is applied to any visitable page whose access is blocked by an authentication alert, and the `IPageNavigation` interface is applied to all of the other visitable pages. Ideally, a single `IPageNavigation` interface should ever be used for the framework, but there is currently a Selenium issue with authentication alerts where keyboard information can not be directly passed into the authentication fields of the alert pop-up. Having identified this, the `IAlertNavigation` interface is a temporary workaround that serves to mimic page navigation behaviours for instances where a standard url string is insufficient.
 
 ### Drivers
 

@@ -7,10 +7,10 @@ Background:
 	Given the user is on the Broken Images page
 
 Scenario Outline: Broken images are correctly detected
-	When the user checks if an image is broken
-	Then the condition of the image should reflect this information
+	When the user checks if an image <id> is broken
+	Then the condition <condition> of the image should reflect this information
 	Examples:
 	| id | condition |
-	| 1  | true		 |
-	| 2  | true		 |
-	| 3  | false	 |
+	| 1  | true      |
+	| 2  | true	     |
+	| 3  | false     |

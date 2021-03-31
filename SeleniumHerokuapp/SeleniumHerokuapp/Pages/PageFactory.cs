@@ -25,6 +25,7 @@ namespace SeleniumHerokuapp.Pages
             FormAuthenticationPage = new FormAuthenticationPage(Driver);
             FramesPage = new FramesPage(Driver);
             HoversPage = new HoversPage(Driver);
+            InputsPage = new InputsPage(Driver);
             JavaScriptAlertsPage = new JavaScriptAlertsPage(Driver);
             NestedFramesPage = new NestedFramesPage(Driver);
         }
@@ -56,6 +57,8 @@ namespace SeleniumHerokuapp.Pages
         public FramesPage FramesPage { get; private set; }
 
         public HoversPage HoversPage { get; private set; }
+
+        public InputsPage InputsPage { get; private set; }
 
         public JavaScriptAlertsPage JavaScriptAlertsPage { get; private set; }
 

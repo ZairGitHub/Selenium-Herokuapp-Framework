@@ -63,6 +63,17 @@ namespace SeleniumExamples.Tests
         }
 
         [Test]
+        public void ClickBrokenImagesLink_OpensBrokenImagesPage()
+        {
+            _sut.IndexPage.NavigateToPage();
+
+            _sut.IndexPage.ClickBrokenImagesLink();
+            var result = _sut.SharedHTML.ReadPageHeaderText();
+
+            Assert.That(result, Contains.Substring("Broken Images"));
+        }
+
+        [Test]
         public void ClickCheckboxesLink_OpensCheckboxesPage()
         {
             _sut.IndexPage.NavigateToPage();

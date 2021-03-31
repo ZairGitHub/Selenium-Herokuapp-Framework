@@ -41,6 +41,12 @@ namespace SeleniumExamples.Steps
             _sut.IndexPage.ClickBasicAuthenticationLink();
         }
 
+        [When(@"the user clicks the Broken Images link")]
+        public void WhenTheUserClicksTheBrokenImagesLink()
+        {
+            _sut.IndexPage.ClickBrokenImagesLink();
+        }
+
         [When(@"the user clicks the Checkboxes link")]
         public void WhenTheUserClicksTheCheckboxesLink()
         {

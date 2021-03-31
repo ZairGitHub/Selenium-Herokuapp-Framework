@@ -30,10 +30,6 @@ namespace SeleniumExamples.Pages
             {
                 Console.WriteLine("Unable to complete operation. File not found.");
             }
-            catch (Exception)
-            {
-                throw;
-            }
         }
 
         public bool HaveDraggableContentsBeenSwapped()

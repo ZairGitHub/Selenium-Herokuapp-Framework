@@ -44,7 +44,7 @@ namespace SeleniumExamples
             ConfigureDriverTimeouts();
         }
 
-        public IWebDriver Driver { get; set; }
+        public IWebDriver Driver { get; private set; }
 
         private void ConfigureDriverTimeouts()
         {

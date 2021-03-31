@@ -17,6 +17,9 @@ namespace SeleniumExamples.Pages
         private IWebElement LinkBasicAuthentication =>
             Driver.FindElement(By.LinkText("Basic Auth"));
 
+        private IWebElement LinkBrokenImages =>
+            Driver.FindElement(By.LinkText("Broken Images"));
+
         private IWebElement LinkCheckboxes =>
             Driver.FindElement(By.LinkText("Checkboxes"));
 
@@ -50,6 +53,8 @@ namespace SeleniumExamples.Pages
         {
             LinkBasicAuthentication.Click();
         }
+
+        public void ClickBrokenImagesLink() => LinkBrokenImages.Click();
 
         public void ClickCheckboxesLink() => LinkCheckboxes.Click();
 

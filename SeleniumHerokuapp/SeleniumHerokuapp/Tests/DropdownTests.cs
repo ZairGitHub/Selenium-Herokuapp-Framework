@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
-using SeleniumHerokuApp.Pages;
+using SeleniumHerokuapp.Pages;
 
-namespace SeleniumHerokuApp.Tests
+namespace SeleniumHerokuapp.Tests
 {
     [TestFixture]
     public class DropdownTests

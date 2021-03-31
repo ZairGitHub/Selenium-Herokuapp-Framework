@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace SeleniumHerokuApp.Pages
+namespace SeleniumHerokuapp.Pages
 {
     public sealed class SecureAreaPage : WebPage, IPageNavigation
     {

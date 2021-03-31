@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace SeleniumHerokuApp.Pages
+namespace SeleniumHerokuapp.Pages
 {
     public abstract class WebPage
     {

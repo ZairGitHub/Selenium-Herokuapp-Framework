@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 
-namespace SeleniumHerokuApp.Pages
+namespace SeleniumHerokuapp.Pages
 {
     public sealed class HoversPage : WebPage, IPageNavigation
     {

@@ -1,4 +1,4 @@
-﻿namespace SeleniumHerokuApp.Pages
+﻿namespace SeleniumHerokuapp.Pages
 {
     public interface IPageNavigation
     {

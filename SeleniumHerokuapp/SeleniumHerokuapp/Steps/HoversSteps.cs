@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
-using SeleniumHerokuApp.Pages;
+using SeleniumHerokuapp.Pages;
 using TechTalk.SpecFlow;
 
-namespace SeleniumHerokuApp.Steps
+namespace SeleniumHerokuapp.Steps
 {
     [Binding]
     public class HoversSteps

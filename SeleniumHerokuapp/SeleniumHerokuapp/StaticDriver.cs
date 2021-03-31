@@ -2,7 +2,7 @@
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 
-namespace SeleniumHerokuApp
+namespace SeleniumHerokuapp
 {
     public static class StaticDriver
     {

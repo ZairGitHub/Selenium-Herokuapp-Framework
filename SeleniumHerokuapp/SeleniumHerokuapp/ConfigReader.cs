@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace SeleniumHerokuApp
+namespace SeleniumHerokuapp
 {
     public static class ConfigReader
     {

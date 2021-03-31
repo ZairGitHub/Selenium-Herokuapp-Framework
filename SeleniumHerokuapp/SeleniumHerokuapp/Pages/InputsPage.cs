@@ -11,27 +11,22 @@ namespace SeleniumHerokuapp.Pages
             NavigateToURL(ConfigReader.Index + ConfigReader.Inputs);
         }
 
-        private IWebElement FieldInput =>
-            Driver.FindElement(By.CssSelector("input"));
+        private IWebElement Input => Driver.FindElement(By.CssSelector("input"));
 
-        public void EnterValue(int value)
-        {
-            FieldInput.SendKeys(value.ToString());
-        }
+        public string ReadValue() => Input.GetAttribute("value");
+        
+        public void EnterValue(int value) => Input.SendKeys(value.ToString());
 
-        public void EnterValue(string value)
-        {
-            FieldInput.SendKeys(value);
-        }
-
+        public void EnterValue(string value) => Input.SendKeys(value);
+        
         public void IncreaseValue()
         {
-            FieldInput.Click();
+            Input.Click();
         }
 
         public void DecreaseValue()
         {
-            FieldInput.Click();
+            Input.Click();
         }
     }
 }

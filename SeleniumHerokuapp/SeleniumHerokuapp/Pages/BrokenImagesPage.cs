@@ -19,5 +19,23 @@ namespace SeleniumHerokuapp.Pages
 
         public IWebElement Image3 =>
             Driver.FindElement(By.CssSelector("img:nth-child(4)"));
+
+        public bool IsImageBroken(int id)
+        {
+            IWebElement image;
+            if (id == 1)
+            {
+                image = Image1;
+            }
+            else if (id == 2)
+            {
+                image = Image2;
+            }
+            else
+            {
+                image = Image3;
+            }
+            return image.GetAttribute("naturalWidth").Equals("0");
+        }
     }
 }

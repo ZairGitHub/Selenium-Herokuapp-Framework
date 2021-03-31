@@ -46,6 +46,9 @@ namespace SeleniumHerokuapp
         public static string IFrame =>
             ConfigurationManager.AppSettings["iframe"];
 
+        public static string Inputs =>
+            ConfigurationManager.AppSettings["inputs"];
+
         public static string NestedFrames =>
             ConfigurationManager.AppSettings["nested_frames"];
 

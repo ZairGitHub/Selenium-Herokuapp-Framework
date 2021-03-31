@@ -28,6 +28,11 @@ Scenario: Navigate to Basic Authentication form
 	Then the popup text should inform the user that they are attempting to reach the correct "“Restricted Area”" page
 
 @hypertext
+Scenario: Navigate to Broken Images page
+	When the user clicks the Broken Images link
+	Then the page header text should inform the user that they are on the correct "Broken Images" page
+
+@hypertext
 Scenario: Navigate to Checkboxes page
 	When the user clicks the Checkboxes link
 	Then the page header text should inform the user that they are on the correct "Checkboxes" page

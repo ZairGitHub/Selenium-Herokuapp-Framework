@@ -153,6 +153,17 @@ namespace SeleniumHerokuapp.Tests
         }
 
         [Test]
+        public void ClickInputsLink_RedirectsToInputsPage()
+        {
+            _sut.IndexPage.NavigateToPage();
+
+            _sut.IndexPage.ClickInputsLink();
+            var result = _sut.SharedHTML.ReadPageHeaderText();
+
+            Assert.That(result, Is.EqualTo("Inputs"));
+        }
+
+        [Test]
         public void ClickJavaScriptAlertsLink_RedirectsToJavaScriptAlertsPage()
         {
             _sut.IndexPage.NavigateToPage();

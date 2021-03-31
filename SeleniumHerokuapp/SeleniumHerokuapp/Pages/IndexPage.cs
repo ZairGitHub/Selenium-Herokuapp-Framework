@@ -41,6 +41,9 @@ namespace SeleniumHerokuapp.Pages
         private IWebElement LinkHovers =>
             Driver.FindElement(By.LinkText("Hovers"));
 
+        private IWebElement LinkInputs =>
+            Driver.FindElement(By.LinkText("Inputs"));
+
         private IWebElement LinkJavaScriptAlerts =>
             Driver.FindElement(By.LinkText("JavaScript Alerts"));
 
@@ -75,6 +78,8 @@ namespace SeleniumHerokuapp.Pages
         public void ClickFramesLink() => LinkFrames.Click();
 
         public void ClickHoversLink() => LinkHovers.Click();
+
+        public void ClickInputsLink() => LinkInputs.Click();
 
         public void ClickJavaScriptAlertsLink() => LinkJavaScriptAlerts.Click();
 

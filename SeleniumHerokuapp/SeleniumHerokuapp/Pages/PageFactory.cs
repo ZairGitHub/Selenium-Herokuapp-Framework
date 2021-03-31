@@ -17,6 +17,7 @@ namespace SeleniumHerokuapp.Pages
             IndexPage = new IndexPage(Driver);
             AddRemoveElementsPage = new AddRemoveElementsPage(Driver);
             BasicAuthenticationPage = new BasicAuthenticationPage(Driver);
+            BrokenImagesPage = new BrokenImagesPage(Driver);
             CheckboxesPage = new CheckboxesPage(Driver);
             DigestAuthenticationPage = new DigestAuthenticationPage(Driver);
             DragAndDropPage = new DragAndDropPage(Driver);
@@ -39,6 +40,8 @@ namespace SeleniumHerokuapp.Pages
         public AddRemoveElementsPage AddRemoveElementsPage { get; private set; }
 
         public BasicAuthenticationPage BasicAuthenticationPage { get; private set; }
+
+        public BrokenImagesPage BrokenImagesPage { get; private set; }
 
         public CheckboxesPage CheckboxesPage { get; private set; }
 

@@ -20,10 +20,20 @@ namespace SeleniumHerokuapp.Tests
             _sut.InputsPage.NavigateToPage();
 
             _sut.InputsPage.EnterValue(9);
-
             var result =  _sut.InputsPage.ReadValue();
 
             Assert.That(result, Is.EqualTo(9.ToString()));
+        }
+
+        [Test]
+        public void Increment()
+        {
+            _sut.InputsPage.NavigateToPage();
+
+            _sut.InputsPage.IncreaseValue();
+            var result = _sut.InputsPage.ReadValue();
+
+            Assert.That(result, Is.EqualTo("1"));
         }
     }
 }

@@ -21,7 +21,7 @@ namespace SeleniumHerokuapp.Pages
         
         public void IncreaseValue()
         {
-            Input.Click();
+            Input.SendKeys(Keys.Up);
         }
 
         public void DecreaseValue()

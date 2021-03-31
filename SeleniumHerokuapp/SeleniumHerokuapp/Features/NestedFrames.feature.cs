@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SeleniumExamples.Features
+namespace SeleniumHerokuapp.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,23 @@ namespace SeleniumExamples.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Form Authentication Page")]
-    public partial class FormAuthenticationPageFeature
+    [NUnit.Framework.DescriptionAttribute("Nested Frames Page")]
+    public partial class NestedFramesPageFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "FormAuthentication.feature"
+#line 1 "NestedFrames.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Form Authentication Page", "\tAs a user,\r\n\tI want to be able to authenticate my credentials,\r\n\tso that I can a" +
-                    "ccess the Secure Area page.", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Nested Frames Page", "\tAs a user,\r\n\tI want to be able to navigate between different frames,\r\n\tso that I" +
+                    " can interact with pages than hold multiple frames.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,18 +79,20 @@ namespace SeleniumExamples.Features
 #line 6
 #line hidden
 #line 7
- testRunner.Given("the user is on the Form Authentication page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the user is on the Nested Frames page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Logging in with no credentials displays a username error message")]
-        public virtual void LoggingInWithNoCredentialsDisplaysAUsernameErrorMessage()
+        [NUnit.Framework.DescriptionAttribute("Left frame displays the correct text")]
+        [NUnit.Framework.CategoryAttribute("frame-text")]
+        public virtual void LeftFrameDisplaysTheCorrectText()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "frame-text"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logging in with no credentials displays a username error message", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 9
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Left frame displays the correct text", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 10
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -112,28 +114,27 @@ this.ScenarioInitialize(scenarioInfo);
                 this.ScenarioStart();
 #line 6
 this.FeatureBackground();
-#line hidden
-#line 10
- testRunner.When("the user clicks the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
- testRunner.Then("a help message containing the following text \"Your username is invalid!\" should b" +
-                        "e displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("the user switches to the left frame", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 12
+ testRunner.Then("the body of the frame should display the correct text \"LEFT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Logging in with a valid username and no password displays a password error messag" +
-            "e")]
-        public virtual void LoggingInWithAValidUsernameAndNoPasswordDisplaysAPasswordErrorMessage()
+        [NUnit.Framework.DescriptionAttribute("Middle frame displays the correct text")]
+        [NUnit.Framework.CategoryAttribute("frame-text")]
+        public virtual void MiddleFrameDisplaysTheCorrectText()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "frame-text"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logging in with a valid username and no password displays a password error messag" +
-                    "e", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 13
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Middle frame displays the correct text", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 15
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -155,31 +156,27 @@ this.ScenarioInitialize(scenarioInfo);
                 this.ScenarioStart();
 #line 6
 this.FeatureBackground();
-#line hidden
-#line 14
-    testRunner.When("the user enters a valid username", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 15
-    testRunner.And("the user clicks the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
-    testRunner.Then("a help message containing the following text \"Your password is invalid!\" should b" +
-                        "e displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("the user switches to the middle frame", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 17
+ testRunner.Then("the body of the frame should display the correct text \"MIDDLE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Logging in with a valid username and a valid password redirects user to the Secur" +
-            "e Area page")]
-        public virtual void LoggingInWithAValidUsernameAndAValidPasswordRedirectsUserToTheSecureAreaPage()
+        [NUnit.Framework.DescriptionAttribute("Right frame displays the correct text")]
+        [NUnit.Framework.CategoryAttribute("frame-text")]
+        public virtual void RightFrameDisplaysTheCorrectText()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "frame-text"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logging in with a valid username and a valid password redirects user to the Secur" +
-                    "e Area page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 18
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Right frame displays the correct text", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -201,34 +198,27 @@ this.ScenarioInitialize(scenarioInfo);
                 this.ScenarioStart();
 #line 6
 this.FeatureBackground();
-#line hidden
-#line 19
-    testRunner.When("the user enters a valid username", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 20
-    testRunner.And("the user enters a valid password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 21
-    testRunner.And("the user clicks the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("the user switches to the right frame", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 22
-    testRunner.Then("a help message containing the following text \"You logged into a secure area!\" sho" +
-                        "uld be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the body of the frame should display the correct text \"RIGHT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Directly navigating to the Secure Area page displays an appropriate error message" +
-            "")]
-        public virtual void DirectlyNavigatingToTheSecureAreaPageDisplaysAnAppropriateErrorMessage()
+        [NUnit.Framework.DescriptionAttribute("Bottom frame displays the correct text")]
+        [NUnit.Framework.CategoryAttribute("frame-text")]
+        public virtual void BottomFrameDisplaysTheCorrectText()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "frame-text"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Directly navigating to the Secure Area page displays an appropriate error message" +
-                    "", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 24
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Bottom frame displays the correct text", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 25
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -250,28 +240,35 @@ this.ScenarioInitialize(scenarioInfo);
                 this.ScenarioStart();
 #line 6
 this.FeatureBackground();
-#line hidden
-#line 25
-    testRunner.When("the user directly navigates to the Secure Area page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 26
-    testRunner.Then("a help message containing the following text \"You must login to view the secure a" +
-                        "rea!\" should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("the user switches to the bottom frame", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 27
+ testRunner.Then("the body of the frame should display the correct text \"BOTTOM\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Logging out removes authentication and redirects the user back to the Form Authen" +
-            "tication page")]
-        public virtual void LoggingOutRemovesAuthenticationAndRedirectsTheUserBackToTheFormAuthenticationPage()
+        [NUnit.Framework.DescriptionAttribute("Top and bottom parent frames can be resized using their shared border")]
+        [NUnit.Framework.CategoryAttribute("frame-border")]
+        [NUnit.Framework.TestCaseAttribute("-50", null)]
+        [NUnit.Framework.TestCaseAttribute("50", null)]
+        public virtual void TopAndBottomParentFramesCanBeResizedUsingTheirSharedBorder(string offset, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] @__tags = new string[] {
+                    "frame-border"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logging out removes authentication and redirects the user back to the Form Authen" +
-                    "tication page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 28
+            argumentsOfScenario.Add("offset", offset);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Top and bottom parent frames can be resized using their shared border", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 30
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -293,31 +290,35 @@ this.ScenarioInitialize(scenarioInfo);
                 this.ScenarioStart();
 #line 6
 this.FeatureBackground();
-#line hidden
-#line 29
-    testRunner.When("the user is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 30
-    testRunner.And("the user clicks the logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 31
-    testRunner.Then("a help message containing the following text \"You logged out of the secure area!\"" +
-                        " should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When(string.Format("the user resizes the top and bottom parent frames using their shared border {0}", offset), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 32
+ testRunner.Then("the sizes of the parent frames should be different to their original sizes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Navigating back after logging out restores authentication and redirects the user " +
-            "back to the Secure Area page")]
-        public virtual void NavigatingBackAfterLoggingOutRestoresAuthenticationAndRedirectsTheUserBackToTheSecureAreaPage()
+        [NUnit.Framework.DescriptionAttribute("Left and middle nested frames can be resized using their shared border")]
+        [NUnit.Framework.CategoryAttribute("frame-border")]
+        [NUnit.Framework.TestCaseAttribute("-50", null)]
+        [NUnit.Framework.TestCaseAttribute("50", null)]
+        public virtual void LeftAndMiddleNestedFramesCanBeResizedUsingTheirSharedBorder(string offset, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] @__tags = new string[] {
+                    "frame-border"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigating back after logging out restores authentication and redirects the user " +
-                    "back to the Secure Area page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 33
+            argumentsOfScenario.Add("offset", offset);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Left and middle nested frames can be resized using their shared border", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 39
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -340,18 +341,64 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 34
-    testRunner.When("the user is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
+ testRunner.When(string.Format("the user resizes the left and middle nested frames using their shared border {0}", offset), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 35
-    testRunner.And("the user clicks the logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+ testRunner.Then("the sizes of the nested frames should be different to their original sizes (left " +
+                        "border)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 36
-    testRunner.And("the user uses the back button of the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Right and middle nested frames can be resized using their shared border")]
+        [NUnit.Framework.CategoryAttribute("frame-border")]
+        [NUnit.Framework.TestCaseAttribute("-50", null)]
+        [NUnit.Framework.TestCaseAttribute("50", null)]
+        public virtual void RightAndMiddleNestedFramesCanBeResizedUsingTheirSharedBorder(string offset, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "frame-border"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("offset", offset);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Right and middle nested frames can be resized using their shared border", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 48
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
-#line 37
-    testRunner.Then("a help message containing the following text \"You logged into a secure area!\" sho" +
-                        "uld be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line hidden
+#line 49
+ testRunner.When(string.Format("the user resizes the right and middle nested frames using their shared border {0}" +
+                            "", offset), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 50
+ testRunner.Then("the sizes of the nested frames should be different to their original sizes (right" +
+                        " border)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

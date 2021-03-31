@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumExamples", "SeleniumExamples\SeleniumExamples.csproj", "{EC2AD963-7A38-4982-B4BD-6966249A273B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumHerokuapp", "SeleniumHerokuapp\SeleniumHerokuapp.csproj", "{5E27FBF7-DBF4-4322-AFB2-A513E3570EDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EC2AD963-7A38-4982-B4BD-6966249A273B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC2AD963-7A38-4982-B4BD-6966249A273B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC2AD963-7A38-4982-B4BD-6966249A273B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC2AD963-7A38-4982-B4BD-6966249A273B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E27FBF7-DBF4-4322-AFB2-A513E3570EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E27FBF7-DBF4-4322-AFB2-A513E3570EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E27FBF7-DBF4-4322-AFB2-A513E3570EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E27FBF7-DBF4-4322-AFB2-A513E3570EDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

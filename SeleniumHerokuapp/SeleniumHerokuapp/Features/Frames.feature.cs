@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SeleniumExamples.Features
+namespace SeleniumHerokuapp.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,23 @@ namespace SeleniumExamples.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Hovers Page")]
-    public partial class HoversPageFeature
+    [NUnit.Framework.DescriptionAttribute("Frames Page")]
+    public partial class FramesPageFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "Hovers.feature"
+#line 1 "Frames.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Hovers Page", "\tAs a user,\r\n\tI want to be hover over elements to reveal new elements,\r\n\tso that " +
-                    "I can interact with hidden elements on the website.", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Frames Page", "\tAs a user,\r\n\tI want to be able to select links on the frames page,\r\n\tso that I c" +
+                    "an navigate to other areas of the website.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,21 +79,17 @@ namespace SeleniumExamples.Features
 #line 6
 #line hidden
 #line 7
-    testRunner.Given("the user is on the Hovers page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the user is on the Frames page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Hovering over an image reveals additional name information")]
-        [NUnit.Framework.TestCaseAttribute("1", null)]
-        [NUnit.Framework.TestCaseAttribute("2", null)]
-        [NUnit.Framework.TestCaseAttribute("3", null)]
-        public virtual void HoveringOverAnImageRevealsAdditionalNameInformation(string id, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Navigate to Nested Frames page")]
+        public virtual void NavigateToNestedFramesPage()
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("id", id);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Hovering over an image reveals additional name information", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigate to Nested Frames page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -118,27 +114,24 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 10
- testRunner.When(string.Format("the user hovers over the image {0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the user clicks the NestedFrames link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
- testRunner.Then(string.Format("the user should be able to see additional name information for the image {0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the page url should inform the user that they are on the correct \"nested_frames\" " +
+                        "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Hovering over an image reveals a link for additional profile information")]
-        [NUnit.Framework.TestCaseAttribute("1", null)]
-        [NUnit.Framework.TestCaseAttribute("2", null)]
-        [NUnit.Framework.TestCaseAttribute("3", null)]
-        public virtual void HoveringOverAnImageRevealsALinkForAdditionalProfileInformation(string id, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Navigate to iFrames page")]
+        public virtual void NavigateToIFramesPage()
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("id", id);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Hovering over an image reveals a link for additional profile information", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 18
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigate to iFrames page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 13
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -161,14 +154,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 19
-    testRunner.When(string.Format("the user hovers over the image {0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.When("the user clicks the iFrames link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 20
-    testRunner.And("the user clicks the profile link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 21
-    testRunner.Then(string.Format("the user should be redirected to a profile page for the selected user {0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 15
+ testRunner.Then("the page header text should inform the user that they are on the correct \"An iFra" +
+                        "me containing the TinyMCE WYSIWYG Editor\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

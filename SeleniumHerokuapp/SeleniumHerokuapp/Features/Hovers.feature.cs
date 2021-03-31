@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SeleniumExamples.Features
+namespace SeleniumHerokuapp.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,23 @@ namespace SeleniumExamples.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Add/Remove Elements Page")]
-    public partial class AddRemoveElementsPageFeature
+    [NUnit.Framework.DescriptionAttribute("Hovers Page")]
+    public partial class HoversPageFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "AddRemoveElements.feature"
+#line 1 "Hovers.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Add/Remove Elements Page", "\tAs a user,\r\n\tI want to be able to add and remove elements,\r\n\tso that I can creat" +
-                    "e and delete elements on the website.", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Hovers Page", "\tAs a user,\r\n\tI want to be hover over elements to reveal new elements,\r\n\tso that " +
+                    "I can interact with hidden elements on the website.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,17 +79,21 @@ namespace SeleniumExamples.Features
 #line 6
 #line hidden
 #line 7
- testRunner.Given("the user is on the Add/Remove Elements page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("the user is on the Hovers page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add button creates a new element")]
-        public virtual void AddButtonCreatesANewElement()
+        [NUnit.Framework.DescriptionAttribute("Hovering over an image reveals additional name information")]
+        [NUnit.Framework.TestCaseAttribute("1", null)]
+        [NUnit.Framework.TestCaseAttribute("2", null)]
+        [NUnit.Framework.TestCaseAttribute("3", null)]
+        public virtual void HoveringOverAnImageRevealsAdditionalNameInformation(string id, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add button creates a new element", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            argumentsOfScenario.Add("id", id);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Hovering over an image reveals additional name information", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -114,23 +118,27 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 10
- testRunner.When("the user clicks the add button three times", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("the user hovers over the image {0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
- testRunner.Then("the number of delete buttons should be equal to 3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the user should be able to see additional name information for the image {0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Delete button deletes created element")]
-        public virtual void DeleteButtonDeletesCreatedElement()
+        [NUnit.Framework.DescriptionAttribute("Hovering over an image reveals a link for additional profile information")]
+        [NUnit.Framework.TestCaseAttribute("1", null)]
+        [NUnit.Framework.TestCaseAttribute("2", null)]
+        [NUnit.Framework.TestCaseAttribute("3", null)]
+        public virtual void HoveringOverAnImageRevealsALinkForAdditionalProfileInformation(string id, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete button deletes created element", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 13
+            argumentsOfScenario.Add("id", id);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Hovering over an image reveals a link for additional profile information", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 18
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -153,14 +161,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 14
- testRunner.When("the user clicks the add button three times", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 19
+    testRunner.When(string.Format("the user hovers over the image {0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 15
- testRunner.And("the user clicks any delete button two times", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+    testRunner.And("the user clicks the profile link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 16
- testRunner.Then("the number of delete buttons should be equal to 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 21
+    testRunner.Then(string.Format("the user should be redirected to a profile page for the selected user {0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

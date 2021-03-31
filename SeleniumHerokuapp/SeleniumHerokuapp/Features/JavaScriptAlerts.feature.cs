@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SeleniumExamples.Features
+namespace SeleniumHerokuapp.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,23 @@ namespace SeleniumExamples.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Nested Frames Page")]
-    public partial class NestedFramesPageFeature
+    [NUnit.Framework.DescriptionAttribute("JavaScriptAlerts Page")]
+    public partial class JavaScriptAlertsPageFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "NestedFrames.feature"
+#line 1 "JavaScriptAlerts.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Nested Frames Page", "\tAs a user,\r\n\tI want to be able to navigate between different frames,\r\n\tso that I" +
-                    " can interact with pages than hold multiple frames.", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "JavaScriptAlerts Page", "\tAs a user,\r\n\tI want to be to handle information from within JavaScript alerts,\r\n" +
+                    "\tso that I can interact with JavaScript alerts on the website.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,19 +79,19 @@ namespace SeleniumExamples.Features
 #line 6
 #line hidden
 #line 7
- testRunner.Given("the user is on the Nested Frames page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the user is on the JavaScriptAlerts page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Left frame displays the correct text")]
-        [NUnit.Framework.CategoryAttribute("frame-text")]
-        public virtual void LeftFrameDisplaysTheCorrectText()
+        [NUnit.Framework.DescriptionAttribute("Interacting with a basic JavaScript alert")]
+        [NUnit.Framework.CategoryAttribute("javascript-alert")]
+        public virtual void InteractingWithABasicJavaScriptAlert()
         {
             string[] tagsOfScenario = new string[] {
-                    "frame-text"};
+                    "javascript-alert"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Left frame displays the correct text", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Interacting with a basic JavaScript alert", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 10
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -116,25 +116,29 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 11
- testRunner.When("the user switches to the left frame", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the user clicks the JSAlert button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
- testRunner.Then("the body of the frame should display the correct text \"LEFT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And("the user clicks the OK button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 13
+ testRunner.Then("the page should display the result text \"You successfully clicked an alert\" for t" +
+                        "he interaction", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Middle frame displays the correct text")]
-        [NUnit.Framework.CategoryAttribute("frame-text")]
-        public virtual void MiddleFrameDisplaysTheCorrectText()
+        [NUnit.Framework.DescriptionAttribute("Interacting with JavaScript confirm alert using the cancel button")]
+        [NUnit.Framework.CategoryAttribute("javascript-confirm")]
+        public virtual void InteractingWithJavaScriptConfirmAlertUsingTheCancelButton()
         {
             string[] tagsOfScenario = new string[] {
-                    "frame-text"};
+                    "javascript-confirm"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Middle frame displays the correct text", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 15
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Interacting with JavaScript confirm alert using the cancel button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 16
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -156,69 +160,76 @@ this.ScenarioInitialize(scenarioInfo);
                 this.ScenarioStart();
 #line 6
 this.FeatureBackground();
-#line hidden
-#line 16
- testRunner.When("the user switches to the middle frame", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 17
- testRunner.Then("the body of the frame should display the correct text \"MIDDLE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.When("the user clicks the JSConfirm button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 18
+    testRunner.And("the user clicks the cancel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 19
+    testRunner.Then("the page should display the result text \"You clicked: Cancel\" for the interaction" +
+                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Right frame displays the correct text")]
-        [NUnit.Framework.CategoryAttribute("frame-text")]
-        public virtual void RightFrameDisplaysTheCorrectText()
+        [NUnit.Framework.DescriptionAttribute("Interacting with JavaScript confirm alert using the OK button")]
+        [NUnit.Framework.CategoryAttribute("javascript-confirm")]
+        public virtual void InteractingWithJavaScriptConfirmAlertUsingTheOKButton()
         {
             string[] tagsOfScenario = new string[] {
-                    "frame-text"};
+                    "javascript-confirm"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Right frame displays the correct text", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 20
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
-#line 21
- testRunner.When("the user switches to the right frame", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Interacting with JavaScript confirm alert using the OK button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 22
- testRunner.Then("the body of the frame should display the correct text \"RIGHT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line hidden
+#line 23
+    testRunner.When("the user clicks the JSConfirm button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 24
+    testRunner.And("the user clicks the OK button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 25
+    testRunner.Then("the page should display the result text \"You clicked: Ok\" for the interaction", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Bottom frame displays the correct text")]
-        [NUnit.Framework.CategoryAttribute("frame-text")]
-        public virtual void BottomFrameDisplaysTheCorrectText()
+        [NUnit.Framework.DescriptionAttribute("Interacting with JavaScript prompt alert using the cancel button")]
+        [NUnit.Framework.CategoryAttribute("javascript-prompt")]
+        public virtual void InteractingWithJavaScriptPromptAlertUsingTheCancelButton()
         {
             string[] tagsOfScenario = new string[] {
-                    "frame-text"};
+                    "javascript-prompt"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Bottom frame displays the correct text", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 25
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Interacting with JavaScript prompt alert using the cancel button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 28
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -241,84 +252,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 26
- testRunner.When("the user switches to the bottom frame", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 29
+    testRunner.When("the user clicks the JSPrompt button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 27
- testRunner.Then("the body of the frame should display the correct text \"BOTTOM\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Top and bottom parent frames can be resized using their shared border")]
-        [NUnit.Framework.CategoryAttribute("frame-border")]
-        [NUnit.Framework.TestCaseAttribute("-50", null)]
-        [NUnit.Framework.TestCaseAttribute("50", null)]
-        public virtual void TopAndBottomParentFramesCanBeResizedUsingTheirSharedBorder(string offset, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "frame-border"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("offset", offset);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Top and bottom parent frames can be resized using their shared border", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 30
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 6
-this.FeatureBackground();
+    testRunner.And("the user clicks the cancel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 31
- testRunner.When(string.Format("the user resizes the top and bottom parent frames using their shared border {0}", offset), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 32
- testRunner.Then("the sizes of the parent frames should be different to their original sizes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("the page should display the result text \"You entered: null\" for the interaction", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Left and middle nested frames can be resized using their shared border")]
-        [NUnit.Framework.CategoryAttribute("frame-border")]
-        [NUnit.Framework.TestCaseAttribute("-50", null)]
-        [NUnit.Framework.TestCaseAttribute("50", null)]
-        public virtual void LeftAndMiddleNestedFramesCanBeResizedUsingTheirSharedBorder(string offset, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Interacting with JavaScript prompt alert using the OK button")]
+        [NUnit.Framework.CategoryAttribute("javascript-prompt")]
+        public virtual void InteractingWithJavaScriptPromptAlertUsingTheOKButton()
         {
-            string[] @__tags = new string[] {
-                    "frame-border"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
+            string[] tagsOfScenario = new string[] {
+                    "javascript-prompt"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("offset", offset);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Left and middle nested frames can be resized using their shared border", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 39
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Interacting with JavaScript prompt alert using the OK button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 34
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -341,64 +297,63 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
+#line 35
+    testRunner.When("the user clicks the JSPrompt button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 36
+    testRunner.And("the user clicks the OK button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 37
+    testRunner.Then("the page should display the result text \"You entered:\" for the interaction", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Interacting with JavaScript prompt alert using text input")]
+        [NUnit.Framework.CategoryAttribute("javascript-prompt")]
+        public virtual void InteractingWithJavaScriptPromptAlertUsingTextInput()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "javascript-prompt"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Interacting with JavaScript prompt alert using text input", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 40
- testRunner.When(string.Format("the user resizes the left and middle nested frames using their shared border {0}", offset), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
 #line hidden
 #line 41
- testRunner.Then("the sizes of the nested frames should be different to their original sizes (left " +
-                        "border)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.When("the user clicks the JSPrompt button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Right and middle nested frames can be resized using their shared border")]
-        [NUnit.Framework.CategoryAttribute("frame-border")]
-        [NUnit.Framework.TestCaseAttribute("-50", null)]
-        [NUnit.Framework.TestCaseAttribute("50", null)]
-        public virtual void RightAndMiddleNestedFramesCanBeResizedUsingTheirSharedBorder(string offset, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "frame-border"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("offset", offset);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Right and middle nested frames can be resized using their shared border", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 48
-this.ScenarioInitialize(scenarioInfo);
+#line 42
+    testRunner.And("the user enters the text \" i  np  u  t  1 \"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 6
-this.FeatureBackground();
+#line 43
+    testRunner.And("the user clicks the OK button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 49
- testRunner.When(string.Format("the user resizes the right and middle nested frames using their shared border {0}" +
-                            "", offset), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 50
- testRunner.Then("the sizes of the nested frames should be different to their original sizes (right" +
-                        " border)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 44
+    testRunner.Then("the page should display the result text \"You entered: i np u t 1\" for the interac" +
+                        "tion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

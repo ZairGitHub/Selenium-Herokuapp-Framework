@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SeleniumExamples.Features
+namespace SeleniumHerokuapp.Features
 {
     using TechTalk.SpecFlow;
     using System;

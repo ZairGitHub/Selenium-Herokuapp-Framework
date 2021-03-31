@@ -19,14 +19,8 @@ namespace SeleniumHerokuapp.Pages
 
         public void EnterValue(string value) => Input.SendKeys(value);
         
-        public void IncreaseValue()
-        {
-            Input.SendKeys(Keys.Up);
-        }
+        public void IncreaseValue() => Input.SendKeys(Keys.Up);
 
-        public void DecreaseValue()
-        {
-            Input.Click();
-        }
+        public void DecreaseValue() => Input.SendKeys(Keys.Down);
     }
 }

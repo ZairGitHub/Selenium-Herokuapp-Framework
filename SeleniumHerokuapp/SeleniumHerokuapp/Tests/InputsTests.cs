@@ -13,5 +13,17 @@ namespace SeleniumHerokuapp.Tests
 
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
+
+        [Test]
+        public void InputNumber()
+        {
+            _sut.InputsPage.NavigateToPage();
+
+            _sut.InputsPage.EnterValue(9);
+
+            var result =  _sut.InputsPage.ReadValue();
+
+            Assert.That(result, Is.EqualTo(9.ToString()));
+        }
     }
 }

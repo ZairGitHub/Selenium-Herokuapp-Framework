@@ -19,6 +19,9 @@ namespace SeleniumExamples
         public static string BasicAuthentication =>
             ConfigurationManager.AppSettings["basic_authentication"];
 
+        public static string BrokenImages =>
+            ConfigurationManager.AppSettings["broken_images"];
+
         public static string Checkboxes =>
             ConfigurationManager.AppSettings["checkboxes"];
 

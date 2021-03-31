@@ -35,5 +35,16 @@ namespace SeleniumHerokuapp.Tests
 
             Assert.That(result, Is.EqualTo("1"));
         }
+
+        [Test]
+        public void Decrement()
+        {
+            _sut.InputsPage.NavigateToPage();
+
+            _sut.InputsPage.DecreaseValue();
+            var result = _sut.InputsPage.ReadValue();
+
+            Assert.That(result, Is.EqualTo("-1"));
+        }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using BoDi;
 using TechTalk.SpecFlow;
-using SeleniumExamples.Pages;
+using SeleniumHerokuApp.Pages;
 
-namespace SeleniumExamples.Steps
+namespace SeleniumHerokuApp.Steps
 {
     [Binding]
     public class ScenarioHooks

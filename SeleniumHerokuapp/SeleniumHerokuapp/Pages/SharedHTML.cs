@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 
-namespace SeleniumExamples.Pages
+namespace SeleniumHerokuApp.Pages
 {
     public sealed class SharedHTML : WebPage
     {

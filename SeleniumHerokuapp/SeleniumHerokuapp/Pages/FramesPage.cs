@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace SeleniumExamples.Pages
+namespace SeleniumHerokuApp.Pages
 {
     public sealed class FramesPage : WebPage, IPageNavigation
     {

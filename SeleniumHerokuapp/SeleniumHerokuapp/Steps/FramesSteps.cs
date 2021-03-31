@@ -1,7 +1,7 @@
-﻿using SeleniumExamples.Pages;
+﻿using SeleniumHerokuApp.Pages;
 using TechTalk.SpecFlow;
 
-namespace SeleniumExamples.Steps
+namespace SeleniumHerokuApp.Steps
 {
     [Binding]
     public class FramesSteps

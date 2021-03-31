@@ -1,7 +1,7 @@
 using NUnit.Framework;
-using SeleniumExamples.Pages;
+using SeleniumHerokuApp.Pages;
 
-namespace SeleniumExamples.Tests
+namespace SeleniumHerokuApp.Tests
 {
     [TestFixture]
     public class AddRemoveElementsTests

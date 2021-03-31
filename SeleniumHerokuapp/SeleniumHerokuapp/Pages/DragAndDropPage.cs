@@ -2,7 +2,7 @@
 using System.IO;
 using OpenQA.Selenium;
 
-namespace SeleniumExamples.Pages
+namespace SeleniumHerokuApp.Pages
 {
     public sealed class DragAndDropPage : WebPage, IPageNavigation
     {

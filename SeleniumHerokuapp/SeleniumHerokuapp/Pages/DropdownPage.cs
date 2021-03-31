@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using OpenQA.Selenium;
 
-namespace SeleniumExamples.Pages
+namespace SeleniumHerokuApp.Pages
 {
     public sealed class DropdownPage : WebPage, IPageNavigation
     {

@@ -1,9 +1,7 @@
-﻿Feature: BrokenImages
-	Simple calculator for adding two numbers
+﻿Feature: Broken Images Page
+	As a user,
+	I want to be able to detect broken images,
+	so that I can differentiate between normal and broken images.
 
-@mytag
-Scenario: Add two numbers
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+Background:
+	Given the user is on the Broken Images page

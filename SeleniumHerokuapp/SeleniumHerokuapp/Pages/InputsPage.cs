@@ -13,7 +13,7 @@ namespace SeleniumHerokuapp.Pages
 
         private IWebElement Input => Driver.FindElement(By.CssSelector("input"));
 
-        public int ReadValue() => int.Parse(Input.GetAttribute("value"));
+        public double ReadValue() => double.Parse(Input.GetAttribute("value"));
         
         public void EnterValue(double value) => Input.SendKeys(value.ToString());
 

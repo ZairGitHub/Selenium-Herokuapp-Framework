@@ -3,8 +3,6 @@ using SeleniumHerokuapp.Pages;
 
 namespace SeleniumHerokuapp.Tests
 {
-    // Tests for increment/decrement doubles
-    // Tests for strings
     [TestFixture]
     public class InputsTests
     {
@@ -15,6 +13,18 @@ namespace SeleniumHerokuapp.Tests
 
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
+
+        [Test]
+        public void DecimalNumber()
+        {
+            _sut.InputsPage.NavigateToPage();
+
+            _sut.InputsPage.EnterValue(9.3);
+            _sut.InputsPage.IncrementValue();
+            var result = _sut.InputsPage.ReadValue();
+
+            Assert.That(result, Is.EqualTo(10));
+        }
 
         [Test]
         public void InputNumber()

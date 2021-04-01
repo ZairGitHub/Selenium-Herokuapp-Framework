@@ -8,9 +8,9 @@ namespace SeleniumHerokuapp.Pages
 
         public enum ImageID
         {
-            Image1,
-            Image2,
-            Image3
+            Image1 = 1,
+            Image2 = 2,
+            Image3 = 3
         }
 
         public void NavigateToPage()

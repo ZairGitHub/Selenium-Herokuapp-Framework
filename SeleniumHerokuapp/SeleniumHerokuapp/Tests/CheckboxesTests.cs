@@ -16,15 +16,16 @@ namespace SeleniumHerokuapp.Tests
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
 
-        [TestCase(Checkbox.Checkbox1)]
-        [TestCase(Checkbox.Checkbox2)]
-        public void ClickCheckbox_CheckboxId_TogglesCheckboxesTick(Checkbox id)
+        [TestCase(CheckboxID.Checkbox1)]
+        [TestCase(CheckboxID.Checkbox2)]
+        public void ClickCheckbox_CheckboxId_TogglesCheckboxesTick(
+            CheckboxID checkboxID)
         {
             _sut.CheckboxesPage.NavigateToPage();
-            var initialState = _sut.CheckboxesPage.IsCheckboxTicked(id);
+            var initialState = _sut.CheckboxesPage.IsCheckboxTicked(checkboxID);
 
-            _sut.CheckboxesPage.ClickCheckbox(id);
-            var endState = _sut.CheckboxesPage.IsCheckboxTicked(id);
+            _sut.CheckboxesPage.ClickCheckbox(checkboxID);
+            var endState = _sut.CheckboxesPage.IsCheckboxTicked(checkboxID);
 
             Assert.That(endState, Is.Not.EqualTo(initialState));
         }

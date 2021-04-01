@@ -26,17 +26,17 @@ namespace SeleniumHerokuapp.Tests
             Assert.That(result, Is.EqualTo("Please select an option"));
         }
 
-        [TestCase(Dropdown.Option1, "Option 1")]
-        [TestCase(Dropdown.Option2, "Option 2")]
+        [TestCase(DropdownID.Option1)]
+        [TestCase(DropdownID.Option2)]
         public void ClickDropdownOption_OptionId_SelectsOptionIdFromTheDropdownList(
-            Dropdown id, string dropdownText)
+            DropdownID dropdownID)
         {
             _sut.DropdownPage.NavigateToPage();
 
-            _sut.DropdownPage.ClickDropdownOption(id);
+            _sut.DropdownPage.ClickDropdownOption(dropdownID);
             var result = _sut.DropdownPage.ReadDropdownText();
 
-            Assert.That(result, Is.EqualTo(dropdownText));
+            Assert.That(result, Is.EqualTo("Option " + (int)dropdownID));
         }
     }
 }

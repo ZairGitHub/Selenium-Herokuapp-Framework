@@ -16,34 +16,32 @@ namespace SeleniumHerokuapp.Tests
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
 
-        [TestCase(Image.Image1, 1)]
-        [TestCase(Image.Image2, 2)]
-        [TestCase(Image.Image3, 3)]
-        public void HoverOverImage_ImageId_DiplaysCorrectSubHeaders(
-            Image id, int userID)
+        [TestCase(ImageID.Image1)]
+        [TestCase(ImageID.Image2)]
+        [TestCase(ImageID.Image3)]
+        public void HoverOverImage_ImageId_DiplaysCorrectSubHeaders(ImageID imageID)
         {
             _sut.HoversPage.NavigateToPage();
 
-            _sut.HoversPage.HoverOverImage(id);
-            var result = _sut.HoversPage.ReadSubHeaderTextForImage(id);
+            _sut.HoversPage.HoverOverImage(imageID);
+            var result = _sut.HoversPage.ReadSubHeaderTextForImage(imageID);
 
-            Assert.That(result, Is.EqualTo("name: user" + userID));
+            Assert.That(result, Is.EqualTo("name: user" + (int)imageID));
         }
 
-        [TestCase(Image.Image1, 1)]
-        [TestCase(Image.Image2, 2)]
-        [TestCase(Image.Image3, 3)]
-        public void HoverOverImage_ImageId_DisplaysCorrectLinks(
-            Image id, int userID)
+        [TestCase(ImageID.Image1)]
+        [TestCase(ImageID.Image2)]
+        [TestCase(ImageID.Image3)]
+        public void HoverOverImage_ImageId_DisplaysCorrectLinks(ImageID imageID)
         {
             _sut.HoversPage.NavigateToPage();
 
-            _sut.HoversPage.HoverOverImage(id);
+            _sut.HoversPage.HoverOverImage(imageID);
             _sut.HoversPage.ClickViewProfileLink();
             var result = _sut.Driver.Url;
 
-            Assert.That(result,
-                Is.EqualTo("http://the-internet.herokuapp.com/users/" + userID));
+            Assert.That(result, Is.EqualTo(
+                "http://the-internet.herokuapp.com/users/" + (int)imageID));
         }
     }
 }

@@ -8,8 +8,8 @@ namespace SeleniumHerokuapp.Pages
 
         public enum CheckboxID
         {
-            Checkbox1,
-            Checkbox2
+            Checkbox1 = 1,
+            Checkbox2 = 2
         }
 
         public void NavigateToPage()

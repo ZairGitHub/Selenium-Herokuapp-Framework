@@ -47,6 +47,9 @@ namespace SeleniumHerokuapp.Pages
         private IWebElement LinkJavaScriptAlerts =>
             Driver.FindElement(By.LinkText("JavaScript Alerts"));
 
+        private IWebElement LinkKeyPresses =>
+            Driver.FindElement(By.LinkText("Key Presses"));
+
         private IWebElement LinkNestedFrames =>
             Driver.FindElement(By.LinkText("Nested Frames"));
 
@@ -82,6 +85,8 @@ namespace SeleniumHerokuapp.Pages
         public void ClickInputsLink() => LinkInputs.Click();
 
         public void ClickJavaScriptAlertsLink() => LinkJavaScriptAlerts.Click();
+
+        public void ClickKeyPressesLink() => LinkKeyPresses.Click();
 
         public void ClickNestedFramesLink() => LinkNestedFrames.Click();
     }

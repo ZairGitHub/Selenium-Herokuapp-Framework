@@ -3,6 +3,8 @@ using SeleniumHerokuapp.Pages;
 
 namespace SeleniumHerokuapp.Tests
 {
+    using static CheckboxesPage;
+
     [TestFixture]
     public class CheckboxesTests
     {
@@ -14,9 +16,9 @@ namespace SeleniumHerokuapp.Tests
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
 
-        [TestCase(1)]
-        [TestCase(2)]
-        public void ClickCheckbox_CheckboxId_TogglesCheckboxesTick(int id)
+        [TestCase(Checkbox.Checkbox1)]
+        [TestCase(Checkbox.Checkbox2)]
+        public void ClickCheckbox_CheckboxId_TogglesCheckboxesTick(Checkbox id)
         {
             _sut.CheckboxesPage.NavigateToPage();
             var initialState = _sut.CheckboxesPage.IsCheckboxTicked(id);

@@ -77,30 +77,31 @@ namespace SeleniumHerokuapp.Pages
 
         private void SwitchToParentFrame(ParentFrame frame)
         {
-            if (frame == ParentFrame.Top)
+            switch (frame)
             {
-                SwitchToFrame(FrameTop);
-            }
-            else if (frame == ParentFrame.Bottom)
-            {
-                SwitchToFrame(FrameBottom);
+                case ParentFrame.Top:
+                    SwitchToFrame(FrameTop);
+                    break;
+                case ParentFrame.Bottom:
+                    SwitchToFrame(FrameBottom);
+                    break;
             }
         }
 
         private void SwitchToNestedFrame(NestedFrame frame)
         {
             SwitchToFrame(FrameTop);
-            if (frame == NestedFrame.Left)
+            switch (frame)
             {
-                SwitchToFrame(FrameLeft);
-            }
-            else if (frame == NestedFrame.Middle)
-            {
-                SwitchToFrame(FrameMiddle);
-            }
-            else if (frame == NestedFrame.Right)
-            {
-                SwitchToFrame(FrameRight);
+                case NestedFrame.Left:
+                    SwitchToFrame(FrameLeft);
+                    break;
+                case NestedFrame.Middle:
+                    SwitchToFrame(FrameMiddle);
+                    break;
+                case NestedFrame.Right:
+                    SwitchToFrame(FrameRight);
+                    break;
             }
         }
 

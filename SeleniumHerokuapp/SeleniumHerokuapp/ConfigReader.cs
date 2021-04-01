@@ -55,6 +55,9 @@ namespace SeleniumHerokuapp
         public static string JavaScriptAlerts =>
             ConfigurationManager.AppSettings["javascript_alerts"];
 
+        public static string KeyPresses =>
+            ConfigurationManager.AppSettings["key_presses"];
+
         public static string SecureArea =>
             ConfigurationManager.AppSettings["secure_area"];
     }

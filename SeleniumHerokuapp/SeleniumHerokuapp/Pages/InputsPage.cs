@@ -15,7 +15,7 @@ namespace SeleniumHerokuapp.Pages
 
         public double ReadNumber() => double.Parse(Input.GetAttribute("value"));
         
-        public void InputNumber(double value) => Input.SendKeys(value.ToString());
+        public void EnterNumber(double value) => Input.SendKeys(value.ToString());
         
         public void IncrementNumber() => Input.SendKeys(Keys.Up);
 

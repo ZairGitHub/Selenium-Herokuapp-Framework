@@ -15,12 +15,12 @@ namespace SeleniumHerokuapp.Tests
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void InputNumber_DisplaysTheEnteredNumber()
+        public void EnterNumber_DisplaysTheEnteredNumber()
         {
             _sut.InputsPage.NavigateToPage();
             const double input = 1.0;
 
-            _sut.InputsPage.InputNumber(input);
+            _sut.InputsPage.EnterNumber(input);
             var result = _sut.InputsPage.ReadNumber();
 
             Assert.That(result, Is.EqualTo(input));

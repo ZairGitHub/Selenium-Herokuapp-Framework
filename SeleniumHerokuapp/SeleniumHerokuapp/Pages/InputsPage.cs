@@ -13,12 +13,12 @@ namespace SeleniumHerokuapp.Pages
 
         private IWebElement Input => Driver.FindElement(By.CssSelector("input"));
 
-        public double ReadValue() => double.Parse(Input.GetAttribute("value"));
+        public double ReadNumber() => double.Parse(Input.GetAttribute("value"));
         
-        public void EnterValue(double value) => Input.SendKeys(value.ToString());
+        public void EnterNumber(double value) => Input.SendKeys(value.ToString());
         
-        public void IncrementValue() => Input.SendKeys(Keys.Up);
+        public void IncrementNumber() => Input.SendKeys(Keys.Up);
 
-        public void DecrementValue() => Input.SendKeys(Keys.Down);
+        public void DecrementNumber() => Input.SendKeys(Keys.Down);
     }
 }

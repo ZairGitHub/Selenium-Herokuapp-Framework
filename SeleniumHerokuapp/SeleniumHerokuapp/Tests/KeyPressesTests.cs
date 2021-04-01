@@ -13,8 +13,10 @@ namespace SeleniumHerokuapp.Tests
 
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
-        //Tab,Enter,Escape
-        [TestCase("\ue004", "TAB")]
+        
+        [TestCase("\uE004", "TAB")]
+        [TestCase("\uE003", "BACK_SPACE")]
+        [TestCase("\uE00C", "ESCAPE")]
         public void Tab(string keyCode, string key)
         {
             _sut.KeyPressesPage.NavigateToPage();

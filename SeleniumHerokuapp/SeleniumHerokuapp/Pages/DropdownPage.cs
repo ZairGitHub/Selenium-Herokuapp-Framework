@@ -7,6 +7,12 @@ namespace SeleniumHerokuapp.Pages
     {
         public DropdownPage(IWebDriver driver) : base(driver) { }
 
+        public enum Dropdown
+        {
+            Option1,
+            Option2
+        }
+
         public void NavigateToPage()
         {
             NavigateToURL(ConfigReader.Index + ConfigReader.Dropdown);
@@ -23,25 +29,28 @@ namespace SeleniumHerokuapp.Pages
 
         public string ReadDropdownText()
         {
+            string text = null;
             foreach(IWebElement dropdownOption in DropDownOptions)
             {
                 if (dropdownOption.Selected)
                 {
-                    return dropdownOption.Text;
+                    text = dropdownOption.Text;
+                    break;
                 }
             }
-            return null;
+            return text;
         }
 
-        public void ClickDropdownOption(int id)
+        public void ClickDropdownOption(Dropdown id)
         {
-            if (id == 1)
+            switch (id)
             {
-                DropdownOption1.Click();
-            }
-            else if (id == 2)
-            {
-                DropdownOption2.Click();
+                case Dropdown.Option1:
+                    DropdownOption1.Click();
+                    break;
+                case Dropdown.Option2:
+                    DropdownOption2.Click();
+                    break;
             }
         }
     }

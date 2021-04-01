@@ -15,25 +15,13 @@ namespace SeleniumHerokuapp.Tests
         public void OneTimeTearDown() => _sut.CloseDriver();
 
         [Test]
-        public void DecimalNumber()
+        public void InputNumber_DisplaysTheEnteredNumber()
         {
             _sut.InputsPage.NavigateToPage();
+            const double input = 1.0;
 
-            _sut.InputsPage.EnterValue(9.3);
-            _sut.InputsPage.IncrementValue();
-            var result = _sut.InputsPage.ReadValue();
-
-            Assert.That(result, Is.EqualTo(10));
-        }
-
-        [Test]
-        public void InputNumber()
-        {
-            _sut.InputsPage.NavigateToPage();
-            int input = 9;
-
-            _sut.InputsPage.EnterValue(input);
-            var result =  _sut.InputsPage.ReadValue();
+            _sut.InputsPage.InputNumber(input);
+            var result = _sut.InputsPage.ReadNumber();
 
             Assert.That(result, Is.EqualTo(input));
         }
@@ -43,8 +31,8 @@ namespace SeleniumHerokuapp.Tests
         {
             _sut.InputsPage.NavigateToPage();
 
-            _sut.InputsPage.IncrementValue();
-            var result = _sut.InputsPage.ReadValue();
+            _sut.InputsPage.IncrementNumber();
+            var result = _sut.InputsPage.ReadNumber();
 
             Assert.That(result, Is.EqualTo(1));
         }
@@ -54,8 +42,8 @@ namespace SeleniumHerokuapp.Tests
         {
             _sut.InputsPage.NavigateToPage();
 
-            _sut.InputsPage.DecrementValue();
-            var result = _sut.InputsPage.ReadValue();
+            _sut.InputsPage.DecrementNumber();
+            var result = _sut.InputsPage.ReadNumber();
 
             Assert.That(result, Is.EqualTo(-1));
         }

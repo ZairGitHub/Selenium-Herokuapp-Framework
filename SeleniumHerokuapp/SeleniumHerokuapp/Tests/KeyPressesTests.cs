@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using SeleniumHerokuapp.Pages;
+using SeleniumHerokuapp.Helpers;
 
 namespace SeleniumHerokuapp.Tests
 {
@@ -14,9 +15,9 @@ namespace SeleniumHerokuapp.Tests
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
         
-        [TestCase("\uE004", "TAB")]
-        [TestCase("\uE003", "BACK_SPACE")]
-        [TestCase("\uE00C", "ESCAPE")]
+        [TestCase(KeyCodes.Tab, "TAB")]
+        [TestCase(KeyCodes.BackSpace, "BACK_SPACE")]
+        [TestCase(KeyCodes.Escape, "ESCAPE")]
         public void Tab(string keyCode, string key)
         {
             _sut.KeyPressesPage.NavigateToPage();

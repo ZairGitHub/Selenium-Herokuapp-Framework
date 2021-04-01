@@ -3,6 +3,8 @@ using SeleniumHerokuapp.Pages;
 
 namespace SeleniumHerokuapp.Tests
 {
+    using static BrokenImagesPage;
+
     [TestFixture]
     public class BrokenImagesTests
     {
@@ -14,11 +16,11 @@ namespace SeleniumHerokuapp.Tests
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
 
-        [TestCase(1, true)]
-        [TestCase(2, true)]
-        [TestCase(3, false)]
+        [TestCase(Images.Image1, true)]
+        [TestCase(Images.Image2, true)]
+        [TestCase(Images.Image3, false)]
         public void IsImageBroken_ReturnsTrueIfImageIsBroken(
-            int id, bool expectedCondition)
+            Images id, bool expectedCondition)
         {
             _sut.BrokenImagesPage.NavigateToPage();
 

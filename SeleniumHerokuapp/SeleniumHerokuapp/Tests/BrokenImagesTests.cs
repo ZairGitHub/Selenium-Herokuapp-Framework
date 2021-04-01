@@ -16,11 +16,11 @@ namespace SeleniumHerokuapp.Tests
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
 
-        [TestCase(Images.Image1, true)]
-        [TestCase(Images.Image2, true)]
-        [TestCase(Images.Image3, false)]
+        [TestCase(Image.Image1, true)]
+        [TestCase(Image.Image2, true)]
+        [TestCase(Image.Image3, false)]
         public void IsImageBroken_ReturnsTrueIfImageIsBroken(
-            Images id, bool expectedCondition)
+            Image id, bool expectedCondition)
         {
             _sut.BrokenImagesPage.NavigateToPage();
 

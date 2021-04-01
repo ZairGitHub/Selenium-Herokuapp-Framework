@@ -6,7 +6,7 @@ namespace SeleniumHerokuapp.Pages
     {
         public BrokenImagesPage(IWebDriver driver) : base(driver) { }
 
-        public enum Images
+        public enum Image
         {
             Image1,
             Image2,
@@ -27,18 +27,18 @@ namespace SeleniumHerokuapp.Pages
         public IWebElement Image3 =>
             Driver.FindElement(By.CssSelector("img:nth-child(4)"));
 
-        public bool IsImageBroken(Images id)
+        public bool IsImageBroken(Image id)
         {
             IWebElement image = null;
             switch (id)
             {
-                case Images.Image1:
+                case Image.Image1:
                     image = Image1;
                     break;
-                case Images.Image2:
+                case Image.Image2:
                     image = Image2;
                     break;
-                case Images.Image3:
+                case Image.Image3:
                     image = Image3;
                     break;
             }

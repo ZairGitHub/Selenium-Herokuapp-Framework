@@ -22,7 +22,7 @@ namespace SeleniumHerokuapp.Pages
 
         public bool IsImageBroken(int id)
         {
-            IWebElement image;
+            IWebElement image = null;
             if (id == 1)
             {
                 image = Image1;
@@ -31,7 +31,7 @@ namespace SeleniumHerokuapp.Pages
             {
                 image = Image2;
             }
-            else
+            else if (id == 3)
             {
                 image = Image3;
             }

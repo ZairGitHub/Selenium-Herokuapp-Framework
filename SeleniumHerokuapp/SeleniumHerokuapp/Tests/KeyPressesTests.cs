@@ -13,5 +13,16 @@ namespace SeleniumHerokuapp.Tests
 
         [OneTimeTearDown]
         public void OneTimeTearDown() => _sut.CloseDriver();
+
+        [Test]
+        public void Tab()
+        {
+            _sut.KeyPressesPage.NavigateToPage();
+
+            _sut.KeyPressesPage.PressTabKey();
+            var result = _sut.KeyPressesPage.ReadInformation();
+
+            Assert.That(result, Is.EqualTo("You entered: TAB"));
+        }
     }
 }

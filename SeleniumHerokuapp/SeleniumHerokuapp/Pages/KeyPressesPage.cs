@@ -16,7 +16,11 @@ namespace SeleniumHerokuapp.Pages
         private IWebElement TextUpdate => Driver.FindElement(By.Id("result"));
 
         public string ReadInformation() => TextUpdate.Text;
+        
+        public void PressTabKey() => Input.SendKeys(Keys.Tab);
 
-        public void PressKey(string key) => Input.SendKeys(key);
+        public void PressEnterKey() => Input.SendKeys(Keys.Enter);
+
+        public void PressEscapeKey() => Input.SendKeys(Keys.Escape);
     }
 }

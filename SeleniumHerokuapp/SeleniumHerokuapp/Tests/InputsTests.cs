@@ -27,10 +27,11 @@ namespace SeleniumHerokuapp.Tests
         }
 
         [Test]
-        public void IncrementValue_IncrementsTheCurrentInput()
+        public void IncrementNumber_RoundsUpTheDisplayedValueToTheNearestWholeNumber()
         {
             _sut.InputsPage.NavigateToPage();
 
+            _sut.InputsPage.EnterNumber(double.Epsilon);
             _sut.InputsPage.IncrementNumber();
             var result = _sut.InputsPage.ReadNumber();
 
@@ -38,10 +39,11 @@ namespace SeleniumHerokuapp.Tests
         }
 
         [Test]
-        public void DecrementValue_DecrementsTheCurrentInput()
+        public void DecrementNumber_RoundsDownTheDisplayedValueToTheNearestWholeNumber()
         {
-            _sut.InputsPage.NavigateToPage();
+            _sut.InputsPage.NavigateToPage();            
 
+            _sut.InputsPage.EnterNumber(-double.Epsilon);
             _sut.InputsPage.DecrementNumber();
             var result = _sut.InputsPage.ReadNumber();
 

@@ -4,6 +4,8 @@ using TechTalk.SpecFlow;
 
 namespace SeleniumHerokuapp.Steps
 {
+    using static BrokenImagesPage;
+
     [Binding]
     public class BrokenImagesSteps
     {
@@ -22,7 +24,7 @@ namespace SeleniumHerokuapp.Steps
         [When(@"the user checks if an image (.*) is broken")]
         public void WhenTheUserChecksIfAnImageIsBroken(int id)
         {
-            _actualCondition = _sut.BrokenImagesPage.IsImageBroken(id);
+            _actualCondition = _sut.BrokenImagesPage.IsImageBroken((ImageID)id);
         }
 
         [Then(@"the condition (.*) of the image should reflect this information")]

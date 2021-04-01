@@ -4,6 +4,8 @@ using TechTalk.SpecFlow;
 
 namespace SeleniumHerokuapp.Steps
 {
+    using static DropdownPage;
+
     [Binding]
     public class DropdownSteps
     {
@@ -20,7 +22,7 @@ namespace SeleniumHerokuapp.Steps
         [When(@"the user selects the option (.*) from the dropdown list")]
         public void WhenTheUserSelectsTheOptionFromTheDropdownList(int id)
         {
-            _sut.DropdownPage.ClickDropdownOption(id);
+            _sut.DropdownPage.ClickDropdownOption((DropdownID)id);
         }
 
         [Then(@"the dropdown list should display the following text ""(.*)""")]

@@ -4,6 +4,8 @@ using TechTalk.SpecFlow;
 
 namespace SeleniumHerokuapp.Steps
 {
+    using static HoversPage;
+
     [Binding]
     public class HoversSteps
     {
@@ -20,7 +22,7 @@ namespace SeleniumHerokuapp.Steps
         [When(@"the user hovers over the image (.*)")]
         public void WhenTheUserHoversOverTheImage(int id)
         {
-            _sut.HoversPage.HoverOverImage(id);
+            _sut.HoversPage.HoverOverImage((ImageID)id);
         }
 
         [When(@"the user clicks the profile link")]
@@ -32,7 +34,7 @@ namespace SeleniumHerokuapp.Steps
         [Then(@"the user should be able to see additional name information for the image (.*)")]
         public void ThenTheUserShouldBeAbleToSeeAdditionalNameInformationForTheImage(int id)
         {
-            var result = _sut.HoversPage.ReadSubHeaderTextForImage(id);
+            var result = _sut.HoversPage.ReadSubHeaderTextForImage((ImageID)id);
 
             Assert.That(result, Is.EqualTo("name: user" + id));
         }

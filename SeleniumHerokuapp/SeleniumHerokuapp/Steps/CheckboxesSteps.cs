@@ -4,6 +4,8 @@ using TechTalk.SpecFlow;
 
 namespace SeleniumHerokuapp.Steps
 {
+    using static CheckboxesPage;
+
     [Binding]
     public class CheckboxesSteps
     {
@@ -22,14 +24,14 @@ namespace SeleniumHerokuapp.Steps
         [Given(@"the user clicks on a checkbox (.*)")]
         public void GivenTheUserClicksOnACheckbox(int id)
         {
-            _initialState = _sut.CheckboxesPage.IsCheckboxTicked(id);
-            _sut.CheckboxesPage.ClickCheckbox(id);
+            _initialState = _sut.CheckboxesPage.IsCheckboxTicked((CheckboxID)id);
+            _sut.CheckboxesPage.ClickCheckbox((CheckboxID)id);
         }
 
         [Then(@"the state of the checkbox (.*) should be toggled")]
         public void ThenTheStateOfTheCheckboxShouldBeToggled(int id)
         {
-            var endState = _sut.CheckboxesPage.IsCheckboxTicked(id);
+            var endState = _sut.CheckboxesPage.IsCheckboxTicked((CheckboxesPage.CheckboxID)id);
 
             Assert.That(endState, Is.Not.EqualTo(_initialState));
         }

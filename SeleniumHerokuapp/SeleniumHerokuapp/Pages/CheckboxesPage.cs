@@ -6,7 +6,7 @@ namespace SeleniumHerokuapp.Pages
     {
         public CheckboxesPage(IWebDriver driver) : base(driver) { }
 
-        public enum Checkbox
+        public enum CheckboxID
         {
             Checkbox1,
             Checkbox2
@@ -23,29 +23,29 @@ namespace SeleniumHerokuapp.Pages
         private IWebElement Checkbox2 =>
             Driver.FindElement(By.CssSelector("input:nth-child(3)"));
 
-        public bool IsCheckboxTicked(Checkbox id)
+        public bool IsCheckboxTicked(CheckboxID checkboxID)
         {
             IWebElement checkbox = null;
-            switch (id)
+            switch (checkboxID)
             {
-                case Checkbox.Checkbox1:
+                case CheckboxID.Checkbox1:
                     checkbox = Checkbox1;
                     break;
-                case Checkbox.Checkbox2:
+                case CheckboxID.Checkbox2:
                     checkbox = Checkbox2;
                     break;
             }
             return checkbox.Selected;
         }
 
-        public void ClickCheckbox(Checkbox id)
+        public void ClickCheckbox(CheckboxID checkboxID)
         {
-            switch (id)
+            switch (checkboxID)
             {
-                case Checkbox.Checkbox1:
+                case CheckboxID.Checkbox1:
                     Checkbox1.Click();
                     break;
-                case Checkbox.Checkbox2:
+                case CheckboxID.Checkbox2:
                     Checkbox2.Click();
                     break;
             }

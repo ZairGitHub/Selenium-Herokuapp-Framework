@@ -7,11 +7,11 @@ namespace SeleniumHerokuapp.Pages
     {
         public HoversPage(IWebDriver driver) : base(driver) { }
 
-        public enum Image
+        public enum ImageID
         {
-            Image1,
-            Image2,
-            Image3
+            Image1 = 1,
+            Image2 = 2,
+            Image3 = 3
         }
 
         public void NavigateToPage()
@@ -40,36 +40,36 @@ namespace SeleniumHerokuapp.Pages
         private IWebElement LinkViewProfile =>
             Driver.FindElement(By.LinkText("View profile"));
 
-        public void HoverOverImage(Image id)
+        public void HoverOverImage(ImageID imageID)
         {
             Actions actions = new Actions(Driver);
-            switch (id)
+            switch (imageID)
             {
-                case Image.Image1:
+                case ImageID.Image1:
                     actions.MoveToElement(Image1);
                     break;
-                case Image.Image2:
+                case ImageID.Image2:
                     actions.MoveToElement(Image2);
                     break;
-                case Image.Image3:
+                case ImageID.Image3:
                     actions.MoveToElement(Image3);
                     break;
             }
             actions.Perform();
         }
 
-        public string ReadSubHeaderTextForImage(Image id)
+        public string ReadSubHeaderTextForImage(ImageID imageID)
         {
             string headerText = null;
-            switch (id)
+            switch (imageID)
             {
-                case Image.Image1:
+                case ImageID.Image1:
                     headerText = PageSubHeader1.Text;
                     break;
-                case Image.Image2:
+                case ImageID.Image2:
                     headerText = PageSubHeader2.Text;
                     break;
-                case Image.Image3:
+                case ImageID.Image3:
                     headerText = PageSubHeader3.Text;
                     break;
             }

@@ -175,6 +175,17 @@ namespace SeleniumHerokuapp.Tests
         }
 
         [Test]
+        public void ClickKeyPressesLink_RedirectsToKeyPressesPage()
+        {
+            _sut.IndexPage.NavigateToPage();
+
+            _sut.IndexPage.ClickKeyPressesLink();
+            var result = _sut.SharedHTML.ReadPageHeaderText();
+
+            Assert.That(result, Is.EqualTo("Key Presses"));
+        }
+
+        [Test]
         public void ClickNestedFramesLink_RedirectsToNestedFramesPage()
         {
             _sut.IndexPage.NavigateToPage();

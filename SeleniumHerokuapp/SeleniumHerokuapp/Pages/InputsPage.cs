@@ -16,8 +16,6 @@ namespace SeleniumHerokuapp.Pages
         public double ReadValue() => double.Parse(Input.GetAttribute("value"));
         
         public void EnterValue(double value) => Input.SendKeys(value.ToString());
-
-        public void EnterText(string text) => Input.SendKeys(text);
         
         public void IncrementValue() => Input.SendKeys(Keys.Up);
 

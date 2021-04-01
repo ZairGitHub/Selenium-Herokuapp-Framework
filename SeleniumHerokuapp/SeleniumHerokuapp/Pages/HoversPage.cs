@@ -7,6 +7,13 @@ namespace SeleniumHerokuapp.Pages
     {
         public HoversPage(IWebDriver driver) : base(driver) { }
 
+        public enum Image
+        {
+            Image1,
+            Image2,
+            Image3
+        }
+
         public void NavigateToPage()
         {
             NavigateToURL(ConfigReader.Index + ConfigReader.Hovers);
@@ -33,38 +40,38 @@ namespace SeleniumHerokuapp.Pages
         private IWebElement LinkViewProfile =>
             Driver.FindElement(By.LinkText("View profile"));
 
-        public void HoverOverImage(int id)
+        public void HoverOverImage(Image id)
         {
             Actions actions = new Actions(Driver);
-            if (id == 1)
+            switch (id)
             {
-                actions.MoveToElement(Image1);
-            }
-            else if (id == 2)
-            {
-                actions.MoveToElement(Image2);
-            }
-            else
-            {
-                actions.MoveToElement(Image3);
+                case Image.Image1:
+                    actions.MoveToElement(Image1);
+                    break;
+                case Image.Image2:
+                    actions.MoveToElement(Image2);
+                    break;
+                case Image.Image3:
+                    actions.MoveToElement(Image3);
+                    break;
             }
             actions.Perform();
         }
 
-        public string ReadSubHeaderTextForImage(int id)
+        public string ReadSubHeaderTextForImage(Image id)
         {
-            string headerText;
-            if (id == 1)
+            string headerText = null;
+            switch (id)
             {
-                headerText = PageSubHeader1.Text;
-            }
-            else if (id == 2)
-            {
-                headerText = PageSubHeader2.Text;
-            }
-            else
-            {
-                headerText = PageSubHeader3.Text;
+                case Image.Image1:
+                    headerText = PageSubHeader1.Text;
+                    break;
+                case Image.Image2:
+                    headerText = PageSubHeader2.Text;
+                    break;
+                case Image.Image3:
+                    headerText = PageSubHeader3.Text;
+                    break;
             }
             return headerText;
         }

@@ -120,6 +120,17 @@ namespace SeleniumHerokuapp.Tests
         }
 
         [Test]
+        public void ClickEntryAdLink_RedirectsToEntryAdPage()
+        {
+            _sut.IndexPage.NavigateToPage();
+
+            _sut.IndexPage.ClickEntryAdLink();
+            var result = _sut.SharedHTML.ReadPageHeaderText();
+
+            Assert.That(result, Is.EqualTo("Entry Ad"));
+        }
+
+        [Test]
         public void ClickFormAuthenticationLink_RedirectsToLoginPage()
         {
             _sut.IndexPage.NavigateToPage();

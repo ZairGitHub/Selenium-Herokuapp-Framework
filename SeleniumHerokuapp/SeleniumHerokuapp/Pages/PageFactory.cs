@@ -22,6 +22,7 @@ namespace SeleniumHerokuapp.Pages
             DigestAuthenticationPage = new DigestAuthenticationPage(Driver);
             DragAndDropPage = new DragAndDropPage(Driver);
             DropdownPage = new DropdownPage(Driver);
+            EntryAdPage = new EntryAdPage(Driver);
             FormAuthenticationPage = new FormAuthenticationPage(Driver);
             FramesPage = new FramesPage(Driver);
             HoversPage = new HoversPage(Driver);
@@ -52,6 +53,8 @@ namespace SeleniumHerokuapp.Pages
         public DragAndDropPage DragAndDropPage { get; private set; }
 
         public DropdownPage DropdownPage { get; private set; }
+
+        public EntryAdPage EntryAdPage { get; private set; }
 
         public FormAuthenticationPage FormAuthenticationPage { get; private set; }
 

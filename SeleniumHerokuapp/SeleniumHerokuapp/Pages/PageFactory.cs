@@ -76,5 +76,7 @@ namespace SeleniumHerokuapp.Pages
         }
 
         public void CloseDriver() => Driver.Quit();
+
+        public void DeleteAllCookies() => Driver.Manage().Cookies.DeleteAllCookies();
     }
 }

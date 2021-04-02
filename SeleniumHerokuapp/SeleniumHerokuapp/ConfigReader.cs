@@ -4,6 +4,9 @@ namespace SeleniumHerokuapp
 {
     public static class ConfigReader
     {
+        public static string Protocol =>
+            ConfigurationManager.AppSettings["protocol"];
+
         public static string Base =>
             ConfigurationManager.AppSettings["base"];
 

@@ -41,7 +41,7 @@ namespace SeleniumHerokuapp.Tests
             var result = _sut.Driver.Url;
 
             Assert.That(result, Is.EqualTo(
-                "http://the-internet.herokuapp.com/users/" + (int)imageID));
+                ConfigReader.Index + "users/" + (int)imageID));
         }
     }
 }

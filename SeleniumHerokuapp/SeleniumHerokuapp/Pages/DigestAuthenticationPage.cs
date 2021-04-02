@@ -16,7 +16,8 @@ namespace SeleniumHerokuapp.Pages
         
         public void NavigatePastAuthentication()
         {
-            NavigateToURL($"http://{_validUsername}:{_validPassword}@" +
+            NavigateToURL(
+                $"{ConfigReader.Protocol}{_validUsername}:{_validPassword}@" +
                 ConfigReader.Base + ConfigReader.DigestAuthentication);
         }
     }

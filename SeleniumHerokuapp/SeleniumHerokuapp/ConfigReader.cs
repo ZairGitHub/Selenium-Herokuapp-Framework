@@ -34,6 +34,9 @@ namespace SeleniumHerokuapp
         public static string Dropdown =>
             ConfigurationManager.AppSettings["dropdown"];
 
+        public static string EntryAd =>
+            ConfigurationManager.AppSettings["entry_ad"];
+
         public static string FormAuthetication =>
             ConfigurationManager.AppSettings["form_authentication"];
 

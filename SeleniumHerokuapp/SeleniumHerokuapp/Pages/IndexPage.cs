@@ -32,6 +32,9 @@ namespace SeleniumHerokuapp.Pages
         private IWebElement LinkDropdown =>
             Driver.FindElement(By.LinkText("Dropdown"));
 
+        private IWebElement LinkEntryAd =>
+            Driver.FindElement(By.LinkText("Entry Ad"));
+
         private IWebElement LinkFormAuthentiication =>
             Driver.FindElement(By.LinkText("Form Authentication"));
 
@@ -72,6 +75,8 @@ namespace SeleniumHerokuapp.Pages
         public void ClickDragAndDropLink() => LinkDragAndDrop.Click();
 
         public void ClickDropdownLink() => LinkDropdown.Click();
+
+        public void ClickEntryAdLink() => LinkEntryAd.Click();
 
         public void ClickFormAuthenticationLink()
         {
